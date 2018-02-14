@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B6A1177C202BAD2200218EEE /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A1177B202BAD2200218EEE /* DiscoverViewController.m */; };
+		B98D35FF20322F7800B2F52D /* EducationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B98D35FE20322F7800B2F52D /* EducationViewController.m */; };
 		CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF55493202B9E5600B1521E /* AppDelegate.m */; };
 		CAF5549A202B9E5600B1521E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF55498202B9E5600B1521E /* Main.storyboard */; };
 		CAF5549C202B9E5600B1521E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF5549B202B9E5600B1521E /* Assets.xcassets */; };
@@ -20,6 +21,8 @@
 /* Begin PBXFileReference section */
 		B6A1177A202BAD2200218EEE /* DiscoverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
 		B6A1177B202BAD2200218EEE /* DiscoverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
+		B98D35FD20322F7800B2F52D /* EducationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EducationViewController.h; sourceTree = "<group>"; };
+		B98D35FE20322F7800B2F52D /* EducationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EducationViewController.m; sourceTree = "<group>"; };
 		CAF5548F202B9E5600B1521E /* climateConvos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = climateConvos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF55492202B9E5600B1521E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CAF55493202B9E5600B1521E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -45,6 +48,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B98D36012032313600B2F52D /* education */ = {
+			isa = PBXGroup;
+			children = (
+				B98D35FD20322F7800B2F52D /* EducationViewController.h */,
+				B98D35FE20322F7800B2F52D /* EducationViewController.m */,
+			);
+			name = education;
+			sourceTree = "<group>";
+		};
 		CAF55486202B9E5600B1521E = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +82,7 @@
 				CAF554A9202B9E8100B1521E /* TutorialViewController.m */,
 				B6A1177A202BAD2200218EEE /* DiscoverViewController.h */,
 				B6A1177B202BAD2200218EEE /* DiscoverViewController.m */,
+				B98D36012032313600B2F52D /* education */,
 				CAF55498202B9E5600B1521E /* Main.storyboard */,
 				CAF5549B202B9E5600B1521E /* Assets.xcassets */,
 				E79B1133202BB5DB00F6A0ED /* Exxtra */,
@@ -165,6 +178,7 @@
 				B6A1177C202BAD2200218EEE /* DiscoverViewController.m in Sources */,
 				CAF554AA202B9E8100B1521E /* TutorialViewController.m in Sources */,
 				CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */,
+				B98D35FF20322F7800B2F52D /* EducationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

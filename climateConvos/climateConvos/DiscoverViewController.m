@@ -8,7 +8,6 @@
 
 #import "DiscoverViewController.h"
 
-// neeko's something new
 
 @interface DiscoverViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *leftButton;

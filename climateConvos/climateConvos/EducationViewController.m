@@ -1,0 +1,48 @@
+//
+//  EducationViewController.m
+//  climateConvos
+//
+//  Created by neeks on 2/12/18.
+//  Copyright © 2018 acn96. All rights reserved.
+//
+
+#import "EducationViewController.h"
+
+@interface EducationViewController ()
+
+@property (weak, nonatomic) IBOutlet UIButton *whatIsIt;
+
+@property (weak, nonatomic) IBOutlet UITextView *theText;
+
+
+@end
+
+@implementation EducationViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+}
+
+- (IBAction)changeText: (UIButton *) sender
+{
+    self.theText.text = @"Something New";
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+
+@end
