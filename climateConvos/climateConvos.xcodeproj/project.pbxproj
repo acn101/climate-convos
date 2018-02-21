@@ -71,6 +71,10 @@
 				B6A1177A202BAD2200218EEE /* DiscoverViewController.h */,
 				B6A1177B202BAD2200218EEE /* DiscoverViewController.m */,
 				CAF55498202B9E5600B1521E /* Main.storyboard */,
+				CAF5549D202B9E5600B1521E /* LaunchScreen.storyboard */,
+				CAF55493202B9E5600B1521E /* AppDelegate.m */,
+				CAF55492202B9E5600B1521E /* AppDelegate.h */,
+				CAF554A1202B9E5600B1521E /* main.m */,
 				CAF5549B202B9E5600B1521E /* Assets.xcassets */,
 				E79B1133202BB5DB00F6A0ED /* Exxtra */,
 			);
@@ -80,11 +84,7 @@
 		E79B1133202BB5DB00F6A0ED /* Exxtra */ = {
 			isa = PBXGroup;
 			children = (
-				CAF5549D202B9E5600B1521E /* LaunchScreen.storyboard */,
 				CAF554A0202B9E5600B1521E /* Info.plist */,
-				CAF554A1202B9E5600B1521E /* main.m */,
-				CAF55492202B9E5600B1521E /* AppDelegate.h */,
-				CAF55493202B9E5600B1521E /* AppDelegate.m */,
 			);
 			name = Exxtra;
 			sourceTree = "<group>";
