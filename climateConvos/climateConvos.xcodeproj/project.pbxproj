@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B6A1177C202BAD2200218EEE /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A1177B202BAD2200218EEE /* DiscoverViewController.m */; };
+		B957BB3C203BD3CE001750E8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B957BB3B203BD3CE001750E8 /* GoogleService-Info.plist */; };
 		B98D35FF20322F7800B2F52D /* EducationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B98D35FE20322F7800B2F52D /* EducationViewController.m */; };
 		CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF55493202B9E5600B1521E /* AppDelegate.m */; };
 		CAF5549A202B9E5600B1521E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF55498202B9E5600B1521E /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		B6A1177A202BAD2200218EEE /* DiscoverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
 		B6A1177B202BAD2200218EEE /* DiscoverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
+		B957BB3B203BD3CE001750E8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B98D35FD20322F7800B2F52D /* EducationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EducationViewController.h; sourceTree = "<group>"; };
 		B98D35FE20322F7800B2F52D /* EducationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EducationViewController.m; sourceTree = "<group>"; };
 		CAF5548F202B9E5600B1521E /* climateConvos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = climateConvos.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,7 +63,6 @@
 			isa = PBXGroup;
 			children = (
 				CAF55491202B9E5600B1521E /* climateConvos */,
-				CAF55490202B9E5600B1521E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +72,7 @@
 				CAF5548F202B9E5600B1521E /* climateConvos.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		CAF55491202B9E5600B1521E /* climateConvos */ = {
@@ -82,6 +84,8 @@
 				CAF554A9202B9E8100B1521E /* TutorialViewController.m */,
 				B6A1177A202BAD2200218EEE /* DiscoverViewController.h */,
 				B6A1177B202BAD2200218EEE /* DiscoverViewController.m */,
+				B957BB3B203BD3CE001750E8 /* GoogleService-Info.plist */,
+				CAF55490202B9E5600B1521E /* Products */,
 				B98D36012032313600B2F52D /* education */,
 				CAF55498202B9E5600B1521E /* Main.storyboard */,
 				CAF5549B202B9E5600B1521E /* Assets.xcassets */,
@@ -161,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAF5549F202B9E5600B1521E /* LaunchScreen.storyboard in Resources */,
+				B957BB3C203BD3CE001750E8 /* GoogleService-Info.plist in Resources */,
 				CAF5549C202B9E5600B1521E /* Assets.xcassets in Resources */,
 				CAF5549A202B9E5600B1521E /* Main.storyboard in Resources */,
 			);

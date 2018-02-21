@@ -9,10 +9,7 @@
 #import "EducationViewController.h"
 
 @interface EducationViewController ()
-
-@property (weak, nonatomic) IBOutlet UIButton *whatIsIt;
-
-@property (weak, nonatomic) IBOutlet UITextView *theText;
+@property (weak, nonatomic) IBOutlet UITextView *educText;
 
 
 @end
@@ -24,10 +21,28 @@
     
 }
 
-- (IBAction)changeText: (UIButton *) sender
-{
-    self.theText.text = @"Something New";
+
+
+- (IBAction)changePro:(UIButton *)sender {
+    self.educText.text = [self proactive];
+    
 }
+
+- (IBAction)changeWhatIs:(UIButton *)sender {
+    self.educText.text = [self whatIsIt];
+}
+
+- (IBAction)changeHow:(UIButton *)sender {
+    self.educText.text = [self howDoesIt];
+}
+
+- (IBAction)changeWhatCan:(UIButton *)sender {
+    self.educText.text = [self whatCanYou];
+}
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -44,5 +59,26 @@
 }
 */
 
+- (NSString *)proactive
+{
+    return @"Proactive Conversation";
+}
 
+- (NSString *)whatIsIt
+{
+    return @"What Even Is it";
+}
+
+- (NSString *)howDoesIt
+{
+    return @"How Does it Affect You";
+}
+
+- (NSString *)whatCanYou
+{
+    return @"What Can You Do About It";
+}
+
+- (IBAction)hello:(UIButton *)sender {
+}
 @end
