@@ -172,62 +172,102 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ey0-Qf-Hy3">
-                                <rect key="frame" x="52" y="302" width="257" height="62"/>
+                                <rect key="frame" x="54" y="340" width="257" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.74147039651870728" green="0.99958544969558716" blue="0.8349003791809082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Proactive Conversation"/>
                                 <connections>
                                     <action selector="changePro:" destination="kVH-Al-PQN" eventType="touchUpInside" id="gJI-og-VDy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hfm-yf-e4c">
-                                <rect key="frame" x="54" y="372" width="257" height="80"/>
+                                <rect key="frame" x="37" y="401" width="300" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.74147039651870728" green="0.99958544969558716" blue="0.8349003791809082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="What Even is Climate Change?"/>
                                 <connections>
                                     <action selector="changeWhatIs:" destination="kVH-Al-PQN" eventType="touchUpInside" id="yTs-oL-sav"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Vfh-XW-kBa">
-                                <rect key="frame" x="54" y="436" width="257" height="80"/>
+                                <rect key="frame" x="54" y="463" width="257" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.74147039651870728" green="0.99958544969558716" blue="0.8349003791809082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="How Does it Affect you?"/>
                                 <connections>
                                     <action selector="changeHow:" destination="kVH-Al-PQN" eventType="touchUpInside" id="Flf-NW-PrP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JIq-Em-TFE">
-                                <rect key="frame" x="54" y="504" width="257" height="80"/>
+                                <rect key="frame" x="54" y="517" width="257" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.74147039651870728" green="0.99958544969558716" blue="0.8349003791809082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="What Can You Do About it?"/>
                                 <connections>
                                     <action selector="changeWhatCan:" destination="kVH-Al-PQN" eventType="touchUpInside" id="f6U-Uw-MDr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nGa-JD-E8J">
-                                <rect key="frame" x="0.0" y="0.0" width="84" height="30"/>
+                                <rect key="frame" x="0.0" y="0.0" width="110" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back Button"/>
+                                <connections>
+                                    <segue destination="MkA-cr-rUm" kind="modal" id="Xwm-oT-cvY"/>
+                                </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="asdasd" textAlignment="natural" id="yLw-g7-wN9">
-                                <rect key="frame" x="60" y="82" width="255" height="212"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="center" id="yLw-g7-wN9">
+                                <rect key="frame" x="37" y="94" width="300" height="223"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="backgroundColor" red="0.74268411690000002" green="1" blue="0.83457378910000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">To get you started, it's important to have a baseline of knowledge about climate change. Click on the modules below to learn more. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XOm-1R-wur">
-                                <rect key="frame" x="150" y="53" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Getting Educated" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XOm-1R-wur">
+                                <rect key="frame" x="16" y="38" width="343" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="backgroundColor" red="0.74147039651870728" green="0.99958544969558716" blue="0.8349003791809082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="topRight" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" id="itN-n2-eSR">
+                                <rect key="frame" x="0.0" y="575" width="99" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <size key="titleShadowOffset" width="6" height="0.0"/>
+                                <state key="normal" image="geo_talking"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Mxd-ut-x1P">
+                                <rect key="frame" x="5" y="192" width="24" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="&lt;"/>
+                                <connections>
+                                    <action selector="leftAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="77B-bd-ya4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eZr-DC-JOf">
+                                <rect key="frame" x="327" y="181" width="68" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="&gt;"/>
+                                <connections>
+                                    <action selector="rightAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sgf-RB-gW0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="JyJ-Uv-FCT"/>
                     <connections>
                         <outlet property="educText" destination="yLw-g7-wN9" id="P9h-sM-UOA"/>
+                        <outlet property="educTitle" destination="XOm-1R-wur" id="xcJ-W0-HTC"/>
+                        <outlet property="leftNav" destination="Mxd-ut-x1P" id="ikl-sP-neX"/>
+                        <outlet property="rightNav" destination="eZr-DC-JOf" id="tMH-Mm-E9o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xbt-aT-VPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -235,4 +275,10 @@
             <point key="canvasLocation" x="695.5" y="1108.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="geo_talking" width="51" height="52"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Xwm-oT-cvY"/>
+    </inferredMetricsTieBreakers>
 </document>

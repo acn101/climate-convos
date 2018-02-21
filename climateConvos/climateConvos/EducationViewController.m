@@ -10,38 +10,57 @@
 
 @interface EducationViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *educText;
+@property (weak, nonatomic) IBOutlet UILabel *educTitle;
 
+@property (weak, nonatomic) IBOutlet UIButton *rightNav;
+@property (weak, nonatomic) IBOutlet UIButton *leftNav;
 
 @end
+
+int pageNum;
 
 @implementation EducationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _educTitle.textAlignment = NSTextAlignmentCenter;
+    
+    
+    _rightNav.hidden = YES;
+    _leftNav.hidden = YES;
+    
 }
 
 
 
 - (IBAction)changePro:(UIButton *)sender {
-    self.educText.text = [self proactive];
+    self.educText.text = [self proactive1];
     
+    self.rightNav.hidden = NO;
+    self.leftNav.hidden = NO;
 }
 
 - (IBAction)changeWhatIs:(UIButton *)sender {
-    self.educText.text = [self whatIsIt];
+    self.educText.text = [self whatIsIt1];
+    
+    self.rightNav.hidden = NO;
+    self.leftNav.hidden = NO;
 }
 
 - (IBAction)changeHow:(UIButton *)sender {
-    self.educText.text = [self howDoesIt];
+    self.educText.text = [self howDoesIt1];
+    
+    self.rightNav.hidden = NO;
+    self.leftNav.hidden = NO;
 }
 
 - (IBAction)changeWhatCan:(UIButton *)sender {
-    self.educText.text = [self whatCanYou];
+    self.educText.text = [self whatCanYou1];
+    
+    self.rightNav.hidden = NO;
+    self.leftNav.hidden = NO;
 }
-
-
-
 
 
 - (void)didReceiveMemoryWarning {
@@ -59,24 +78,24 @@
 }
 */
 
-- (NSString *)proactive
+- (NSString *)proactive1
 {
-    return @"Proactive Conversation";
+    return @"Proactive Conversation is important for making conversation like happen and like stuff";
 }
 
-- (NSString *)whatIsIt
+- (NSString *)whatIsIt1
 {
-    return @"What Even Is it";
+    return @"Climate Change is this thing which toally sucks and should be stopped at all costs";
 }
 
-- (NSString *)howDoesIt
+- (NSString *)howDoesIt1
 {
-    return @"How Does it Affect You";
+    return @"It may not seem pressing in a grander scope, but it does actuall effect you, and the people around you...";
 }
 
-- (NSString *)whatCanYou
+- (NSString *)whatCanYou1
 {
-    return @"What Can You Do About It";
+    return @"What you can do about it is help start conversation and promote activism in order to stop legislation and systematic negatives.";
 }
 
 - (IBAction)hello:(UIButton *)sender {
