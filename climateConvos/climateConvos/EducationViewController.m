@@ -15,9 +15,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *rightNav;
 @property (weak, nonatomic) IBOutlet UIButton *leftNav;
 
+@property (nonatomic) int pageView;
+
 @end
 
-int pageNum;
+
 
 @implementation EducationViewController
 
@@ -26,7 +28,7 @@ int pageNum;
     
     _educTitle.textAlignment = NSTextAlignmentCenter;
     
-    
+
     _rightNav.hidden = YES;
     _leftNav.hidden = YES;
     
@@ -35,28 +37,40 @@ int pageNum;
 
 
 - (IBAction)changePro:(UIButton *)sender {
+    self.pageView = 1;
     self.educText.text = [self proactive1];
+    
+    
     
     self.rightNav.hidden = NO;
     self.leftNav.hidden = NO;
 }
 
 - (IBAction)changeWhatIs:(UIButton *)sender {
+    self.pageView = 2;
     self.educText.text = [self whatIsIt1];
+    
+    
     
     self.rightNav.hidden = NO;
     self.leftNav.hidden = NO;
 }
 
 - (IBAction)changeHow:(UIButton *)sender {
+    self.pageView = 3;
     self.educText.text = [self howDoesIt1];
+    
+    
     
     self.rightNav.hidden = NO;
     self.leftNav.hidden = NO;
 }
 
 - (IBAction)changeWhatCan:(UIButton *)sender {
+    self.pageView = 4;
     self.educText.text = [self whatCanYou1];
+    
+    
     
     self.rightNav.hidden = NO;
     self.leftNav.hidden = NO;
