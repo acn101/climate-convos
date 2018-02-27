@@ -1,0 +1,3 @@
+target 'climateConvos' do
+  pod 'Firebase/Core'
+end
