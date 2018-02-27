@@ -21,6 +21,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self checkStatus];
+    [self checkID];
+}
+
+- (void)checkID {
+    NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
+    NSLog(@"this is the key: %@", bundleIdentifier);
 }
 
 - (IBAction)leftAction:(UIButton *)sender {

@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A897D18F7F6F76D12A2CEA6F /* libPods-climateConvos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D17DF1A932B1E842B2BE86B1 /* libPods-climateConvos.a */; };
 		B6A1177C202BAD2200218EEE /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A1177B202BAD2200218EEE /* DiscoverViewController.m */; };
+		B6B837EA2044D64800A578CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6B837E92044D64700A578CE /* GoogleService-Info.plist */; };
 		CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF55493202B9E5600B1521E /* AppDelegate.m */; };
 		CAF5549A202B9E5600B1521E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF55498202B9E5600B1521E /* Main.storyboard */; };
 		CAF5549C202B9E5600B1521E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF5549B202B9E5600B1521E /* Assets.xcassets */; };
@@ -18,8 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D5E6FCB5803DBBE0E4B7980 /* Pods-climateConvos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-climateConvos.release.xcconfig"; path = "Pods/Target Support Files/Pods-climateConvos/Pods-climateConvos.release.xcconfig"; sourceTree = "<group>"; };
+		63AAD45C0209B5D2C5E28471 /* Pods-climateConvos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-climateConvos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-climateConvos/Pods-climateConvos.debug.xcconfig"; sourceTree = "<group>"; };
 		B6A1177A202BAD2200218EEE /* DiscoverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
 		B6A1177B202BAD2200218EEE /* DiscoverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
+		B6B837E92044D64700A578CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CAF5548F202B9E5600B1521E /* climateConvos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = climateConvos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF55492202B9E5600B1521E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CAF55493202B9E5600B1521E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -30,6 +35,7 @@
 		CAF554A1202B9E5600B1521E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CAF554A8202B9E8100B1521E /* TutorialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		CAF554A9202B9E8100B1521E /* TutorialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
+		D17DF1A932B1E842B2BE86B1 /* libPods-climateConvos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-climateConvos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79B1134202BB73E00F6A0ED /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = SOURCE_ROOT; };
 		E79B1135202BB73E00F6A0ED /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -39,17 +45,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A897D18F7F6F76D12A2CEA6F /* libPods-climateConvos.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F73D541EB97926794776CAF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				63AAD45C0209B5D2C5E28471 /* Pods-climateConvos.debug.xcconfig */,
+				2D5E6FCB5803DBBE0E4B7980 /* Pods-climateConvos.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CAF55486202B9E5600B1521E = {
 			isa = PBXGroup;
 			children = (
 				CAF55491202B9E5600B1521E /* climateConvos */,
 				CAF55490202B9E5600B1521E /* Products */,
+				1F73D541EB97926794776CAF /* Pods */,
+				DACA0EE2585206BA83E2A1DF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +95,14 @@
 			path = climateConvos;
 			sourceTree = "<group>";
 		};
+		DACA0EE2585206BA83E2A1DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D17DF1A932B1E842B2BE86B1 /* libPods-climateConvos.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E79B1133202BB5DB00F6A0ED /* Exxtra */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +111,7 @@
 				CAF554A1202B9E5600B1521E /* main.m */,
 				CAF55492202B9E5600B1521E /* AppDelegate.h */,
 				CAF55493202B9E5600B1521E /* AppDelegate.m */,
+				B6B837E92044D64700A578CE /* GoogleService-Info.plist */,
 			);
 			name = Exxtra;
 			sourceTree = "<group>";
@@ -96,9 +123,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAF554A5202B9E5600B1521E /* Build configuration list for PBXNativeTarget "climateConvos" */;
 			buildPhases = (
+				3352422821552F7FD01D219A /* [CP] Check Pods Manifest.lock */,
 				CAF5548B202B9E5600B1521E /* Sources */,
 				CAF5548C202B9E5600B1521E /* Frameworks */,
 				CAF5548D202B9E5600B1521E /* Resources */,
+				534AEDF655328582D743AF4C /* [CP] Embed Pods Frameworks */,
+				B3D71E55A66FA94C97FC61AB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -148,12 +178,64 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAF5549F202B9E5600B1521E /* LaunchScreen.storyboard in Resources */,
+				B6B837EA2044D64800A578CE /* GoogleService-Info.plist in Resources */,
 				CAF5549C202B9E5600B1521E /* Assets.xcassets in Resources */,
 				CAF5549A202B9E5600B1521E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3352422821552F7FD01D219A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-climateConvos-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		534AEDF655328582D743AF4C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-climateConvos/Pods-climateConvos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3D71E55A66FA94C97FC61AB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-climateConvos/Pods-climateConvos-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CAF5548B202B9E5600B1521E /* Sources */ = {
@@ -297,6 +379,7 @@
 		};
 		CAF554A6202B9E5600B1521E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63AAD45C0209B5D2C5E28471 /* Pods-climateConvos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -313,6 +396,7 @@
 		};
 		CAF554A7202B9E5600B1521E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D5E6FCB5803DBBE0E4B7980 /* Pods-climateConvos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
