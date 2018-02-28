@@ -10,12 +10,22 @@
 
 @interface DiscoverViewController ()
 
+@property (strong, nonatomic) FIRDatabaseReference *ref;
+
+@property (strong, nonatomic) NSArray *getDBInfo;
+
 @end
 
 @implementation DiscoverViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [FIRApp configure];
+    self.ref = [[FIRDatabase database] reference];
+}
+
+- (void)testDB {
+    
 }
 
 /*
