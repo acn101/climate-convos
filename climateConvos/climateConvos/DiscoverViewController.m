@@ -22,10 +22,17 @@
     [super viewDidLoad];
     [FIRApp configure];
     self.ref = [[FIRDatabase database] reference];
+    [self testDB];
 }
 
 - (void)testDB {
-    
+    [[[self.ref child:@"facts"] child:@"climate"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        NSDictionary *dict = snapshot.value;
+        NSLog(@"%@",dict);
+        
+    } withCancelBlock:^(NSError * _Nonnull error) {
+        NSLog(@"%@", error.localizedDescription);
+    }];
 }
 
 /*
