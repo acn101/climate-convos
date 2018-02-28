@@ -16,10 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self databaseTest];
-}
-
-- (void)databaseTest {
 }
 
 /*
