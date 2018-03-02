@@ -15,7 +15,10 @@
 		CAF5549F202B9E5600B1521E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF5549D202B9E5600B1521E /* LaunchScreen.storyboard */; };
 		CAF554A2202B9E5600B1521E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF554A1202B9E5600B1521E /* main.m */; };
 		CAF554AA202B9E8100B1521E /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF554A9202B9E8100B1521E /* TutorialViewController.m */; };
-		E79B1136202BB73E00F6A0ED /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = E79B1135202BB73E00F6A0ED /* iCarousel.m */; };
+		CB478EE220474CA700D38E46 /* proactiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB478EE120474CA700D38E46 /* proactiveViewController.m */; };
+		CBC39DE22044BFD3000BB0F3 /* whatIsItViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC39DE12044BFD3000BB0F3 /* whatIsItViewController.m */; };
+		CBC39DE52044BFF1000BB0F3 /* howDoesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC39DE42044BFF1000BB0F3 /* howDoesViewController.m */; };
+		CBC39DE82044BFFD000BB0F3 /* whatCanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC39DE72044BFFD000BB0F3 /* whatCanViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +36,15 @@
 		CAF554A1202B9E5600B1521E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CAF554A8202B9E8100B1521E /* TutorialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		CAF554A9202B9E8100B1521E /* TutorialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
-		E79B1134202BB73E00F6A0ED /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = SOURCE_ROOT; };
-		E79B1135202BB73E00F6A0ED /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = SOURCE_ROOT; };
+		CB478EDD20474B8600D38E46 /* climateConvos-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "climateConvos-Bridging-Header.h"; sourceTree = "<group>"; };
+		CB478EE020474CA700D38E46 /* proactiveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = proactiveViewController.h; sourceTree = "<group>"; };
+		CB478EE120474CA700D38E46 /* proactiveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = proactiveViewController.m; sourceTree = "<group>"; };
+		CBC39DE02044BFD3000BB0F3 /* whatIsItViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = whatIsItViewController.h; sourceTree = "<group>"; };
+		CBC39DE12044BFD3000BB0F3 /* whatIsItViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = whatIsItViewController.m; sourceTree = "<group>"; };
+		CBC39DE32044BFF1000BB0F3 /* howDoesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = howDoesViewController.h; sourceTree = "<group>"; };
+		CBC39DE42044BFF1000BB0F3 /* howDoesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = howDoesViewController.m; sourceTree = "<group>"; };
+		CBC39DE62044BFFD000BB0F3 /* whatCanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = whatCanViewController.h; sourceTree = "<group>"; };
+		CBC39DE72044BFFD000BB0F3 /* whatCanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = whatCanViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +63,14 @@
 			children = (
 				B98D35FD20322F7800B2F52D /* EducationViewController.h */,
 				B98D35FE20322F7800B2F52D /* EducationViewController.m */,
+				CB478EE020474CA700D38E46 /* proactiveViewController.h */,
+				CB478EE120474CA700D38E46 /* proactiveViewController.m */,
+				CBC39DE02044BFD3000BB0F3 /* whatIsItViewController.h */,
+				CBC39DE12044BFD3000BB0F3 /* whatIsItViewController.m */,
+				CBC39DE32044BFF1000BB0F3 /* howDoesViewController.h */,
+				CBC39DE42044BFF1000BB0F3 /* howDoesViewController.m */,
+				CBC39DE62044BFFD000BB0F3 /* whatCanViewController.h */,
+				CBC39DE72044BFFD000BB0F3 /* whatCanViewController.m */,
 			);
 			name = education;
 			sourceTree = "<group>";
@@ -61,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				CAF55491202B9E5600B1521E /* climateConvos */,
+				CB478EDD20474B8600D38E46 /* climateConvos-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,8 +95,6 @@
 		CAF55491202B9E5600B1521E /* climateConvos */ = {
 			isa = PBXGroup;
 			children = (
-				E79B1134202BB73E00F6A0ED /* iCarousel.h */,
-				E79B1135202BB73E00F6A0ED /* iCarousel.m */,
 				CAF554A8202B9E8100B1521E /* TutorialViewController.h */,
 				CAF554A9202B9E8100B1521E /* TutorialViewController.m */,
 				B6A1177A202BAD2200218EEE /* DiscoverViewController.h */,
@@ -134,6 +151,7 @@
 				TargetAttributes = {
 					CAF5548E202B9E5600B1521E = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -174,8 +192,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBC39DE82044BFFD000BB0F3 /* whatCanViewController.m in Sources */,
+				CB478EE220474CA700D38E46 /* proactiveViewController.m in Sources */,
 				CAF554A2202B9E5600B1521E /* main.m in Sources */,
-				E79B1136202BB73E00F6A0ED /* iCarousel.m in Sources */,
+				CBC39DE22044BFD3000BB0F3 /* whatIsItViewController.m in Sources */,
+				CBC39DE52044BFF1000BB0F3 /* howDoesViewController.m in Sources */,
 				B6A1177C202BAD2200218EEE /* DiscoverViewController.m in Sources */,
 				CAF554AA202B9E8100B1521E /* TutorialViewController.m in Sources */,
 				CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */,
@@ -314,6 +335,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = climateConvos/Info.plist;
@@ -322,6 +344,9 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = acn96.climateConvos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "climateConvos-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -330,6 +355,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = climateConvos/Info.plist;
@@ -338,6 +364,8 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = acn96.climateConvos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "climateConvos-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

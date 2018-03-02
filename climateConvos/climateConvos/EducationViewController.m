@@ -17,8 +17,8 @@
 
 @property (nonatomic) int pageView;
 
-@end
 
+@end
 
 
 @implementation EducationViewController
@@ -26,54 +26,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     _educTitle.textAlignment = NSTextAlignmentCenter;
     
-
+    _pageView = 0;
+    
     _rightNav.hidden = YES;
     _leftNav.hidden = YES;
     
 }
 
 
-
 - (IBAction)changePro:(UIButton *)sender {
-    self.pageView = 1;
-    self.educText.text = [self proactive1];
     
-    
-    
-    self.rightNav.hidden = NO;
-    self.leftNav.hidden = NO;
 }
 
 - (IBAction)changeWhatIs:(UIButton *)sender {
-    self.pageView = 2;
-    self.educText.text = [self whatIsIt1];
     
-    
-    
-    self.rightNav.hidden = NO;
-    self.leftNav.hidden = NO;
 }
 
 - (IBAction)changeHow:(UIButton *)sender {
-    self.pageView = 3;
-    self.educText.text = [self howDoesIt1];
     
-    
-    
-    self.rightNav.hidden = NO;
-    self.leftNav.hidden = NO;
 }
 
 - (IBAction)changeWhatCan:(UIButton *)sender {
-    self.pageView = 4;
-    self.educText.text = [self whatCanYou1];
     
-    
-    
-    self.rightNav.hidden = NO;
-    self.leftNav.hidden = NO;
 }
 
 
@@ -96,6 +73,19 @@
 {
     return @"Proactive Conversation is important for making conversation like happen and like stuff";
 }
+- (NSString *)proactive2
+{
+    return @"pro2";
+}
+- (NSString *)proactive3
+{
+    return @"pro3";
+}
+- (NSString *)proactive4
+{
+    return @"pro4";
+}
+
 
 - (NSString *)whatIsIt1
 {
