@@ -29,7 +29,8 @@
     [scrollView addSubview:Button3];
     [scrollView addSubview:Button4];
     [scrollView addSubview:Button5];
-    
+    [scrollView addSubview:Button6];
+    [scrollView addSubview:ExampleLabel];
     
     // old scroll view data UIView* redView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, scrollView.frame.size.width, scrollView.frame.size.height)];
                        //redView.backgroundColor = [UIColor redColor];

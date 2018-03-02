@@ -8,10 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIButton *Button1;
+@interface ViewController : UIViewController {
 
-- (IBAction)btn:(id)sender;
 
+IBOutlet UIButton *Button1;
+IBOutlet UIButton *Button2;
+IBOutlet UIButton *Button3; IBOutlet UIButton *Button4;
+IBOutlet UIButton *Button5;
+IBOutlet UIButton *Button6;
+
+IBOutlet UIScrollView *scrollView;
+    IBOutlet UILabel *ExampleLabel;
+                       
+                       }
 @end
 
