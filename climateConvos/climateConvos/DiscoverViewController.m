@@ -27,7 +27,7 @@
 }
 
 - (void)testDB {
-    [[[self.ref child:@"facts"] child:@"climate"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+    [[self.ref child:@"facts"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         NSDictionary *dict = snapshot.value;
         NSLog(@"%@",dict);
         
