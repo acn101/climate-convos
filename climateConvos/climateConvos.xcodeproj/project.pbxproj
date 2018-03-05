@@ -16,12 +16,12 @@
 		CAF5549F202B9E5600B1521E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF5549D202B9E5600B1521E /* LaunchScreen.storyboard */; };
 		CAF554A2202B9E5600B1521E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF554A1202B9E5600B1521E /* main.m */; };
 		CAF554AA202B9E8100B1521E /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF554A9202B9E8100B1521E /* TutorialViewController.m */; };
+		E75578AF204DD96D00E01ED3 /* EducationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75578A5204DD96C00E01ED3 /* EducationViewController.m */; };
+		E75578B0204DD96D00E01ED3 /* whatCanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75578A6204DD96C00E01ED3 /* whatCanViewController.m */; };
+		E75578B1204DD96D00E01ED3 /* proactiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75578A9204DD96D00E01ED3 /* proactiveViewController.m */; };
+		E75578B2204DD96D00E01ED3 /* whatIsItViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75578AA204DD96D00E01ED3 /* whatIsItViewController.m */; };
+		E75578B3204DD96D00E01ED3 /* howDoesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75578AD204DD96D00E01ED3 /* howDoesViewController.m */; };
 		E7603904204612820060C245 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7603903204612820060C245 /* GoogleService-Info.plist */; };
-		E797E512204DD43A00CF29DE /* whatIsItViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E797E508204DD43900CF29DE /* whatIsItViewController.m */; };
-		E797E513204DD43A00CF29DE /* whatCanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E797E50A204DD43900CF29DE /* whatCanViewController.m */; };
-		E797E514204DD43A00CF29DE /* howDoesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E797E50E204DD43A00CF29DE /* howDoesViewController.m */; };
-		E797E515204DD43A00CF29DE /* EducationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E797E510204DD43A00CF29DE /* EducationViewController.m */; };
-		E797E516204DD43A00CF29DE /* proactiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E797E511204DD43A00CF29DE /* proactiveViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,17 +42,17 @@
 		CAF554A8202B9E8100B1521E /* TutorialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		CAF554A9202B9E8100B1521E /* TutorialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		D3DDCC3C1E53D0557DD56E79 /* libPods-climateConvos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-climateConvos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E75578A5204DD96C00E01ED3 /* EducationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EducationViewController.m; sourceTree = "<group>"; };
+		E75578A6204DD96C00E01ED3 /* whatCanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = whatCanViewController.m; sourceTree = "<group>"; };
+		E75578A7204DD96C00E01ED3 /* howDoesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = howDoesViewController.h; sourceTree = "<group>"; };
+		E75578A8204DD96D00E01ED3 /* whatIsItViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = whatIsItViewController.h; sourceTree = "<group>"; };
+		E75578A9204DD96D00E01ED3 /* proactiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = proactiveViewController.m; sourceTree = "<group>"; };
+		E75578AA204DD96D00E01ED3 /* whatIsItViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = whatIsItViewController.m; sourceTree = "<group>"; };
+		E75578AB204DD96D00E01ED3 /* whatCanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = whatCanViewController.h; sourceTree = "<group>"; };
+		E75578AC204DD96D00E01ED3 /* EducationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EducationViewController.h; sourceTree = "<group>"; };
+		E75578AD204DD96D00E01ED3 /* howDoesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = howDoesViewController.m; sourceTree = "<group>"; };
+		E75578AE204DD96D00E01ED3 /* proactiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = proactiveViewController.h; sourceTree = "<group>"; };
 		E7603903204612820060C245 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E797E508204DD43900CF29DE /* whatIsItViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = whatIsItViewController.m; path = ../../../../.Trash/whatIsItViewController.m; sourceTree = "<group>"; };
-		E797E509204DD43900CF29DE /* EducationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EducationViewController.h; path = ../../../../.Trash/EducationViewController.h; sourceTree = "<group>"; };
-		E797E50A204DD43900CF29DE /* whatCanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = whatCanViewController.m; path = ../../../../.Trash/whatCanViewController.m; sourceTree = "<group>"; };
-		E797E50B204DD43900CF29DE /* whatCanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = whatCanViewController.h; path = ../../../../.Trash/whatCanViewController.h; sourceTree = "<group>"; };
-		E797E50C204DD43900CF29DE /* whatIsItViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = whatIsItViewController.h; path = ../../../../.Trash/whatIsItViewController.h; sourceTree = "<group>"; };
-		E797E50D204DD43900CF29DE /* howDoesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = howDoesViewController.h; path = ../../../../.Trash/howDoesViewController.h; sourceTree = "<group>"; };
-		E797E50E204DD43A00CF29DE /* howDoesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = howDoesViewController.m; path = ../../../../.Trash/howDoesViewController.m; sourceTree = "<group>"; };
-		E797E50F204DD43A00CF29DE /* proactiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = proactiveViewController.h; path = ../../../../.Trash/proactiveViewController.h; sourceTree = "<group>"; };
-		E797E510204DD43A00CF29DE /* EducationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EducationViewController.m; path = ../../../../.Trash/EducationViewController.m; sourceTree = "<group>"; };
-		E797E511204DD43A00CF29DE /* proactiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = proactiveViewController.m; path = ../../../../.Trash/proactiveViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,16 +114,16 @@
 				CAF55498202B9E5600B1521E /* Main.storyboard */,
 				E7603903204612820060C245 /* GoogleService-Info.plist */,
 				CAF5549B202B9E5600B1521E /* Assets.xcassets */,
-				E797E509204DD43900CF29DE /* EducationViewController.h */,
-				E797E510204DD43A00CF29DE /* EducationViewController.m */,
-				E797E50D204DD43900CF29DE /* howDoesViewController.h */,
-				E797E50E204DD43A00CF29DE /* howDoesViewController.m */,
-				E797E50F204DD43A00CF29DE /* proactiveViewController.h */,
-				E797E511204DD43A00CF29DE /* proactiveViewController.m */,
-				E797E50B204DD43900CF29DE /* whatCanViewController.h */,
-				E797E50A204DD43900CF29DE /* whatCanViewController.m */,
-				E797E50C204DD43900CF29DE /* whatIsItViewController.h */,
-				E797E508204DD43900CF29DE /* whatIsItViewController.m */,
+				E75578AC204DD96D00E01ED3 /* EducationViewController.h */,
+				E75578A5204DD96C00E01ED3 /* EducationViewController.m */,
+				E75578A7204DD96C00E01ED3 /* howDoesViewController.h */,
+				E75578AD204DD96D00E01ED3 /* howDoesViewController.m */,
+				E75578AE204DD96D00E01ED3 /* proactiveViewController.h */,
+				E75578A9204DD96D00E01ED3 /* proactiveViewController.m */,
+				E75578AB204DD96D00E01ED3 /* whatCanViewController.h */,
+				E75578A6204DD96C00E01ED3 /* whatCanViewController.m */,
+				E75578A8204DD96D00E01ED3 /* whatIsItViewController.h */,
+				E75578AA204DD96D00E01ED3 /* whatIsItViewController.m */,
 				E79B1133202BB5DB00F6A0ED /* Exxtra */,
 			);
 			path = climateConvos;
@@ -267,16 +267,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E75578B3204DD96D00E01ED3 /* howDoesViewController.m in Sources */,
+				E75578B2204DD96D00E01ED3 /* whatIsItViewController.m in Sources */,
+				E75578B1204DD96D00E01ED3 /* proactiveViewController.m in Sources */,
 				CAF554A2202B9E5600B1521E /* main.m in Sources */,
 				B6A1177C202BAD2200218EEE /* DiscoverViewController.m in Sources */,
-				E797E516204DD43A00CF29DE /* proactiveViewController.m in Sources */,
-				E797E514204DD43A00CF29DE /* howDoesViewController.m in Sources */,
 				CAF554AA202B9E8100B1521E /* TutorialViewController.m in Sources */,
-				E797E512204DD43A00CF29DE /* whatIsItViewController.m in Sources */,
-				E797E515204DD43A00CF29DE /* EducationViewController.m in Sources */,
 				CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */,
 				A7C2B435204A187000561ADF /* ViewController.m in Sources */,
-				E797E513204DD43A00CF29DE /* whatCanViewController.m in Sources */,
+				E75578AF204DD96D00E01ED3 /* EducationViewController.m in Sources */,
+				E75578B0204DD96D00E01ED3 /* whatCanViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
