@@ -8,6 +8,7 @@
 
 #import "DiscoverViewController.h"
 
+
 @interface DiscoverViewController ()
 
 @property (strong, nonatomic) FIRDatabaseReference *ref;
