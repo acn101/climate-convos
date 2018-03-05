@@ -7,14 +7,43 @@
 //
 
 #import "AppDelegate.h"
-// Firebase Stuff
-@import UIKit;
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
+
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Override point for customization after application launch.
+    // Show Slashscreens
+    UIStoryboard *SB = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    self.window.rootViewController = [SB instantiateViewControllerWithIdentifier:@"launchscreen"];
+    [self.window makeKeyAndVisible];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        //after launch screen
+        //first screen
+        self.window.rootViewController = [SB instantiateViewControllerWithIdentifier:@"splashscreen"];
+        [self.window makeKeyAndVisible];
+        //second screen
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            self.window.rootViewController = [SB instantiateViewControllerWithIdentifier:@"splashscreen2"];
+            [self.window makeKeyAndVisible];
+            //Enter the app
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                self.window.rootViewController = [SB instantiateViewControllerWithIdentifier:@"somethingElse"];
+                [self.window makeKeyAndVisible];
+            });
+        });
+        
+    });
+    
+    
+    return YES;
+}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
