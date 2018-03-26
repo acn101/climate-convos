@@ -14,6 +14,7 @@
 @property (strong, nonatomic) FIRDatabaseReference *ref;
 
 @property (strong, nonatomic) NSArray *getDBInfo;
+@property (weak, nonatomic) IBOutlet UITextView *printDBtest;
 
 @end
 
@@ -30,7 +31,7 @@
     [[self.ref child:@"facts"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         NSDictionary *dict = snapshot.value;
         NSLog(@"%@",dict);
-        
+        self.printDBtest.text = [NSString stringWithFormat:@"%@", dict];
     } withCancelBlock:^(NSError * _Nonnull error) {
         NSLog(@"%@", error.localizedDescription);
     }];
