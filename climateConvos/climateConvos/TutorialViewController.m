@@ -8,6 +8,7 @@
 //oliver comment
 
 #import "TutorialViewController.h"
+@import Firebase;
 
 @interface TutorialViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *leftButton;
@@ -89,14 +90,11 @@
     return @"You may also input your location, and you will receive curated information and different activism based on where you are! CC is your one-stop-shop for getting started with helping stop climate change.";
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    [FIRApp configure];
 }
-*/
 
 @end

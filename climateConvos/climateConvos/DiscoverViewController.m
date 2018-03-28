@@ -17,6 +17,8 @@
 
 @property (strong, nonatomic) NSArray *getDBInfo;
 @property (weak, nonatomic) IBOutlet UITextView *printDBtest;
+@property (strong, nonatomic) singleFactoid *currentFactoid;
+
 
 @end
 
@@ -24,16 +26,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [FIRApp configure];
+    [self setup];
+    [self testDB];
+    DELAY(2000);
+    [self writeFact];
+}
+
+- (IBAction)genFactoid:(UIButton *)sender {
+    self.currentFactoid = [self.currentDB objectAtIndex:arc4random_uniform(self.currentDB.count)];
+    self.printDBtest.text = [NSString stringWithFormat:@"%@", self.currentFactoid.text];
+}
+
+- (void)setup {
     self.ref = [[FIRDatabase database] reference];
     self.currentDB = [[NSMutableArray alloc] init];
-    [self testDB];
 }
 
 - (void)testDB {
     [[self.ref child:@"facts"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         self.dict = snapshot.value;
-      //  NSLog(@"%@", dict);
         for (NSString *factNumber in self.dict) {
             singleFactoid *single = [[singleFactoid alloc] init];
             single.number = factNumber;
@@ -45,9 +56,6 @@
             single.text = [factDetails  objectForKey:@"text"];
             [self.currentDB addObject:single];
             
-            [self writeFact:self.currentDB];
-            
-            
             //THIS WORKS HERE BUT NOT IN WRITEFACT
 //            singleFactoid *currentFactoid = [self.currentDB objectAtIndex:0];
 //            self.printDBtest.text = [NSString stringWithFormat:@"%@", currentFactoid.text];
@@ -58,12 +66,31 @@
     }];
 }
 
-- (void)writeFact:(NSObject *)neeko {
-   // singleFactoid *currentFactoid = [self.currentDB objectAtIndex:0];
-    //self.printDBtest.text = [NSString stringWithFormat:@"%@", currentFactoid.text];
-//    NSLog(@"%@", currentFactoid.text);
-    NSLog(@"LOOK AT ME: %lu", (unsigned long)self.currentDB.count);
+- (void)writeFact {
+    // singleFactoid *currentFactoid = [self.currentDB objectAtIndex:0];
+    // self.printDBtest.text = [NSString stringWithFormat:@"%@", currentFactoid.text];
+    // NSLog(@"%@", currentFactoid.text);
+    self.printDBtest.text = @"Loading";
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+//        NSLog(@"Does the database have any information in it?: %i", self.currentDB.count);
+        self.currentFactoid = [self.currentDB objectAtIndex:0];
+        self.printDBtest.text = [NSString stringWithFormat:@"%@", self.currentFactoid.text];
+    });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 //        NSLog(@"%@",dict);
 /*        for (NSString *key in [dict allKeys]) {
             if([key isEqualToString:@"fact1"]) {
