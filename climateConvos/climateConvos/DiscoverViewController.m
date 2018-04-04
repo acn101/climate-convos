@@ -28,11 +28,15 @@
     [super viewDidLoad];
     [self setup];
     [self testDB];
-    DELAY(2000);
+//    DELAY(2000);
     [self writeFact];
 }
 
 - (IBAction)genFactoid:(UIButton *)sender {
+    [self genFactoid];
+}
+
+- (void)genFactoid {
     self.currentFactoid = [self.currentDB objectAtIndex:arc4random_uniform(self.currentDB.count)];
     self.printDBtest.text = [NSString stringWithFormat:@"%@", self.currentFactoid.text];
 }
@@ -55,11 +59,6 @@
             single.location = [factDetails objectForKey:@"location"];
             single.text = [factDetails  objectForKey:@"text"];
             [self.currentDB addObject:single];
-            
-            //THIS WORKS HERE BUT NOT IN WRITEFACT
-//            singleFactoid *currentFactoid = [self.currentDB objectAtIndex:0];
-//            self.printDBtest.text = [NSString stringWithFormat:@"%@", currentFactoid.text];
-//            NSLog(@"LOOK AT ME AIOWJEO;FAIJWEOA: %lu", (unsigned long)self.currentDB.count);
         }
     } withCancelBlock:^(NSError * _Nonnull error) {
         NSLog(@"%@", error.localizedDescription);
@@ -67,42 +66,11 @@
 }
 
 - (void)writeFact {
-    // singleFactoid *currentFactoid = [self.currentDB objectAtIndex:0];
-    // self.printDBtest.text = [NSString stringWithFormat:@"%@", currentFactoid.text];
-    // NSLog(@"%@", currentFactoid.text);
     self.printDBtest.text = @"Loading";
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC);
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-//        NSLog(@"Does the database have any information in it?: %i", self.currentDB.count);
-        self.currentFactoid = [self.currentDB objectAtIndex:0];
-        self.printDBtest.text = [NSString stringWithFormat:@"%@", self.currentFactoid.text];
-    });
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-//        NSLog(@"%@",dict);
-/*        for (NSString *key in [dict allKeys]) {
-            if([key isEqualToString:@"fact1"]) {
-                if([key isEqualToString:@"text"]) {
-                    self.printDBtest.text = [NSString stringWithFormat:@"%@", [dict objectForKey:key]];
-                }
-            }
-        }
-    } withCancelBlock:^(NSError * _Nonnull error) {
-        NSLog(@"%@", error.localizedDescription);
+    [self.ref observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot) {
+        [self genFactoid];
     }];
-}*/
+}
 
 /*
  #pragma mark - Navigation
