@@ -8,6 +8,7 @@
 
 #import "DiscoverViewController.h"
 #import "singleFactoid.h"
+#import "iCarousel.h"
 
 @interface DiscoverViewController ()
 
@@ -19,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *printDBtest;
 @property (strong, nonatomic) singleFactoid *currentFactoid;
 
+@property (weak, nonatomic) IBOutlet iCarousel *carousel;
+@property (nonatomic, strong) NSMutableArray *items;
 
 @end
 
@@ -27,8 +30,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setup];
+    [self setupCarousel];
     [self testDB];
-//    DELAY(2000);
     [self writeFact];
 }
 
@@ -47,7 +50,7 @@
 }
 
 - (void)testDB {
-    [[self.ref child:@"facts"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+    [[self.ref child:@"Facts"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         self.dict = snapshot.value;
         for (NSString *factNumber in self.dict) {
             singleFactoid *single = [[singleFactoid alloc] init];
@@ -82,5 +85,92 @@
  }
  */
 
+- (void)setItems:(NSMutableArray *)items
+{
+    NSLog(@"setting items");
+    _items = items;
+}
+- (void)setupCarousel
+{
+    
+    //configure carousel
+    self.carousel.type = iCarouselTypeCoverFlow2;
+    self.carousel.delegate = self;
+    self.carousel.dataSource = self;
+    
+    
+    //set up data
+    //your carousel should always be driven by an array of
+    //data of some kind - don't store data in your item views
+    //or the recycling mechanism will destroy your data once
+    //your item views move off-screen
+    self.items = [[NSMutableArray alloc] init];
+    for (int i = 0; i < 1000; i++)
+    {
+        [self.items addObject:[NSNumber numberWithInt:i]];
+    }
+    NSLog(@"self.items.count: %lu", (long unsigned)self.items.count);
+    [self.carousel reloadData];
+}
+#pragma mark - iCarousel methods
+
+- (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel
+{
+    //return the total number of items in the carousel
+    NSLog(@"numberOfItemsInCarousel self.items.count: %lu", (long unsigned)self.items.count);
+    return [self.items count];
+}
+
+- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
+{
+    UILabel *label = nil;
+    
+    //create new view if no view is available for recycling
+    if (view == nil)
+    {
+        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200.0f, 200.0f)];
+        ((UIImageView *)view).image = [UIImage imageNamed:@"page.png"];
+        view.contentMode = UIViewContentModeCenter;
+        label = [[UILabel alloc] initWithFrame:view.bounds];
+        label.backgroundColor = [UIColor clearColor];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.font = [label.font fontWithSize:50];
+        label.tag = 1;
+        [view addSubview:label];
+    }
+    else
+    {
+        //get a reference to the label in the recycled view
+        label = (UILabel *)[view viewWithTag:1];
+    }
+    
+    //set item label
+    //remember to always set any properties of your carousel item
+    //views outside of the `if (view == nil) {...}` check otherwise
+    //you'll get weird issues with carousel item content appearing
+    //in the wrong place in the carousel
+    label.text = [self.items[index] stringValue];
+    
+    return view;
+}
+
+- (void)dealloc
+{
+    //it's a good idea to set these to nil here to avoid
+    //sending messages to a deallocated viewcontroller
+    self.carousel.delegate = nil;
+    self.carousel.dataSource = nil;
+}
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    
+    //free up memory by releasing subviews
+    self.carousel = nil;
+}
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return YES;
+}
 
 @end

@@ -7,9 +7,10 @@
 //
 
 @import Firebase;
+#import "iCarousel.h"
 
 #import <UIKit/UIKit.h>
 
-@interface DiscoverViewController : UIViewController
+@interface DiscoverViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>
 
 @end

@@ -80,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="85.5" y="148.5"/>
+            <point key="canvasLocation" x="130" y="149"/>
         </scene>
         <!--Discover View Controller-->
         <scene sceneID="pbz-n9-nvr">
@@ -130,11 +130,17 @@
                                     <action selector="genFactoid:" destination="MkA-cr-rUm" eventType="touchUpInside" id="MGi-kr-bYB"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" misplaced="YES" id="U99-Kw-lXE" customClass="iCarousel">
+                                <rect key="frame" x="119" y="411" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="CNH-bd-p6t"/>
                     <connections>
+                        <outlet property="carousel" destination="U99-Kw-lXE" id="mMZ-D9-efA"/>
                         <outlet property="printDBtest" destination="9rX-hf-jDM" id="eMd-i8-DLS"/>
                     </connections>
                 </viewController>
@@ -1268,6 +1274,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="sme-By-CBo"/>
         <segue reference="Lbr-aU-GOw"/>
-        <segue reference="MVu-bP-0BV"/>
+        <segue reference="SaD-Gq-xrr"/>
     </inferredMetricsTieBreakers>
 </document>
