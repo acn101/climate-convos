@@ -11,7 +11,7 @@
 @interface singleFactoid : NSObject
 @property (strong, nonatomic) NSString *number;
 @property (strong, nonatomic) NSDictionary *sources;
-@property (strong, nonatomic) NSString *tags;
 @property (strong, nonatomic) NSString *location;
-@property (strong, nonatomic) NSString *text;
+@property (strong, nonatomic) NSString *tags;
+@property (strong, nonatomic) NSDictionary *texts;
 @end
