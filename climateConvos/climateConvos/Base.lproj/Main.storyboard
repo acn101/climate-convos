@@ -91,7 +91,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nDT-o6-czD">
-                                <rect key="frame" x="137" y="547" width="65" height="30"/>
+                                <rect key="frame" x="294" y="20" width="65" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="TO EDUC"/>
                                 <connections>
@@ -99,39 +99,23 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Wha-TW-hOk">
-                                <rect key="frame" x="136" y="43" width="48" height="30"/>
+                                <rect key="frame" x="16" y="20" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="TO OLI"/>
                                 <connections>
                                     <segue destination="Fd9-GG-hAD" kind="modal" id="Lbr-aU-GOw"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" id="9rX-hf-jDM">
-                                <rect key="frame" x="16" y="140" width="240" height="399"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SDE-zY-Jkd">
-                                <rect key="frame" x="263" y="309" width="96" height="30"/>
+                                <rect key="frame" x="139" y="20" width="96" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="TO SETTINGS"/>
                                 <connections>
                                     <segue destination="azQ-5P-oyF" kind="modal" id="4XU-Li-fzm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cbI-6P-avN">
-                                <rect key="frame" x="171" y="617" width="179" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Generate Random Factoid"/>
-                                <connections>
-                                    <action selector="genFactoid:" destination="MkA-cr-rUm" eventType="touchUpInside" id="MGi-kr-bYB"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" misplaced="YES" id="U99-Kw-lXE" customClass="iCarousel">
-                                <rect key="frame" x="119" y="411" width="240" height="128"/>
+                                <rect key="frame" x="16" y="58" width="343" height="589"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -141,12 +125,11 @@
                     <navigationItem key="navigationItem" id="CNH-bd-p6t"/>
                     <connections>
                         <outlet property="carousel" destination="U99-Kw-lXE" id="mMZ-D9-efA"/>
-                        <outlet property="printDBtest" destination="9rX-hf-jDM" id="eMd-i8-DLS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zIs-dh-EWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1014" y="149"/>
+            <point key="canvasLocation" x="1013.5" y="148.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="dMA-hz-e9R">

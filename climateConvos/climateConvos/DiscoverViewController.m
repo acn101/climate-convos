@@ -30,9 +30,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setup];
-    [self setupCarousel];
-    [self testDB];
     [self writeFact];
+    [self setupCarousel];
 }
 
 - (IBAction)genFactoid:(UIButton *)sender {
@@ -41,15 +40,16 @@
 
 - (void)genFactoid {
     self.currentFactoid = [self.currentDB objectAtIndex:arc4random_uniform(self.currentDB.count)];
-   // NSDictionary *textS = [self.c objectForKey:factNumber];
-    NSString *shortText = [self.currentFactoid.texts objectForKey:@"short"];
-    NSLog(@"Short Text: %@", self.currentFactoid);
-    self.printDBtest.text = [NSString stringWithFormat:@"%@", shortText];
+    // NSDictionary *textS = [self.c objectForKey:factNumber];
+    //    NSString *shortText = [self.currentFactoid.texts objectForKey:@"short"];
+    //    NSLog(@"Short Text: %@", self.currentFactoid);
+    self.printDBtest.text = [self.currentFactoid.texts objectForKey:@"short"];
 }
 
 - (void)setup {
     self.ref = [[FIRDatabase database] reference];
     self.currentDB = [[NSMutableArray alloc] init];
+    [self testDB];
 }
 
 - (void)testDB {
@@ -91,9 +91,10 @@
     NSLog(@"setting items");
     _items = items;
 }
+
 - (void)setupCarousel {
     //configure carousel
-    self.carousel.type = iCarouselTypeCoverFlow2;
+    self.carousel.type = iCarouselTypeLinear;
     self.carousel.delegate = self;
     self.carousel.dataSource = self;
     
@@ -103,12 +104,13 @@
     //or the recycling mechanism will destroy your data once
     //your item views move off-screen
     self.items = [[NSMutableArray alloc] init];
-    for (int i = 0; i < 1000; i++)
-    {
-        [self.items addObject:[NSNumber numberWithInt:i]];
-    }
-    NSLog(@"self.items.count: %lu", (long unsigned)self.items.count);
-    [self.carousel reloadData];
+    [self.ref observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot) {
+        for (int i = 0; i < self.currentDB.count; i++) {
+            [self.items addObject:[NSNumber numberWithInt:i]];
+        }
+        //        NSLog(@"self.items.count: %lu", (long unsigned)self.items.count);
+        [self.carousel reloadData];
+    }];
 }
 
 #pragma mark - iCarousel methods
@@ -123,14 +125,15 @@
     
     //create new view if no view is available for recycling
     if (view == nil) {
-        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200.0f, 200.0f)];
-        ((UIImageView *)view).image = [UIImage imageNamed:@"page.png"];
+        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300.0f, 400.0f)];
         view.contentMode = UIViewContentModeCenter;
-        label = [[UILabel alloc] initWithFrame:view.bounds];
-        label.backgroundColor = [UIColor clearColor];
+        //        label = [[UILabel alloc] initWithFrame:view.bounds];
+        label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 280.0f, 380.0f)];
+        label.backgroundColor = [UIColor grayColor];
         label.textAlignment = NSTextAlignmentCenter;
-        label.font = [label.font fontWithSize:50];
+        label.font = [label.font fontWithSize:16];
         label.tag = 1;
+        label.numberOfLines = 0;
         [view addSubview:label];
     } else {
         //get a reference to the label in the recycled view
@@ -142,7 +145,9 @@
     //views outside of the `if (view == nil) {...}` check otherwise
     //you'll get weird issues with carousel item content appearing
     //in the wrong place in the carousel
-    label.text = [self.items[index] stringValue];
+    //    label.text = [self.currentDB[index] stringValue];
+    self.currentFactoid = [self.currentDB objectAtIndex:index];
+    label.text = [self.currentFactoid.texts objectForKey:@"short"];
     
     return view;
 }
@@ -163,6 +168,14 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return YES;
+}
+
+- (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value {
+    switch (option) {
+        case iCarouselOptionWrap:
+            return YES;
+    }
+    return value;
 }
 
 @end
