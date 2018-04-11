@@ -11,6 +11,9 @@
 @import Firebase;
 
 @interface TutorialViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *skipButton;
+@property (weak, nonatomic) IBOutlet UIButton *doneButton;
+@property (weak, nonatomic) IBOutlet UIImageView *dotThing;
 @property (weak, nonatomic) IBOutlet UIButton *leftButton;
 @property (weak, nonatomic) IBOutlet UIButton *rightButton;
 @property (weak, nonatomic) IBOutlet UITextView *tutorialText;
@@ -48,22 +51,31 @@
         case 1:
             self.leftButton.hidden = YES;
             self.rightButton.hidden = NO;
+            self.doneButton.hidden = YES;
             self.tutorialText.text = [self text1];
+            self.dotThing.image = [UIImage imageNamed:@"dot1.png"];
             break;
         case 2:
             self.leftButton.hidden = NO;
             self.rightButton.hidden = NO;
+            self.doneButton.hidden = YES;
             self.tutorialText.text = [self text2];
+            self.dotThing.image = [UIImage imageNamed:@"dot2.png"];
             break;
         case 3:
             self.leftButton.hidden = NO;
             self.rightButton.hidden = NO;
+            self.doneButton.hidden = YES;
             self.tutorialText.text = [self text3];
+            self.dotThing.image = [UIImage imageNamed:@"dot3.png"];
             break;
         case 4:
-            self.leftButton.hidden = NO;
+            self.leftButton.hidden = YES;
             self.rightButton.hidden = YES;
+            self.doneButton.hidden = NO;
+            self.skipButton.hidden = YES;
             self.tutorialText.text = [self text4];
+            self.dotThing.image = [UIImage imageNamed:@"dot4.png"];
             break;
         default:
             break;

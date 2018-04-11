@@ -13,7 +13,8 @@
 
 IBOutlet UIButton *Button1;
 IBOutlet UIButton *Button2;
-IBOutlet UIButton *Button3; IBOutlet UIButton *Button4;
+IBOutlet UIButton *Button3;
+    IBOutlet UIButton *Button4;
 IBOutlet UIButton *Button5;
 IBOutlet UIButton *Button6;
 

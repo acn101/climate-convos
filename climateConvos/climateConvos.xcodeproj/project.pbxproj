@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		53C9D0BBA247DEF9485234B6 /* libPods-climateConvos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DDCC3C1E53D0557DD56E79 /* libPods-climateConvos.a */; };
 		A7C2B435204A187000561ADF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C2B434204A187000561ADF /* ViewController.m */; };
+		B631685F207EB2A8008B7503 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B631685E207EB2A8008B7503 /* CategoriesViewController.m */; };
 		B64B1AF120759FC100E4F0CD /* ScrollDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */; };
 		B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF32075A41600E4F0CD /* iCarousel.m */; };
 		B69EB1CD20757AF800E22425 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69EB1CC20757AF800E22425 /* QuartzCore.framework */; };
@@ -33,6 +34,8 @@
 		A7C2B433204A187000561ADF /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A7C2B434204A187000561ADF /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B5BFFC3BCBD5962E5EAA6D39 /* Pods-climateConvos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-climateConvos.release.xcconfig"; path = "Pods/Target Support Files/Pods-climateConvos/Pods-climateConvos.release.xcconfig"; sourceTree = "<group>"; };
+		B631685D207EB2A7008B7503 /* CategoriesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
+		B631685E207EB2A8008B7503 /* CategoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
 		B64B1AEF20759FC100E4F0CD /* ScrollDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollDemoViewController.h; sourceTree = "<group>"; };
 		B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollDemoViewController.m; sourceTree = "<group>"; };
 		B64B1AF22075A41600E4F0CD /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 				CA0A851A2069874C006BC7DA /* singleFactoid.m */,
 				A7C2B433204A187000561ADF /* ViewController.h */,
 				A7C2B434204A187000561ADF /* ViewController.m */,
+				B631685D207EB2A7008B7503 /* CategoriesViewController.h */,
+				B631685E207EB2A8008B7503 /* CategoriesViewController.m */,
 				CAF55498202B9E5600B1521E /* Main.storyboard */,
 				B64B1AEF20759FC100E4F0CD /* ScrollDemoViewController.h */,
 				B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */,
@@ -296,6 +301,7 @@
 				CAF554AA202B9E8100B1521E /* TutorialViewController.m in Sources */,
 				CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */,
 				A7C2B435204A187000561ADF /* ViewController.m in Sources */,
+				B631685F207EB2A8008B7503 /* CategoriesViewController.m in Sources */,
 				E75578AF204DD96D00E01ED3 /* EducationViewController.m in Sources */,
 				B64B1AF120759FC100E4F0CD /* ScrollDemoViewController.m in Sources */,
 				E75578B0204DD96D00E01ED3 /* whatCanViewController.m in Sources */,
