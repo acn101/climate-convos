@@ -72,22 +72,22 @@
 
 - (NSString *)text1
 {
-    return @"To Climate Convos, where we believe the solution begins with conversation. I'm Geo and I've got some tips for you before you begin. Feel free to skip and get started right away!";
+    return @"Welcome to Climate Convos! I’m Geo and I’ve got some tips for you before you begin. Feel free to skip and get started right away!";
 }
 
 - (NSString *)text2
 {
-    return @"The purpose of this app is to provide a platform which helps users like you talk about climate change. We believe this is the best way to spread awareness, promote action, and create systematic change.";
+    return @"Our is a platform that helps users like you talk about climate change. We believe this is the best way to spread awareness, promote action, and create systematic change.";
 }
 
 - (NSString *)text3
 {
-    return @"The app provides well-researched and easy-to-digest factoids that you are encouraged to bring up in your day-to-day conversation. You can also explore the sources and related news articles.";
+    return @"We provide well-researched and easy-to-digest factoids that you are encouraged to bring up in your day-to-day conversation. You can also explore the sources and related news articles.";
 }
 
 - (NSString *)text4
 {
-    return @"You may also input your location, and you will receive curated information and different activism based on where you are! CC is your one-stop-shop for getting started with helping stop climate change.";
+    return @"You can use your location to curate information and different activism based on where you are! CC is your one-stop-shop for getting started with helping stop climate change.";
 }
 
 #pragma mark - Navigation
