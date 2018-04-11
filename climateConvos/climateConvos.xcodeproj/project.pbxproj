@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		53C9D0BBA247DEF9485234B6 /* libPods-climateConvos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DDCC3C1E53D0557DD56E79 /* libPods-climateConvos.a */; };
+		7A1385CD207BF342006BF698 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385CC207BF342006BF698 /* NavigationViewController.m */; };
+		7A1385D3207BF4D7006BF698 /* EmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385D2207BF4D7006BF698 /* EmptySegue.m */; };
+		7A1385D6207BF683006BF698 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385D5207BF683006BF698 /* ContainerViewController.m */; };
 		A7C2B435204A187000561ADF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C2B434204A187000561ADF /* ViewController.m */; };
 		B64B1AF120759FC100E4F0CD /* ScrollDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */; };
 		B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF32075A41600E4F0CD /* iCarousel.m */; };
@@ -30,6 +33,12 @@
 
 /* Begin PBXFileReference section */
 		733D98D011E3D98921342933 /* Pods-climateConvos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-climateConvos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-climateConvos/Pods-climateConvos.debug.xcconfig"; sourceTree = "<group>"; };
+		7A1385CB207BF342006BF698 /* NavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
+		7A1385CC207BF342006BF698 /* NavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
+		7A1385D1207BF4D7006BF698 /* EmptySegue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptySegue.h; sourceTree = "<group>"; };
+		7A1385D2207BF4D7006BF698 /* EmptySegue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptySegue.m; sourceTree = "<group>"; };
+		7A1385D4207BF683006BF698 /* ContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
+		7A1385D5207BF683006BF698 /* ContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
 		A7C2B433204A187000561ADF /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A7C2B434204A187000561ADF /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B5BFFC3BCBD5962E5EAA6D39 /* Pods-climateConvos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-climateConvos.release.xcconfig"; path = "Pods/Target Support Files/Pods-climateConvos/Pods-climateConvos.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +106,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7AFD84C5207CAA210029ED54 /* NavBar */ = {
+			isa = PBXGroup;
+			children = (
+				7A1385D1207BF4D7006BF698 /* EmptySegue.h */,
+				7A1385D2207BF4D7006BF698 /* EmptySegue.m */,
+				7A1385D4207BF683006BF698 /* ContainerViewController.h */,
+				7A1385D5207BF683006BF698 /* ContainerViewController.m */,
+				7A1385CB207BF342006BF698 /* NavigationViewController.h */,
+				7A1385CC207BF342006BF698 /* NavigationViewController.m */,
+			);
+			name = NavBar;
+			sourceTree = "<group>";
+		};
 		CAF55486202B9E5600B1521E = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +150,7 @@
 				CA0A851A2069874C006BC7DA /* singleFactoid.m */,
 				A7C2B433204A187000561ADF /* ViewController.h */,
 				A7C2B434204A187000561ADF /* ViewController.m */,
+				7AFD84C5207CAA210029ED54 /* NavBar */,
 				CAF55498202B9E5600B1521E /* Main.storyboard */,
 				B64B1AEF20759FC100E4F0CD /* ScrollDemoViewController.h */,
 				B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */,
@@ -288,9 +311,12 @@
 			files = (
 				E75578B3204DD96D00E01ED3 /* howDoesViewController.m in Sources */,
 				E75578B2204DD96D00E01ED3 /* whatIsItViewController.m in Sources */,
+				7A1385CD207BF342006BF698 /* NavigationViewController.m in Sources */,
 				E75578B1204DD96D00E01ED3 /* proactiveViewController.m in Sources */,
 				CAF554A2202B9E5600B1521E /* main.m in Sources */,
 				B6A1177C202BAD2200218EEE /* DiscoverViewController.m in Sources */,
+				7A1385D6207BF683006BF698 /* ContainerViewController.m in Sources */,
+				7A1385D3207BF4D7006BF698 /* EmptySegue.m in Sources */,
 				B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */,
 				CA0A851B2069874C006BC7DA /* singleFactoid.m in Sources */,
 				CAF554AA202B9E8100B1521E /* TutorialViewController.m in Sources */,
