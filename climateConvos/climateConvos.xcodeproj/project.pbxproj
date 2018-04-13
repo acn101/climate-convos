@@ -8,18 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		53C9D0BBA247DEF9485234B6 /* libPods-climateConvos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DDCC3C1E53D0557DD56E79 /* libPods-climateConvos.a */; };
-		B631685F207EB2A8008B7503 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B631685E207EB2A8008B7503 /* CategoriesViewController.m */; };
+		7A1385CD207BF342006BF698 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385CC207BF342006BF698 /* NavigationViewController.m */; };
+		7A1385D3207BF4D7006BF698 /* EmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385D2207BF4D7006BF698 /* EmptySegue.m */; };
+		7A1385D6207BF683006BF698 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385D5207BF683006BF698 /* ContainerViewController.m */; };
 		B64B1AF120759FC100E4F0CD /* ScrollDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */; };
 		B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF32075A41600E4F0CD /* iCarousel.m */; };
 		B69EB1CD20757AF800E22425 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69EB1CC20757AF800E22425 /* QuartzCore.framework */; };
-		B6A1177C202BAD2200218EEE /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A1177B202BAD2200218EEE /* DiscoverViewController.m */; };
-		CA0A851B2069874C006BC7DA /* singleFactoid.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0A851A2069874C006BC7DA /* singleFactoid.m */; };
 		CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF55493202B9E5600B1521E /* AppDelegate.m */; };
 		CAF5549A202B9E5600B1521E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF55498202B9E5600B1521E /* Main.storyboard */; };
 		CAF5549C202B9E5600B1521E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF5549B202B9E5600B1521E /* Assets.xcassets */; };
 		CAF5549F202B9E5600B1521E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF5549D202B9E5600B1521E /* LaunchScreen.storyboard */; };
 		CAF554A2202B9E5600B1521E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF554A1202B9E5600B1521E /* main.m */; };
-		CAF554AA202B9E8100B1521E /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF554A9202B9E8100B1521E /* TutorialViewController.m */; };
+		CAFD9ECF2081500000F5EB35 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFD9ECE2081500000F5EB35 /* CategoriesViewController.m */; };
+		CAFD9ED2208153E400F5EB35 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFD9ED0208153E300F5EB35 /* TutorialViewController.m */; };
+		CAFD9ED52081559500F5EB35 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFD9ED32081559400F5EB35 /* DiscoverViewController.m */; };
+		CAFD9ED8208155BF00F5EB35 /* singleFactoid.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFD9ED6208155BF00F5EB35 /* singleFactoid.m */; };
 		E75578AF204DD96D00E01ED3 /* EducationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75578A5204DD96C00E01ED3 /* EducationViewController.m */; };
 		E75578B0204DD96D00E01ED3 /* whatCanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75578A6204DD96C00E01ED3 /* whatCanViewController.m */; };
 		E75578B1204DD96D00E01ED3 /* proactiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75578A9204DD96D00E01ED3 /* proactiveViewController.m */; };
@@ -30,18 +33,18 @@
 
 /* Begin PBXFileReference section */
 		733D98D011E3D98921342933 /* Pods-climateConvos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-climateConvos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-climateConvos/Pods-climateConvos.debug.xcconfig"; sourceTree = "<group>"; };
+		7A1385CB207BF342006BF698 /* NavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
+		7A1385CC207BF342006BF698 /* NavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
+		7A1385D1207BF4D7006BF698 /* EmptySegue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptySegue.h; sourceTree = "<group>"; };
+		7A1385D2207BF4D7006BF698 /* EmptySegue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptySegue.m; sourceTree = "<group>"; };
+		7A1385D4207BF683006BF698 /* ContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
+		7A1385D5207BF683006BF698 /* ContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
 		B5BFFC3BCBD5962E5EAA6D39 /* Pods-climateConvos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-climateConvos.release.xcconfig"; path = "Pods/Target Support Files/Pods-climateConvos/Pods-climateConvos.release.xcconfig"; sourceTree = "<group>"; };
-		B631685D207EB2A7008B7503 /* CategoriesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
-		B631685E207EB2A8008B7503 /* CategoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
 		B64B1AEF20759FC100E4F0CD /* ScrollDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollDemoViewController.h; sourceTree = "<group>"; };
 		B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollDemoViewController.m; sourceTree = "<group>"; };
 		B64B1AF22075A41600E4F0CD /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		B64B1AF32075A41600E4F0CD /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		B69EB1CC20757AF800E22425 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		B6A1177A202BAD2200218EEE /* DiscoverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
-		B6A1177B202BAD2200218EEE /* DiscoverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
-		CA0A85192069874C006BC7DA /* singleFactoid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = singleFactoid.h; sourceTree = "<group>"; };
-		CA0A851A2069874C006BC7DA /* singleFactoid.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = singleFactoid.m; sourceTree = "<group>"; };
 		CAF5548F202B9E5600B1521E /* climateConvos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = climateConvos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF55492202B9E5600B1521E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CAF55493202B9E5600B1521E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -50,8 +53,14 @@
 		CAF5549E202B9E5600B1521E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CAF554A0202B9E5600B1521E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAF554A1202B9E5600B1521E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CAF554A8202B9E8100B1521E /* TutorialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
-		CAF554A9202B9E8100B1521E /* TutorialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
+		CAFD9ECD2081500000F5EB35 /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
+		CAFD9ECE2081500000F5EB35 /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
+		CAFD9ED0208153E300F5EB35 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
+		CAFD9ED1208153E400F5EB35 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
+		CAFD9ED32081559400F5EB35 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
+		CAFD9ED42081559500F5EB35 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
+		CAFD9ED6208155BF00F5EB35 /* singleFactoid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = singleFactoid.m; sourceTree = "<group>"; };
+		CAFD9ED7208155BF00F5EB35 /* singleFactoid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = singleFactoid.h; sourceTree = "<group>"; };
 		D3DDCC3C1E53D0557DD56E79 /* libPods-climateConvos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-climateConvos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75578A5204DD96C00E01ED3 /* EducationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EducationViewController.m; sourceTree = "<group>"; };
 		E75578A6204DD96C00E01ED3 /* whatCanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = whatCanViewController.m; sourceTree = "<group>"; };
@@ -97,6 +106,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7AFD84C5207CAA210029ED54 /* NavBar */ = {
+			isa = PBXGroup;
+			children = (
+				7A1385D1207BF4D7006BF698 /* EmptySegue.h */,
+				7A1385D2207BF4D7006BF698 /* EmptySegue.m */,
+				7A1385D4207BF683006BF698 /* ContainerViewController.h */,
+				7A1385D5207BF683006BF698 /* ContainerViewController.m */,
+				7A1385CB207BF342006BF698 /* NavigationViewController.h */,
+				7A1385CC207BF342006BF698 /* NavigationViewController.m */,
+			);
+			name = NavBar;
+			sourceTree = "<group>";
+		};
 		CAF55486202B9E5600B1521E = {
 			isa = PBXGroup;
 			children = (
@@ -120,14 +142,15 @@
 			children = (
 				B64B1AF22075A41600E4F0CD /* iCarousel.h */,
 				B64B1AF32075A41600E4F0CD /* iCarousel.m */,
-				CAF554A8202B9E8100B1521E /* TutorialViewController.h */,
-				CAF554A9202B9E8100B1521E /* TutorialViewController.m */,
-				B6A1177A202BAD2200218EEE /* DiscoverViewController.h */,
-				B6A1177B202BAD2200218EEE /* DiscoverViewController.m */,
-				CA0A85192069874C006BC7DA /* singleFactoid.h */,
-				CA0A851A2069874C006BC7DA /* singleFactoid.m */,
-				B631685D207EB2A7008B7503 /* CategoriesViewController.h */,
-				B631685E207EB2A8008B7503 /* CategoriesViewController.m */,
+				CAFD9ED1208153E400F5EB35 /* TutorialViewController.h */,
+				CAFD9ED0208153E300F5EB35 /* TutorialViewController.m */,
+				CAFD9ED42081559500F5EB35 /* DiscoverViewController.h */,
+				CAFD9ED32081559400F5EB35 /* DiscoverViewController.m */,
+				CAFD9ECD2081500000F5EB35 /* CategoriesViewController.h */,
+				CAFD9ECE2081500000F5EB35 /* CategoriesViewController.m */,
+				CAFD9ED7208155BF00F5EB35 /* singleFactoid.h */,
+				CAFD9ED6208155BF00F5EB35 /* singleFactoid.m */,
+				7AFD84C5207CAA210029ED54 /* NavBar */,
 				CAF55498202B9E5600B1521E /* Main.storyboard */,
 				B64B1AEF20759FC100E4F0CD /* ScrollDemoViewController.h */,
 				B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */,
@@ -287,15 +310,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				E75578B3204DD96D00E01ED3 /* howDoesViewController.m in Sources */,
+				CAFD9ED52081559500F5EB35 /* DiscoverViewController.m in Sources */,
 				E75578B2204DD96D00E01ED3 /* whatIsItViewController.m in Sources */,
+				7A1385CD207BF342006BF698 /* NavigationViewController.m in Sources */,
 				E75578B1204DD96D00E01ED3 /* proactiveViewController.m in Sources */,
 				CAF554A2202B9E5600B1521E /* main.m in Sources */,
-				B6A1177C202BAD2200218EEE /* DiscoverViewController.m in Sources */,
+				CAFD9ED8208155BF00F5EB35 /* singleFactoid.m in Sources */,
+				CAFD9ED2208153E400F5EB35 /* TutorialViewController.m in Sources */,
+				7A1385D6207BF683006BF698 /* ContainerViewController.m in Sources */,
+				7A1385D3207BF4D7006BF698 /* EmptySegue.m in Sources */,
 				B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */,
-				CA0A851B2069874C006BC7DA /* singleFactoid.m in Sources */,
-				CAF554AA202B9E8100B1521E /* TutorialViewController.m in Sources */,
 				CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */,
-				B631685F207EB2A8008B7503 /* CategoriesViewController.m in Sources */,
+				CAFD9ECF2081500000F5EB35 /* CategoriesViewController.m in Sources */,
 				E75578AF204DD96D00E01ED3 /* EducationViewController.m in Sources */,
 				B64B1AF120759FC100E4F0CD /* ScrollDemoViewController.m in Sources */,
 				E75578B0204DD96D00E01ED3 /* whatCanViewController.m in Sources */,

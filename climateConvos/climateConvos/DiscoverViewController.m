@@ -96,9 +96,9 @@
     if (view == nil) {
         view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300.0f, 378.0f)];
         view.contentMode = UIViewContentModeCenter;
-        //view.backgroundColor = [UIColor grayColor];
+//        view.backgroundColor = [UIColor grayColor];
         view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"discover_body.png"]];
-       // label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 280.0f, 380.0f)];
+//        label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 280.0f, 380.0f)];
         label = [[UILabel alloc] initWithFrame:CGRectMake(25, -50, 250.0f, 380.0f)];
         label.textAlignment = NSTextAlignmentCenter;
         label.font = [label.font fontWithSize:16];
