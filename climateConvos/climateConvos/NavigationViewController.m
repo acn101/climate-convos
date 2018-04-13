@@ -101,7 +101,7 @@ ContainerViewController *container;
 -(void)openMenu{
     
     [UIView animateWithDuration:0.5
-                     animations:^{self.displayPage.center = CGPointMake(187, 520);}];
+                     animations:^{self.displayPage.center = CGPointMake(187, 505);}];
     
     self.arrow.transform = CGAffineTransformMakeRotation(M_PI);
     self.buttonPressed = YES;
@@ -110,7 +110,7 @@ ContainerViewController *container;
 -(void)closeMenu{
     
     [UIView animateWithDuration:0.5
-                     animations:^{self.displayPage.center = CGPointMake(187, 348);}];
+                     animations:^{self.displayPage.center = CGPointMake(187, 365);}];
     
     self.arrow.transform = CGAffineTransformMakeRotation(M_PI*2);
     self.buttonPressed = NO;
