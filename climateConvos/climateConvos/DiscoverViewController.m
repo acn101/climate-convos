@@ -94,14 +94,18 @@
     
     //create new view if no view is available for recycling
     if (view == nil) {
-        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300.0f, 420.0f)];
+        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300.0f, 378.0f)];
         view.contentMode = UIViewContentModeCenter;
-        view.backgroundColor = [UIColor grayColor];
-        label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 280.0f, 380.0f)];
+        //view.backgroundColor = [UIColor grayColor];
+        view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"discover_body.png"]];
+       // label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 280.0f, 380.0f)];
+        label = [[UILabel alloc] initWithFrame:CGRectMake(25, -50, 250.0f, 380.0f)];
         label.textAlignment = NSTextAlignmentCenter;
-        label.font = [label.font fontWithSize:18];
+        label.font = [label.font fontWithSize:16];
         label.tag = 1;
         label.numberOfLines = 0;
+       // [label sizeToFit];
+        label.textColor = [UIColor colorWithRed:94.0f/255.0f green:94.0f/255.0f blue:94.0f/255.0f alpha:1.0f];
         [view addSubview:label];
     } else {
         //get a reference to the label in the recycled view
