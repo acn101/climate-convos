@@ -14,6 +14,7 @@
 		B64B1AF120759FC100E4F0CD /* ScrollDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */; };
 		B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF32075A41600E4F0CD /* iCarousel.m */; };
 		B69EB1CD20757AF800E22425 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69EB1CC20757AF800E22425 /* QuartzCore.framework */; };
+		CA920A3920815CD6003E78CD /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA920A3820815CD6003E78CD /* MessageUI.framework */; };
 		CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF55493202B9E5600B1521E /* AppDelegate.m */; };
 		CAF5549A202B9E5600B1521E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF55498202B9E5600B1521E /* Main.storyboard */; };
 		CAF5549C202B9E5600B1521E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF5549B202B9E5600B1521E /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		B64B1AF22075A41600E4F0CD /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		B64B1AF32075A41600E4F0CD /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		B69EB1CC20757AF800E22425 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CA920A3820815CD6003E78CD /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		CAF5548F202B9E5600B1521E /* climateConvos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = climateConvos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF55492202B9E5600B1521E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CAF55493202B9E5600B1521E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA920A3920815CD6003E78CD /* MessageUI.framework in Frameworks */,
 				B69EB1CD20757AF800E22425 /* QuartzCore.framework in Frameworks */,
 				53C9D0BBA247DEF9485234B6 /* libPods-climateConvos.a in Frameworks */,
 			);
@@ -100,6 +103,7 @@
 		19A085A659FE924496B90486 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA920A3820815CD6003E78CD /* MessageUI.framework */,
 				B69EB1CC20757AF800E22425 /* QuartzCore.framework */,
 				D3DDCC3C1E53D0557DD56E79 /* libPods-climateConvos.a */,
 			);

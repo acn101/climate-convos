@@ -22,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
 @property (nonatomic, strong) NSMutableArray *items;
 
+
+
 @end
 
 @implementation DiscoverViewController
@@ -80,6 +82,22 @@
         }
         [self.carousel reloadData];
     }];
+}
+
+// Share Button
+
+- (IBAction)shareButton:(id)sender {
+    [self shareContent];
+}
+
+-(void)shareContent{
+    NSString * message = @"share factoids";
+//    UIImage * image = [UIImage imageNamed:@"earth"];
+    NSArray * shareItems = @[message];
+//    NSArray * shareItems = @[message, image];
+    
+    UIActivityViewController * avc = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
+    [self presentViewController:avc animated:YES completion:nil];
 }
 
 #pragma mark - iCarousel methods
