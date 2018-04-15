@@ -52,6 +52,7 @@
             self.leftButton.hidden = YES;
             self.rightButton.hidden = NO;
             self.doneButton.hidden = YES;
+            self.skipButton.hidden = NO;
             self.tutorialText.text = [self text1];
             self.dotThing.image = [UIImage imageNamed:@"dot1.png"];
             break;
@@ -59,6 +60,7 @@
             self.leftButton.hidden = NO;
             self.rightButton.hidden = NO;
             self.doneButton.hidden = YES;
+            self.skipButton.hidden = NO;
             self.tutorialText.text = [self text2];
             self.dotThing.image = [UIImage imageNamed:@"dot2.png"];
             break;
@@ -66,6 +68,7 @@
             self.leftButton.hidden = NO;
             self.rightButton.hidden = NO;
             self.doneButton.hidden = YES;
+            self.skipButton.hidden = NO;
             self.tutorialText.text = [self text3];
             self.dotThing.image = [UIImage imageNamed:@"dot3.png"];
             break;
