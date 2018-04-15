@@ -54,7 +54,7 @@ ContainerViewController *container;
     [self.container segueIdentifierReceivedFromParent:@"toHome"];
     
     //change the label
-    [self.titleButton setTitle:@"DISCOVER" forState:UIControlStateNormal];
+    [self.titleButton setTitle:@"Discover" forState:UIControlStateNormal];
     
     self.homeButton.hidden=YES;
     
@@ -67,7 +67,7 @@ ContainerViewController *container;
     
     //change the label
     
-    [self.titleButton setTitle:@"TOPIC" forState:UIControlStateNormal];
+    [self.titleButton setTitle:@"Search by Topic" forState:UIControlStateNormal];
     
     self.homeButton.hidden=NO;
     
@@ -80,7 +80,7 @@ ContainerViewController *container;
     [self.container segueIdentifierReceivedFromParent:@"toEducation"];
     
     //change the label
-    [self.titleButton setTitle:@"EDUCATION" forState:UIControlStateNormal];
+    [self.titleButton setTitle:@"Get Educated" forState:UIControlStateNormal];
     
     self.homeButton.hidden=NO;
     
@@ -91,7 +91,7 @@ ContainerViewController *container;
     [self.container segueIdentifierReceivedFromParent:@"toGetActive"];
     
     //change the label
-    [self.titleButton setTitle:@"GET ACTIVE" forState:UIControlStateNormal];
+    [self.titleButton setTitle:@"Get Active" forState:UIControlStateNormal];
     
     self.homeButton.hidden=NO;
     

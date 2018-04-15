@@ -70,7 +70,7 @@
             self.dotThing.image = [UIImage imageNamed:@"dot3.png"];
             break;
         case 4:
-            self.leftButton.hidden = YES;
+            self.leftButton.hidden = NO;
             self.rightButton.hidden = YES;
             self.doneButton.hidden = NO;
             self.skipButton.hidden = YES;
