@@ -13,6 +13,8 @@
 		7A1385D6207BF683006BF698 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385D5207BF683006BF698 /* ContainerViewController.m */; };
 		B64B1AF120759FC100E4F0CD /* ScrollDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */; };
 		B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF32075A41600E4F0CD /* iCarousel.m */; };
+		B678F14420841749001CD0F5 /* ArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B678F14320841749001CD0F5 /* ArticlesViewController.m */; };
+		B678F14720841A24001CD0F5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B678F14620841A24001CD0F5 /* ProfileViewController.m */; };
 		B69EB1CD20757AF800E22425 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69EB1CC20757AF800E22425 /* QuartzCore.framework */; };
 		CA920A3920815CD6003E78CD /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA920A3820815CD6003E78CD /* MessageUI.framework */; };
 		CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF55493202B9E5600B1521E /* AppDelegate.m */; };
@@ -45,6 +47,10 @@
 		B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollDemoViewController.m; sourceTree = "<group>"; };
 		B64B1AF22075A41600E4F0CD /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		B64B1AF32075A41600E4F0CD /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		B678F14220841749001CD0F5 /* ArticlesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticlesViewController.h; sourceTree = "<group>"; };
+		B678F14320841749001CD0F5 /* ArticlesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticlesViewController.m; sourceTree = "<group>"; };
+		B678F14520841A24001CD0F5 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		B678F14620841A24001CD0F5 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		B69EB1CC20757AF800E22425 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CA920A3820815CD6003E78CD /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		CAF5548F202B9E5600B1521E /* climateConvos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = climateConvos.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +129,61 @@
 			name = NavBar;
 			sourceTree = "<group>";
 		};
+		B6DE172D208414F00068C02F /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				CAFD9ED1208153E400F5EB35 /* TutorialViewController.h */,
+				CAFD9ED0208153E300F5EB35 /* TutorialViewController.m */,
+			);
+			name = Tutorial;
+			sourceTree = "<group>";
+		};
+		B6DE172E208414FE0068C02F /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				B64B1AF22075A41600E4F0CD /* iCarousel.h */,
+				B64B1AF32075A41600E4F0CD /* iCarousel.m */,
+			);
+			name = Carousel;
+			sourceTree = "<group>";
+		};
+		B6DE172F2084150A0068C02F /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				CAFD9ED42081559500F5EB35 /* DiscoverViewController.h */,
+				CAFD9ED32081559400F5EB35 /* DiscoverViewController.m */,
+			);
+			name = Discover;
+			sourceTree = "<group>";
+		};
+		B6DE17302084151B0068C02F /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				CAFD9ECD2081500000F5EB35 /* CategoriesViewController.h */,
+				CAFD9ECE2081500000F5EB35 /* CategoriesViewController.m */,
+				B678F14220841749001CD0F5 /* ArticlesViewController.h */,
+				B678F14320841749001CD0F5 /* ArticlesViewController.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		B6DE1731208415400068C02F /* Education */ = {
+			isa = PBXGroup;
+			children = (
+				E75578AC204DD96D00E01ED3 /* EducationViewController.h */,
+				E75578A5204DD96C00E01ED3 /* EducationViewController.m */,
+				E75578A7204DD96C00E01ED3 /* howDoesViewController.h */,
+				E75578AD204DD96D00E01ED3 /* howDoesViewController.m */,
+				E75578AE204DD96D00E01ED3 /* proactiveViewController.h */,
+				E75578A9204DD96D00E01ED3 /* proactiveViewController.m */,
+				E75578AB204DD96D00E01ED3 /* whatCanViewController.h */,
+				E75578A6204DD96C00E01ED3 /* whatCanViewController.m */,
+				E75578A8204DD96D00E01ED3 /* whatIsItViewController.h */,
+				E75578AA204DD96D00E01ED3 /* whatIsItViewController.m */,
+			);
+			name = Education;
+			sourceTree = "<group>";
+		};
 		CAF55486202B9E5600B1521E = {
 			isa = PBXGroup;
 			children = (
@@ -144,14 +205,13 @@
 		CAF55491202B9E5600B1521E /* climateConvos */ = {
 			isa = PBXGroup;
 			children = (
-				B64B1AF22075A41600E4F0CD /* iCarousel.h */,
-				B64B1AF32075A41600E4F0CD /* iCarousel.m */,
-				CAFD9ED1208153E400F5EB35 /* TutorialViewController.h */,
-				CAFD9ED0208153E300F5EB35 /* TutorialViewController.m */,
-				CAFD9ED42081559500F5EB35 /* DiscoverViewController.h */,
-				CAFD9ED32081559400F5EB35 /* DiscoverViewController.m */,
-				CAFD9ECD2081500000F5EB35 /* CategoriesViewController.h */,
-				CAFD9ECE2081500000F5EB35 /* CategoriesViewController.m */,
+				B678F14520841A24001CD0F5 /* ProfileViewController.h */,
+				B678F14620841A24001CD0F5 /* ProfileViewController.m */,
+				B6DE1731208415400068C02F /* Education */,
+				B6DE17302084151B0068C02F /* Categories */,
+				B6DE172F2084150A0068C02F /* Discover */,
+				B6DE172E208414FE0068C02F /* Carousel */,
+				B6DE172D208414F00068C02F /* Tutorial */,
 				CAFD9ED7208155BF00F5EB35 /* singleFactoid.h */,
 				CAFD9ED6208155BF00F5EB35 /* singleFactoid.m */,
 				7AFD84C5207CAA210029ED54 /* NavBar */,
@@ -160,16 +220,6 @@
 				B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */,
 				E7603903204612820060C245 /* GoogleService-Info.plist */,
 				CAF5549B202B9E5600B1521E /* Assets.xcassets */,
-				E75578AC204DD96D00E01ED3 /* EducationViewController.h */,
-				E75578A5204DD96C00E01ED3 /* EducationViewController.m */,
-				E75578A7204DD96C00E01ED3 /* howDoesViewController.h */,
-				E75578AD204DD96D00E01ED3 /* howDoesViewController.m */,
-				E75578AE204DD96D00E01ED3 /* proactiveViewController.h */,
-				E75578A9204DD96D00E01ED3 /* proactiveViewController.m */,
-				E75578AB204DD96D00E01ED3 /* whatCanViewController.h */,
-				E75578A6204DD96C00E01ED3 /* whatCanViewController.m */,
-				E75578A8204DD96D00E01ED3 /* whatIsItViewController.h */,
-				E75578AA204DD96D00E01ED3 /* whatIsItViewController.m */,
 				E79B1133202BB5DB00F6A0ED /* Exxtra */,
 			);
 			path = climateConvos;
@@ -323,6 +373,8 @@
 				CAFD9ED2208153E400F5EB35 /* TutorialViewController.m in Sources */,
 				7A1385D6207BF683006BF698 /* ContainerViewController.m in Sources */,
 				7A1385D3207BF4D7006BF698 /* EmptySegue.m in Sources */,
+				B678F14720841A24001CD0F5 /* ProfileViewController.m in Sources */,
+				B678F14420841749001CD0F5 /* ArticlesViewController.m in Sources */,
 				B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */,
 				CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */,
 				CAFD9ECF2081500000F5EB35 /* CategoriesViewController.m in Sources */,
@@ -468,6 +520,7 @@
 				DEVELOPMENT_TEAM = 3F468498MY;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = climateConvos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
@@ -486,6 +539,7 @@
 				DEVELOPMENT_TEAM = 3F468498MY;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = climateConvos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
