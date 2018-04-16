@@ -236,7 +236,7 @@
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <state key="normal" title="      Notifications" backgroundImage="setting_body">
+                                <state key="normal" title="      Notifications" backgroundImage="setting_body_2">
                                     <color key="titleColor" red="0.36862745099999999" green="0.36862745099999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -269,7 +269,7 @@
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <state key="normal" title="      Sounds" backgroundImage="setting_body">
+                                <state key="normal" title="      Sounds" backgroundImage="setting_body_2">
                                     <color key="titleColor" red="0.36862745099999999" green="0.36862745099999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -285,7 +285,7 @@
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <state key="normal" title="      Show on Lock Screen" backgroundImage="setting_body">
+                                <state key="normal" title="      Show on Lock Screen" backgroundImage="setting_body_2">
                                     <color key="titleColor" red="0.36862745099999999" green="0.36862745099999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -301,7 +301,7 @@
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <state key="normal" title="      Show in History" backgroundImage="setting_body">
+                                <state key="normal" title="      Show in History" backgroundImage="setting_body_2">
                                     <color key="titleColor" red="0.36862745099999999" green="0.36862745099999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -1554,11 +1554,11 @@
         <image name="profile_body" width="717" height="1052"/>
         <image name="profile_body_2" width="652" height="145"/>
         <image name="setting_body" width="805" height="152"/>
+        <image name="setting_body_2" width="483" height="91"/>
         <image name="settings" width="937" height="1667"/>
         <image name="speech bubble" width="680" height="722"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DGu-63-7yX"/>
         <segue reference="7hw-Ms-wY4"/>
         <segue reference="obu-Sd-AqT"/>
         <segue reference="eUW-5M-HJj"/>
