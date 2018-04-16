@@ -16,6 +16,7 @@
 		B678F14420841749001CD0F5 /* ArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B678F14320841749001CD0F5 /* ArticlesViewController.m */; };
 		B678F14720841A24001CD0F5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B678F14620841A24001CD0F5 /* ProfileViewController.m */; };
 		B69EB1CD20757AF800E22425 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69EB1CC20757AF800E22425 /* QuartzCore.framework */; };
+		B69FDE772085369F00B60C4C /* EducationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69FDE762085369F00B60C4C /* EducationViewController.m */; };
 		CA920A3920815CD6003E78CD /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA920A3820815CD6003E78CD /* MessageUI.framework */; };
 		CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF55493202B9E5600B1521E /* AppDelegate.m */; };
 		CAF5549A202B9E5600B1521E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF55498202B9E5600B1521E /* Main.storyboard */; };
@@ -26,11 +27,6 @@
 		CAFD9ED2208153E400F5EB35 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFD9ED0208153E300F5EB35 /* TutorialViewController.m */; };
 		CAFD9ED52081559500F5EB35 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFD9ED32081559400F5EB35 /* DiscoverViewController.m */; };
 		CAFD9ED8208155BF00F5EB35 /* singleFactoid.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFD9ED6208155BF00F5EB35 /* singleFactoid.m */; };
-		E75578AF204DD96D00E01ED3 /* EducationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75578A5204DD96C00E01ED3 /* EducationViewController.m */; };
-		E75578B0204DD96D00E01ED3 /* whatCanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75578A6204DD96C00E01ED3 /* whatCanViewController.m */; };
-		E75578B1204DD96D00E01ED3 /* proactiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75578A9204DD96D00E01ED3 /* proactiveViewController.m */; };
-		E75578B2204DD96D00E01ED3 /* whatIsItViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75578AA204DD96D00E01ED3 /* whatIsItViewController.m */; };
-		E75578B3204DD96D00E01ED3 /* howDoesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75578AD204DD96D00E01ED3 /* howDoesViewController.m */; };
 		E7603904204612820060C245 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7603903204612820060C245 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +48,8 @@
 		B678F14520841A24001CD0F5 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		B678F14620841A24001CD0F5 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		B69EB1CC20757AF800E22425 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B69FDE752085369F00B60C4C /* EducationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EducationViewController.h; sourceTree = "<group>"; };
+		B69FDE762085369F00B60C4C /* EducationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EducationViewController.m; sourceTree = "<group>"; };
 		CA920A3820815CD6003E78CD /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		CAF5548F202B9E5600B1521E /* climateConvos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = climateConvos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF55492202B9E5600B1521E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -70,16 +68,6 @@
 		CAFD9ED6208155BF00F5EB35 /* singleFactoid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = singleFactoid.m; sourceTree = "<group>"; };
 		CAFD9ED7208155BF00F5EB35 /* singleFactoid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = singleFactoid.h; sourceTree = "<group>"; };
 		D3DDCC3C1E53D0557DD56E79 /* libPods-climateConvos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-climateConvos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E75578A5204DD96C00E01ED3 /* EducationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EducationViewController.m; sourceTree = "<group>"; };
-		E75578A6204DD96C00E01ED3 /* whatCanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = whatCanViewController.m; sourceTree = "<group>"; };
-		E75578A7204DD96C00E01ED3 /* howDoesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = howDoesViewController.h; sourceTree = "<group>"; };
-		E75578A8204DD96D00E01ED3 /* whatIsItViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = whatIsItViewController.h; sourceTree = "<group>"; };
-		E75578A9204DD96D00E01ED3 /* proactiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = proactiveViewController.m; sourceTree = "<group>"; };
-		E75578AA204DD96D00E01ED3 /* whatIsItViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = whatIsItViewController.m; sourceTree = "<group>"; };
-		E75578AB204DD96D00E01ED3 /* whatCanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = whatCanViewController.h; sourceTree = "<group>"; };
-		E75578AC204DD96D00E01ED3 /* EducationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EducationViewController.h; sourceTree = "<group>"; };
-		E75578AD204DD96D00E01ED3 /* howDoesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = howDoesViewController.m; sourceTree = "<group>"; };
-		E75578AE204DD96D00E01ED3 /* proactiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = proactiveViewController.h; sourceTree = "<group>"; };
 		E7603903204612820060C245 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,16 +158,6 @@
 		B6DE1731208415400068C02F /* Education */ = {
 			isa = PBXGroup;
 			children = (
-				E75578AC204DD96D00E01ED3 /* EducationViewController.h */,
-				E75578A5204DD96C00E01ED3 /* EducationViewController.m */,
-				E75578A7204DD96C00E01ED3 /* howDoesViewController.h */,
-				E75578AD204DD96D00E01ED3 /* howDoesViewController.m */,
-				E75578AE204DD96D00E01ED3 /* proactiveViewController.h */,
-				E75578A9204DD96D00E01ED3 /* proactiveViewController.m */,
-				E75578AB204DD96D00E01ED3 /* whatCanViewController.h */,
-				E75578A6204DD96C00E01ED3 /* whatCanViewController.m */,
-				E75578A8204DD96D00E01ED3 /* whatIsItViewController.h */,
-				E75578AA204DD96D00E01ED3 /* whatIsItViewController.m */,
 			);
 			name = Education;
 			sourceTree = "<group>";
@@ -214,6 +192,8 @@
 				B6DE172D208414F00068C02F /* Tutorial */,
 				CAFD9ED7208155BF00F5EB35 /* singleFactoid.h */,
 				CAFD9ED6208155BF00F5EB35 /* singleFactoid.m */,
+				B69FDE752085369F00B60C4C /* EducationViewController.h */,
+				B69FDE762085369F00B60C4C /* EducationViewController.m */,
 				7AFD84C5207CAA210029ED54 /* NavBar */,
 				CAF55498202B9E5600B1521E /* Main.storyboard */,
 				B64B1AEF20759FC100E4F0CD /* ScrollDemoViewController.h */,
@@ -363,11 +343,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E75578B3204DD96D00E01ED3 /* howDoesViewController.m in Sources */,
 				CAFD9ED52081559500F5EB35 /* DiscoverViewController.m in Sources */,
-				E75578B2204DD96D00E01ED3 /* whatIsItViewController.m in Sources */,
 				7A1385CD207BF342006BF698 /* NavigationViewController.m in Sources */,
-				E75578B1204DD96D00E01ED3 /* proactiveViewController.m in Sources */,
 				CAF554A2202B9E5600B1521E /* main.m in Sources */,
 				CAFD9ED8208155BF00F5EB35 /* singleFactoid.m in Sources */,
 				CAFD9ED2208153E400F5EB35 /* TutorialViewController.m in Sources */,
@@ -377,10 +354,9 @@
 				B678F14420841749001CD0F5 /* ArticlesViewController.m in Sources */,
 				B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */,
 				CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */,
+				B69FDE772085369F00B60C4C /* EducationViewController.m in Sources */,
 				CAFD9ECF2081500000F5EB35 /* CategoriesViewController.m in Sources */,
-				E75578AF204DD96D00E01ED3 /* EducationViewController.m in Sources */,
 				B64B1AF120759FC100E4F0CD /* ScrollDemoViewController.m in Sources */,
-				E75578B0204DD96D00E01ED3 /* whatCanViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
