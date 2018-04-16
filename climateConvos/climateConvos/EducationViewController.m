@@ -15,7 +15,21 @@
 @property (weak, nonatomic) IBOutlet UIButton *rightNav;
 @property (weak, nonatomic) IBOutlet UIButton *leftNav;
 
+@property (weak, nonatomic) IBOutlet UIImageView *module;
+
+@property (weak, nonatomic) IBOutlet UITextView *modText;
+@property (weak, nonatomic) IBOutlet UIButton *hide;
+
+@property (strong,nonatomic) NSArray*currentTexts;
+
+@property (weak, nonatomic) IBOutlet UIButton *proButt;
+@property (weak, nonatomic) IBOutlet UIButton *whatButt;
+@property (weak, nonatomic) IBOutlet UIButton *howButt;
+@property (weak, nonatomic) IBOutlet UIButton *whatCanButt;
+
+
 @property (nonatomic) int pageView;
+@property (nonatomic) int index;
 
 
 @end
@@ -28,30 +42,185 @@
     
     
     _educTitle.textAlignment = NSTextAlignmentCenter;
-    
     _pageView = 0;
     
-    _rightNav.hidden = YES;
-    _leftNav.hidden = YES;
+    [self hideContent];
     
+}
+- (IBAction)hideButt:(id)sender {
+    [self hideContent];
+}
+    -(void) hideContent
+    {
+        _proButt.enabled = YES;
+        _whatButt.enabled = YES;
+        _howButt.enabled = YES;
+        _whatCanButt.enabled = YES;
+        
+        [UIView transitionWithView:_module
+                          duration:0.4
+                           options:UIViewAnimationOptionTransitionCrossDissolve
+                        animations:^{
+                            _module.hidden = YES;
+                            _modText.hidden = YES;
+                            _hide.hidden = YES;
+                            _rightNav.hidden = YES;
+                            _leftNav.hidden = YES;
+                        }
+                        completion:NULL];
+        _index = 0;
+    }
+
+- (void) showContent
+{
+    _proButt.enabled = NO;
+    _whatButt.enabled = NO;
+    _howButt.enabled = NO;
+    _whatCanButt.enabled = NO;
+    
+    
+    
+    
+    
+    [UIView transitionWithView:_modText
+                      duration:0.4
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+    
+    _modText.hidden = NO;
+   
+                    } completion: NULL];
+    _module.hidden = NO;
+    _hide.hidden = NO;
+    _rightNav.hidden = NO;
 }
 
 
-- (IBAction)changePro:(UIButton *)sender {
+- (IBAction)proMod:(id)sender {
+    [self showContent];
+    _pageView = 1;
+    _index = 0;
     
+    [self initProArray];
+    _modText.text = _currentTexts[_index];
+    
+    //_modText =
+    //self.leftNav.hidden = YES;
+}
+    - (void) initProArray
+    {
+        _currentTexts = [NSArray arrayWithObjects:
+                             @"Climate Change is hard to talk about. It's complex, vast, and very political. Luckily I have some tips and guidance for you to follow during your climate convos. 0 ",
+                             @"Something to start you out with is to take it easy, and understand that it's not the end of the world, especially if the person you're talking to doesn't agree with you 1",
+                             @"It's always important to talk about it optimistically, and to not think it's the end of the world. 2",
+                             @"Holding a proactive conversation is to talk about solutions and remaining hopeful. 3",
+                             @"More stuff here!!!!! More text and explanation about proactive conversations and stuff. 4" , nil];
+    }
+
+- (IBAction)whatMod:(id)sender {
+    [self showContent];
+    _pageView = 2;
+    [self initWhatArray];
+    _modText.text = _currentTexts[0];
+}
+    - (void)initWhatArray
+    {
+        _currentTexts = [NSArray arrayWithObjects:
+                           @" What is it",
+                           @" 1w",
+                           @" 2w",
+                           @" 3w",
+                           @" 4w" , nil];
+    }
+
+- (IBAction)howMod:(id)sender {
+    [self showContent];
+    _pageView = 3;
+    [self initHowArray];
+    _modText.text = _currentTexts[0];
+}
+- (void)initHowArray
+    {
+        _currentTexts = [NSArray arrayWithObjects:
+                         @" How Does it Effect You",
+                         @" 1h",
+                         @" 2h",
+                         @" 3h",
+                         @" 4h" , nil];
+    }
+
+- (IBAction)whatCanMod:(id)sender {
+    [self showContent];
+    _pageView = 4;
+    [self initWhatCanArray];
+    _modText.text = _currentTexts[0];
+}
+- (void)initWhatCanArray
+    {
+        _currentTexts = [NSArray arrayWithObjects:
+                         @" What Can you do about it",
+                         @" 1c",
+                         @" 2c",
+                         @" 3c",
+                         @" 4c" , nil];
+    }
+
+
+
+
+- (IBAction)navRight:(UIButton *)sender {
+    CATransition *transition = [CATransition new];
+    transition.type = kCATransitionPush;
+    transition.subtype = kCATransitionFromRight;
+    
+    // Make any view changes
+    _modText.text = _currentTexts[++_index];
+    
+    // Add the transition
+    [_modText.layer addAnimation:transition forKey:@"transition"];
+    
+
+    
+    
+    if (_index > 0)
+    {
+        _leftNav.hidden = NO;
+    }
+    
+    if (_index > 3)
+    {
+        _rightNav.hidden = YES;
+
+    }
 }
 
-- (IBAction)changeWhatIs:(UIButton *)sender {
+- (IBAction)navLeft:(UIButton *)sender {
+    CATransition *transition = [CATransition new];
+    transition.type = kCATransitionPush;
+    transition.subtype = kCATransitionFromLeft;
     
+    // Make any view changes
+    _modText.text = _currentTexts[--_index];
+    
+    // Add the transition
+    [_modText.layer addAnimation:transition forKey:@"transition"];
+    
+    
+    
+    
+    if (_index == 0)
+    {
+        _leftNav.hidden = YES;
+    }
+    
+    if (_index < 4)
+    {
+        _rightNav.hidden = NO;
+        
+    }
 }
 
-- (IBAction)changeHow:(UIButton *)sender {
-    
-}
 
-- (IBAction)changeWhatCan:(UIButton *)sender {
-    
-}
 
 
 - (void)didReceiveMemoryWarning {
@@ -68,39 +237,6 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-- (NSString *)proactive1
-{
-    return @"Proactive Conversation is important for making conversation like happen and like stuff";
-}
-- (NSString *)proactive2
-{
-    return @"pro2";
-}
-- (NSString *)proactive3
-{
-    return @"pro3";
-}
-- (NSString *)proactive4
-{
-    return @"pro4";
-}
-
-
-- (NSString *)whatIsIt1
-{
-    return @"Climate Change is this thing which toally sucks and should be stopped at all costs";
-}
-
-- (NSString *)howDoesIt1
-{
-    return @"It may not seem pressing in a grander scope, but it does actuall effect you, and the people around you...";
-}
-
-- (NSString *)whatCanYou1
-{
-    return @"What you can do about it is help start conversation and promote activism in order to stop legislation and systematic negatives.";
-}
 
 - (IBAction)hello:(UIButton *)sender {
 }

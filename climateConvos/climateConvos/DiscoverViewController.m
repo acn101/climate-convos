@@ -38,6 +38,21 @@
     [self testDB];
 }
 
+- (IBAction)sender:(id)sender {
+    [self shareContent];
+
+}
+
+- (void) shareContent
+{
+    NSString * message = @"share factoids";
+    NSArray * shareItems = @[message];
+    
+    UIActivityViewController * avc = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
+    [self presentViewController:avc animated:YES completion:nil];
+}
+
+
 - (void)testDB {
     [[self.ref child:@"Facts"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         self.dict = snapshot.value;
