@@ -107,27 +107,55 @@
     return [self.items count];
 }
 
-- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view {
+- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)carouselView {
     UILabel *label = nil;
     
     //create new view if no view is available for recycling
-    if (view == nil) {
-        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300.0f, 378.0f)];
-        view.contentMode = UIViewContentModeCenter;
-//        view.backgroundColor = [UIColor grayColor];
-        view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"discover_body.png"]];
-//        label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 280.0f, 380.0f)];
+    if (carouselView == nil) {
+        carouselView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300.0f, 378.0f)];
+        //carouselView.contentMode = UIViewContentModeCenter;
+        carouselView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"discover_body.png"]];
+//       label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 280.0f, 380.0f)];
         label = [[UILabel alloc] initWithFrame:CGRectMake(25, -50, 250.0f, 380.0f)];
         label.textAlignment = NSTextAlignmentCenter;
         label.font = [label.font fontWithSize:16];
         label.tag = 1;
         label.numberOfLines = 0;
-       // [label sizeToFit];
+//        [label sizeToFit];
         label.textColor = [UIColor colorWithRed:94.0f/255.0f green:94.0f/255.0f blue:94.0f/255.0f alpha:1.0f];
-        [view addSubview:label];
+        [carouselView addSubview:label];
+        
+        
+        // Show more button
+        UIButton *showMore = [[UIButton alloc] initWithFrame:CGRectMake(26.0, 320, 98.0f, 32.0f)];
+        [showMore addTarget:self
+                   action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
+        [showMore setTitle:@"+ show more" forState:UIControlStateNormal];
+        [showMore setTitleColor:[UIColor colorWithRed:94.0f/255.0f green:94.0f/255.0f blue:94.0f/255.0f alpha:1.0f] forState:UIControlStateNormal];
+        showMore.titleLabel.font = [UIFont boldSystemFontOfSize:16];
+        [carouselView addSubview:showMore];
+        
+        // Show plus button
+        UIButton *addButton = [[UIButton alloc] initWithFrame:CGRectMake(215.0, 327, 20.0f, 20.0f)];
+        [addButton addTarget:self
+                     action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
+        [addButton setImage:([UIImage imageNamed:@"add_icon.png"]) forState:UIControlStateNormal];
+        [addButton setTitle:@"" forState:UIControlStateNormal];
+        addButton.titleLabel.font = [UIFont systemFontOfSize:16];
+        [carouselView addSubview:addButton];
+        
+        // share button
+        UIButton *shareButton = [[UIButton alloc] initWithFrame:CGRectMake(245.0, 327, 20.0f, 18.0f)];
+        [shareButton addTarget:self
+                      action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [shareButton setImage:([UIImage imageNamed:@"share_icon.png"]) forState:UIControlStateNormal];
+        [shareButton setTitle:@"" forState:UIControlStateNormal];
+        shareButton.titleLabel.font = [UIFont systemFontOfSize:16];
+        [carouselView addSubview:shareButton];
+        
     } else {
         //get a reference to the label in the recycled view
-        label = (UILabel *)[view viewWithTag:1];
+        label = (UILabel *)[carouselView viewWithTag:1];
     }
     
 //    set item label
@@ -138,7 +166,12 @@
     self.currentFactoid = [self.currentDB objectAtIndex:index];
     label.text = [self.currentFactoid.texts objectForKey:@"short"];
     
-    return view;
+    return carouselView;
+}
+
+- (void)buttonPressed:(id)sender {
+    NSLog(@"I worked yay");
+
 }
 
 - (void)dealloc {

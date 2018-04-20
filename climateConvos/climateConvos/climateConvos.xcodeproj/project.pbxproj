@@ -11,6 +11,7 @@
 		7A1385CD207BF342006BF698 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385CC207BF342006BF698 /* NavigationViewController.m */; };
 		7A1385D3207BF4D7006BF698 /* EmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385D2207BF4D7006BF698 /* EmptySegue.m */; };
 		7A1385D6207BF683006BF698 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385D5207BF683006BF698 /* ContainerViewController.m */; };
+		B62A12022087D4D7008FD063 /* ExpandFactoidViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B62A12012087D4D7008FD063 /* ExpandFactoidViewController.m */; };
 		B64B1AF120759FC100E4F0CD /* ScrollDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */; };
 		B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF32075A41600E4F0CD /* iCarousel.m */; };
 		B678F14420841749001CD0F5 /* ArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B678F14320841749001CD0F5 /* ArticlesViewController.m */; };
@@ -39,6 +40,8 @@
 		7A1385D4207BF683006BF698 /* ContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
 		7A1385D5207BF683006BF698 /* ContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
 		B5BFFC3BCBD5962E5EAA6D39 /* Pods-climateConvos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-climateConvos.release.xcconfig"; path = "Pods/Target Support Files/Pods-climateConvos/Pods-climateConvos.release.xcconfig"; sourceTree = "<group>"; };
+		B62A12002087D4D7008FD063 /* ExpandFactoidViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandFactoidViewController.h; sourceTree = "<group>"; };
+		B62A12012087D4D7008FD063 /* ExpandFactoidViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandFactoidViewController.m; sourceTree = "<group>"; };
 		B64B1AEF20759FC100E4F0CD /* ScrollDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollDemoViewController.h; sourceTree = "<group>"; };
 		B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollDemoViewController.m; sourceTree = "<group>"; };
 		B64B1AF22075A41600E4F0CD /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
@@ -158,6 +161,8 @@
 		B6DE1731208415400068C02F /* Education */ = {
 			isa = PBXGroup;
 			children = (
+				B69FDE752085369F00B60C4C /* EducationViewController.h */,
+				B69FDE762085369F00B60C4C /* EducationViewController.m */,
 			);
 			name = Education;
 			sourceTree = "<group>";
@@ -165,6 +170,8 @@
 		CAF55486202B9E5600B1521E = {
 			isa = PBXGroup;
 			children = (
+				B62A12002087D4D7008FD063 /* ExpandFactoidViewController.h */,
+				B62A12012087D4D7008FD063 /* ExpandFactoidViewController.m */,
 				CAF55491202B9E5600B1521E /* climateConvos */,
 				CAF55490202B9E5600B1521E /* Products */,
 				09C4DCD11E88711E6F20B7D4 /* Pods */,
@@ -192,8 +199,6 @@
 				B6DE172D208414F00068C02F /* Tutorial */,
 				CAFD9ED7208155BF00F5EB35 /* singleFactoid.h */,
 				CAFD9ED6208155BF00F5EB35 /* singleFactoid.m */,
-				B69FDE752085369F00B60C4C /* EducationViewController.h */,
-				B69FDE762085369F00B60C4C /* EducationViewController.m */,
 				7AFD84C5207CAA210029ED54 /* NavBar */,
 				CAF55498202B9E5600B1521E /* Main.storyboard */,
 				B64B1AEF20759FC100E4F0CD /* ScrollDemoViewController.h */,
@@ -349,6 +354,7 @@
 				CAFD9ED8208155BF00F5EB35 /* singleFactoid.m in Sources */,
 				CAFD9ED2208153E400F5EB35 /* TutorialViewController.m in Sources */,
 				7A1385D6207BF683006BF698 /* ContainerViewController.m in Sources */,
+				B62A12022087D4D7008FD063 /* ExpandFactoidViewController.m in Sources */,
 				7A1385D3207BF4D7006BF698 /* EmptySegue.m in Sources */,
 				B678F14720841A24001CD0F5 /* ProfileViewController.m in Sources */,
 				B678F14420841749001CD0F5 /* ArticlesViewController.m in Sources */,
