@@ -15,9 +15,9 @@
 		B64B1AF120759FC100E4F0CD /* ScrollDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */; };
 		B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF32075A41600E4F0CD /* iCarousel.m */; };
 		B678F14420841749001CD0F5 /* ArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B678F14320841749001CD0F5 /* ArticlesViewController.m */; };
-		B678F14720841A24001CD0F5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B678F14620841A24001CD0F5 /* ProfileViewController.m */; };
 		B69EB1CD20757AF800E22425 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69EB1CC20757AF800E22425 /* QuartzCore.framework */; };
 		B69FDE772085369F00B60C4C /* EducationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69FDE762085369F00B60C4C /* EducationViewController.m */; };
+		B6CAA3A4208AAF5A00FCB56D /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CAA3A3208AAF5A00FCB56D /* Profile.m */; };
 		CA920A3920815CD6003E78CD /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA920A3820815CD6003E78CD /* MessageUI.framework */; };
 		CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF55493202B9E5600B1521E /* AppDelegate.m */; };
 		CAF5549A202B9E5600B1521E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF55498202B9E5600B1521E /* Main.storyboard */; };
@@ -48,11 +48,11 @@
 		B64B1AF32075A41600E4F0CD /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		B678F14220841749001CD0F5 /* ArticlesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticlesViewController.h; sourceTree = "<group>"; };
 		B678F14320841749001CD0F5 /* ArticlesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticlesViewController.m; sourceTree = "<group>"; };
-		B678F14520841A24001CD0F5 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
-		B678F14620841A24001CD0F5 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		B69EB1CC20757AF800E22425 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B69FDE752085369F00B60C4C /* EducationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EducationViewController.h; sourceTree = "<group>"; };
 		B69FDE762085369F00B60C4C /* EducationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EducationViewController.m; sourceTree = "<group>"; };
+		B6CAA3A2208AAF5900FCB56D /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
+		B6CAA3A3208AAF5A00FCB56D /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
 		CA920A3820815CD6003E78CD /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		CAF5548F202B9E5600B1521E /* climateConvos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = climateConvos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF55492202B9E5600B1521E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -118,6 +118,16 @@
 				7A1385CC207BF342006BF698 /* NavigationViewController.m */,
 			);
 			name = NavBar;
+			sourceTree = "<group>";
+		};
+		B609F1C5208A8B6C00E2EA7F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				B6CAA3A2208AAF5900FCB56D /* Profile.h */,
+				B6CAA3A3208AAF5A00FCB56D /* Profile.m */,
+			);
+			name = Profile;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		B6DE172D208414F00068C02F /* Tutorial */ = {
@@ -190,8 +200,7 @@
 		CAF55491202B9E5600B1521E /* climateConvos */ = {
 			isa = PBXGroup;
 			children = (
-				B678F14520841A24001CD0F5 /* ProfileViewController.h */,
-				B678F14620841A24001CD0F5 /* ProfileViewController.m */,
+				B609F1C5208A8B6C00E2EA7F /* Profile */,
 				B6DE1731208415400068C02F /* Education */,
 				B6DE17302084151B0068C02F /* Categories */,
 				B6DE172F2084150A0068C02F /* Discover */,
@@ -356,8 +365,8 @@
 				7A1385D6207BF683006BF698 /* ContainerViewController.m in Sources */,
 				B62A12022087D4D7008FD063 /* ExpandFactoidViewController.m in Sources */,
 				7A1385D3207BF4D7006BF698 /* EmptySegue.m in Sources */,
-				B678F14720841A24001CD0F5 /* ProfileViewController.m in Sources */,
 				B678F14420841749001CD0F5 /* ArticlesViewController.m in Sources */,
+				B6CAA3A4208AAF5A00FCB56D /* Profile.m in Sources */,
 				B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */,
 				CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */,
 				B69FDE772085369F00B60C4C /* EducationViewController.m in Sources */,
@@ -500,6 +509,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3F468498MY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = climateConvos/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
@@ -519,6 +532,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3F468498MY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = climateConvos/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
