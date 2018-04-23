@@ -12,7 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *location;
 
-@property (weak, nonatomic) IBOutlet UITextField *testText;
 
 @end
 
@@ -21,15 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self textInput];
 }
 
--(void) textInput
-{
-    NSString *savedValue = [[NSUserDefaults standardUserDefaults]
-                            stringForKey:@"location"];
-    _testText.text = savedValue;
+
+- (IBAction)segmentSaveLocation:(id)sender {
+    
 }
+
+
 
 - (IBAction)saveLocation:(id)sender {
     if(_location.selectedSegmentIndex == 0)

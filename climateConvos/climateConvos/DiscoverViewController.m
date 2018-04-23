@@ -171,13 +171,10 @@
 //    views outside of the `if (view == nil) {...}` check otherwise
 //    you'll get weird issues with carousel item content appearing
 //    in the wrong place in the carousel
-    self.currentFactoid = [self.currentDB objectAtIndex:index];
-    NSString *currentSavedLocation = [[NSUserDefaults standardUserDefaults]
-                                 stringForKey:@"location"];
-    if([_currentFactoid.location isEqualToString:currentSavedLocation]|| [_currentFactoid.location isEqualToString:@"Global"]) {
-        label.text = [self.currentFactoid.texts objectForKey:@"short"];
-    }
+    int temp = [[self.items objectAtIndex:index] intValue];
+    self.currentFactoid = [self.currentDB objectAtIndex:temp];
 
+    label.text = [self.currentFactoid.texts objectForKey:@"short"];
     
     return carouselView;
 }
