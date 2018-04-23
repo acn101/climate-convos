@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		53C9D0BBA247DEF9485234B6 /* libPods-climateConvos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DDCC3C1E53D0557DD56E79 /* libPods-climateConvos.a */; };
+		740C8CAA208D94E400FC091A /* CalendarEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 740C8CA9208D94E400FC091A /* CalendarEvent.m */; };
 		7A1385CD207BF342006BF698 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385CC207BF342006BF698 /* NavigationViewController.m */; };
 		7A1385D3207BF4D7006BF698 /* EmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385D2207BF4D7006BF698 /* EmptySegue.m */; };
 		7A1385D6207BF683006BF698 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385D5207BF683006BF698 /* ContainerViewController.m */; };
@@ -37,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		733D98D011E3D98921342933 /* Pods-climateConvos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-climateConvos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-climateConvos/Pods-climateConvos.debug.xcconfig"; sourceTree = "<group>"; };
+		740C8CA8208D94E400FC091A /* CalendarEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarEvent.h; sourceTree = "<group>"; };
+		740C8CA9208D94E400FC091A /* CalendarEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarEvent.m; sourceTree = "<group>"; };
 		7A1385CB207BF342006BF698 /* NavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
 		7A1385CC207BF342006BF698 /* NavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		7A1385D1207BF4D7006BF698 /* EmptySegue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptySegue.h; sourceTree = "<group>"; };
@@ -217,6 +220,8 @@
 				B6DE172D208414F00068C02F /* Tutorial */,
 				CAFD9ED7208155BF00F5EB35 /* singleFactoid.h */,
 				CAFD9ED6208155BF00F5EB35 /* singleFactoid.m */,
+				740C8CA8208D94E400FC091A /* CalendarEvent.h */,
+				740C8CA9208D94E400FC091A /* CalendarEvent.m */,
 				7AFD84C5207CAA210029ED54 /* NavBar */,
 				CAF55498202B9E5600B1521E /* Main.storyboard */,
 				CA183A9520854B0F00493F01 /* CalendarViewController.h */,
@@ -378,6 +383,7 @@
 				CAFD9ED2208153E400F5EB35 /* TutorialViewController.m in Sources */,
 				7A1385D6207BF683006BF698 /* ContainerViewController.m in Sources */,
 				7A1385D3207BF4D7006BF698 /* EmptySegue.m in Sources */,
+				740C8CAA208D94E400FC091A /* CalendarEvent.m in Sources */,
 				B678F14720841A24001CD0F5 /* ProfileViewController.m in Sources */,
 				B678F14420841749001CD0F5 /* ArticlesViewController.m in Sources */,
 				B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */,
