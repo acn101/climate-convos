@@ -16,7 +16,6 @@
 		7A1385CD207BF342006BF698 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385CC207BF342006BF698 /* NavigationViewController.m */; };
 		7A1385D3207BF4D7006BF698 /* EmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385D2207BF4D7006BF698 /* EmptySegue.m */; };
 		7A1385D6207BF683006BF698 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385D5207BF683006BF698 /* ContainerViewController.m */; };
-		7A4E2DBF208E688400A3375B /* geo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7A4E2DBE208E688000A3375B /* geo.gif */; };
 		7A936CFC2087F21800651E3F /* GEOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A936CFB2087F21800651E3F /* GEOViewController.m */; };
 		7AFEB99B208AD34000BA7C31 /* geo.html in Resources */ = {isa = PBXBuildFile; fileRef = 7AFEB99A208AD33F00BA7C31 /* geo.html */; };
 		B64B1AF120759FC100E4F0CD /* ScrollDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */; };
@@ -35,6 +34,7 @@
 		CAFD9ED2208153E400F5EB35 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFD9ED0208153E300F5EB35 /* TutorialViewController.m */; };
 		CAFD9ED52081559500F5EB35 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFD9ED32081559400F5EB35 /* DiscoverViewController.m */; };
 		CAFD9ED8208155BF00F5EB35 /* singleFactoid.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFD9ED6208155BF00F5EB35 /* singleFactoid.m */; };
+		CBFD0A21208E74C8002B4567 /* locationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFD0A20208E74C8002B4567 /* locationViewController.m */; };
 		E7603904204612820060C245 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7603903204612820060C245 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +53,6 @@
 		7A1385D4207BF683006BF698 /* ContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
 		7A1385D5207BF683006BF698 /* ContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
 		7A158CFA2087D29300AEA7FE /* house-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "house-selected.png"; sourceTree = "<group>"; };
-		7A4E2DBE208E688000A3375B /* geo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = geo.gif; path = ../../../geo.gif; sourceTree = "<group>"; };
 		7A936CFA2087F21800651E3F /* GEOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GEOViewController.h; sourceTree = "<group>"; };
 		7A936CFB2087F21800651E3F /* GEOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GEOViewController.m; sourceTree = "<group>"; };
 		7AFEB99A208AD33F00BA7C31 /* geo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = geo.html; sourceTree = "<group>"; };
@@ -86,6 +85,8 @@
 		CAFD9ED42081559500F5EB35 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
 		CAFD9ED6208155BF00F5EB35 /* singleFactoid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = singleFactoid.m; sourceTree = "<group>"; };
 		CAFD9ED7208155BF00F5EB35 /* singleFactoid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = singleFactoid.h; sourceTree = "<group>"; };
+		CBFD0A1F208E74C8002B4567 /* locationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = locationViewController.h; sourceTree = "<group>"; };
+		CBFD0A20208E74C8002B4567 /* locationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = locationViewController.m; sourceTree = "<group>"; };
 		D3DDCC3C1E53D0557DD56E79 /* libPods-climateConvos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-climateConvos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7603903204612820060C245 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -236,6 +237,8 @@
 		CAF55491202B9E5600B1521E /* climateConvos */ = {
 			isa = PBXGroup;
 			children = (
+				CBFD0A1F208E74C8002B4567 /* locationViewController.h */,
+				CBFD0A20208E74C8002B4567 /* locationViewController.m */,
 				7A936CFD2087F22400651E3F /* GEO */,
 				7A0476DD20872A3C009765D5 /* Profile */,
 				7AFD84C5207CAA210029ED54 /* NavBar */,
@@ -245,7 +248,6 @@
 				B6DE172E208414FE0068C02F /* Carousel */,
 				B6DE172D208414F00068C02F /* Tutorial */,
 				CAF55498202B9E5600B1521E /* Main.storyboard */,
-				7A4E2DBE208E688000A3375B /* geo.gif */,
 				E7603903204612820060C245 /* GoogleService-Info.plist */,
 				CAF5549B202B9E5600B1521E /* Assets.xcassets */,
 				7A158CFA2087D29300AEA7FE /* house-selected.png */,
@@ -329,7 +331,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A4E2DBF208E688400A3375B /* geo.gif in Resources */,
 				7AFEB99B208AD34000BA7C31 /* geo.html in Resources */,
 				CAF5549F202B9E5600B1521E /* LaunchScreen.storyboard in Resources */,
 				E7603904204612820060C245 /* GoogleService-Info.plist in Resources */,
@@ -407,6 +408,7 @@
 				7A1385D3207BF4D7006BF698 /* EmptySegue.m in Sources */,
 				B678F14420841749001CD0F5 /* ArticlesViewController.m in Sources */,
 				B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */,
+				CBFD0A21208E74C8002B4567 /* locationViewController.m in Sources */,
 				CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */,
 				B69FDE772085369F00B60C4C /* EducationViewController.m in Sources */,
 				CAFD9ECF2081500000F5EB35 /* CategoriesViewController.m in Sources */,

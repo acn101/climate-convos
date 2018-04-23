@@ -78,7 +78,15 @@
     self.items = [[NSMutableArray alloc] init];
     [self.ref observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot) {
         for (int i = 0; i < self.currentDB.count; i++) {
-            [self.items addObject:[NSNumber numberWithInt:i]];
+            singleFactoid *sf = [[singleFactoid alloc] init];
+            sf = [self.currentDB objectAtIndex:i];
+            
+            NSString *currentSavedLocation = [[NSUserDefaults standardUserDefaults]
+                                    stringForKey:@"location"];
+            
+            if([sf.location isEqualToString:currentSavedLocation] || [sf.location isEqualToString:@"Global"] ) {
+                [self.items addObject:[NSNumber numberWithInt:i]];
+            }
         }
         [self.carousel reloadData];
     }];
@@ -164,7 +172,12 @@
 //    you'll get weird issues with carousel item content appearing
 //    in the wrong place in the carousel
     self.currentFactoid = [self.currentDB objectAtIndex:index];
-    label.text = [self.currentFactoid.texts objectForKey:@"short"];
+    NSString *currentSavedLocation = [[NSUserDefaults standardUserDefaults]
+                                 stringForKey:@"location"];
+    if([_currentFactoid.location isEqualToString:currentSavedLocation]|| [_currentFactoid.location isEqualToString:@"Global"]) {
+        label.text = [self.currentFactoid.texts objectForKey:@"short"];
+    }
+
     
     return carouselView;
 }
