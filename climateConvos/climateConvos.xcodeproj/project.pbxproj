@@ -16,6 +16,7 @@
 		7A1385CD207BF342006BF698 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385CC207BF342006BF698 /* NavigationViewController.m */; };
 		7A1385D3207BF4D7006BF698 /* EmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385D2207BF4D7006BF698 /* EmptySegue.m */; };
 		7A1385D6207BF683006BF698 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385D5207BF683006BF698 /* ContainerViewController.m */; };
+		7A4E2DBF208E688400A3375B /* geo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7A4E2DBE208E688000A3375B /* geo.gif */; };
 		7A936CFC2087F21800651E3F /* GEOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A936CFB2087F21800651E3F /* GEOViewController.m */; };
 		7AFEB99B208AD34000BA7C31 /* geo.html in Resources */ = {isa = PBXBuildFile; fileRef = 7AFEB99A208AD33F00BA7C31 /* geo.html */; };
 		B64B1AF120759FC100E4F0CD /* ScrollDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */; };
@@ -52,6 +53,7 @@
 		7A1385D4207BF683006BF698 /* ContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
 		7A1385D5207BF683006BF698 /* ContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
 		7A158CFA2087D29300AEA7FE /* house-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "house-selected.png"; sourceTree = "<group>"; };
+		7A4E2DBE208E688000A3375B /* geo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = geo.gif; path = ../../../geo.gif; sourceTree = "<group>"; };
 		7A936CFA2087F21800651E3F /* GEOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GEOViewController.h; sourceTree = "<group>"; };
 		7A936CFB2087F21800651E3F /* GEOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GEOViewController.m; sourceTree = "<group>"; };
 		7AFEB99A208AD33F00BA7C31 /* geo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = geo.html; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				B6DE172E208414FE0068C02F /* Carousel */,
 				B6DE172D208414F00068C02F /* Tutorial */,
 				CAF55498202B9E5600B1521E /* Main.storyboard */,
+				7A4E2DBE208E688000A3375B /* geo.gif */,
 				E7603903204612820060C245 /* GoogleService-Info.plist */,
 				CAF5549B202B9E5600B1521E /* Assets.xcassets */,
 				7A158CFA2087D29300AEA7FE /* house-selected.png */,
@@ -326,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A4E2DBF208E688400A3375B /* geo.gif in Resources */,
 				7AFEB99B208AD34000BA7C31 /* geo.html in Resources */,
 				CAF5549F202B9E5600B1521E /* LaunchScreen.storyboard in Resources */,
 				E7603904204612820060C245 /* GoogleService-Info.plist in Resources */,
