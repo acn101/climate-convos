@@ -75,12 +75,13 @@
 //    data of some kind - don't store data in your item views
 //    or the recycling mechanism will destroy your data once
 //    your item views move off-screen
+#pragma mark this1
     self.items = [[NSMutableArray alloc] init];
     [self.ref observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot) {
         for (int i = 0; i < self.currentDB.count; i++) {
             singleFactoid *sf = [[singleFactoid alloc] init];
             sf = [self.currentDB objectAtIndex:i];
-            if([sf.location isEqualToString:@"Seattle"]) {
+            if([sf.location isEqualToString:@"Houston"]) {
                 [self.items addObject:[NSNumber numberWithInt:i]];
             }
 //            [self.items addObject:[NSNumber numberWithInt:i]];
@@ -140,7 +141,9 @@
 //    views outside of the `if (view == nil) {...}` check otherwise
 //    you'll get weird issues with carousel item content appearing
 //    in the wrong place in the carousel
-    self.currentFactoid = [self.currentDB objectAtIndex:index];
+#pragma mark this2
+    int num = [[self.items objectAtIndex:index] intValue];
+    self.currentFactoid = [self.currentDB objectAtIndex:num];
     label.text = [self.currentFactoid.texts objectForKey:@"short"];
     
     return view;
