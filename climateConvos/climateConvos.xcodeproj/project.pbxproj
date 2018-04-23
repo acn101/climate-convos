@@ -245,9 +245,9 @@
 				B6DE172E208414FE0068C02F /* Carousel */,
 				B6DE172D208414F00068C02F /* Tutorial */,
 				CAF55498202B9E5600B1521E /* Main.storyboard */,
-				7A4E2DBE208E688000A3375B /* geo.gif */,
 				E7603903204612820060C245 /* GoogleService-Info.plist */,
 				CAF5549B202B9E5600B1521E /* Assets.xcassets */,
+				7A4E2DBE208E688000A3375B /* geo.gif */,
 				7A158CFA2087D29300AEA7FE /* house-selected.png */,
 				E79B1133202BB5DB00F6A0ED /* Exxtra */,
 			);
