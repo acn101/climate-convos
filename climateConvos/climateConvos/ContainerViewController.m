@@ -8,7 +8,6 @@
 
 #import "ContainerViewController.h"
 
-
 @interface ContainerViewController ()
 
 @end
@@ -27,6 +26,10 @@
         self.segueIdentifier = @"homeButton";
         [self performSegueWithIdentifier:self.segueIdentifier sender:nil];
     }
+    else if ([button isEqualToString: @"toProfile"]){
+        self.segueIdentifier = @"profileButton";
+        [self performSegueWithIdentifier:self.segueIdentifier sender:nil];
+    }
     
     else if ([button isEqualToString: @"toTopic"]){
         self.segueIdentifier = @"topicButton";
@@ -40,6 +43,13 @@
     else if
         ([button isEqualToString: @"toGetActive"]){
             self.segueIdentifier = @"getActiveButton";
+            [self performSegueWithIdentifier:self.segueIdentifier sender:nil];
+          
+
+        }
+    else if
+        ([button isEqualToString: @"toSettings"]){
+            self.segueIdentifier = @"settingsButton";
             [self performSegueWithIdentifier:self.segueIdentifier sender:nil];
         }
 }

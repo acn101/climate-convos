@@ -8,9 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		53C9D0BBA247DEF9485234B6 /* libPods-climateConvos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DDCC3C1E53D0557DD56E79 /* libPods-climateConvos.a */; };
+		7A01D81220854EC100C832A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A01D81120854EC100C832A9 /* CoreGraphics.framework */; };
+		7A01D81520854ECD00C832A9 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A01D81320854ECC00C832A9 /* AVKit.framework */; };
+		7A01D81620854ECD00C832A9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A01D81420854ECD00C832A9 /* AVFoundation.framework */; };
+		7A01D81820854EF000C832A9 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A01D81720854EF000C832A9 /* ImageIO.framework */; };
+		7A01D81A20854EFB00C832A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A01D81920854EFB00C832A9 /* UIKit.framework */; };
 		7A1385CD207BF342006BF698 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385CC207BF342006BF698 /* NavigationViewController.m */; };
 		7A1385D3207BF4D7006BF698 /* EmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385D2207BF4D7006BF698 /* EmptySegue.m */; };
 		7A1385D6207BF683006BF698 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385D5207BF683006BF698 /* ContainerViewController.m */; };
+		7A936CFC2087F21800651E3F /* GEOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A936CFB2087F21800651E3F /* GEOViewController.m */; };
+		7AFEB999208AD1FC00BA7C31 /* geo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7AFEB998208AD1F800BA7C31 /* geo.gif */; };
+		7AFEB99B208AD34000BA7C31 /* geo.html in Resources */ = {isa = PBXBuildFile; fileRef = 7AFEB99A208AD33F00BA7C31 /* geo.html */; };
 		B64B1AF120759FC100E4F0CD /* ScrollDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */; };
 		B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF32075A41600E4F0CD /* iCarousel.m */; };
 		B678F14420841749001CD0F5 /* ArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B678F14320841749001CD0F5 /* ArticlesViewController.m */; };
@@ -32,12 +40,23 @@
 
 /* Begin PBXFileReference section */
 		733D98D011E3D98921342933 /* Pods-climateConvos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-climateConvos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-climateConvos/Pods-climateConvos.debug.xcconfig"; sourceTree = "<group>"; };
+		7A01D81120854EC100C832A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7A01D81320854ECC00C832A9 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		7A01D81420854ECD00C832A9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		7A01D81720854EF000C832A9 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		7A01D81920854EFB00C832A9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7A12FBC3208B2C3000AB0016 /* geo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = geo.gif; sourceTree = "<group>"; };
 		7A1385CB207BF342006BF698 /* NavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
 		7A1385CC207BF342006BF698 /* NavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		7A1385D1207BF4D7006BF698 /* EmptySegue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptySegue.h; sourceTree = "<group>"; };
 		7A1385D2207BF4D7006BF698 /* EmptySegue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptySegue.m; sourceTree = "<group>"; };
 		7A1385D4207BF683006BF698 /* ContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerViewController.h; sourceTree = "<group>"; };
 		7A1385D5207BF683006BF698 /* ContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerViewController.m; sourceTree = "<group>"; };
+		7A158CFA2087D29300AEA7FE /* house-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "house-selected.png"; sourceTree = "<group>"; };
+		7A936CFA2087F21800651E3F /* GEOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GEOViewController.h; sourceTree = "<group>"; };
+		7A936CFB2087F21800651E3F /* GEOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GEOViewController.m; sourceTree = "<group>"; };
+		7AFEB998208AD1F800BA7C31 /* geo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = geo.gif; path = ../../../geo.gif; sourceTree = "<group>"; };
+		7AFEB99A208AD33F00BA7C31 /* geo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = geo.html; sourceTree = "<group>"; };
 		B5BFFC3BCBD5962E5EAA6D39 /* Pods-climateConvos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-climateConvos.release.xcconfig"; path = "Pods/Target Support Files/Pods-climateConvos/Pods-climateConvos.release.xcconfig"; sourceTree = "<group>"; };
 		B64B1AEF20759FC100E4F0CD /* ScrollDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollDemoViewController.h; sourceTree = "<group>"; };
 		B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollDemoViewController.m; sourceTree = "<group>"; };
@@ -76,6 +95,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A01D81A20854EFB00C832A9 /* UIKit.framework in Frameworks */,
+				7A01D81820854EF000C832A9 /* ImageIO.framework in Frameworks */,
+				7A01D81520854ECD00C832A9 /* AVKit.framework in Frameworks */,
+				7A01D81620854ECD00C832A9 /* AVFoundation.framework in Frameworks */,
+				7A01D81220854EC100C832A9 /* CoreGraphics.framework in Frameworks */,
 				CA920A3920815CD6003E78CD /* MessageUI.framework in Frameworks */,
 				B69EB1CD20757AF800E22425 /* QuartzCore.framework in Frameworks */,
 				53C9D0BBA247DEF9485234B6 /* libPods-climateConvos.a in Frameworks */,
@@ -97,11 +121,36 @@
 		19A085A659FE924496B90486 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A01D81920854EFB00C832A9 /* UIKit.framework */,
+				7A01D81720854EF000C832A9 /* ImageIO.framework */,
+				7A01D81420854ECD00C832A9 /* AVFoundation.framework */,
+				7A01D81320854ECC00C832A9 /* AVKit.framework */,
+				7A01D81120854EC100C832A9 /* CoreGraphics.framework */,
 				CA920A3820815CD6003E78CD /* MessageUI.framework */,
 				B69EB1CC20757AF800E22425 /* QuartzCore.framework */,
 				D3DDCC3C1E53D0557DD56E79 /* libPods-climateConvos.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7A0476DD20872A3C009765D5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				B678F14520841A24001CD0F5 /* ProfileViewController.h */,
+				B678F14620841A24001CD0F5 /* ProfileViewController.m */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		7A936CFD2087F22400651E3F /* GEO */ = {
+			isa = PBXGroup;
+			children = (
+				7A12FBC3208B2C3000AB0016 /* geo.gif */,
+				7AFEB99A208AD33F00BA7C31 /* geo.html */,
+				7A936CFA2087F21800651E3F /* GEOViewController.h */,
+				7A936CFB2087F21800651E3F /* GEOViewController.m */,
+			);
+			name = GEO;
 			sourceTree = "<group>";
 		};
 		7AFD84C5207CAA210029ED54 /* NavBar */ = {
@@ -138,6 +187,8 @@
 		B6DE172F2084150A0068C02F /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				CAFD9ED7208155BF00F5EB35 /* singleFactoid.h */,
+				CAFD9ED6208155BF00F5EB35 /* singleFactoid.m */,
 				CAFD9ED42081559500F5EB35 /* DiscoverViewController.h */,
 				CAFD9ED32081559400F5EB35 /* DiscoverViewController.m */,
 			);
@@ -158,6 +209,8 @@
 		B6DE1731208415400068C02F /* Education */ = {
 			isa = PBXGroup;
 			children = (
+				B69FDE752085369F00B60C4C /* EducationViewController.h */,
+				B69FDE762085369F00B60C4C /* EducationViewController.m */,
 			);
 			name = Education;
 			sourceTree = "<group>";
@@ -183,23 +236,19 @@
 		CAF55491202B9E5600B1521E /* climateConvos */ = {
 			isa = PBXGroup;
 			children = (
-				B678F14520841A24001CD0F5 /* ProfileViewController.h */,
-				B678F14620841A24001CD0F5 /* ProfileViewController.m */,
+				7A936CFD2087F22400651E3F /* GEO */,
+				7A0476DD20872A3C009765D5 /* Profile */,
+				7AFD84C5207CAA210029ED54 /* NavBar */,
 				B6DE1731208415400068C02F /* Education */,
 				B6DE17302084151B0068C02F /* Categories */,
 				B6DE172F2084150A0068C02F /* Discover */,
 				B6DE172E208414FE0068C02F /* Carousel */,
 				B6DE172D208414F00068C02F /* Tutorial */,
-				CAFD9ED7208155BF00F5EB35 /* singleFactoid.h */,
-				CAFD9ED6208155BF00F5EB35 /* singleFactoid.m */,
-				B69FDE752085369F00B60C4C /* EducationViewController.h */,
-				B69FDE762085369F00B60C4C /* EducationViewController.m */,
-				7AFD84C5207CAA210029ED54 /* NavBar */,
 				CAF55498202B9E5600B1521E /* Main.storyboard */,
-				B64B1AEF20759FC100E4F0CD /* ScrollDemoViewController.h */,
-				B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */,
+				7AFEB998208AD1F800BA7C31 /* geo.gif */,
 				E7603903204612820060C245 /* GoogleService-Info.plist */,
 				CAF5549B202B9E5600B1521E /* Assets.xcassets */,
+				7A158CFA2087D29300AEA7FE /* house-selected.png */,
 				E79B1133202BB5DB00F6A0ED /* Exxtra */,
 			);
 			path = climateConvos;
@@ -213,6 +262,8 @@
 				CAF554A1202B9E5600B1521E /* main.m */,
 				CAF55492202B9E5600B1521E /* AppDelegate.h */,
 				CAF55493202B9E5600B1521E /* AppDelegate.m */,
+				B64B1AEF20759FC100E4F0CD /* ScrollDemoViewController.h */,
+				B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */,
 			);
 			name = Exxtra;
 			sourceTree = "<group>";
@@ -278,8 +329,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AFEB99B208AD34000BA7C31 /* geo.html in Resources */,
 				CAF5549F202B9E5600B1521E /* LaunchScreen.storyboard in Resources */,
 				E7603904204612820060C245 /* GoogleService-Info.plist in Resources */,
+				7AFEB999208AD1FC00BA7C31 /* geo.gif in Resources */,
 				CAF5549C202B9E5600B1521E /* Assets.xcassets in Resources */,
 				CAF5549A202B9E5600B1521E /* Main.storyboard in Resources */,
 			);
@@ -343,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A936CFC2087F21800651E3F /* GEOViewController.m in Sources */,
 				CAFD9ED52081559500F5EB35 /* DiscoverViewController.m in Sources */,
 				7A1385CD207BF342006BF698 /* NavigationViewController.m in Sources */,
 				CAF554A2202B9E5600B1521E /* main.m in Sources */,
@@ -492,16 +546,18 @@
 			baseConfigurationReference = 733D98D011E3D98921342933 /* Pods-climateConvos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3F468498MY;
+				DEVELOPMENT_TEAM = "";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = climateConvos/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = acn96.climateConvos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -511,16 +567,18 @@
 			baseConfigurationReference = B5BFFC3BCBD5962E5EAA6D39 /* Pods-climateConvos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3F468498MY;
+				DEVELOPMENT_TEAM = "";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = climateConvos/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = acn96.climateConvos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

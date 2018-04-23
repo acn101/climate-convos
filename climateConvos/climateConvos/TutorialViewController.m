@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *leftButton;
 @property (weak, nonatomic) IBOutlet UIButton *rightButton;
 @property (weak, nonatomic) IBOutlet UITextView *tutorialText;
+@property (weak, nonatomic) IBOutlet UIWebView *geoGif;
 @property (nonatomic) int current;
 @end
 
@@ -25,6 +26,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self checkStatus];
+   
+      [self loadHTML];
+}
+
+// gif of GEO
+- (void)loadHTML {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"geo" ofType:@"html"];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    NSURL *baseURL = [url URLByDeletingLastPathComponent];
+    [self.geoGif loadData:data MIMEType:@"text/html" textEncodingName:@"utf-8" baseURL:baseURL];
+    
+    //make the background transparent
+    [self.geoGif setBackgroundColor:[UIColor clearColor]];
+    [self.geoGif setOpaque:NO];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 - (IBAction)leftAction:(UIButton *)sender {
