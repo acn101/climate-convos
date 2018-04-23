@@ -78,7 +78,12 @@
     self.items = [[NSMutableArray alloc] init];
     [self.ref observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot) {
         for (int i = 0; i < self.currentDB.count; i++) {
-            [self.items addObject:[NSNumber numberWithInt:i]];
+            singleFactoid *sf = [[singleFactoid alloc] init];
+            sf = [self.currentDB objectAtIndex:i];
+            if([sf.location isEqualToString:@"Seattle"]) {
+                [self.items addObject:[NSNumber numberWithInt:i]];
+            }
+//            [self.items addObject:[NSNumber numberWithInt:i]];
         }
         [self.carousel reloadData];
     }];
