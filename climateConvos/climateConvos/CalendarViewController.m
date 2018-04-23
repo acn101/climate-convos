@@ -34,7 +34,8 @@
 - (void)parseICS:(NSData *)data
 {
     NSString *ICSAsString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", ICSAsString);
+//    NSLog(@"%@", ICSAsString);
+    printf("%s", [NSString stringWithFormat: @"%@", ICSAsString].UTF8String);
 }
 
 - (void)viewDidLoad {
