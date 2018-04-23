@@ -12,6 +12,9 @@
 @interface NavigationViewController : UIViewController
 
 @property ContainerViewController *container;
+
+@property (strong, nonatomic) NSString *VCSegueWasPerformedFrom;
+
 @property (weak, nonatomic) IBOutlet UIButton *topicButton;
 @property (weak, nonatomic) IBOutlet UIButton *educationButton;
 @property (weak, nonatomic) IBOutlet UIButton *getActiveButton;

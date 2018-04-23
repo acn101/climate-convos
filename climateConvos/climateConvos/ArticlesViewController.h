@@ -10,4 +10,6 @@
 
 @interface ArticlesViewController : UIViewController
 
+@property (strong, nonatomic) NSString *selectedCategory;
+
 @end

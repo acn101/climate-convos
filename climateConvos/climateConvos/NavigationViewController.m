@@ -24,6 +24,14 @@ ContainerViewController *container;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    // check what screen to load
+    if ([self.VCSegueWasPerformedFrom isEqualToString:@"articlesVC"]) {
+        // setup the display to show article categories
+         [self.container segueIdentifierReceivedFromParent:@"toTopic"];
+    }
+    
     [self buttonShadows];
     self.titleButtonPressed = NO;
     self.displayGEO.hidden=NO;
@@ -111,6 +119,7 @@ ContainerViewController *container;
      [self buttonStyling];
     [self closeMenu];
 }
+
 
 //change home icon
 - (IBAction)notHomeButton:(id)sender {

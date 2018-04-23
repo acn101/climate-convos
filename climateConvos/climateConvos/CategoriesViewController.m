@@ -7,41 +7,62 @@
 //
 
 #import "CategoriesViewController.h"
+#import "ArticlesViewController.h"
+
 
 @interface CategoriesViewController ()
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIButton *button1;
-@property (weak, nonatomic) IBOutlet UIButton *button2;
-@property (weak, nonatomic) IBOutlet UIButton *button3;
-@property (weak, nonatomic) IBOutlet UIButton *button4;
-@property (weak, nonatomic) IBOutlet UIButton *button5;
-@property (weak, nonatomic) IBOutlet UIButton *button6;
-@property (weak, nonatomic) IBOutlet UIButton *button7;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray *categories;
+@property (strong, nonatomic) NSString *categoryForArticleVC;
 
 @end
 
 @implementation CategoriesViewController
 
+- (void)setup
+{
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.categories = [NSArray arrayWithObjects:@"agriculture", @"energy", @"extreme weather", @"health", @"legislation", @"water", @"wildlife", nil];
+}
+
+#pragma mark - table view delegate and data source methods
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return self.categories.count;
+    } else {
+        return 0;
+    }
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    UILabel *categoryLabel = [cell viewWithTag:1];
+    categoryLabel.text = self.categories[indexPath.row];
+    
+    return cell;
+    
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.categoryForArticleVC = self.categories[indexPath.row];
+    [self performSegueWithIdentifier:@"articleSegue" sender:self];
+    
+}
+#pragma mark - inherited methods
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self.view addSubview:self.scrollView];
-    [self.scrollView setContentSize:CGSizeMake(self.scrollView.bounds.size.width,self.scrollView.bounds.size.height*1.5)];
-    
-    [self.scrollView addSubview:self.button1];
-    [self.scrollView addSubview:self.button2];
-    [self.scrollView addSubview:self.button3];
-    [self.scrollView addSubview:self.button4];
-    [self.scrollView addSubview:self.button5];
-    [self.scrollView addSubview:self.button6];
+    [self setup];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"prep for segue");
+    ArticlesViewController *articleVC = segue.destinationViewController;
+    articleVC.selectedCategory = self.categoryForArticleVC;
 }
 
 
-- (IBAction)btn:(id)sender {
-}
 @end
