@@ -20,21 +20,42 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    [self setDefaultLocation];
+    [self setSegment];
 }
 
+-(void) setDefaultLocation
+{
+    NSString *valueToSave = @"Seattle";
+    [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"location"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
 
-- (IBAction)segmentSaveLocation:(id)sender {
+-(void) setSegment
+{
+    NSString *currentSavedLocation = [[NSUserDefaults standardUserDefaults]
+                            stringForKey:@"location"];
+
+    if ([currentSavedLocation isEqualToString:@"Seattle"])
+    {
+        _location.selectedSegmentIndex = 0;
+    }
+    if ([currentSavedLocation isEqualToString:@"Houston"])
+    {
+        _location.selectedSegmentIndex = 1;
+    }
     
 }
 
-
-
-- (IBAction)saveLocation:(id)sender {
+- (IBAction)segmentSaveLocation:(id)sender {
     if(_location.selectedSegmentIndex == 0)
     {
         NSString *valueToSave = @"Seattle";
         [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"location"];
         [[NSUserDefaults standardUserDefaults] synchronize];
+        
     }
     if(_location.selectedSegmentIndex == 1)
     {
@@ -43,6 +64,7 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
