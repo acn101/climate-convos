@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		53C9D0BBA247DEF9485234B6 /* libPods-climateConvos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DDCC3C1E53D0557DD56E79 /* libPods-climateConvos.a */; };
+		5C5A0D8B209110DB006E5538 /* geo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5C5A0D8A209110DA006E5538 /* geo.gif */; };
+		5C5A0D8E20912233006E5538 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5A0D8D20912233006E5538 /* SettingsViewController.m */; };
 		7A01D81220854EC100C832A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A01D81120854EC100C832A9 /* CoreGraphics.framework */; };
 		7A01D81520854ECD00C832A9 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A01D81320854ECC00C832A9 /* AVKit.framework */; };
 		7A01D81620854ECD00C832A9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A01D81420854ECD00C832A9 /* AVFoundation.framework */; };
@@ -38,13 +40,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C5A0D8A209110DA006E5538 /* geo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = geo.gif; path = ../../../../Downloads/geo.gif; sourceTree = "<group>"; };
+		5C5A0D8C20912233006E5538 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		5C5A0D8D20912233006E5538 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		733D98D011E3D98921342933 /* Pods-climateConvos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-climateConvos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-climateConvos/Pods-climateConvos.debug.xcconfig"; sourceTree = "<group>"; };
 		7A01D81120854EC100C832A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		7A01D81320854ECC00C832A9 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		7A01D81420854ECD00C832A9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		7A01D81720854EF000C832A9 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		7A01D81920854EFB00C832A9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		7A12FBC3208B2C3000AB0016 /* geo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = geo.gif; sourceTree = "<group>"; };
 		7A1385CB207BF342006BF698 /* NavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
 		7A1385CC207BF342006BF698 /* NavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		7A1385D1207BF4D7006BF698 /* EmptySegue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptySegue.h; sourceTree = "<group>"; };
@@ -143,8 +147,8 @@
 		7A936CFD2087F22400651E3F /* GEO */ = {
 			isa = PBXGroup;
 			children = (
-				7A12FBC3208B2C3000AB0016 /* geo.gif */,
 				7AFEB99A208AD33F00BA7C31 /* geo.html */,
+				5C5A0D8A209110DA006E5538 /* geo.gif */,
 				7A936CFA2087F21800651E3F /* GEOViewController.h */,
 				7A936CFB2087F21800651E3F /* GEOViewController.m */,
 			);
@@ -243,6 +247,8 @@
 				B6DE172E208414FE0068C02F /* Carousel */,
 				B6DE172D208414F00068C02F /* Tutorial */,
 				CAF55498202B9E5600B1521E /* Main.storyboard */,
+				5C5A0D8C20912233006E5538 /* SettingsViewController.h */,
+				5C5A0D8D20912233006E5538 /* SettingsViewController.m */,
 				E7603903204612820060C245 /* GoogleService-Info.plist */,
 				CAF5549B202B9E5600B1521E /* Assets.xcassets */,
 				7A158CFA2087D29300AEA7FE /* house-selected.png */,
@@ -326,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C5A0D8B209110DB006E5538 /* geo.gif in Resources */,
 				7AFEB99B208AD34000BA7C31 /* geo.html in Resources */,
 				CAF5549F202B9E5600B1521E /* LaunchScreen.storyboard in Resources */,
 				E7603904204612820060C245 /* GoogleService-Info.plist in Resources */,
@@ -395,6 +402,7 @@
 				7A936CFC2087F21800651E3F /* GEOViewController.m in Sources */,
 				CAFD9ED52081559500F5EB35 /* DiscoverViewController.m in Sources */,
 				7A1385CD207BF342006BF698 /* NavigationViewController.m in Sources */,
+				5C5A0D8E20912233006E5538 /* SettingsViewController.m in Sources */,
 				CAF554A2202B9E5600B1521E /* main.m in Sources */,
 				CAFD9ED8208155BF00F5EB35 /* singleFactoid.m in Sources */,
 				CAFD9ED2208153E400F5EB35 /* TutorialViewController.m in Sources */,
