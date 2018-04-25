@@ -45,7 +45,9 @@
         if (i > 0) {
             
             NSString *event = events[i];
+            NSLog(@"EVENT WE ARE IN: %zd", i);
             [self getStartTime:event];
+            
             
             
             
@@ -108,6 +110,7 @@
 
     return description;
 }
+
 - (NSString *)getStartTime:(NSString *)event
 {
     
@@ -117,22 +120,31 @@
 //        NSString *line = lines[i];
 //    }
     
-    for (NSString *line in lines) {
+    for (NSUInteger i = 0; i < lines.count; i++) {
+        NSString *line = lines[i];
         if ([line rangeOfString:@"DTSTART" options:NSRegularExpressionSearch].location != NSNotFound) {
             NSRegularExpression *RE = [[NSRegularExpression alloc] initWithPattern:@"TSTART:.+Z"
                                                                            options:NSRegularExpressionDotMatchesLineSeparators
                                                                              error:nil];
-
+            
             NSArray *matches = [RE matchesInString:line options:0 range:NSMakeRange(0, line.length)];
-
             if (matches.count <= 0) {
                 NSLog(@"ERROR! No matches for DTSART");
-                exit(EXIT_FAILURE);
+                line = [self getSemiColonTime:line];
+                RE = [[NSRegularExpression alloc] initWithPattern:@"TSTART:.+Z"
+                                                                               options:NSRegularExpressionDotMatchesLineSeparators
+                                                                                 error:nil];
+                
+                matches = [RE matchesInString:line options:0 range:NSMakeRange(0, line.length)];
+                // exit(EXIT_FAILURE);
             }
             
             NSLog(@"matches: %@", matches);
             
             NSTextCheckingResult *result = matches[0];
+            
+            // Should be:   20180519T163000Z
+            // Is:          20180509T000000Z
             
             NSString *startTime = [line substringWithRange:result.range];
             startTime = [startTime stringByReplacingOccurrencesOfString:@"TSTART:" withString:@""];
@@ -195,6 +207,50 @@
     return lines[0];
     
 }
+
+- (NSString *)getSemiColonTime:(NSString *)line
+{
+    // GET DESCRIPTION
+    
+    NSString *date;
+    
+    NSError *error;
+    NSRegularExpression *RE = [[NSRegularExpression alloc] initWithPattern:@";.+:"
+                                                                   options:NSRegularExpressionDotMatchesLineSeparators
+                                                                     error:&error];
+    
+    if (error) {
+        NSLog(@"ERROR! - %@", error.localizedDescription);
+    }
+    
+    NSArray *matches = [RE matchesInString:line options:0 range:NSMakeRange(0, line.length)];
+    NSTextCheckingResult *result = matches[0];
+    NSString *tempStr = [line substringWithRange:result.range];
+    NSLog(@"Temp String: %@", tempStr);
+    
+    date = [line stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@", tempStr] withString:@":"];
+    if(date.length <=17 ) {
+        date = [date stringByAppendingString:@"T000000Z"];
+    } else {
+        date = [date stringByAppendingString:@"Z"];
+    }
+    
+//    NSArray *matches = [RE matchesInString:line options:0 range:NSMakeRange(0, line.length)];
+//
+//    // 20180418T18 3 0 0 0
+//    // 01234567891011121314
+//
+//    if (matches.count > 0) {
+//        NSTextCheckingResult *result = matches[0];
+//        date = [line substringWithRange:result.range];
+//        date = [date stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@", RE] withString:@""];
+//        date = [date stringByAppendingString:@"Z"];
+//        NSLog(@"date: %@", date);
+//    }
+    
+    return date;
+}
+
 //- (NSString *)getEndTime:(NSString *)event
 //{
 //

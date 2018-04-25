@@ -9,14 +9,6 @@
 /* Begin PBXBuildFile section */
 		53C9D0BBA247DEF9485234B6 /* libPods-climateConvos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DDCC3C1E53D0557DD56E79 /* libPods-climateConvos.a */; };
 		740C8CAA208D94E400FC091A /* CalendarEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 740C8CA9208D94E400FC091A /* CalendarEvent.m */; };
-		745D7B9F208FF3B80077DDDE /* CGICalendarContentLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D7B8F208FF3B70077DDDE /* CGICalendarContentLine.m */; };
-		745D7BA0208FF3B80077DDDE /* CGICalendarComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D7B90208FF3B70077DDDE /* CGICalendarComponent.m */; };
-		745D7BA1208FF3B80077DDDE /* CGICalendarValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D7B92208FF3B70077DDDE /* CGICalendarValue.m */; };
-		745D7BA2208FF3B80077DDDE /* CGICalendarProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D7B94208FF3B80077DDDE /* CGICalendarProperty.m */; };
-		745D7BA3208FF3B80077DDDE /* NSDate+CGICalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D7B96208FF3B80077DDDE /* NSDate+CGICalendar.m */; };
-		745D7BA4208FF3B80077DDDE /* CGICalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D7B97208FF3B80077DDDE /* CGICalendar.m */; };
-		745D7BA5208FF3B80077DDDE /* CGICalendarObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D7B99208FF3B80077DDDE /* CGICalendarObject.m */; };
-		745D7BA6208FF3B80077DDDE /* CGICalendarParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D7B9E208FF3B80077DDDE /* CGICalendarParameter.m */; };
 		7A1385CD207BF342006BF698 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385CC207BF342006BF698 /* NavigationViewController.m */; };
 		7A1385D3207BF4D7006BF698 /* EmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385D2207BF4D7006BF698 /* EmptySegue.m */; };
 		7A1385D6207BF683006BF698 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385D5207BF683006BF698 /* ContainerViewController.m */; };
@@ -423,28 +415,20 @@
 			files = (
 				E75578B3204DD96D00E01ED3 /* howDoesViewController.m in Sources */,
 				CAFD9ED52081559500F5EB35 /* DiscoverViewController.m in Sources */,
-				745D7BA2208FF3B80077DDDE /* CGICalendarProperty.m in Sources */,
 				E75578B2204DD96D00E01ED3 /* whatIsItViewController.m in Sources */,
 				7A1385CD207BF342006BF698 /* NavigationViewController.m in Sources */,
-				745D7BA4208FF3B80077DDDE /* CGICalendar.m in Sources */,
 				E75578B1204DD96D00E01ED3 /* proactiveViewController.m in Sources */,
 				CAF554A2202B9E5600B1521E /* main.m in Sources */,
 				CAFD9ED8208155BF00F5EB35 /* singleFactoid.m in Sources */,
 				CAFD9ED2208153E400F5EB35 /* TutorialViewController.m in Sources */,
 				7A1385D6207BF683006BF698 /* ContainerViewController.m in Sources */,
-				745D7BA6208FF3B80077DDDE /* CGICalendarParameter.m in Sources */,
 				7A1385D3207BF4D7006BF698 /* EmptySegue.m in Sources */,
-				745D7BA1208FF3B80077DDDE /* CGICalendarValue.m in Sources */,
 				740C8CAA208D94E400FC091A /* CalendarEvent.m in Sources */,
-				745D7BA3208FF3B80077DDDE /* NSDate+CGICalendar.m in Sources */,
 				B678F14720841A24001CD0F5 /* ProfileViewController.m in Sources */,
 				B678F14420841749001CD0F5 /* ArticlesViewController.m in Sources */,
-				745D7BA0208FF3B80077DDDE /* CGICalendarComponent.m in Sources */,
 				B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */,
 				CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */,
 				CAFD9ECF2081500000F5EB35 /* CategoriesViewController.m in Sources */,
-				745D7B9F208FF3B80077DDDE /* CGICalendarContentLine.m in Sources */,
-				745D7BA5208FF3B80077DDDE /* CGICalendarObject.m in Sources */,
 				E75578AF204DD96D00E01ED3 /* EducationViewController.m in Sources */,
 				CA183A9720854B0F00493F01 /* CalendarViewController.m in Sources */,
 				B64B1AF120759FC100E4F0CD /* ScrollDemoViewController.m in Sources */,
@@ -585,7 +569,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3F468498MY;
+				DEVELOPMENT_TEAM = "";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = climateConvos/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -604,7 +588,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3F468498MY;
+				DEVELOPMENT_TEAM = "";
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = climateConvos/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
