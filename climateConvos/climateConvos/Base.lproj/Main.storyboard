@@ -1210,11 +1210,15 @@
                                     <segment title="Seattle"/>
                                     <segment title="Houston"/>
                                 </segments>
-                                <connections>
-                                    <action selector="saveLocation:" destination="TQZ-VJ-IEB" eventType="valueChanged" id="mDU-tP-pym"/>
-                                    <action selector="segmentSaveLocation:" destination="TQZ-VJ-IEB" eventType="valueChanged" id="P00-rQ-Ydm"/>
-                                </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRG-fB-7bO">
+                                <rect key="frame" x="257" y="396" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveLocation:" destination="TQZ-VJ-IEB" eventType="touchUpInside" id="g0v-wR-RLT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.40948313474655151" green="0.73920291662216187" blue="0.88961392641067505" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
