@@ -10,11 +10,10 @@
 
 @interface CalendarEvent : NSObject
 
-@property (strong, nonatomic) NSString *eName;
-@property (strong, nonatomic) NSString *eDate;
-@property (strong, nonatomic) NSString *eDay; // Refers to the day of the week (ie monday tuesday wednesday etc...)
-@property (strong, nonatomic) NSString *eTimeStart;
-@property (strong, nonatomic) NSString *eTimeEnd;
+@property (strong, nonatomic) NSString *eSummary;
 @property (strong, nonatomic) NSString *eDescription;
+@property (strong, nonatomic) NSDate *eStartTime;
+@property (strong, nonatomic) NSDate *eEndTime;
+@property (strong, nonatomic) NSString *eLocation;
 
 @end

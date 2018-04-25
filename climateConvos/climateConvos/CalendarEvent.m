@@ -11,7 +11,7 @@
 @implementation CalendarEvent
 
 - (NSString *) description {
-    return [NSString stringWithFormat:@"Name: %@ | Date: %@ | Day: %@ | Start Time: %@ | End Time: %@ | Description: %@", self.eName, self.eDate, self.eDay, self.eTimeStart, self.eTimeEnd, self.eDescription];
+    return [NSString stringWithFormat:@"Summary: %@\nStart Time: %@\nEnd Time: %@\nLocation: %@\nDescription: %@", self.eSummary, self.eStartTime, self.eEndTime, self.eLocation, self.eDescription];
 }
 
 @end
