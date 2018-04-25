@@ -8,10 +8,10 @@
 //oliver comment
 
 #import "TutorialViewController.h"
-@import Firebase;
 
 @interface TutorialViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *skipButton;
+@property (weak, nonatomic) IBOutlet UIButton *skip2;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
 @property (weak, nonatomic) IBOutlet UIImageView *dotThing;
 @property (weak, nonatomic) IBOutlet UIButton *leftButton;
@@ -27,8 +27,24 @@
     [super viewDidLoad];
     [self checkStatus];
    
-      [self loadHTML];
+    [self loadHTML];
+    [self checkSkip];
 }
+
+
+- (void) checkSkip
+{
+    
+    
+}
+
+- (IBAction)skipSave:(id)sender {
+
+    NSString *valueToSave = @"tooSkip";
+    [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"tutSkipStatus"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 
 // gif of GEO
 - (void)loadHTML {
@@ -129,7 +145,7 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    [FIRApp configure];
+    
 }
 
 @end

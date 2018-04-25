@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+@import Firebase;
 
 @interface AppDelegate ()
 
@@ -16,11 +17,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    
     // Override point for customization after application launch.
     // Show Slashscreens
+    [FIRApp configure];
     UIStoryboard *SB = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     self.window.rootViewController = [SB instantiateViewControllerWithIdentifier:@"launchscreen"];
     [self.window makeKeyAndVisible];
+    
+    
+    
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
@@ -33,6 +40,8 @@
             self.window.rootViewController = [SB instantiateViewControllerWithIdentifier:@"splashscreen2"];
             [self.window makeKeyAndVisible];
             //Enter the app
+            
+            
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 self.window.rootViewController = [SB instantiateViewControllerWithIdentifier:@"somethingElse"];
                 [self.window makeKeyAndVisible];
@@ -41,6 +50,14 @@
         
     });
     
+    NSString *currentSavedStatus = [[NSUserDefaults standardUserDefaults]
+                                    stringForKey:@"tutSkipStatus"];
+    if ([currentSavedStatus isEqualToString:(@"toSkip")])
+    {
+        
+        self.window.rootViewController = [SB instantiateViewControllerWithIdentifier:@"location"];
+        [self.window makeKeyAndVisible];
+    }
     
     return YES;
 }
