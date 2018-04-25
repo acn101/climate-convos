@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		53C9D0BBA247DEF9485234B6 /* libPods-climateConvos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DDCC3C1E53D0557DD56E79 /* libPods-climateConvos.a */; };
 		740C8CAA208D94E400FC091A /* CalendarEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 740C8CA9208D94E400FC091A /* CalendarEvent.m */; };
+		745D7B9F208FF3B80077DDDE /* CGICalendarContentLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D7B8F208FF3B70077DDDE /* CGICalendarContentLine.m */; };
+		745D7BA0208FF3B80077DDDE /* CGICalendarComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D7B90208FF3B70077DDDE /* CGICalendarComponent.m */; };
+		745D7BA1208FF3B80077DDDE /* CGICalendarValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D7B92208FF3B70077DDDE /* CGICalendarValue.m */; };
+		745D7BA2208FF3B80077DDDE /* CGICalendarProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D7B94208FF3B80077DDDE /* CGICalendarProperty.m */; };
+		745D7BA3208FF3B80077DDDE /* NSDate+CGICalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D7B96208FF3B80077DDDE /* NSDate+CGICalendar.m */; };
+		745D7BA4208FF3B80077DDDE /* CGICalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D7B97208FF3B80077DDDE /* CGICalendar.m */; };
+		745D7BA5208FF3B80077DDDE /* CGICalendarObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D7B99208FF3B80077DDDE /* CGICalendarObject.m */; };
+		745D7BA6208FF3B80077DDDE /* CGICalendarParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 745D7B9E208FF3B80077DDDE /* CGICalendarParameter.m */; };
 		7A1385CD207BF342006BF698 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385CC207BF342006BF698 /* NavigationViewController.m */; };
 		7A1385D3207BF4D7006BF698 /* EmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385D2207BF4D7006BF698 /* EmptySegue.m */; };
 		7A1385D6207BF683006BF698 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385D5207BF683006BF698 /* ContainerViewController.m */; };
@@ -40,6 +48,22 @@
 		733D98D011E3D98921342933 /* Pods-climateConvos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-climateConvos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-climateConvos/Pods-climateConvos.debug.xcconfig"; sourceTree = "<group>"; };
 		740C8CA8208D94E400FC091A /* CalendarEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarEvent.h; sourceTree = "<group>"; };
 		740C8CA9208D94E400FC091A /* CalendarEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarEvent.m; sourceTree = "<group>"; };
+		745D7B8F208FF3B70077DDDE /* CGICalendarContentLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGICalendarContentLine.m; sourceTree = "<group>"; };
+		745D7B90208FF3B70077DDDE /* CGICalendarComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGICalendarComponent.m; sourceTree = "<group>"; };
+		745D7B91208FF3B70077DDDE /* CGICalendarObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGICalendarObject.h; sourceTree = "<group>"; };
+		745D7B92208FF3B70077DDDE /* CGICalendarValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGICalendarValue.m; sourceTree = "<group>"; };
+		745D7B93208FF3B80077DDDE /* NSDate+CGICalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CGICalendar.h"; sourceTree = "<group>"; };
+		745D7B94208FF3B80077DDDE /* CGICalendarProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGICalendarProperty.m; sourceTree = "<group>"; };
+		745D7B95208FF3B80077DDDE /* CGICalendarValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGICalendarValue.h; sourceTree = "<group>"; };
+		745D7B96208FF3B80077DDDE /* NSDate+CGICalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CGICalendar.m"; sourceTree = "<group>"; };
+		745D7B97208FF3B80077DDDE /* CGICalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGICalendar.m; sourceTree = "<group>"; };
+		745D7B98208FF3B80077DDDE /* CGICalendarProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGICalendarProperty.h; sourceTree = "<group>"; };
+		745D7B99208FF3B80077DDDE /* CGICalendarObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGICalendarObject.m; sourceTree = "<group>"; };
+		745D7B9A208FF3B80077DDDE /* CGICalendarComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGICalendarComponent.h; sourceTree = "<group>"; };
+		745D7B9B208FF3B80077DDDE /* CGICalendarContentLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGICalendarContentLine.h; sourceTree = "<group>"; };
+		745D7B9C208FF3B80077DDDE /* CGICalendarParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGICalendarParameter.h; sourceTree = "<group>"; };
+		745D7B9D208FF3B80077DDDE /* CGICalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGICalendar.h; sourceTree = "<group>"; };
+		745D7B9E208FF3B80077DDDE /* CGICalendarParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGICalendarParameter.m; sourceTree = "<group>"; };
 		7A1385CB207BF342006BF698 /* NavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
 		7A1385CC207BF342006BF698 /* NavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		7A1385D1207BF4D7006BF698 /* EmptySegue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptySegue.h; sourceTree = "<group>"; };
@@ -120,6 +144,29 @@
 				D3DDCC3C1E53D0557DD56E79 /* libPods-climateConvos.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		745D7B8E208FF3980077DDDE /* ical */ = {
+			isa = PBXGroup;
+			children = (
+				745D7B9D208FF3B80077DDDE /* CGICalendar.h */,
+				745D7B97208FF3B80077DDDE /* CGICalendar.m */,
+				745D7B9A208FF3B80077DDDE /* CGICalendarComponent.h */,
+				745D7B90208FF3B70077DDDE /* CGICalendarComponent.m */,
+				745D7B9B208FF3B80077DDDE /* CGICalendarContentLine.h */,
+				745D7B8F208FF3B70077DDDE /* CGICalendarContentLine.m */,
+				745D7B91208FF3B70077DDDE /* CGICalendarObject.h */,
+				745D7B99208FF3B80077DDDE /* CGICalendarObject.m */,
+				745D7B9C208FF3B80077DDDE /* CGICalendarParameter.h */,
+				745D7B9E208FF3B80077DDDE /* CGICalendarParameter.m */,
+				745D7B98208FF3B80077DDDE /* CGICalendarProperty.h */,
+				745D7B94208FF3B80077DDDE /* CGICalendarProperty.m */,
+				745D7B95208FF3B80077DDDE /* CGICalendarValue.h */,
+				745D7B92208FF3B70077DDDE /* CGICalendarValue.m */,
+				745D7B93208FF3B80077DDDE /* NSDate+CGICalendar.h */,
+				745D7B96208FF3B80077DDDE /* NSDate+CGICalendar.m */,
+			);
+			name = ical;
 			sourceTree = "<group>";
 		};
 		7AFD84C5207CAA210029ED54 /* NavBar */ = {
@@ -211,6 +258,7 @@
 		CAF55491202B9E5600B1521E /* climateConvos */ = {
 			isa = PBXGroup;
 			children = (
+				745D7B8E208FF3980077DDDE /* ical */,
 				B678F14520841A24001CD0F5 /* ProfileViewController.h */,
 				B678F14620841A24001CD0F5 /* ProfileViewController.m */,
 				B6DE1731208415400068C02F /* Education */,
@@ -375,20 +423,28 @@
 			files = (
 				E75578B3204DD96D00E01ED3 /* howDoesViewController.m in Sources */,
 				CAFD9ED52081559500F5EB35 /* DiscoverViewController.m in Sources */,
+				745D7BA2208FF3B80077DDDE /* CGICalendarProperty.m in Sources */,
 				E75578B2204DD96D00E01ED3 /* whatIsItViewController.m in Sources */,
 				7A1385CD207BF342006BF698 /* NavigationViewController.m in Sources */,
+				745D7BA4208FF3B80077DDDE /* CGICalendar.m in Sources */,
 				E75578B1204DD96D00E01ED3 /* proactiveViewController.m in Sources */,
 				CAF554A2202B9E5600B1521E /* main.m in Sources */,
 				CAFD9ED8208155BF00F5EB35 /* singleFactoid.m in Sources */,
 				CAFD9ED2208153E400F5EB35 /* TutorialViewController.m in Sources */,
 				7A1385D6207BF683006BF698 /* ContainerViewController.m in Sources */,
+				745D7BA6208FF3B80077DDDE /* CGICalendarParameter.m in Sources */,
 				7A1385D3207BF4D7006BF698 /* EmptySegue.m in Sources */,
+				745D7BA1208FF3B80077DDDE /* CGICalendarValue.m in Sources */,
 				740C8CAA208D94E400FC091A /* CalendarEvent.m in Sources */,
+				745D7BA3208FF3B80077DDDE /* NSDate+CGICalendar.m in Sources */,
 				B678F14720841A24001CD0F5 /* ProfileViewController.m in Sources */,
 				B678F14420841749001CD0F5 /* ArticlesViewController.m in Sources */,
+				745D7BA0208FF3B80077DDDE /* CGICalendarComponent.m in Sources */,
 				B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */,
 				CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */,
 				CAFD9ECF2081500000F5EB35 /* CategoriesViewController.m in Sources */,
+				745D7B9F208FF3B80077DDDE /* CGICalendarContentLine.m in Sources */,
+				745D7BA5208FF3B80077DDDE /* CGICalendarObject.m in Sources */,
 				E75578AF204DD96D00E01ED3 /* EducationViewController.m in Sources */,
 				CA183A9720854B0F00493F01 /* CalendarViewController.m in Sources */,
 				B64B1AF120759FC100E4F0CD /* ScrollDemoViewController.m in Sources */,
