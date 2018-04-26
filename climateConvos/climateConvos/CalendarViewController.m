@@ -11,6 +11,7 @@
 
 @interface CalendarViewController ()
 
+@property (strong, nonatomic) NSMutableArray *calendarEvents;
 @end
 
 @implementation CalendarViewController
@@ -35,6 +36,7 @@
 {
     NSString *ICSAsString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     // printf("%s", [NSString stringWithFormat: @"%@", ICSAsString].UTF8String);
+    self.calendarEvents = [[NSMutableArray alloc] init];
     // create array of lines
     NSArray *events = [ICSAsString componentsSeparatedByString:@"BEGIN:VEVENT"];
     for (NSUInteger i = 0; i < events.count; i++) {
@@ -48,9 +50,11 @@
             calEvent.eEndTime = [self getEndTime:event];
             calEvent.eSummary = [self getSummary:event];
             calEvent.eLocation = [self getLocation:event];
-            NSLog(@"%@ \n\n\n", calEvent);
+            // NSLog(@"%@ \n\n\n", calEvent);
+            [self.calendarEvents addObject:calEvent];
         }
     }
+    // NSLog(@"Calendar Events Count %tu", self.calendarEvents.count);
 }
 
 #pragma mark - HELPER METHODS
