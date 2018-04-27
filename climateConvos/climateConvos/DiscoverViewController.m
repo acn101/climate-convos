@@ -82,10 +82,13 @@
         for (int i = 0; i < self.currentDB.count; i++) {
             singleFactoid *sf = [[singleFactoid alloc] init];
             sf = [self.currentDB objectAtIndex:i];
-            if([sf.location isEqualToString:@"Houston"]) {
+            
+            NSString *currentSavedLocation = [[NSUserDefaults standardUserDefaults]
+                                              stringForKey:@"location"];
+            
+            if([sf.location isEqualToString:currentSavedLocation] || [sf.location isEqualToString:@"Global"] ) {
                 [self.items addObject:[NSNumber numberWithInt:i]];
             }
-            //            [self.items addObject:[NSNumber numberWithInt:i]];
         }
         [self.carousel reloadData];
     }];
@@ -186,8 +189,7 @@
 //    you'll get weird issues with carousel item content appearing
 //    in the wrong place in the carousel
 #pragma mark this2
-    int num = [[self.items objectAtIndex:index] intValue];
-    self.currentFactoid = [self.currentDB objectAtIndex:num];
+    self.currentFactoid = [self.currentDB objectAtIndex:[[self.items objectAtIndex:index] intValue]];
     label.text = [self.currentFactoid.texts objectForKey:@"short"];
     
     return carouselView;

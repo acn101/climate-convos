@@ -8,7 +8,6 @@
 //oliver comment
 
 #import "TutorialViewController.h"
-@import Firebase;
 
 @interface TutorialViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *skipButton;
@@ -134,7 +133,7 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    [FIRApp configure];
+    
 }
 
 @end
