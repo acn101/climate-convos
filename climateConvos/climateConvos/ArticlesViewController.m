@@ -11,6 +11,9 @@
 
 @interface ArticlesViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *topic;
+@property (weak, nonatomic) IBOutlet UIView *whiteFrame;
+
 
 
 @end
@@ -19,9 +22,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.whiteFrame.layer.cornerRadius = 11;
+    self.whiteFrame.layer.masksToBounds = YES;
     NSLog(@"should display articles for %@", self.selectedCategory);
-    
+    self.topic.text = self.selectedCategory;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

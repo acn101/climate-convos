@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/Sandra/Desktop/climateconvos/climateConvos/climateConvos/CustomTableViewCell.h">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/Sandra/Desktop/climateconvos/climateConvos/climateConvos/CustomTableViewCell.m">
+   </FileRef>
+   <FileRef
       location = "group:climateConvos.xcodeproj">
    </FileRef>
    <FileRef

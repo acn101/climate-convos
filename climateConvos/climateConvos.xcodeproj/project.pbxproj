@@ -21,8 +21,10 @@
 		B64B1AF120759FC100E4F0CD /* ScrollDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */; };
 		B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF32075A41600E4F0CD /* iCarousel.m */; };
 		B678F14420841749001CD0F5 /* ArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B678F14320841749001CD0F5 /* ArticlesViewController.m */; };
+		B69856CF20926D8D008F8435 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B69856CE20926D8C008F8435 /* CustomTableViewCell.m */; };
 		B69EB1CD20757AF800E22425 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69EB1CC20757AF800E22425 /* QuartzCore.framework */; };
 		B69FDE772085369F00B60C4C /* EducationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69FDE762085369F00B60C4C /* EducationViewController.m */; };
+		B6F58F2E2091065B0098F484 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F58F2C2091065A0098F484 /* LocationViewController.m */; };
 		CA7137A3208E6217008F57B1 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7137A1208E6216008F57B1 /* Profile.m */; };
 		CA920A3920815CD6003E78CD /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA920A3820815CD6003E78CD /* MessageUI.framework */; };
 		CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF55493202B9E5600B1521E /* AppDelegate.m */; };
@@ -62,9 +64,13 @@
 		B64B1AF32075A41600E4F0CD /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		B678F14220841749001CD0F5 /* ArticlesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticlesViewController.h; sourceTree = "<group>"; };
 		B678F14320841749001CD0F5 /* ArticlesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticlesViewController.m; sourceTree = "<group>"; };
+		B69856CD20926D8C008F8435 /* CustomTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CustomTableViewCell.h; path = /Users/Sandra/Desktop/climateconvos/climateConvos/climateConvos/CustomTableViewCell.h; sourceTree = "<absolute>"; };
+		B69856CE20926D8C008F8435 /* CustomTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CustomTableViewCell.m; path = /Users/Sandra/Desktop/climateconvos/climateConvos/climateConvos/CustomTableViewCell.m; sourceTree = "<absolute>"; };
 		B69EB1CC20757AF800E22425 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B69FDE752085369F00B60C4C /* EducationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EducationViewController.h; sourceTree = "<group>"; };
 		B69FDE762085369F00B60C4C /* EducationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EducationViewController.m; sourceTree = "<group>"; };
+		B6F58F2C2091065A0098F484 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
+		B6F58F2D2091065B0098F484 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		CA7137A1208E6216008F57B1 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
 		CA7137A2208E6217008F57B1 /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
 		CA920A3820815CD6003E78CD /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -196,6 +202,8 @@
 		B6DE17302084151B0068C02F /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				B69856CD20926D8C008F8435 /* CustomTableViewCell.h */,
+				B69856CE20926D8C008F8435 /* CustomTableViewCell.m */,
 				CAFD9ECD2081500000F5EB35 /* CategoriesViewController.h */,
 				CAFD9ECE2081500000F5EB35 /* CategoriesViewController.m */,
 				B678F14220841749001CD0F5 /* ArticlesViewController.h */,
@@ -234,6 +242,8 @@
 		CAF55491202B9E5600B1521E /* climateConvos */ = {
 			isa = PBXGroup;
 			children = (
+				B6F58F2D2091065B0098F484 /* LocationViewController.h */,
+				B6F58F2C2091065A0098F484 /* LocationViewController.m */,
 				7A936CFD2087F22400651E3F /* GEO */,
 				7A0476DD20872A3C009765D5 /* Profile */,
 				7AFD84C5207CAA210029ED54 /* NavBar */,
@@ -403,7 +413,9 @@
 				7A1385D3207BF4D7006BF698 /* EmptySegue.m in Sources */,
 				B678F14420841749001CD0F5 /* ArticlesViewController.m in Sources */,
 				B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */,
+				B6F58F2E2091065B0098F484 /* LocationViewController.m in Sources */,
 				CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */,
+				B69856CF20926D8D008F8435 /* CustomTableViewCell.m in Sources */,
 				B69FDE772085369F00B60C4C /* EducationViewController.m in Sources */,
 				CAFD9ECF2081500000F5EB35 /* CategoriesViewController.m in Sources */,
 				B64B1AF120759FC100E4F0CD /* ScrollDemoViewController.m in Sources */,

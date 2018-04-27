@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *rightButton;
 @property (weak, nonatomic) IBOutlet UITextView *tutorialText;
 @property (weak, nonatomic) IBOutlet UIWebView *geoGif;
+@property (weak, nonatomic) IBOutlet UIImageView *skipArrow;
 @property (nonatomic) int current;
 @end
 
@@ -73,6 +74,7 @@
             self.rightButton.hidden = NO;
             self.doneButton.hidden = YES;
             self.skipButton.hidden = NO;
+            self.skipArrow.hidden = NO;
             self.tutorialText.text = [self text1];
             self.dotThing.image = [UIImage imageNamed:@"dot1.png"];
             break;
@@ -81,6 +83,7 @@
             self.rightButton.hidden = NO;
             self.doneButton.hidden = YES;
             self.skipButton.hidden = NO;
+            self.skipArrow.hidden = NO;
             self.tutorialText.text = [self text2];
             self.dotThing.image = [UIImage imageNamed:@"dot2.png"];
             break;
@@ -89,6 +92,7 @@
             self.rightButton.hidden = NO;
             self.doneButton.hidden = YES;
             self.skipButton.hidden = NO;
+            self.skipArrow.hidden = NO;
             self.tutorialText.text = [self text3];
             self.dotThing.image = [UIImage imageNamed:@"dot3.png"];
             break;
@@ -97,6 +101,7 @@
             self.rightButton.hidden = YES;
             self.doneButton.hidden = NO;
             self.skipButton.hidden = YES;
+            self.skipArrow.hidden = YES;
             self.tutorialText.text = [self text4];
             self.dotThing.image = [UIImage imageNamed:@"dot4.png"];
             break;

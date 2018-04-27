@@ -31,7 +31,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setup];
-    [self setupCarousel];
 }
 
 - (void)setup {
@@ -53,6 +52,7 @@
             single.texts = [factDetails objectForKey:@"texts"];
             [self.currentDB addObject:single];
         }
+        [self setupCarousel];
     } withCancelBlock:^(NSError * _Nonnull error) {
         NSLog(@"%@", error.localizedDescription);
     }];
@@ -119,6 +119,8 @@
     
     //create new view if no view is available for recycling
     if (carouselView == nil) {
+    
+        // editing the boyd of the carousel
         carouselView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300.0f, 378.0f)];
         carouselView.contentMode = UIViewContentModeCenter;
 //        view.backgroundColor = [UIColor grayColor];
@@ -132,6 +134,17 @@
        // [label sizeToFit];
         label.textColor = [UIColor colorWithRed:94.0f/255.0f green:94.0f/255.0f blue:94.0f/255.0f alpha:1.0f];
         [carouselView addSubview:label];
+        
+        // Topic Label
+        UILabel *topic = [[UILabel alloc] initWithFrame:CGRectMake(15, -30, 250.0f, 30.0f)];
+       // topic.textAlignment = NSTextAlignmentLeft;
+        topic.font = [UIFont boldSystemFontOfSize:22];
+        //topic.font = [topic.font fontWithSize:24];
+        topic.tag = 1;
+        topic.numberOfLines = 0;
+        topic.text = self.currentFactoid.tags; // here
+        topic.textColor = [UIColor whiteColor];
+        [carouselView addSubview:topic];
         
         // Show more button
         UIButton *showMore = [[UIButton alloc] initWithFrame:CGRectMake(26.0, 320, 98.0f, 32.0f)];
@@ -149,6 +162,7 @@
         [addButton setImage:([UIImage imageNamed:@"add_icon.png"]) forState:UIControlStateNormal];
         [addButton setTitle:@"" forState:UIControlStateNormal];
         addButton.titleLabel.font = [UIFont systemFontOfSize:16];
+        addButton.userInteractionEnabled = YES;
         [carouselView addSubview:addButton];
         
         // share button
@@ -158,6 +172,7 @@
         [shareButton setImage:([UIImage imageNamed:@"share_icon.png"]) forState:UIControlStateNormal];
         [shareButton setTitle:@"" forState:UIControlStateNormal];
         shareButton.titleLabel.font = [UIFont systemFontOfSize:16];
+        shareButton.userInteractionEnabled = YES;
         [carouselView addSubview:shareButton];
         
     } else {
