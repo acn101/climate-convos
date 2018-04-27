@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		53C9D0BBA247DEF9485234B6 /* libPods-climateConvos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DDCC3C1E53D0557DD56E79 /* libPods-climateConvos.a */; };
+		74FD3CCC2093BB4100A56183 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FD3CCA2093BB4000A56183 /* CustomTableViewCell.m */; };
+		74FD3CD32093BBD400A56183 /* CalendarEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FD3CD02093BBD400A56183 /* CalendarEvent.m */; };
+		74FD3CD42093BBD500A56183 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FD3CD12093BBD400A56183 /* CalendarViewController.m */; };
 		7A01D81220854EC100C832A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A01D81120854EC100C832A9 /* CoreGraphics.framework */; };
 		7A01D81520854ECD00C832A9 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A01D81320854ECC00C832A9 /* AVKit.framework */; };
 		7A01D81620854ECD00C832A9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A01D81420854ECD00C832A9 /* AVFoundation.framework */; };
@@ -21,7 +24,6 @@
 		B64B1AF120759FC100E4F0CD /* ScrollDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */; };
 		B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF32075A41600E4F0CD /* iCarousel.m */; };
 		B678F14420841749001CD0F5 /* ArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B678F14320841749001CD0F5 /* ArticlesViewController.m */; };
-		B69856CF20926D8D008F8435 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B69856CE20926D8C008F8435 /* CustomTableViewCell.m */; };
 		B69EB1CD20757AF800E22425 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69EB1CC20757AF800E22425 /* QuartzCore.framework */; };
 		B69FDE772085369F00B60C4C /* EducationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69FDE762085369F00B60C4C /* EducationViewController.m */; };
 		B6F58F2E2091065B0098F484 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F58F2C2091065A0098F484 /* LocationViewController.m */; };
@@ -41,6 +43,12 @@
 
 /* Begin PBXFileReference section */
 		733D98D011E3D98921342933 /* Pods-climateConvos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-climateConvos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-climateConvos/Pods-climateConvos.debug.xcconfig"; sourceTree = "<group>"; };
+		74FD3CCA2093BB4000A56183 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
+		74FD3CCB2093BB4000A56183 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		74FD3CCF2093BBD400A56183 /* CalendarEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalendarEvent.h; path = ../../../TEMP/climateConvos/climateConvos/CalendarEvent.h; sourceTree = "<group>"; };
+		74FD3CD02093BBD400A56183 /* CalendarEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarEvent.m; path = ../../../TEMP/climateConvos/climateConvos/CalendarEvent.m; sourceTree = "<group>"; };
+		74FD3CD12093BBD400A56183 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarViewController.m; path = ../../../TEMP/climateConvos/climateConvos/CalendarViewController.m; sourceTree = "<group>"; };
+		74FD3CD22093BBD400A56183 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalendarViewController.h; path = ../../../TEMP/climateConvos/climateConvos/CalendarViewController.h; sourceTree = "<group>"; };
 		7A01D81120854EC100C832A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		7A01D81320854ECC00C832A9 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		7A01D81420854ECD00C832A9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -64,8 +72,6 @@
 		B64B1AF32075A41600E4F0CD /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		B678F14220841749001CD0F5 /* ArticlesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticlesViewController.h; sourceTree = "<group>"; };
 		B678F14320841749001CD0F5 /* ArticlesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticlesViewController.m; sourceTree = "<group>"; };
-		B69856CD20926D8C008F8435 /* CustomTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CustomTableViewCell.h; path = /Users/Sandra/Desktop/climateconvos/climateConvos/climateConvos/CustomTableViewCell.h; sourceTree = "<absolute>"; };
-		B69856CE20926D8C008F8435 /* CustomTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CustomTableViewCell.m; path = /Users/Sandra/Desktop/climateconvos/climateConvos/climateConvos/CustomTableViewCell.m; sourceTree = "<absolute>"; };
 		B69EB1CC20757AF800E22425 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B69FDE752085369F00B60C4C /* EducationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EducationViewController.h; sourceTree = "<group>"; };
 		B69FDE762085369F00B60C4C /* EducationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EducationViewController.m; sourceTree = "<group>"; };
@@ -137,6 +143,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		74FD3CCE2093BBC900A56183 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				74FD3CCF2093BBD400A56183 /* CalendarEvent.h */,
+				74FD3CD02093BBD400A56183 /* CalendarEvent.m */,
+				74FD3CD22093BBD400A56183 /* CalendarViewController.h */,
+				74FD3CD12093BBD400A56183 /* CalendarViewController.m */,
+			);
+			name = Calendar;
+			sourceTree = "<group>";
+		};
 		7A0476DD20872A3C009765D5 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,8 +219,8 @@
 		B6DE17302084151B0068C02F /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				B69856CD20926D8C008F8435 /* CustomTableViewCell.h */,
-				B69856CE20926D8C008F8435 /* CustomTableViewCell.m */,
+				74FD3CCB2093BB4000A56183 /* CustomTableViewCell.h */,
+				74FD3CCA2093BB4000A56183 /* CustomTableViewCell.m */,
 				CAFD9ECD2081500000F5EB35 /* CategoriesViewController.h */,
 				CAFD9ECE2081500000F5EB35 /* CategoriesViewController.m */,
 				B678F14220841749001CD0F5 /* ArticlesViewController.h */,
@@ -242,6 +259,7 @@
 		CAF55491202B9E5600B1521E /* climateConvos */ = {
 			isa = PBXGroup;
 			children = (
+				74FD3CCE2093BBC900A56183 /* Calendar */,
 				B6F58F2D2091065B0098F484 /* LocationViewController.h */,
 				B6F58F2C2091065A0098F484 /* LocationViewController.m */,
 				7A936CFD2087F22400651E3F /* GEO */,
@@ -412,11 +430,13 @@
 				7A1385D6207BF683006BF698 /* ContainerViewController.m in Sources */,
 				7A1385D3207BF4D7006BF698 /* EmptySegue.m in Sources */,
 				B678F14420841749001CD0F5 /* ArticlesViewController.m in Sources */,
+				74FD3CD32093BBD400A56183 /* CalendarEvent.m in Sources */,
 				B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */,
 				B6F58F2E2091065B0098F484 /* LocationViewController.m in Sources */,
 				CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */,
-				B69856CF20926D8D008F8435 /* CustomTableViewCell.m in Sources */,
+				74FD3CCC2093BB4100A56183 /* CustomTableViewCell.m in Sources */,
 				B69FDE772085369F00B60C4C /* EducationViewController.m in Sources */,
+				74FD3CD42093BBD500A56183 /* CalendarViewController.m in Sources */,
 				CAFD9ECF2081500000F5EB35 /* CategoriesViewController.m in Sources */,
 				B64B1AF120759FC100E4F0CD /* ScrollDemoViewController.m in Sources */,
 			);
