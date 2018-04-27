@@ -14,7 +14,7 @@
         <!--Navigation View Controller-->
         <scene sceneID="Ltg-Vi-ijT">
             <objects>
-                <viewController title="Navigation View Controller" id="F5C-TM-oVy" customClass="NavigationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="discover" title="Navigation View Controller" id="F5C-TM-oVy" customClass="NavigationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JvD-7r-3CC"/>
                         <viewControllerLayoutGuide type="bottom" id="Hag-xZ-XnX"/>
@@ -862,7 +862,7 @@
         <!--Tutorial View Controller-->
         <scene sceneID="Ihv-Pi-u4X">
             <objects>
-                <viewController storyboardIdentifier="somethingElse" id="lTQ-Fw-3bh" customClass="TutorialViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="intro" id="lTQ-Fw-3bh" customClass="TutorialViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vQI-Th-d2I"/>
                         <viewControllerLayoutGuide type="bottom" id="bxN-71-pPN"/>
@@ -893,7 +893,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjT-BL-0L4">
-                                <rect key="frame" x="254" y="593" width="92" height="40"/>
+                                <rect key="frame" x="254" y="591" width="92" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Skip">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -948,6 +948,14 @@
                                     <segue destination="9j6-os-07a" kind="modal" id="0qV-ZU-P3x"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1O-3M-aND">
+                                <rect key="frame" x="150" y="397" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save Skip"/>
+                                <connections>
+                                    <action selector="setSkipStatus:" destination="lTQ-Fw-3bh" eventType="touchUpInside" id="p3w-j6-AHq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -958,7 +966,6 @@
                         <outlet property="leftButton" destination="iTV-7m-gay" id="hSz-jh-cok"/>
                         <outlet property="rightButton" destination="fOi-9s-btt" id="9uW-L0-qmV"/>
                         <outlet property="skipArrow" destination="hlq-1d-6ni" id="aP4-iv-ZY3"/>
-                        <outlet property="skipButton" destination="gjT-BL-0L4" id="QEm-A1-eG7"/>
                         <outlet property="tutorialText" destination="HkF-O2-l28" id="fB3-zl-KQQ"/>
                     </connections>
                 </viewController>
@@ -1007,7 +1014,7 @@
         <!--Location View Controller-->
         <scene sceneID="cXX-eQ-tkp">
             <objects>
-                <viewController id="c28-H7-wmd" customClass="LocationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="location" id="c28-H7-wmd" customClass="LocationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tDe-WW-f0X"/>
                         <viewControllerLayoutGuide type="bottom" id="LUW-0M-j7D"/>
@@ -1070,6 +1077,15 @@
                                     <action selector="saveLocation:" destination="c28-H7-wmd" eventType="touchUpInside" id="ONM-BW-Vvc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVd-dM-bJq">
+                                <rect key="frame" x="145" y="396" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save Skip"/>
+                                <connections>
+                                    <action selector="setSkipStatus:" destination="lTQ-Fw-3bh" eventType="touchUpInside" id="2tm-ey-pgF"/>
+                                    <action selector="setSkipStatus:" destination="c28-H7-wmd" eventType="touchUpInside" id="Q2U-3K-moF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.40948313469999997" green="0.73920291660000004" blue="0.88961392640000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -1128,6 +1144,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="kQ7-nK-npE"/>
         <segue reference="Jtk-wm-iid"/>
-        <segue reference="GRZ-z3-a8u"/>
+        <segue reference="7df-xW-IVn"/>
     </inferredMetricsTieBreakers>
 </document>

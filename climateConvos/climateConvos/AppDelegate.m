@@ -34,11 +34,34 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             self.window.rootViewController = [SB instantiateViewControllerWithIdentifier:@"splashscreen2"];
             [self.window makeKeyAndVisible];
+           
+            
+        //
+            
+            NSString *startScreen;
+            NSString *currentSavedStatus = [[NSUserDefaults standardUserDefaults]
+                                            stringForKey:@"tutSkipStatus"];
+            if ([currentSavedStatus isEqualToString:(@"skipToLocation")])
+            {
+                startScreen = @"location";
+                
+            } else if ([currentSavedStatus isEqualToString:(@"skipToDiscover")])
+            {
+               startScreen = @"discover";
+            }
+            else
+            {
+                startScreen = @"intro";
+            }
+            
+            
             //Enter the app
+            
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                self.window.rootViewController = [SB instantiateViewControllerWithIdentifier:@"somethingElse"];
+                self.window.rootViewController = [SB instantiateViewControllerWithIdentifier:startScreen];
                 [self.window makeKeyAndVisible];
             });
+
         });
         
     });
