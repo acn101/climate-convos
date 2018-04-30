@@ -11,6 +11,7 @@
 #import "iCarousel.h"
 
 @interface DiscoverViewController ()
+@property (weak, nonatomic) IBOutlet UIView *carouselV;
 
 @property (strong, nonatomic) FIRDatabaseReference *ref;
 @property (strong, nonatomic) NSMutableDictionary *dict;
@@ -150,13 +151,21 @@
         [carouselView addSubview:topic];
         
         // Show more button
-        UIButton *showMore = [[UIButton alloc] initWithFrame:CGRectMake(26.0, 320, 98.0f, 32.0f)];
-        [showMore addTarget:self
-                     action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
+        UIButton *showMore = [UIButton buttonWithType:UIButtonTypeCustom];
+        showMore.frame = CGRectMake(26.0, 320, 98.0f, 32.0f);
         [showMore setTitle:@"+ show more" forState:UIControlStateNormal];
         [showMore setTitleColor:[UIColor colorWithRed:94.0f/255.0f green:94.0f/255.0f blue:94.0f/255.0f alpha:1.0f] forState:UIControlStateNormal];
         showMore.titleLabel.font = [UIFont boldSystemFontOfSize:16];
         [carouselView addSubview:showMore];
+        
+        // Inivisible shadow button
+        UIButton *shadowMore = [UIButton buttonWithType:UIButtonTypeCustom];
+        shadowMore.frame = CGRectMake(65.0, 357.0, 98.0f, 32.0f);
+        shadowMore.backgroundColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:.25];
+        [shadowMore addTarget:self
+                       action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
+        [self.view addSubview:shadowMore];
+
         
         // Show plus button
         UIButton *addButton = [[UIButton alloc] initWithFrame:CGRectMake(215.0, 327, 20.0f, 20.0f)];
