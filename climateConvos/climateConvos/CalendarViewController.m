@@ -10,12 +10,51 @@
 #import "CalendarEvent.h"
 
 @interface CalendarViewController ()
-
-@property (strong, nonatomic) NSMutableArray *calendarEvents;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation CalendarViewController
+#pragma mark - Table View Data Source and Delegate Methods
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Our table only has one section...
+    if (section == 0) {
+        return self.calendarEvents.count;
+    } else {
+        return 0;
+    }
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // grab the drone for this row
+    CalendarEvent *thisEvent = self.calendarEvents[indexPath.row];
+    
+    // get our custom cell
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"custom"];
+    
+    // we assigned each component of the custom cell we created
+    // in interface builder a unique tab number - this is how
+    // we get references to those components
+    UILabel *titleLabel = (UILabel *)[cell viewWithTag:1];
+    UILabel *costLabel = (UILabel *)[cell viewWithTag:2];
+    UILabel *bodyLabel = (UILabel *)[cell viewWithTag:3];
+    
+    // populate the cell
+    titleLabel.text = thisEvent.eSummary;
+    costLabel.text = thisEvent.eLocation;
+    bodyLabel.text = thisEvent.eDescription;
+    
+    // return our cell
+    return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // we need to override the default cell height even thought we've set this
+    // explicitly in interface builder (this may be a bug in apple's software)
+    return 120;
+}
 
+#pragma mark - calendar download
 - (void)downloadICS
 {
     NSString *URLString = @"https://calendar.google.com/calendar/ical/72dh5ehol3oufbkusqagta0qf8%40group.calendar.google.com/public/basic.ics";
@@ -54,11 +93,13 @@
             [self.calendarEvents addObject:calEvent];
         }
     }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
     // NSLog(@"Calendar Events Count %tu", self.calendarEvents.count);
 }
 
 #pragma mark - HELPER METHODS
-#pragma mark - description
 - (NSString *)getDescription:(NSString *)event
 {
     // GET DESCRIPTION
@@ -313,6 +354,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self downloadICS];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
 }
 
 @end
