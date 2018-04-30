@@ -121,7 +121,7 @@
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G5j-oy-l5N">
-                                <rect key="frame" x="0.0" y="539" width="375" height="128"/>
+                                <rect key="frame" x="0.0" y="532" width="375" height="135"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="BoL-lh-zxP" kind="embed" id="n3j-uT-7rJ"/>
@@ -168,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8nn-nJ-voJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-547.5" y="-953.5"/>
+            <point key="canvasLocation" x="-447.5" y="-1271.5"/>
         </scene>
         <!--Discover View Controller-->
         <scene sceneID="pbz-n9-nvr">
@@ -523,7 +523,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iNL-YU-qLq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-681" y="130"/>
+            <point key="canvasLocation" x="-490" y="170"/>
         </scene>
         <!--Categories View Controller-->
         <scene sceneID="F5T-Jb-ZCG">
@@ -966,8 +966,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="geo speech bubble" translatesAutoresizingMaskIntoConstraints="NO" id="Ago-4b-Jwo">
-                                <rect key="frame" x="131" y="0.0" width="228" height="108"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="geo speech bubble" translatesAutoresizingMaskIntoConstraints="NO" id="Ago-4b-Jwo">
+                                <rect key="frame" x="101" y="-3" width="267" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="topRight" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5n-8a-izr">
@@ -978,8 +978,14 @@
                                     <action selector="geoPressed:" destination="BoL-lh-zxP" eventType="touchUpInside" id="Zw6-5K-VAa"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="geo.gif" translatesAutoresizingMaskIntoConstraints="NO" id="iYg-Nr-wR8">
-                                <rect key="frame" x="21" y="-3" width="130" height="130"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="tips" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2aH-CZ-fqv">
+                                <rect key="frame" x="131" y="13" width="216" height="95"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="geo.gif" translatesAutoresizingMaskIntoConstraints="NO" id="iYg-Nr-wR8">
+                                <rect key="frame" x="0.0" y="0.0" width="145" height="128"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
@@ -988,12 +994,13 @@
                     <connections>
                         <outlet property="GEO" destination="a5n-8a-izr" id="eah-2x-8hb"/>
                         <outlet property="geoGif" destination="iYg-Nr-wR8" id="IA7-9q-HSD"/>
+                        <outlet property="geoText" destination="2aH-CZ-fqv" id="Xbv-A1-x72"/>
                         <outlet property="speechBubble" destination="Ago-4b-Jwo" id="pEH-7S-1As"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZR-Jz-QaL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="672.5" y="-937"/>
+            <point key="canvasLocation" x="413.5" y="-1038"/>
         </scene>
         <!--Location View Controller-->
         <scene sceneID="cXX-eQ-tkp">
@@ -1223,7 +1230,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6pb-hg-yuu"/>
-        <segue reference="Jtk-wm-iid"/>
-        <segue reference="fHA-Qe-ohv"/>
+        <segue reference="KUf-ys-Eio"/>
+        <segue reference="7df-xW-IVn"/>
     </inferredMetricsTieBreakers>
 </document>

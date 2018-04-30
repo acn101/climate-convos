@@ -11,6 +11,6 @@
 @implementation singleFactoid
 
 - (NSString *) description {
-    return [NSString stringWithFormat:@"number %@ | sources:%@ | tags:%@ | location:%@ | text:%@", self.number, self.sources, self.tags, self.location, self.texts];
+    return [NSString stringWithFormat:@"text %@ | tags:%@ | tags:%@ | location:%@ | text:%@", self.number, self.sources, self.tags, self.location, self.texts];
 }
 @end

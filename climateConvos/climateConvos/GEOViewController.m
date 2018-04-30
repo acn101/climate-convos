@@ -8,8 +8,15 @@
 
 #import "GEOViewController.h"
 #import "UIImage+animatedGIF.h"
+#import "Tip.h"
 
 @interface GEOViewController ()
+
+@property (weak, nonatomic) IBOutlet UITextView *geoText;
+@property (strong, nonatomic) FIRDatabaseReference *ref;
+@property (strong, nonatomic) NSMutableDictionary *dict;
+@property (strong, nonatomic) NSMutableArray *tips;
+
 @property (weak, nonatomic) IBOutlet UIButton *GEO;
 @property (weak, nonatomic) IBOutlet UIImageView *speechBubble;
 
@@ -20,12 +27,36 @@
 @implementation GEOViewController
 
 - (void)viewDidLoad {
-   
-    [super viewDidLoad];
-//    [self animatedGeo];
-    // Do any additional setup after loading the view.
-    
+   [super viewDidLoad];
+    [self setup];
     [self displayGeo];
+    [self displayTip];
+    
+}
+
+- (void)setup {
+    self.ref = [[FIRDatabase database] reference];
+    self.tips = [[NSMutableArray alloc] init];
+    [self tipsDB];
+    self.geoText.textAlignment = NSTextAlignmentCenter;
+}
+
+- (void)tipsDB {
+    [[self.ref child:@"Tips"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        self.dict = snapshot.value;
+        for (NSString *factNumber in self.dict) {
+            Tip *tip = [[Tip alloc] init];
+            tip.number = factNumber;
+            NSDictionary *tipsDetails = [self.dict objectForKey:factNumber];
+            tip.tags = [tipsDetails  objectForKey:@"tags"];
+            tip.text = [tipsDetails objectForKey:@"text"];
+            [self.tips addObject:tip];
+            NSLog(@"this is the current tip %@", tip);
+          //  [self displayTip];
+        }
+    } withCancelBlock:^(NSError * _Nonnull error) {
+        NSLog(@"%@", error.localizedDescription);
+    }];
 }
     
     
@@ -34,8 +65,22 @@
     self.geoGif.image = [UIImage animatedImageWithAnimatedGIFData:[NSData dataWithContentsOfURL:url]];
     
 }
+
+-(void)displayTip{
+
+    [self.ref observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot) {
+        int random = arc4random_uniform(self.tips.count);
+        Tip *currentTip = self.tips[random];
+        self.geoText.text = currentTip.text;
+    }];
+}
+
+
 - (IBAction)geoPressed:(id)sender {
-    [self disableGeo];
+    int random = arc4random_uniform(self.tips.count);
+    Tip *currentTip = self.tips[random];
+    self.geoText.text = currentTip.text;
+    //[self disableGeo];
 }
 
 -(void)disableGeo{
