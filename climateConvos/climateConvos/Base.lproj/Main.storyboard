@@ -1042,6 +1042,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="saveLocation:" destination="c28-H7-wmd" eventType="touchUpInside" id="bWo-EW-NwI"/>
                                     <action selector="setSkipStatus:" destination="c28-H7-wmd" eventType="touchUpInside" id="tHU-26-y7f"/>
                                     <segue destination="F5C-TM-oVy" kind="modal" id="7df-xW-IVn"/>
                                 </connections>
@@ -1072,15 +1073,10 @@
                                     <segment title="Seattle"/>
                                     <segment title="Houston"/>
                                 </segments>
-                            </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGT-YC-sqA">
-                                <rect key="frame" x="257" y="396" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save"/>
                                 <connections>
-                                    <action selector="saveLocation:" destination="c28-H7-wmd" eventType="touchUpInside" id="ONM-BW-Vvc"/>
+                                    <action selector="setLocation:" destination="c28-H7-wmd" eventType="valueChanged" id="6RI-pJ-efs"/>
                                 </connections>
-                            </button>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.40948313469999997" green="0.73920291660000004" blue="0.88961392640000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -1090,7 +1086,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQR-p1-SJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1080" y="-954"/>
+            <point key="canvasLocation" x="-1080.5" y="-954.5"/>
         </scene>
         <!--Calendar View Controller-->
         <scene sceneID="DKY-61-qoe">
