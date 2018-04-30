@@ -11,6 +11,7 @@
 #import "iCarousel.h"
 
 @interface DiscoverViewController ()
+@property (weak, nonatomic) IBOutlet UIView *carouselV;
 
 @property (strong, nonatomic) FIRDatabaseReference *ref;
 @property (strong, nonatomic) NSMutableDictionary *dict;
@@ -37,6 +38,20 @@
     self.ref = [[FIRDatabase database] reference];
     self.currentDB = [[NSMutableArray alloc] init];
     [self testDB];
+    
+    // Show more button
+    UIButton *showMore = [UIButton buttonWithType:UIButtonTypeCustom];
+    showMore.frame = CGRectMake(100.0, 448.0, 98.0f, 32.0f);
+    //UIButton *showMore = [[UIButton alloc] initWithFrame:CGRectMake(26.0, 320, 98.0f, 32.0f)];
+    [showMore addTarget:self
+                 action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
+    [showMore setTitle:@"+ show more" forState:UIControlStateNormal];
+    [showMore setTitleColor:[UIColor colorWithRed:94.0f/255.0f green:94.0f/255.0f blue:94.0f/255.0f alpha:1.0f] forState:UIControlStateNormal];
+    showMore.titleLabel.font = [UIFont boldSystemFontOfSize:16];
+    [self.view addSubview:showMore];
+    //  showMore.userInteractionEnabled = YES;
+    //  [showMore.superview setUserInteractionEnabled:YES];
+    //[carousel bringSubviewToFront:showMore];
 }
 
 - (void)testDB {
@@ -148,15 +163,37 @@
         topic.text = self.currentFactoid.tags; // here
         topic.textColor = [UIColor whiteColor];
         [carouselView addSubview:topic];
+       
+        
+        /*
         
         // Show more button
-        UIButton *showMore = [[UIButton alloc] initWithFrame:CGRectMake(26.0, 320, 98.0f, 32.0f)];
+        UIButton *showMore = [UIButton buttonWithType:UIButtonTypeCustom];
+        showMore.frame = CGRectMake(26.0, 320, 98.0f, 32.0f);
+        //UIButton *showMore = [[UIButton alloc] initWithFrame:CGRectMake(26.0, 320, 98.0f, 32.0f)];
+        [showMore addTarget:self
+                     action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
+        [showMore setTitle:@"+ show more" forState:UIControlStateNormal];
+        [showMore setTitleColor:[UIColor colorWithRed:94.0f/255.0f green:94.0f/255.0f blue:94.0f/255.0f alpha:1.0f] forState:UIControlStateNormal];
+        showMore.titleLabel.font = [UIFont boldSystemFontOfSize:16];
+        showMore.userInteractionEnabled = YES;
+        [showMore.superview setUserInteractionEnabled:YES];
+        [carouselView addSubview:showMore];
+        [carousel bringSubviewToFront:showMore];*/
+        
+        // Show more button
+        UIButton *showMore = [UIButton buttonWithType:UIButtonTypeCustom];
+        showMore.frame = CGRectMake(26.0, 320, 98.0f, 32.0f);
+        //UIButton *showMore = [[UIButton alloc] initWithFrame:CGRectMake(26.0, 320, 98.0f, 32.0f)];
         [showMore addTarget:self
                      action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
         [showMore setTitle:@"+ show more" forState:UIControlStateNormal];
         [showMore setTitleColor:[UIColor colorWithRed:94.0f/255.0f green:94.0f/255.0f blue:94.0f/255.0f alpha:1.0f] forState:UIControlStateNormal];
         showMore.titleLabel.font = [UIFont boldSystemFontOfSize:16];
         [carouselView addSubview:showMore];
+        //  showMore.userInteractionEnabled = YES;
+        //  [showMore.superview setUserInteractionEnabled:YES];
+        //[carousel bringSubviewToFront:showMore];
         
         // Show plus button
         UIButton *addButton = [[UIButton alloc] initWithFrame:CGRectMake(215.0, 327, 20.0f, 20.0f)];

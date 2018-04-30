@@ -57,18 +57,11 @@
 {
     
     CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    
-    /*UIImageView *myImageView = (UIImageView *)[cell viewWithTag:2];
-    myImageView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"category_body"]];*/
     cell.category.text = [self.categories objectAtIndex:indexPath.row];
     cell.background.layer.cornerRadius = 11;
     cell.background.layer.masksToBounds = YES;
     cell.backgroundColor = [UIColor clearColor];
     cell.contentView.backgroundColor = [UIColor clearColor];
-    
-    
-   // cell.layer.cornerRadius = 11;
-    //cell.layer.masksToBounds = YES;
     return cell;
     
 }
