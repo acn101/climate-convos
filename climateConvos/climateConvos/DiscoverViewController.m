@@ -39,6 +39,9 @@
     [self testDB];
 }
 
+
+
+
 - (void)testDB {
     [[self.ref child:@"Facts"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         self.dict = snapshot.value;

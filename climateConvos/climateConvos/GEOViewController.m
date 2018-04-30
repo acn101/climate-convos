@@ -26,6 +26,11 @@
     [self loadHTML];
 }
 
+- (IBAction)clearDefaults:(id)sender {
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+}
+
 // gif of GEO
 - (void)loadHTML {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"geo" ofType:@"html"];

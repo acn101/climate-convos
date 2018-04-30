@@ -185,15 +185,17 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QcV-jm-3kc" customClass="iCarousel">
                                 <rect key="frame" x="0.0" y="91" width="375" height="271"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V88-q2-wMx">
+                                        <rect key="frame" x="318" y="241" width="49" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="SHARE"/>
+                                        <connections>
+                                            <action selector="shareButton:" destination="MkA-cr-rUm" eventType="touchUpInside" id="fui-x4-e0g"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V88-q2-wMx">
-                                <rect key="frame" x="229" y="448" width="49" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="SHARE"/>
-                                <connections>
-                                    <action selector="shareButton:" destination="MkA-cr-rUm" eventType="touchUpInside" id="fui-x4-e0g"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -204,7 +206,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zIs-dh-EWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1667" y="170"/>
+            <point key="canvasLocation" x="-1667.5" y="170"/>
         </scene>
         <!--Setting-->
         <scene sceneID="dMA-hz-e9R">
@@ -301,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0IQ-1m-HOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1013" y="130"/>
+            <point key="canvasLocation" x="1012.5" y="130"/>
         </scene>
         <!--Expand Factoid View Controller-->
         <scene sceneID="YNa-d9-d80">
@@ -392,7 +394,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f9f-tx-5TE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="632" y="1468"/>
+            <point key="canvasLocation" x="-173" y="-162"/>
         </scene>
         <!--Splash Screen 2-->
         <scene sceneID="jRf-u1-gLp">
@@ -526,7 +528,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iNL-YU-qLq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-681" y="130"/>
+            <point key="canvasLocation" x="-861" y="23"/>
         </scene>
         <!--Categories View Controller-->
         <scene sceneID="F5T-Jb-ZCG">
@@ -899,6 +901,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="setSkipStatus:" destination="lTQ-Fw-3bh" eventType="touchUpInside" id="VnJ-2o-3yk"/>
                                     <segue destination="c28-H7-wmd" kind="modal" id="kQ7-nK-npE"/>
                                 </connections>
                             </button>
@@ -948,14 +951,6 @@
                                     <segue destination="9j6-os-07a" kind="modal" id="0qV-ZU-P3x"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1O-3M-aND">
-                                <rect key="frame" x="150" y="397" width="67" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save Skip"/>
-                                <connections>
-                                    <action selector="setSkipStatus:" destination="lTQ-Fw-3bh" eventType="touchUpInside" id="p3w-j6-AHq"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -999,6 +994,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <size key="titleShadowOffset" width="6" height="0.0"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vtb-ik-B0A">
+                                <rect key="frame" x="194" y="47" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Clear Defaults"/>
+                                <connections>
+                                    <action selector="clearDefaults:" destination="BoL-lh-zxP" eventType="touchUpInside" id="1RK-Wu-2uS"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <size key="freeformSize" width="375" height="128"/>
@@ -1039,6 +1042,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="setSkipStatus:" destination="c28-H7-wmd" eventType="touchUpInside" id="tHU-26-y7f"/>
                                     <segue destination="F5C-TM-oVy" kind="modal" id="7df-xW-IVn"/>
                                 </connections>
                             </button>
@@ -1075,15 +1079,6 @@
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveLocation:" destination="c28-H7-wmd" eventType="touchUpInside" id="ONM-BW-Vvc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVd-dM-bJq">
-                                <rect key="frame" x="145" y="396" width="67" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save Skip"/>
-                                <connections>
-                                    <action selector="setSkipStatus:" destination="lTQ-Fw-3bh" eventType="touchUpInside" id="2tm-ey-pgF"/>
-                                    <action selector="setSkipStatus:" destination="c28-H7-wmd" eventType="touchUpInside" id="Q2U-3K-moF"/>
                                 </connections>
                             </button>
                         </subviews>
