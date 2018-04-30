@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TutorialViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *geoAtTutorial;
 
 @end

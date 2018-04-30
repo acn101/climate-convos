@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface GEOViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *geoGif;
 
 @end

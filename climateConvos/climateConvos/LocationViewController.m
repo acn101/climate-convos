@@ -7,6 +7,7 @@
 //
 
 #import "LocationViewController.h"
+#import "UIImage+animatedGIF.h"
 
 @interface LocationViewController ()
 
@@ -19,9 +20,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self displayGeo];
+}
+
+
+-(void)displayGeo{
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"geo" withExtension:@"gif"];
+    self.geoAtLocation.image = [UIImage animatedImageWithAnimatedGIFData:[NSData dataWithContentsOfURL:url]];
     
 }
+
+
+
 
 
 

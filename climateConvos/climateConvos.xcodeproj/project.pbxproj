@@ -8,18 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		53C9D0BBA247DEF9485234B6 /* libPods-climateConvos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DDCC3C1E53D0557DD56E79 /* libPods-climateConvos.a */; };
-		5CCE17232093D1C300B67541 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CCE17222093D1C300B67541 /* SettingsViewController.m */; };
 		74FD3CCC2093BB4100A56183 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FD3CCA2093BB4000A56183 /* CustomTableViewCell.m */; };
 		7A01D81220854EC100C832A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A01D81120854EC100C832A9 /* CoreGraphics.framework */; };
 		7A01D81520854ECD00C832A9 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A01D81320854ECC00C832A9 /* AVKit.framework */; };
 		7A01D81620854ECD00C832A9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A01D81420854ECD00C832A9 /* AVFoundation.framework */; };
 		7A01D81820854EF000C832A9 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A01D81720854EF000C832A9 /* ImageIO.framework */; };
 		7A01D81A20854EFB00C832A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A01D81920854EFB00C832A9 /* UIKit.framework */; };
+		7A02D2832096DBB000AD240D /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A02D2812096DBB000AD240D /* SettingsViewController.m */; };
 		7A1385CD207BF342006BF698 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385CC207BF342006BF698 /* NavigationViewController.m */; };
 		7A1385D3207BF4D7006BF698 /* EmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385D2207BF4D7006BF698 /* EmptySegue.m */; };
 		7A1385D6207BF683006BF698 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385D5207BF683006BF698 /* ContainerViewController.m */; };
 		7A936CFC2087F21800651E3F /* GEOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A936CFB2087F21800651E3F /* GEOViewController.m */; };
-		7AFEB99B208AD34000BA7C31 /* geo.html in Resources */ = {isa = PBXBuildFile; fileRef = 7AFEB99A208AD33F00BA7C31 /* geo.html */; };
+		7AFDF2E3209795A2009E21BA /* geo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7AFDF2E2209795A2009E21BA /* geo.gif */; };
+		7AFDF2E620979652009E21BA /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFDF2E520979652009E21BA /* UIImage+animatedGIF.m */; };
 		B64B1AF120759FC100E4F0CD /* ScrollDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */; };
 		B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF32075A41600E4F0CD /* iCarousel.m */; };
 		B678F14420841749001CD0F5 /* ArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B678F14320841749001CD0F5 /* ArticlesViewController.m */; };
@@ -43,8 +44,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5CCE17212093D1C300B67541 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = ../../../temp/climateConvos/climateConvos/SettingsViewController.h; sourceTree = "<group>"; };
-		5CCE17222093D1C300B67541 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = ../../../temp/climateConvos/climateConvos/SettingsViewController.m; sourceTree = "<group>"; };
 		733D98D011E3D98921342933 /* Pods-climateConvos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-climateConvos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-climateConvos/Pods-climateConvos.debug.xcconfig"; sourceTree = "<group>"; };
 		74FD3CCA2093BB4000A56183 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		74FD3CCB2093BB4000A56183 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
@@ -53,8 +52,8 @@
 		7A01D81420854ECD00C832A9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		7A01D81720854EF000C832A9 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		7A01D81920854EFB00C832A9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		7A12FBC3208B2C3000AB0016 /* geo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = geo.gif; sourceTree = "<group>"; };
-		7A1385CB207BF342006BF698 /* NavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
+		7A02D2812096DBB000AD240D /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		7A02D2822096DBB000AD240D /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		7A1385CC207BF342006BF698 /* NavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
 		7A1385D1207BF4D7006BF698 /* EmptySegue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptySegue.h; sourceTree = "<group>"; };
 		7A1385D2207BF4D7006BF698 /* EmptySegue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptySegue.m; sourceTree = "<group>"; };
@@ -63,7 +62,9 @@
 		7A158CFA2087D29300AEA7FE /* house-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "house-selected.png"; sourceTree = "<group>"; };
 		7A936CFA2087F21800651E3F /* GEOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GEOViewController.h; sourceTree = "<group>"; };
 		7A936CFB2087F21800651E3F /* GEOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GEOViewController.m; sourceTree = "<group>"; };
-		7AFEB99A208AD33F00BA7C31 /* geo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = geo.html; sourceTree = "<group>"; };
+		7AFDF2E2209795A2009E21BA /* geo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = geo.gif; path = ../../../geo.gif; sourceTree = "<group>"; };
+		7AFDF2E420979652009E21BA /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
+		7AFDF2E520979652009E21BA /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
 		B5BFFC3BCBD5962E5EAA6D39 /* Pods-climateConvos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-climateConvos.release.xcconfig"; path = "Pods/Target Support Files/Pods-climateConvos/Pods-climateConvos.release.xcconfig"; sourceTree = "<group>"; };
 		B64B1AEF20759FC100E4F0CD /* ScrollDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollDemoViewController.h; sourceTree = "<group>"; };
 		B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollDemoViewController.m; sourceTree = "<group>"; };
@@ -169,10 +170,11 @@
 		7A936CFD2087F22400651E3F /* GEO */ = {
 			isa = PBXGroup;
 			children = (
-				7A12FBC3208B2C3000AB0016 /* geo.gif */,
-				7AFEB99A208AD33F00BA7C31 /* geo.html */,
+				7AFDF2E2209795A2009E21BA /* geo.gif */,
 				7A936CFA2087F21800651E3F /* GEOViewController.h */,
 				7A936CFB2087F21800651E3F /* GEOViewController.m */,
+				7AFDF2E420979652009E21BA /* UIImage+animatedGIF.h */,
+				7AFDF2E520979652009E21BA /* UIImage+animatedGIF.m */,
 			);
 			name = GEO;
 			sourceTree = "<group>";
@@ -184,7 +186,6 @@
 				7A1385D2207BF4D7006BF698 /* EmptySegue.m */,
 				7A1385D4207BF683006BF698 /* ContainerViewController.h */,
 				7A1385D5207BF683006BF698 /* ContainerViewController.m */,
-				7A1385CB207BF342006BF698 /* NavigationViewController.h */,
 				7A1385CC207BF342006BF698 /* NavigationViewController.m */,
 			);
 			name = NavBar;
@@ -193,8 +194,8 @@
 		B6DE172D208414F00068C02F /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
-				5CCE17212093D1C300B67541 /* SettingsViewController.h */,
-				5CCE17222093D1C300B67541 /* SettingsViewController.m */,
+				7A02D2822096DBB000AD240D /* SettingsViewController.h */,
+				7A02D2812096DBB000AD240D /* SettingsViewController.m */,
 				CAFD9ED1208153E400F5EB35 /* TutorialViewController.h */,
 				CAFD9ED0208153E300F5EB35 /* TutorialViewController.m */,
 			);
@@ -359,7 +360,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AFEB99B208AD34000BA7C31 /* geo.html in Resources */,
+				7AFDF2E3209795A2009E21BA /* geo.gif in Resources */,
 				CAF5549F202B9E5600B1521E /* LaunchScreen.storyboard in Resources */,
 				E7603904204612820060C245 /* GoogleService-Info.plist in Resources */,
 				CAF5549C202B9E5600B1521E /* Assets.xcassets in Resources */,
@@ -431,13 +432,14 @@
 				7A1385CD207BF342006BF698 /* NavigationViewController.m in Sources */,
 				CAF554A2202B9E5600B1521E /* main.m in Sources */,
 				CAFD9ED8208155BF00F5EB35 /* singleFactoid.m in Sources */,
+				7A02D2832096DBB000AD240D /* SettingsViewController.m in Sources */,
 				CAFD9ED2208153E400F5EB35 /* TutorialViewController.m in Sources */,
-				5CCE17232093D1C300B67541 /* SettingsViewController.m in Sources */,
 				CA7137A3208E6217008F57B1 /* Profile.m in Sources */,
 				7A1385D6207BF683006BF698 /* ContainerViewController.m in Sources */,
 				CA5BED102093C2F200C49EDF /* CalendarViewController.m in Sources */,
 				7A1385D3207BF4D7006BF698 /* EmptySegue.m in Sources */,
 				B678F14420841749001CD0F5 /* ArticlesViewController.m in Sources */,
+				7AFDF2E620979652009E21BA /* UIImage+animatedGIF.m in Sources */,
 				B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */,
 				B6F58F2E2091065B0098F484 /* LocationViewController.m in Sources */,
 				CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */,

@@ -209,7 +209,6 @@
         <!--View Controller-->
         <scene sceneID="dMA-hz-e9R">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0IQ-1m-HOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="azQ-5P-oyF" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Eo3-7D-HzS"/>
@@ -297,6 +296,7 @@
                     </view>
                     <size key="freeformSize" width="375" height="588"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0IQ-1m-HOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1255" y="170"/>
         </scene>
@@ -576,7 +576,7 @@
                     <size key="freeformSize" width="375" height="588"/>
                     <connections>
                         <outlet property="tableView" destination="rli-Fr-TwL" id="9UD-FO-8Ru"/>
-                        <segue destination="1qX-uL-M1N" kind="modal" identifier="articleSegue" id="7Da-2V-jHy"/>
+                        <segue destination="1qX-uL-M1N" kind="modal" identifier="articleSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="7Da-2V-jHy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g1P-A9-3WE" sceneMemberID="firstResponder"/>
@@ -595,14 +595,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="588"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qe2-nd-G9i">
-                                <rect key="frame" x="20" y="34" width="34" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Home" image="house icon"/>
-                                <connections>
-                                    <segue destination="F5C-TM-oVy" kind="modal" modalTransitionStyle="crossDissolve" id="GRZ-z3-a8u"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTs-Jb-tMq">
                                 <rect key="frame" x="56" y="32" width="262" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -610,14 +602,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNM-t4-guU">
-                                <rect key="frame" x="67" y="30" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="F5C-TM-oVy" kind="modal" modalTransitionStyle="crossDissolve" id="fHA-Qe-ohv"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UbS-1p-86f">
                                 <rect key="frame" x="325" y="34" width="34" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -645,6 +629,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNM-t4-guU">
+                                <rect key="frame" x="12" y="32" width="34" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="backarrow"/>
+                                <connections>
+                                    <segue destination="F5C-TM-oVy" kind="modal" modalTransitionStyle="crossDissolve" id="fHA-Qe-ohv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -872,11 +864,6 @@
                                 <rect key="frame" x="39" y="175" width="297" height="288"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F7g-rc-A5R">
-                                <rect key="frame" x="108" y="454" width="151" height="114"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkF-O2-l28">
                                 <rect key="frame" x="74" y="214" width="219" height="153"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -896,7 +883,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="c28-H7-wmd" kind="modal" id="kQ7-nK-npE"/>
+                                    <segue destination="c28-H7-wmd" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="kQ7-nK-npE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOi-9s-btt">
@@ -930,7 +917,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
-                                    <segue destination="c28-H7-wmd" kind="modal" id="6pb-hg-yuu"/>
+                                    <segue destination="c28-H7-wmd" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="6pb-hg-yuu"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="right arrow" translatesAutoresizingMaskIntoConstraints="NO" id="hlq-1d-6ni">
@@ -945,13 +932,17 @@
                                     <segue destination="9j6-os-07a" kind="modal" id="0qV-ZU-P3x"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="geo.gif" translatesAutoresizingMaskIntoConstraints="NO" id="d9b-1G-kUi">
+                                <rect key="frame" x="110" y="450" width="130" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="doneButton" destination="v59-j4-Xbm" id="cIa-yo-Qjz"/>
                         <outlet property="dotThing" destination="G9x-wm-I4Y" id="wSU-rS-ruV"/>
-                        <outlet property="geoGif" destination="F7g-rc-A5R" id="Dly-GA-Aun"/>
+                        <outlet property="geoAtTutorial" destination="d9b-1G-kUi" id="joc-0r-KPW"/>
                         <outlet property="leftButton" destination="iTV-7m-gay" id="hSz-jh-cok"/>
                         <outlet property="rightButton" destination="fOi-9s-btt" id="9uW-L0-qmV"/>
                         <outlet property="skipArrow" destination="hlq-1d-6ni" id="aP4-iv-ZY3"/>
@@ -975,31 +966,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kJm-x2-gvj">
-                                <rect key="frame" x="16" y="5" width="151" height="114"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="geo speech bubble" translatesAutoresizingMaskIntoConstraints="NO" id="Ago-4b-Jwo">
-                                <rect key="frame" x="99" y="17" width="287" height="91"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="geo speech bubble" translatesAutoresizingMaskIntoConstraints="NO" id="Ago-4b-Jwo">
+                                <rect key="frame" x="131" y="0.0" width="228" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="topRight" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5n-8a-izr">
-                                <rect key="frame" x="16" y="8" width="135" height="108"/>
+                                <rect key="frame" x="0.0" y="-3" width="151" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <size key="titleShadowOffset" width="6" height="0.0"/>
+                                <connections>
+                                    <action selector="geoPressed:" destination="BoL-lh-zxP" eventType="touchUpInside" id="Zw6-5K-VAa"/>
+                                </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="geo.gif" translatesAutoresizingMaskIntoConstraints="NO" id="iYg-Nr-wR8">
+                                <rect key="frame" x="21" y="-3" width="130" height="130"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                         </subviews>
                     </view>
                     <size key="freeformSize" width="375" height="128"/>
                     <connections>
                         <outlet property="GEO" destination="a5n-8a-izr" id="eah-2x-8hb"/>
-                        <outlet property="geoMain" destination="kJm-x2-gvj" id="8W4-Zd-ay3"/>
+                        <outlet property="geoGif" destination="iYg-Nr-wR8" id="IA7-9q-HSD"/>
+                        <outlet property="speechBubble" destination="Ago-4b-Jwo" id="pEH-7S-1As"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZR-Jz-QaL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="147" y="-684"/>
+            <point key="canvasLocation" x="672.5" y="-937"/>
         </scene>
         <!--Location View Controller-->
         <scene sceneID="cXX-eQ-tkp">
@@ -1017,11 +1011,6 @@
                                 <rect key="frame" x="34" y="171" width="297" height="288"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wHQ-d3-0l4">
-                                <rect key="frame" x="103" y="450" width="151" height="114"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shf-Kg-MJt">
                                 <rect key="frame" x="249" y="589" width="92" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1029,7 +1018,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="F5C-TM-oVy" kind="modal" id="7df-xW-IVn"/>
+                                    <segue destination="F5C-TM-oVy" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="7df-xW-IVn"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Where Are You?" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Gv-zn-V4q">
@@ -1067,16 +1056,21 @@
                                     <action selector="saveLocation:" destination="c28-H7-wmd" eventType="touchUpInside" id="ONM-BW-Vvc"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="geo.gif" translatesAutoresizingMaskIntoConstraints="NO" id="SzL-Wm-l5b">
+                                <rect key="frame" x="110" y="450" width="130" height="130"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.40948313469999997" green="0.73920291660000004" blue="0.88961392640000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="geoAtLocation" destination="SzL-Wm-l5b" id="Ygp-94-scj"/>
                         <outlet property="location" destination="TW5-SV-VEZ" id="BBz-2R-SlX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQR-p1-SJO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1080" y="-954"/>
+            <point key="canvasLocation" x="-1080.5" y="-954.5"/>
         </scene>
         <!--Calendar View Controller-->
         <scene sceneID="DKY-61-qoe">
@@ -1206,6 +1200,7 @@
         <image name="Settings-icon" width="90" height="90"/>
         <image name="add_icon" width="55" height="55"/>
         <image name="arrow-down" width="40" height="25"/>
+        <image name="backarrow" width="36" height="36"/>
         <image name="cc-logo" width="264" height="262"/>
         <image name="dots" width="70" height="10"/>
         <image name="education_body_1" width="3220" height="1280"/>
@@ -1216,7 +1211,7 @@
         <image name="expandfactoid_body3" width="742" height="110"/>
         <image name="expandfactoid_sourcestab" width="805" height="90"/>
         <image name="geo speech bubble" width="517" height="225"/>
-        <image name="house icon" width="90" height="90"/>
+        <image name="geo.gif" width="750" height="422"/>
         <image name="house-selected" width="90" height="90"/>
         <image name="profile icon" width="90" height="90"/>
         <image name="profile_body" width="805" height="1052"/>
@@ -1227,8 +1222,8 @@
         <image name="speech bubble" width="680" height="722"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kQ7-nK-npE"/>
-        <segue reference="KUf-ys-Eio"/>
-        <segue reference="PtQ-hz-cGi"/>
+        <segue reference="6pb-hg-yuu"/>
+        <segue reference="Jtk-wm-iid"/>
+        <segue reference="fHA-Qe-ohv"/>
     </inferredMetricsTieBreakers>
 </document>

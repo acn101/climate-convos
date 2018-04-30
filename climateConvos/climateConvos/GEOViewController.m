@@ -7,11 +7,12 @@
 //
 
 #import "GEOViewController.h"
-
+#import "UIImage+animatedGIF.h"
 
 @interface GEOViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *GEO;
-@property (weak, nonatomic) IBOutlet UIWebView *geoMain;
+@property (weak, nonatomic) IBOutlet UIImageView *speechBubble;
+
 
 
 @end
@@ -23,21 +24,30 @@
     [super viewDidLoad];
 //    [self animatedGeo];
     // Do any additional setup after loading the view.
-    [self loadHTML];
+    
+    [self displayGeo];
+}
+    
+    
+-(void)displayGeo{
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"geo" withExtension:@"gif"];
+    self.geoGif.image = [UIImage animatedImageWithAnimatedGIFData:[NSData dataWithContentsOfURL:url]];
+    
+}
+- (IBAction)geoPressed:(id)sender {
+    [self disableGeo];
 }
 
-// gif of GEO
-- (void)loadHTML {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"geo" ofType:@"html"];
-    NSURL *url = [NSURL fileURLWithPath:path];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    NSURL *baseURL = [url URLByDeletingLastPathComponent];
-    [self.geoMain loadData:data MIMEType:@"text/html" textEncodingName:@"utf-8" baseURL:baseURL];
+-(void)disableGeo{
+    self.geoGif.hidden=YES;
+    self.speechBubble.hidden=YES;
     
-    //make the background transparent
-    [self.geoMain setBackgroundColor:[UIColor clearColor]];
-    [self.geoMain setOpaque:NO];
 }
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return interfaceOrientation == UIInterfaceOrientationPortrait;
+}
+
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;

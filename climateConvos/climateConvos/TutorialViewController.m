@@ -8,6 +8,8 @@
 //oliver comment
 
 #import "TutorialViewController.h"
+#import "UIImage+animatedGIF.h"
+
 
 @interface TutorialViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *skipButton;
@@ -27,20 +29,14 @@
     [super viewDidLoad];
     [self checkStatus];
    
-      [self loadHTML];
+    [self displayGeo];
 }
 
-// gif of GEO
-- (void)loadHTML {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"geo" ofType:@"html"];
-    NSURL *url = [NSURL fileURLWithPath:path];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    NSURL *baseURL = [url URLByDeletingLastPathComponent];
-    [self.geoGif loadData:data MIMEType:@"text/html" textEncodingName:@"utf-8" baseURL:baseURL];
+
+-(void)displayGeo{
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"geo" withExtension:@"gif"];
+    self.geoAtTutorial.image = [UIImage animatedImageWithAnimatedGIFData:[NSData dataWithContentsOfURL:url]];
     
-    //make the background transparent
-    [self.geoGif setBackgroundColor:[UIColor clearColor]];
-    [self.geoGif setOpaque:NO];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {

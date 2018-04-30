@@ -9,7 +9,11 @@
 #import "SettingsViewController.h"
 #import "GEOViewController.h"
 
+
+
 @interface SettingsViewController ()
+
+
 @property (weak, nonatomic) IBOutlet UIView *geoButtonView;
 @property (weak, nonatomic) IBOutlet UILabel *geoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lockscreenLabel;
@@ -23,6 +27,7 @@
 
 @implementation SettingsViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -34,6 +39,7 @@
 - (IBAction)geoSwitch:(id)sender {
     if([sender isOn]){
         self.geoLabel.text = @"Disable GEO";
+      
     } else{
         self.geoLabel.text = @"Enable GEO";
     }
