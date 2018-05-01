@@ -11,10 +11,84 @@
 
 @interface CalendarViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) UIView *cardBox;
+@property (strong, nonatomic) UILabel *eveSummary;
+@property (strong, nonatomic) UILabel *eveDescription;
+@property (strong, nonatomic) UILabel *eveStartTime;
+@property (strong, nonatomic) UILabel *eveEndTime;
+@property (strong, nonatomic) UILabel *eveLocation;
+@property (strong, nonatomic) UIButton *closeEBtn;
 @end
 
 @implementation CalendarViewController
+#pragma mark -  pragmatically generated view
+- (void)generateView {
+    self.cardBox = [[UIView alloc] initWithFrame:CGRectMake(0, 20, 300, 600)];
+    [self.cardBox setBackgroundColor:[UIColor grayColor]];
+    [self.view addSubview:self.cardBox];
+    
+    self.eveSummary = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 200)];
+    self.eveSummary.text = @"Summary";
+    [self.cardBox addSubview:self.eveSummary];
+    
+    self.eveDescription = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, 100, 200)];
+    self.eveDescription.text = @"Description";
+    [self.cardBox addSubview:self.eveDescription];
+    
+    self.eveStartTime = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, 100, 200)];
+    self.eveStartTime.text = @"Start Time";
+    [self.cardBox addSubview:self.eveStartTime];
+    
+    self.eveEndTime = [[UILabel alloc] initWithFrame:CGRectMake(0, 150, 100, 200)];
+    self.eveEndTime.text = @"End Time";
+    [self.cardBox addSubview:self.eveEndTime];
+    
+    self.eveLocation = [[UILabel alloc] initWithFrame:CGRectMake(0, 200, 100, 200)];
+    self.eveLocation.text = @"Location";
+    [self.cardBox addSubview:self.eveLocation];
+    
+    self.closeEBtn = [[UIButton alloc] initWithFrame:CGRectMake(200, 100, 100, 200)];
+    [self.closeEBtn setTitle:@"X" forState:UIControlStateNormal];
+    [self.closeEBtn addTarget:self action:@selector(closeBtnPrs) forControlEvents:UIControlEventTouchUpInside];
+    [self.cardBox addSubview:self.closeEBtn];
+    
+    [self hideBox];
+}
+
+- (void)closeBtnPrs {
+    [self hideBox];
+}
+
+- (void)hideBox {
+    self.cardBox.hidden = YES;
+}
+
+- (void)showBox {
+    self.cardBox.hidden = NO;
+}
+
+- (void)sendData:(CalendarEvent *)ce {
+    //Create the dateformatter object
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //Set the required date format
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    //Get the string date
+    NSString *startString = [dateFormatter stringFromDate:ce.eStartTime];
+    NSString *endString = [dateFormatter stringFromDate:ce.eEndTime];
+    
+    self.eveSummary.text = [NSString stringWithFormat:@"%@", ce.eSummary];
+    self.eveDescription.text = [NSString stringWithFormat:@"%@", ce.eDescription];
+    self.eveStartTime.text = [NSString stringWithFormat:@"%@", startString];
+    self.eveEndTime.text = [NSString stringWithFormat:@"%@", endString];
+    self.eveLocation.text = [NSString stringWithFormat:@"%@", ce.eLocation];
+}
+
 #pragma mark - Table View Data Source and Delegate Methods
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self showBox];
+    [self sendData:self.calendarEvents[indexPath.row]];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Our table only has one section...
@@ -188,7 +262,7 @@
             [formatter setDateFormat:@"MM/dd/yyyy h:mm a"];
             NSDate *dateObj = [formatter dateFromString:dateTimeString];
             // NSLog(@"Start Date: %@", [formatter stringFromDate:dateObj]);
-            break;
+            return dateObj;
         }
     }
     return lines[0];
@@ -276,7 +350,7 @@
             [formatter setDateFormat:@"MM/dd/yyyy h:mm a"];
             NSDate *dateObj = [formatter dateFromString:dateTimeString];
             // NSLog(@"END DATE: %@", [formatter stringFromDate:dateObj]);
-            break;
+            return dateObj;
         }
     }
     return lines[0];
@@ -356,6 +430,7 @@
     [self downloadICS];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    [self generateView];
 }
 
 @end
