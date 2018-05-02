@@ -7,9 +7,9 @@
 //
 
 #import "DiscoverViewController.h"
-#import "ShowMoreViewController.h"
 #import "singleFactoid.h"
 #import "iCarousel.h"
+#import "ArticlesViewController.h"
 
 @interface DiscoverViewController ()
 
@@ -266,6 +266,6 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSLog(@"prep for segue");
-    ShowMoreViewController *factoidVC = segue.destinationViewController;
+    ArticlesViewController *factoidVC = segue.destinationViewController;
 }
 @end

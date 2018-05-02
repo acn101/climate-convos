@@ -20,7 +20,6 @@
 		7A1385D6207BF683006BF698 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1385D5207BF683006BF698 /* ContainerViewController.m */; };
 		7A936CFC2087F21800651E3F /* GEOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A936CFB2087F21800651E3F /* GEOViewController.m */; };
 		7AFDF2E620979652009E21BA /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFDF2E520979652009E21BA /* UIImage+animatedGIF.m */; };
-		B601D4372099A1ED00B4161F /* ShowMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B601D4362099A1ED00B4161F /* ShowMoreViewController.m */; };
 		B60EFE072097AB3C008D0142 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B60EFE052097AB3C008D0142 /* DiscoverViewController.m */; };
 		B64B1AF120759FC100E4F0CD /* ScrollDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */; };
 		B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF32075A41600E4F0CD /* iCarousel.m */; };
@@ -66,8 +65,6 @@
 		7AFDF2E420979652009E21BA /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
 		7AFDF2E520979652009E21BA /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
 		B5BFFC3BCBD5962E5EAA6D39 /* Pods-climateConvos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-climateConvos.release.xcconfig"; path = "Pods/Target Support Files/Pods-climateConvos/Pods-climateConvos.release.xcconfig"; sourceTree = "<group>"; };
-		B601D4352099A1ED00B4161F /* ShowMoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowMoreViewController.h; sourceTree = "<group>"; };
-		B601D4362099A1ED00B4161F /* ShowMoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowMoreViewController.m; sourceTree = "<group>"; };
 		B60EFE052097AB3C008D0142 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
 		B60EFE062097AB3C008D0142 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
 		B64B1AEF20759FC100E4F0CD /* ScrollDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollDemoViewController.h; sourceTree = "<group>"; };
@@ -221,8 +218,6 @@
 				CAFD9ED6208155BF00F5EB35 /* singleFactoid.m */,
 				B60EFE062097AB3C008D0142 /* DiscoverViewController.h */,
 				B60EFE052097AB3C008D0142 /* DiscoverViewController.m */,
-				B601D4352099A1ED00B4161F /* ShowMoreViewController.h */,
-				B601D4362099A1ED00B4161F /* ShowMoreViewController.m */,
 			);
 			name = Discover;
 			sourceTree = "<group>";
@@ -445,7 +440,6 @@
 				B678F14420841749001CD0F5 /* ArticlesViewController.m in Sources */,
 				7AFDF2E620979652009E21BA /* UIImage+animatedGIF.m in Sources */,
 				B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */,
-				B601D4372099A1ED00B4161F /* ShowMoreViewController.m in Sources */,
 				B6F58F2E2091065B0098F484 /* LocationViewController.m in Sources */,
 				CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */,
 				B60EFE072097AB3C008D0142 /* DiscoverViewController.m in Sources */,

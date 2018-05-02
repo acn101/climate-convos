@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *topic;
 @property (weak, nonatomic) IBOutlet UIView *whiteFrame;
+@property (weak, nonatomic) IBOutlet UITextView *factoid;
 
 
 
