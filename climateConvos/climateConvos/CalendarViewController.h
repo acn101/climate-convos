@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CalendarViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface CalendarViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+    NSMutableDictionary *selectedIndexes;
+}
+
 @property (strong, nonatomic) NSMutableArray *calendarEvents;
+
 @end

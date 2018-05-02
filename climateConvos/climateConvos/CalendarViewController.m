@@ -20,80 +20,31 @@
 @property (strong, nonatomic) UIButton *closeEBtn;
 @end
 
-//class var expandedHeight: CGFloat { get {return 200}}
-// class var defaultHeight: CGFloat { get {return 50}}
-
 @implementation CalendarViewController
-#pragma mark -  pragmatically generated view
-- (void)generateView {
-    self.cardBox = [[UIView alloc] initWithFrame:CGRectMake(0, 20, 300, 600)];
-    [self.cardBox setBackgroundColor:[UIColor grayColor]];
-    [self.view addSubview:self.cardBox];
-    
-    self.eveSummary = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 200)];
-    self.eveSummary.text = @"Summary";
-    [self.cardBox addSubview:self.eveSummary];
-    
-    self.eveDescription = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, 100, 200)];
-    self.eveDescription.text = @"Description";
-    [self.cardBox addSubview:self.eveDescription];
-    
-    self.eveStartTime = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, 100, 200)];
-    self.eveStartTime.text = @"Start Time";
-    [self.cardBox addSubview:self.eveStartTime];
-    
-    self.eveEndTime = [[UILabel alloc] initWithFrame:CGRectMake(0, 150, 100, 200)];
-    self.eveEndTime.text = @"End Time";
-    [self.cardBox addSubview:self.eveEndTime];
-    
-    self.eveLocation = [[UILabel alloc] initWithFrame:CGRectMake(0, 200, 100, 200)];
-    self.eveLocation.text = @"Location";
-    [self.cardBox addSubview:self.eveLocation];
-    
-    self.closeEBtn = [[UIButton alloc] initWithFrame:CGRectMake(200, 100, 100, 200)];
-    [self.closeEBtn setTitle:@"X" forState:UIControlStateNormal];
-    [self.closeEBtn addTarget:self action:@selector(closeBtnPrs) forControlEvents:UIControlEventTouchUpInside];
-    [self.cardBox addSubview:self.closeEBtn];
-    
-    [self.cardBox setFrame:CGRectMake(0.0, self.tableView.contentOffset.y, 300, 400)];
-    
-    [self hideBox];
+#pragma mark - table expansion
+- (BOOL)cellIsSelected:(NSIndexPath *)indexPath {
+    // Return whether the cell at the specified index path is selected or not
+    NSNumber *selectedIndex = [selectedIndexes objectForKey:indexPath];
+    return selectedIndex == nil ? FALSE : [selectedIndex boolValue];
 }
 
-- (void)closeBtnPrs {
-    [self hideBox];
-}
-
-- (void)hideBox {
-    self.cardBox.hidden = YES;
-}
-
-- (void)showBox {
-    self.cardBox.hidden = NO;
-}
-
-- (void)sendData:(CalendarEvent *)ce {
-    //Create the dateformatter object
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    //Set the required date format
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    //Get the string date
-    NSString *startString = [dateFormatter stringFromDate:ce.eStartTime];
-    NSString *endString = [dateFormatter stringFromDate:ce.eEndTime];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Deselect cell
+    [tableView deselectRowAtIndexPath:indexPath animated:TRUE];
     
-    self.eveSummary.text = [NSString stringWithFormat:@"%@", ce.eSummary];
-    self.eveDescription.text = [NSString stringWithFormat:@"%@", ce.eDescription];
-    self.eveStartTime.text = [NSString stringWithFormat:@"%@", startString];
-    self.eveEndTime.text = [NSString stringWithFormat:@"%@", endString];
-    self.eveLocation.text = [NSString stringWithFormat:@"%@", ce.eLocation];
+    // Toggle 'selected' state
+    BOOL isSelected = ![self cellIsSelected:indexPath];
+    
+    // Store cell 'selected' state keyed on indexPath
+    NSNumber *selectedIndex = [NSNumber numberWithBool:isSelected];
+    [selectedIndexes setObject:selectedIndex forKey:indexPath];
+    
+    // This is where magic happens...
+    [tableView beginUpdates];
+    [tableView endUpdates];
 }
 
 #pragma mark - Table View Data Source and Delegate Methods
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self showBox];
-    [self sendData:self.calendarEvents[indexPath.row]];
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Our table only has one section...
@@ -103,6 +54,7 @@
         return 0;
     }
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // grab the drone for this row
@@ -114,23 +66,34 @@
     // we assigned each component of the custom cell we created
     // in interface builder a unique tab number - this is how
     // we get references to those components
-    UILabel *titleLabel = (UILabel *)[cell viewWithTag:1];
-    UILabel *costLabel = (UILabel *)[cell viewWithTag:2];
-    UILabel *bodyLabel = (UILabel *)[cell viewWithTag:3];
+    UILabel *summaryLabel = (UILabel *)[cell viewWithTag:1];
+    UILabel *startLabel = (UILabel *)[cell viewWithTag:2];
+    UILabel *endLabel = (UILabel *)[cell viewWithTag:3];
+    UILabel *locationLabel = (UILabel *)[cell viewWithTag:4];
+    UILabel *descriptionLabel = (UILabel *)[cell viewWithTag:5];
+    
+    // customize date
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM/dd/yyyy h:mm a"];
+    NSString *fST = [formatter stringFromDate:thisEvent.eStartTime];
+    NSString *fET = [formatter stringFromDate:thisEvent.eEndTime];
     
     // populate the cell
-    titleLabel.text = thisEvent.eSummary;
-    costLabel.text = thisEvent.eLocation;
-    bodyLabel.text = thisEvent.eDescription;
+    summaryLabel.text = thisEvent.eSummary;
+    startLabel.text = fST;
+    endLabel.text = fET;
+    locationLabel.text = thisEvent.eLocation;
+    descriptionLabel.text = thisEvent.eDescription;
     
     // return our cell
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // we need to override the default cell height even thought we've set this
-    // explicitly in interface builder (this may be a bug in apple's software)
-    return 120;
+    if([self cellIsSelected:indexPath]) {
+        return 500;
+    }
+    return 42;
 }
 
 #pragma mark - calendar download
@@ -435,7 +398,7 @@
     [self downloadICS];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    [self generateView];
+    selectedIndexes = [[NSMutableDictionary alloc] init];
 }
 
 @end
