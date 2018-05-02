@@ -14,7 +14,7 @@
         <!--Navigation View Controller-->
         <scene sceneID="Ltg-Vi-ijT">
             <objects>
-                <viewController title="Navigation View Controller" id="F5C-TM-oVy" customClass="NavigationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="discover" title="Navigation View Controller" id="F5C-TM-oVy" customClass="NavigationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JvD-7r-3CC"/>
                         <viewControllerLayoutGuide type="bottom" id="Hag-xZ-XnX"/>
@@ -859,7 +859,7 @@
         <!--Tutorial View Controller-->
         <scene sceneID="Ihv-Pi-u4X">
             <objects>
-                <viewController storyboardIdentifier="somethingElse" id="lTQ-Fw-3bh" customClass="TutorialViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="intro" id="lTQ-Fw-3bh" customClass="TutorialViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vQI-Th-d2I"/>
                         <viewControllerLayoutGuide type="bottom" id="bxN-71-pPN"/>
@@ -896,6 +896,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="setSkipStatus:" destination="lTQ-Fw-3bh" eventType="touchUpInside" id="pdh-rf-irx"/>
                                     <segue destination="c28-H7-wmd" kind="modal" id="kQ7-nK-npE"/>
                                 </connections>
                             </button>
@@ -1004,7 +1005,7 @@
         <!--Location View Controller-->
         <scene sceneID="cXX-eQ-tkp">
             <objects>
-                <viewController id="c28-H7-wmd" customClass="LocationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="location" id="c28-H7-wmd" customClass="LocationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tDe-WW-f0X"/>
                         <viewControllerLayoutGuide type="bottom" id="LUW-0M-j7D"/>
@@ -1029,6 +1030,8 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="saveLocation:" destination="c28-H7-wmd" eventType="touchUpInside" id="GKr-0T-ov0"/>
+                                    <action selector="setSkipStatus:" destination="c28-H7-wmd" eventType="touchUpInside" id="SgL-1D-ae7"/>
                                     <segue destination="F5C-TM-oVy" kind="modal" id="7df-xW-IVn"/>
                                 </connections>
                             </button>
@@ -1059,14 +1062,6 @@
                                     <segment title="Houston"/>
                                 </segments>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGT-YC-sqA">
-                                <rect key="frame" x="257" y="396" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="saveLocation:" destination="c28-H7-wmd" eventType="touchUpInside" id="ONM-BW-Vvc"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.40948313469999997" green="0.73920291660000004" blue="0.88961392640000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -1302,6 +1297,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="kQ7-nK-npE"/>
         <segue reference="KUf-ys-Eio"/>
-        <segue reference="PtQ-hz-cGi"/>
+        <segue reference="7df-xW-IVn"/>
     </inferredMetricsTieBreakers>
 </document>

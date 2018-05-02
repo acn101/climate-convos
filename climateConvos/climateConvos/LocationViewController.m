@@ -23,6 +23,12 @@
     
 }
 
+- (IBAction)setSkipStatus:(id)sender {
+    NSString *valueToSave = @"skipToDiscover";
+    [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"tutSkipStatus"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 
 
 - (IBAction)saveLocation:(id)sender {

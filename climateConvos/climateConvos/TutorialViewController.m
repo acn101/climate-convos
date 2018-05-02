@@ -27,8 +27,16 @@
     [super viewDidLoad];
     [self checkStatus];
    
-      [self loadHTML];
+    [self loadHTML];
 }
+
+- (IBAction)setSkipStatus:(id)sender {
+    NSString *valueToSave = @"skipToLocation";
+    [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"tutSkipStatus"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+
 
 // gif of GEO
 - (void)loadHTML {
