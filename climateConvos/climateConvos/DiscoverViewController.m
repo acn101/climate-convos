@@ -241,7 +241,8 @@
     
     NSMutableArray *currentSavedFacts = [[currentDefaults objectForKey:@"savedFacts"] mutableCopy];
 
-    currentSavedFacts[currentSavedFacts.count] = _currentDB[index];
+    currentSavedFacts[currentSavedFacts.count] = _currentDB[(int)index];
+    NSLog(@" %tu", index);
     
     for (id obj in currentSavedFacts)
     {
