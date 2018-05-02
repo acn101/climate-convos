@@ -11,6 +11,8 @@
 
 @interface AppDelegate ()
 
+
+
 @end
 
 @implementation AppDelegate
@@ -18,6 +20,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [self initDefaultArrays];
     
     // Show Slashscreens
     [FIRApp configure];
@@ -46,6 +50,28 @@
     
     
     return YES;
+}
+
+-(void) initDefaultArrays
+{
+    NSUserDefaults *currentDefaults = [NSUserDefaults standardUserDefaults];
+    
+    // Pulling current savedFactoids from userDefaults
+    NSMutableArray *savedFactoids = [currentDefaults objectForKey:@"savedFacts"];
+    
+    // Checking if it's null
+    if (!savedFactoids || !savedFactoids.count)
+    {
+        // Creating one if it is null
+        NSMutableArray *saved = [NSMutableArray new];
+        
+        // Uploading new array to userdefaults for it to be used later
+        [currentDefaults setObject:saved forKey:@"savedFacts"];
+        [currentDefaults synchronize];
+        
+        NSLog(@"inside array : %tu", saved);
+    }
+    
 }
 
 

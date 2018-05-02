@@ -32,9 +32,6 @@
 
 
 
-
-
-
 - (IBAction)saveLocation:(id)sender {
     if(_location.selectedSegmentIndex == 0)
     {

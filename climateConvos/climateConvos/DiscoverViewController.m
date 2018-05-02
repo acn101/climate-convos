@@ -184,7 +184,7 @@
         shadowPlus.frame = CGRectMake(253.0, 364.0, 20.0f, 20.0f);
         shadowPlus.backgroundColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:.25];
         [shadowPlus addTarget:self
-                       action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
+                       action:@selector(addFactoid:) forControlEvents:UIControlEventTouchDown];
         [self.view addSubview:shadowPlus];
         
         
@@ -229,9 +229,28 @@
     NSInteger *index = [self.carousel indexOfItemView:(current)];
     NSLog(@" %tu", index);
     [self performSegueWithIdentifier:@"showMoreSegue" sender:self];
+}
+
+-(void)addFactoid:(id)sender
+{
+    NSUserDefaults *currentDefaults = [NSUserDefaults standardUserDefaults];
     
+    UIView *currentFact = self.carousel.currentItemView;
+    NSInteger *index = [self.carousel indexOfItemView:(currentFact)];
+    
+    
+    NSMutableArray *currentSavedFacts = [[currentDefaults objectForKey:@"savedFacts"] mutableCopy];
+
+    currentSavedFacts[currentSavedFacts.count] = _currentDB[index];
+    
+    for (id obj in currentSavedFacts)
+    {
+        NSLog(@"obj: %@", obj);
+    }
     
 }
+
+
 
 
 - (void)dealloc {
