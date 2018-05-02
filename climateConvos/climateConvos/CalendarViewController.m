@@ -20,6 +20,9 @@
 @property (strong, nonatomic) UIButton *closeEBtn;
 @end
 
+//class var expandedHeight: CGFloat { get {return 200}}
+// class var defaultHeight: CGFloat { get {return 50}}
+
 @implementation CalendarViewController
 #pragma mark -  pragmatically generated view
 - (void)generateView {
@@ -51,6 +54,8 @@
     [self.closeEBtn setTitle:@"X" forState:UIControlStateNormal];
     [self.closeEBtn addTarget:self action:@selector(closeBtnPrs) forControlEvents:UIControlEventTouchUpInside];
     [self.cardBox addSubview:self.closeEBtn];
+    
+    [self.cardBox setFrame:CGRectMake(0.0, self.tableView.contentOffset.y, 300, 400)];
     
     [self hideBox];
 }
