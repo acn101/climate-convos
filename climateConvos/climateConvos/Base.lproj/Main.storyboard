@@ -179,7 +179,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2G0-QV-QAD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gvU-gX-0ZB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="588"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QcV-jm-3kc" customClass="iCarousel">
@@ -200,6 +200,7 @@
                     <navigationItem key="navigationItem" id="CNH-bd-p6t"/>
                     <connections>
                         <outlet property="carousel" destination="QcV-jm-3kc" id="6HT-ZT-Ix0"/>
+                        <segue destination="mOy-0s-pCj" kind="modal" identifier="showMoreSegue" id="3Mu-3M-7rJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zIs-dh-EWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -300,10 +301,10 @@
             </objects>
             <point key="canvasLocation" x="1255" y="170"/>
         </scene>
-        <!--Expand Factoid View Controller-->
+        <!--Show More View Controller-->
         <scene sceneID="YNa-d9-d80">
             <objects>
-                <viewController id="mOy-0s-pCj" customClass="ExpandFactoidViewController" sceneMemberID="viewController">
+                <viewController id="mOy-0s-pCj" customClass="ShowMoreViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NVi-YP-yKR"/>
                         <viewControllerLayoutGuide type="bottom" id="gqT-xT-oFe"/>
@@ -383,13 +384,21 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="share_icon"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSJ-r8-qtU">
+                                <rect key="frame" x="6" y="3" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="MkA-cr-rUm" kind="modal" id="VU3-Pq-T89"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f9f-tx-5TE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="632" y="1468"/>
+            <point key="canvasLocation" x="-2358" y="327"/>
         </scene>
         <!--Splash Screen 2-->
         <scene sceneID="jRf-u1-gLp">
@@ -592,7 +601,7 @@
                         <viewControllerLayoutGuide type="bottom" id="SyF-Yk-6R8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bLz-Kj-XUF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="588"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTs-Jb-tMq">
@@ -1222,8 +1231,10 @@
         <image name="speech bubble" width="680" height="722"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="7Da-2V-jHy"/>
         <segue reference="6pb-hg-yuu"/>
         <segue reference="Jtk-wm-iid"/>
+        <segue reference="VU3-Pq-T89"/>
         <segue reference="fHA-Qe-ohv"/>
     </inferredMetricsTieBreakers>
 </document>

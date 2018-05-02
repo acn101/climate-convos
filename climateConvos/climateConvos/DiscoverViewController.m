@@ -7,10 +7,13 @@
 //
 
 #import "DiscoverViewController.h"
+#import "ShowMoreViewController.h"
 #import "singleFactoid.h"
 #import "iCarousel.h"
 
 @interface DiscoverViewController ()
+
+
 @property (weak, nonatomic) IBOutlet UIView *carouselV;
 
 @property (strong, nonatomic) FIRDatabaseReference *ref;
@@ -141,10 +144,9 @@
         
         // Topic Label
         UILabel *topic = [[UILabel alloc] initWithFrame:CGRectMake(15, -30, 250.0f, 30.0f)];
-       // topic.textAlignment = NSTextAlignmentLeft;
         topic.font = [UIFont boldSystemFontOfSize:22];
         //topic.font = [topic.font fontWithSize:24];
-        topic.tag = 1;
+        //topic.tag = 1;
         topic.numberOfLines = 0;
         topic.text = self.currentFactoid.tags; // here
         topic.textColor = [UIColor whiteColor];
@@ -158,7 +160,7 @@
         showMore.titleLabel.font = [UIFont boldSystemFontOfSize:16];
         [carouselView addSubview:showMore];
         
-        // Inivisible shadow button
+        // Inivisible shadow show more button
         UIButton *shadowMore = [UIButton buttonWithType:UIButtonTypeCustom];
         shadowMore.frame = CGRectMake(65.0, 357.0, 98.0f, 32.0f);
         shadowMore.backgroundColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:.25];
@@ -177,6 +179,15 @@
         addButton.userInteractionEnabled = YES;
         [carouselView addSubview:addButton];
         
+        // Inivisible shadow plus button
+        UIButton *shadowPlus = [UIButton buttonWithType:UIButtonTypeCustom];
+        shadowPlus.frame = CGRectMake(253.0, 364.0, 20.0f, 20.0f);
+        shadowPlus.backgroundColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:.25];
+        [shadowPlus addTarget:self
+                       action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
+        [self.view addSubview:shadowPlus];
+        
+        
         // share button
         UIButton *shareButton = [[UIButton alloc] initWithFrame:CGRectMake(245.0, 327, 20.0f, 18.0f)];
         [shareButton addTarget:self
@@ -186,6 +197,14 @@
         shareButton.titleLabel.font = [UIFont systemFontOfSize:16];
         shareButton.userInteractionEnabled = YES;
         [carouselView addSubview:shareButton];
+        
+        // Inivisible share plus button
+        UIButton *shadowShare = [UIButton buttonWithType:UIButtonTypeCustom];
+        shadowShare.frame = CGRectMake(283.0, 364.0, 20.0f, 18.0f);
+        shadowShare.backgroundColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:.25];
+        [shadowShare addTarget:self
+                       action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
+        [self.view addSubview:shadowShare];
         
     } else {
         //get a reference to the label in the recycled view
@@ -206,6 +225,11 @@
 
 - (void)buttonPressed:(id)sender {
     NSLog(@"I worked yay");
+    UIView *current = self.carousel.currentItemView;
+    NSInteger *index = [self.carousel indexOfItemView:(current)];
+    NSLog(@" %tu", index);
+    [self performSegueWithIdentifier:@"showMoreSegue" sender:self];
+    
     
 }
 
@@ -239,4 +263,9 @@
     return value;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"prep for segue");
+    ShowMoreViewController *factoidVC = segue.destinationViewController;
+}
 @end
