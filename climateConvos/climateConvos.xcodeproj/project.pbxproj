@@ -32,6 +32,7 @@
 		CA5BED112093C2F200C49EDF /* CalendarEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5BED0F2093C2F200C49EDF /* CalendarEvent.m */; };
 		CA7137A3208E6217008F57B1 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7137A1208E6216008F57B1 /* Profile.m */; };
 		CA920A3920815CD6003E78CD /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA920A3820815CD6003E78CD /* MessageUI.framework */; };
+		CACB5BD320A0F37900C5B22F /* Articles.m in Sources */ = {isa = PBXBuildFile; fileRef = CACB5BD220A0F37900C5B22F /* Articles.m */; };
 		CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF55493202B9E5600B1521E /* AppDelegate.m */; };
 		CAF5549A202B9E5600B1521E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAF55498202B9E5600B1521E /* Main.storyboard */; };
 		CAF5549C202B9E5600B1521E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAF5549B202B9E5600B1521E /* Assets.xcassets */; };
@@ -86,6 +87,8 @@
 		CA7137A1208E6216008F57B1 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
 		CA7137A2208E6217008F57B1 /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
 		CA920A3820815CD6003E78CD /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		CACB5BD120A0F37800C5B22F /* Articles.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Articles.h; sourceTree = "<group>"; };
+		CACB5BD220A0F37900C5B22F /* Articles.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Articles.m; sourceTree = "<group>"; };
 		CAF5548F202B9E5600B1521E /* climateConvos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = climateConvos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF55492202B9E5600B1521E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CAF55493202B9E5600B1521E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -231,6 +234,8 @@
 				CAFD9ECE2081500000F5EB35 /* CategoriesViewController.m */,
 				B678F14220841749001CD0F5 /* ArticlesViewController.h */,
 				B678F14320841749001CD0F5 /* ArticlesViewController.m */,
+				CACB5BD120A0F37800C5B22F /* Articles.h */,
+				CACB5BD220A0F37900C5B22F /* Articles.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -426,6 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CACB5BD320A0F37900C5B22F /* Articles.m in Sources */,
 				7A936CFC2087F21800651E3F /* GEOViewController.m in Sources */,
 				CA5BED112093C2F200C49EDF /* CalendarEvent.m in Sources */,
 				7A1385CD207BF342006BF698 /* NavigationViewController.m in Sources */,

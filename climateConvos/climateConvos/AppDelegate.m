@@ -25,18 +25,18 @@
     self.window.rootViewController = [SB instantiateViewControllerWithIdentifier:@"launchscreen"];
     [self.window makeKeyAndVisible];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         //after launch screen
         //first screen
         self.window.rootViewController = [SB instantiateViewControllerWithIdentifier:@"splashscreen"];
         [self.window makeKeyAndVisible];
         //second screen
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             self.window.rootViewController = [SB instantiateViewControllerWithIdentifier:@"splashscreen2"];
             [self.window makeKeyAndVisible];
             //Enter the app
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 self.window.rootViewController = [SB instantiateViewControllerWithIdentifier:@"somethingElse"];
                 [self.window makeKeyAndVisible];
             });

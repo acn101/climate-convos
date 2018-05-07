@@ -9,6 +9,7 @@
 #import "ArticlesViewController.h"
 #import "NavigationViewController.h"
 #import "singleFactoid.h"
+#import "Articles.h"
 
 @interface ArticlesViewController ()
 
@@ -20,11 +21,17 @@
 @property (strong, nonatomic) NSMutableDictionary *dict;
 @property (strong, nonatomic) NSMutableArray *currentDB;
 
+@property (strong, nonatomic) NSMutableDictionary *articlesDictionary;
+@property (strong, nonatomic) NSMutableArray *articlesDB;
+
 @property (strong, nonatomic) NSArray *getDBInfo;
 @property (strong, nonatomic) singleFactoid *currentFactoid;
 
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
 @property (nonatomic, strong) NSMutableArray *items;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 
 @end
 
@@ -53,6 +60,8 @@
     self.ref = [[FIRDatabase database] reference];
     self.currentDB = [[NSMutableArray alloc] init];
     [self testDB];
+    [self populateArticles];
+    [self setuptbl];
 }
 
 - (void)testDB {
@@ -75,7 +84,7 @@
 }
 
 - (void)setItems:(NSMutableArray *)items {
-    NSLog(@"setting items");
+//    NSLog(@"setting items");
     _items = items;
 }
 
@@ -113,12 +122,12 @@
 #pragma mark - iCarousel methods
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel {
     //return the total number of items in the carousel
-    NSLog(@"numberOfItemsInCarousel self.items.count: %lu", (long unsigned)self.items.count);
+//    NSLog(@"numberOfItemsInCarousel self.items.count: %lu", (long unsigned)self.items.count);
     return [self.items count];
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)carouselView {
-    UILabel *label = nil;
+    UITextView *label = nil;
     
     //create new view if no view is available for recycling
     if (carouselView == nil) {
@@ -129,11 +138,11 @@
         //        view.backgroundColor = [UIColor grayColor];
         carouselView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"discover_body.png"]];
         //        label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 280.0f, 380.0f)];
-        label = [[UILabel alloc] initWithFrame:CGRectMake(25, -50, 250.0f, 380.0f)];
+        label = [[UITextView alloc] initWithFrame:CGRectMake(25, 50, 250.0f, 280.0f)];
         label.textAlignment = NSTextAlignmentCenter;
-        label.font = [label.font fontWithSize:16];
+        [label setScrollEnabled:YES];
+        [label setFont:[UIFont systemFontOfSize:12]];
         label.tag = 1;
-        label.numberOfLines = 0;
         // [label sizeToFit];
         label.textColor = [UIColor colorWithRed:94.0f/255.0f green:94.0f/255.0f blue:94.0f/255.0f alpha:1.0f];
         [carouselView addSubview:label];
@@ -196,7 +205,7 @@
 }
 
 - (void)buttonPressed:(id)sender {
-    NSLog(@"I worked yay");
+//    NSLog(@"I worked yay");
     
 }
 
@@ -230,6 +239,64 @@
     return value;
 }
 
+#pragma mark - articles setup
+- (void)populateArticles {
+    [[self.ref child:@"Articles"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        self.articlesDictionary = snapshot.value;
+        for (NSString *articlesNumber in self.articlesDictionary) {
+            Articles *anArticle = [[Articles alloc] init];
+            anArticle.number = articlesNumber;
+            NSDictionary *articleDetails = [self.articlesDictionary objectForKey:articlesNumber];
+            anArticle.name = [articleDetails objectForKey:@"name"];
+            anArticle.tags = [articleDetails  objectForKey:@"tags"];
+            anArticle.location = [articleDetails objectForKey:@"location"];
+            anArticle.sources = [articleDetails objectForKey:@"sources"];
+            [self.articlesDB addObject:anArticle];
+            NSLog(@"%@", anArticle);
+        }
+        [self setupCarousel];
+    } withCancelBlock:^(NSError * _Nonnull error) {
+        NSLog(@"%@", error.localizedDescription);
+    }];
+    NSLog(@"Populate Articles Ran!");
+}
+
+#pragma mark - Setup
+- (void)setuptbl
+{
+    // make sure to add "<UITableViewDataSource>" to
+    // DefaultCellViewController.h for this to not
+    // produce a warning
+    self.tableView.dataSource = self;
+}
+#pragma mark - Table View Methods
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Our table only has one section...
+    if (section == 0) {
+        return self.currentDB.count;
+    } else {
+        return 0;
+    }
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // grab the drone for this row
+    singleFactoid *source = self.currentDB[indexPath.row];
+    NSString *singleSource = [source.sources objectForKey:@"url"];
+    
+    // create a cell with default styling
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"default"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"default"];
+    }
+    
+    // populate the cell
+    cell.textLabel.text = singleSource;
+    
+    // return our cell
+    return cell;
+}
 
 @end
 

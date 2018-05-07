@@ -652,6 +652,7 @@
                     </view>
                     <connections>
                         <outlet property="carousel" destination="3Ge-EP-Reb" id="NuS-hb-jqP"/>
+                        <outlet property="tableView" destination="zCI-wv-Zh0" id="e0e-qz-IkA"/>
                         <outlet property="topic" destination="KTs-Jb-tMq" id="6px-qS-OKH"/>
                         <outlet property="whiteFrame" destination="dFL-PP-dLV" id="bbq-Ra-mxU"/>
                     </connections>
