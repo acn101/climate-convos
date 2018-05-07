@@ -48,11 +48,7 @@ ContainerViewController *container;
         [self.container segueIdentifierReceivedFromParent:@"toTopic"];
         
     }
-    // check what screen to load
-    if ([self.VCSegueWasPerformedFrom isEqualToString:@"aboutVC"]) {
-        // setup the display to show article categories
-        [self.container segueIdentifierReceivedFromParent:@"toSettings"];
-    }
+   
 }
 
 

@@ -372,12 +372,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y28-b5-Zs6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2103" y="-957"/>
+            <point key="canvasLocation" x="-2121" y="-958"/>
         </scene>
         <!--Splash Screen-->
         <scene sceneID="dcd-FZ-kWT">
             <objects>
-                <viewController storyboardIdentifier="splashscreen" title="Splash Screen" id="SuV-qm-agi" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="splashscreen" title="Splash Screen" id="SuV-qm-agi" customClass="splashViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AkI-Ms-GFB"/>
                         <viewControllerLayoutGuide type="bottom" id="Isu-vl-1v4"/>
@@ -386,17 +386,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cc-logo" highlightedImage="cc-logo" translatesAutoresizingMaskIntoConstraints="NO" id="dRV-MI-wkd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BG.gif" highlightedImage="cc-logo" translatesAutoresizingMaskIntoConstraints="NO" id="dRV-MI-wkd">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uxp-13-oRw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="zdj-qQ-xqX">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="geo" translatesAutoresizingMaskIntoConstraints="NO" id="Ud0-DK-DN8">
+                                            <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <connections>
+                        <outlet property="splashBG" destination="dRV-MI-wkd" id="6jO-xy-ooy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nqN-9A-n5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2590" y="-957"/>
+            <point key="canvasLocation" x="-3082" y="-959"/>
         </scene>
         <!--Launch Screen-->
         <scene sceneID="rHh-Mr-M7Z">
@@ -412,10 +430,10 @@
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uWe-8g-a6n">
-                                <rect key="frame" x="0.0" y="7" width="375" height="660"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="tq5-33-TlX">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="660"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <blurEffect style="light"/>
@@ -427,7 +445,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2jJ-wr-2kL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3068" y="-958"/>
+            <point key="canvasLocation" x="-2601.5" y="-959.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="sg0-yw-RlM">
@@ -1205,6 +1223,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BG.gif" width="444" height="250"/>
         <image name="Geo" width="420" height="420"/>
         <image name="Settings-icon" width="90" height="90"/>
         <image name="add_icon" width="55" height="55"/>
@@ -1219,6 +1238,7 @@
         <image name="expandfactoid_body2" width="805" height="492"/>
         <image name="expandfactoid_body3" width="742" height="110"/>
         <image name="expandfactoid_sourcestab" width="805" height="90"/>
+        <image name="geo" width="375" height="211"/>
         <image name="geo speech bubble" width="517" height="225"/>
         <image name="geo.gif" width="750" height="422"/>
         <image name="house-selected" width="90" height="90"/>
