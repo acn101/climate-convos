@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *leftNav;
 
 @property (weak, nonatomic) IBOutlet UIImageView *module;
+@property (weak, nonatomic) IBOutlet UIImageView *module2;
+
 
 @property (weak, nonatomic) IBOutlet UITextView *modText;
 @property (weak, nonatomic) IBOutlet UIButton *hide;
@@ -31,6 +33,9 @@
 
 @property (nonatomic) int pageView;
 @property (nonatomic) int index;
+
+
+
 
 
 @end
@@ -57,11 +62,14 @@
     _whatButt.enabled = YES;
     _howButt.enabled = YES;
     _whatCanButt.enabled = YES;
+    _module.hidden = YES;
+    _module2.hidden = YES;
     
     [UIView transitionWithView:_module
                       duration:0.4
                        options:UIViewAnimationOptionTransitionCrossDissolve
                     animations:^{
+                        
                         _module.hidden = YES;
                         _modText.hidden = YES;
                         _hide.hidden = YES;
@@ -74,6 +82,7 @@
 
 - (void) showContent
 {
+    
     _proButt.enabled = NO;
     _whatButt.enabled = NO;
     _howButt.enabled = NO;
@@ -88,6 +97,7 @@
                         
                     } completion: NULL];
     _module.hidden = NO;
+    _module2.hidden = NO;
     _hide.hidden = NO;
     _rightNav.hidden = NO;
 }
@@ -107,7 +117,7 @@
 - (void) initProArray
 {
     _currentTexts = [NSArray arrayWithObjects:
-                     @"Climate Change is hard to talk about. It's complex, vast, and very political. Luckily I have some tips and guidance for you to follow during your climate convos. 0 ",
+                     @"Climate Change can be rather difficult to talk about. It's complex, huge, and very political. Luckily, we on the Climate Convos team have some guidance for you to follow during your climate convos. ",
                      @"Something to start you out with is to take it easy, and understand that it's not the end of the world, especially if the person you're talking to doesn't agree with you 1",
                      @"It's always important to talk about it optimistically, and to not think it's the end of the world. 2",
                      @"Holding a proactive conversation is to talk about solutions and remaining hopeful. 3",
@@ -176,7 +186,8 @@
     
     // Add the transition
     [_modText.layer addAnimation:transition forKey:@"transition"];
-    
+    [_module.layer addAnimation:transition forKey:@"transition"];
+    [_module2.layer addAnimation:transition forKey:@"transition"];
     
     
     
@@ -190,6 +201,8 @@
         _rightNav.hidden = YES;
         
     }
+    
+
 }
 
 - (IBAction)navLeft:(UIButton *)sender {
@@ -202,7 +215,8 @@
     
     // Add the transition
     [_modText.layer addAnimation:transition forKey:@"transition"];
-    
+    [_module.layer addAnimation:transition forKey:@"transition"];
+    [_module2.layer addAnimation:transition forKey:@"transition"];
     
     
     
