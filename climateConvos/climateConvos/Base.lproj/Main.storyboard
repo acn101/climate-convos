@@ -1149,6 +1149,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wF1-pq-I1U">
                                 <rect key="frame" x="21" y="182" width="322" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="     Sources">
                                     <color key="titleColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1195,6 +1196,7 @@
                         <outlet property="notificationsLabel" destination="KQv-Uf-R2F" id="m4e-j2-iT9"/>
                         <outlet property="seattleButton" destination="UNv-hX-MYH" id="6po-EY-cQ6"/>
                         <outlet property="soundsLabel" destination="tbb-9I-aLp" id="VFd-mq-PVK"/>
+                        <outlet property="sourcesButton" destination="wF1-pq-I1U" id="Dbw-le-51z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cai-ej-IKu" userLabel="First Responder" sceneMemberID="firstResponder"/>
