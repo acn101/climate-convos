@@ -27,7 +27,6 @@
 		B69EB1CD20757AF800E22425 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69EB1CC20757AF800E22425 /* QuartzCore.framework */; };
 		B69FDE772085369F00B60C4C /* EducationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69FDE762085369F00B60C4C /* EducationViewController.m */; };
 		B6C16EFA2099A3BA000B553C /* geo.gif in Resources */ = {isa = PBXBuildFile; fileRef = B6C16EF92099A3B8000B553C /* geo.gif */; };
-		B6F1B6B020A0DAB900750DD8 /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F1B6AF20A0DAB900750DD8 /* Global.m */; };
 		B6F58F2E2091065B0098F484 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F58F2C2091065A0098F484 /* LocationViewController.m */; };
 		CA5BED102093C2F200C49EDF /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5BED0E2093C2F200C49EDF /* CalendarViewController.m */; };
 		CA5BED112093C2F200C49EDF /* CalendarEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5BED0F2093C2F200C49EDF /* CalendarEvent.m */; };
@@ -78,8 +77,6 @@
 		B69FDE752085369F00B60C4C /* EducationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EducationViewController.h; sourceTree = "<group>"; };
 		B69FDE762085369F00B60C4C /* EducationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EducationViewController.m; sourceTree = "<group>"; };
 		B6C16EF92099A3B8000B553C /* geo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = geo.gif; sourceTree = "<group>"; };
-		B6F1B6AE20A0DAB900750DD8 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
-		B6F1B6AF20A0DAB900750DD8 /* Global.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Global.m; sourceTree = "<group>"; };
 		B6F58F2C2091065A0098F484 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		B6F58F2D2091065B0098F484 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		CA5BED0C2093C2F100C49EDF /* CalendarEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarEvent.h; sourceTree = "<group>"; };
@@ -268,8 +265,6 @@
 		CAF55491202B9E5600B1521E /* climateConvos */ = {
 			isa = PBXGroup;
 			children = (
-				B6F1B6AE20A0DAB900750DD8 /* Global.h */,
-				B6F1B6AF20A0DAB900750DD8 /* Global.m */,
 				74FD3CCE2093BBC900A56183 /* Calendar */,
 				B6F58F2D2091065B0098F484 /* LocationViewController.h */,
 				B6F58F2C2091065A0098F484 /* LocationViewController.m */,
@@ -431,7 +426,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6F1B6B020A0DAB900750DD8 /* Global.m in Sources */,
 				7A936CFC2087F21800651E3F /* GEOViewController.m in Sources */,
 				CA5BED112093C2F200C49EDF /* CalendarEvent.m in Sources */,
 				7A1385CD207BF342006BF698 /* NavigationViewController.m in Sources */,

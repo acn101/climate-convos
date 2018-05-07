@@ -10,18 +10,23 @@
 #import "singleFactoid.h"
 #import "iCarousel.h"
 #import "ArticlesViewController.h"
+#import "AppDelegate.h"
 
 @interface DiscoverViewController ()
-
+{
+    AppDelegate *mainDelegate;
+}
 
 @property (weak, nonatomic) IBOutlet UIView *carouselV;
-
 @property (strong, nonatomic) FIRDatabaseReference *ref;
 @property (strong, nonatomic) NSMutableDictionary *dict;
 @property (strong, nonatomic) NSMutableArray *currentDB;
 
 @property (strong, nonatomic) NSArray *getDBInfo;
 @property (strong, nonatomic) singleFactoid *currentFactoid;
+@property (nonatomic, strong) NSMutableArray *seattleFactoids;
+@property (nonatomic, strong) NSMutableArray *houstonFactoids;
+@property (nonatomic, strong) NSMutableArray *savedFactoids;
 
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
 @property (nonatomic, strong) NSMutableArray *items;
@@ -40,6 +45,9 @@
 - (void)setup {
     self.ref = [[FIRDatabase database] reference];
     self.currentDB = [[NSMutableArray alloc] init];
+    self.seattleFactoids = [[NSMutableArray alloc] init];
+    self.houstonFactoids = [[NSMutableArray alloc] init];
+
     [self testDB];
 }
 
@@ -61,6 +69,31 @@
         NSLog(@"%@", error.localizedDescription);
     }];
 }
+
+/*
+-(void) initArrayIndices
+{
+    [self.ref observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot) {
+        for (int i = 0; i < _currentDB.count; i++)
+        {
+            singleFactoid *current = self.currentDB[i];
+            NSLog(@"%@", current);
+            if ([current.location isEqualToString:@"Seattle"])
+            {
+                [_seattleFactoids addObject:current];
+            }
+            
+            if ([current.location isEqualToString:@"Houston"])
+            {
+                [_houstonFactoids addObject:current];
+            }
+        }
+        NSLog(@"this is houston: %@", _houstonFactoids);
+        NSLog(@"this is seattle: %@",_seattleFactoids);
+    }];
+    
+    
+}*/
 
 - (void)setItems:(NSMutableArray *)items {
     NSLog(@"setting items");
@@ -90,10 +123,19 @@
             NSString *currentSavedLocation = [[NSUserDefaults standardUserDefaults]
                                               stringForKey:@"location"];
             
-            if([sf.location isEqualToString:currentSavedLocation] || [sf.location isEqualToString:@"Global"] ) {
+          //  if([sf.location isEqualToString:currentSavedLocation] || [sf.location isEqualToString:@"Global"] ) {
+               // [self.items addObject:[NSNumber numberWithInt:i]];
+          //  }
+            if ([sf.location isEqualToString:@"Seattle"] || [sf.location isEqualToString:@"Global"]) {
                 [self.items addObject:[NSNumber numberWithInt:i]];
+                [_seattleFactoids addObject:sf];
+            } else if ([sf.location isEqualToString:@"Houston"] || [sf.location isEqualToString:@"Global"]) {
+                [self.items addObject:[NSNumber numberWithInt:i]];
+                [_houstonFactoids addObject:sf];
             }
         }
+   //     NSLog(@"this is houston: %@", _houstonFactoids);
+   //     NSLog(@"this is seattle: %@",_seattleFactoids);
         [self.carousel reloadData];
     }];
 }
@@ -184,7 +226,7 @@
         shadowPlus.frame = CGRectMake(253.0, 364.0, 20.0f, 20.0f);
         shadowPlus.backgroundColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:.25];
         [shadowPlus addTarget:self
-                       action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
+                       action:@selector(addFactoid:) forControlEvents:UIControlEventTouchDown];
         [self.view addSubview:shadowPlus];
         
         
@@ -231,6 +273,24 @@
     [self performSegueWithIdentifier:@"showMoreSegue" sender:self];
     
     
+}
+
+-(void ) addFactoid:(id)sender {
+    UIView *current = self.carousel.currentItemView;
+    
+    NSInteger *index = [self.carousel indexOfItemView:(current)];
+    NSLog(@" %tu", index);
+    singleFactoid *toSave = [[singleFactoid alloc] init];
+    NSString *currentSavedLocation = [[NSUserDefaults standardUserDefaults]
+                                      stringForKey:@"location"];
+    if ([currentSavedLocation isEqualToString:@"Seattle"]) {
+        toSave = _seattleFactoids[(int)index];
+    } else {
+        toSave = _houstonFactoids[(int)index];
+    }
+    [_savedFactoids addObject:toSave];
+    NSLog(@"this is the saved factoid %@", toSave);
+
 }
 
 
