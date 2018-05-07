@@ -63,7 +63,7 @@
 }
 
 - (void)setItems:(NSMutableArray *)items {
-    NSLog(@"setting items");
+    // NSLog(@"setting items");
     _items = items;
 }
 
@@ -117,7 +117,7 @@
 #pragma mark - iCarousel methods
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel {
     //return the total number of items in the carousel
-    NSLog(@"numberOfItemsInCarousel self.items.count: %lu", (long unsigned)self.items.count);
+    // NSLog(@"numberOfItemsInCarousel self.items.count: %lu", (long unsigned)self.items.count);
     return [self.items count];
 }
 
@@ -224,10 +224,10 @@
 }
 
 - (void)buttonPressed:(id)sender {
-    NSLog(@"I worked yay");
+    // NSLog(@"I worked yay");
     UIView *current = self.carousel.currentItemView;
     NSInteger *index = [self.carousel indexOfItemView:(current)];
-    NSLog(@" %tu", index);
+    // NSLog(@" %tu", index);
     [self performSegueWithIdentifier:@"showMoreSegue" sender:self];
     
     
@@ -265,7 +265,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSLog(@"prep for segue");
+    // NSLog(@"prep for segue");
     ArticlesViewController *factoidVC = segue.destinationViewController;
 }
 @end

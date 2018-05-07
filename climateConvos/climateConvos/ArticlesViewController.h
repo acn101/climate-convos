@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@import Firebase;
+#import "iCarousel.h"
 
-@interface ArticlesViewController : UIViewController
+@interface ArticlesViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>
 
 @property (strong, nonatomic) NSString *selectedCategory;
 

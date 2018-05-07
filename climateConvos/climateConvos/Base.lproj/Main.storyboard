@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="lTQ-Fw-3bh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="lTQ-Fw-3bh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -643,47 +643,22 @@
                                     <segue destination="F5C-TM-oVy" kind="modal" modalTransitionStyle="crossDissolve" id="fHA-Qe-ohv"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="expandfactoid_body" translatesAutoresizingMaskIntoConstraints="NO" id="fh3-tL-eFR">
-                                <rect key="frame" x="26" y="85" width="322" height="233"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ge-EP-Reb" customClass="iCarousel">
+                                <rect key="frame" x="26" y="74" width="323" height="255"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6h-CO-NxO">
-                                <rect key="frame" x="26" y="283" width="322" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <state key="normal" title="Sources" backgroundImage="expandfactoid_sourcestab">
-                                    <color key="titleColor" red="0.36862745099999999" green="0.36862745099999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ekx-nJ-nFv">
-                                <rect key="frame" x="46" y="101" width="283" height="142"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SV3-a4-NRM">
-                                <rect key="frame" x="307" y="256" width="22" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="share_icon"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ja-k4-V4b">
-                                <rect key="frame" x="276" y="255" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="add_icon"/>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="factoid" destination="ekx-nJ-nFv" id="B4C-TR-Cw7"/>
+                        <outlet property="carousel" destination="3Ge-EP-Reb" id="NuS-hb-jqP"/>
                         <outlet property="topic" destination="KTs-Jb-tMq" id="6px-qS-OKH"/>
                         <outlet property="whiteFrame" destination="dFL-PP-dLV" id="bbq-Ra-mxU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uEK-AC-ePs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-89" y="1368"/>
+            <point key="canvasLocation" x="-89.5" y="1368"/>
         </scene>
         <!--Profile-->
         <scene sceneID="wMK-b1-zAT">
@@ -694,7 +669,7 @@
                         <viewControllerLayoutGuide type="bottom" id="UJy-lV-jzW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eXv-u5-zIy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="588"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile_body" translatesAutoresizingMaskIntoConstraints="NO" id="EXC-Si-qob">
@@ -1260,7 +1235,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="6pb-hg-yuu"/>
         <segue reference="Jtk-wm-iid"/>
-        <segue reference="7Da-2V-jHy"/>
+        <segue reference="L9e-qb-ao4"/>
         <segue reference="fHA-Qe-ohv"/>
     </inferredMetricsTieBreakers>
 </document>
