@@ -29,11 +29,12 @@
     // produce a warning
     self.tableView.dataSource = self;
     
-    for (singleFactoid *factoid in self.savedFactoids) {
+   // NSLog(@"%@ this is the array", self.savedFactoids);
+   /* for (singleFactoid *factoid in self.savedFactoids) {
         
         NSLog(@"factoid on profile: %@", factoid);
         
-    }
+    }*/
     
     
 }
@@ -42,17 +43,17 @@
     self.segmentChosen = (int) control.selectedSegmentIndex;
     switch (control.selectedSegmentIndex) {
         case 0:{
-            self.currentArray = self.dummyFactsArray;
+            self.currentArray = self.savedFactoids;
             [self.tableView reloadData];
             
             break;}
         case 1:{
-            self.currentArray = self.dummyArticlesArray;
+            self.currentArray = self.savedFactoids;
             [self.tableView reloadData];
             
             break;}
         case 2:{
-            self.currentArray = self.dummyEventsArray;
+            self.currentArray = self.savedFactoids;
             [self.tableView reloadData];
             
             break;}
@@ -65,7 +66,12 @@
 {
     // Our table only has one section...
     if (section == 0) {
-        return self.currentArray.count;
+        if (self.currentArray.count == 0) {
+            return 1;
+        } else  {
+            return self.currentArray.count;
+        }
+        
         /*
         if (self.segmentChosen == 0) {
             return self.dummyFactsArray.count;
@@ -90,8 +96,19 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"default"];
     }
-    
-    NSString *text = self.currentArray[indexPath.row];
+    NSString *text;
+    if (self.currentArray.count > 0) {
+        for (singleFactoid *factoid in self.currentArray) {
+            
+            NSLog(@"factoid on profile: %@", factoid);
+            
+        }
+        singleFactoid *factoid = self.currentArray[indexPath.row];
+        text = [factoid.texts objectForKey:@"short"];
+   // NSString *text = self.currentArray[indexPath.row];
+    } else {
+        text = @"You have no saved factoids";
+    }
     // populate the cell
     cell.textLabel.text = text;
     //[cell.imageView setImage:thisDrone.image];
@@ -105,7 +122,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setup];
-    self.dummyFactsArray = [[NSMutableArray alloc] init];
+ /*   self.dummyFactsArray = [[NSMutableArray alloc] init];
     [self.dummyFactsArray addObject:@"fact 1"];
     [self.dummyFactsArray addObject:@"fact 2"];
     
@@ -115,9 +132,9 @@
     
     self.dummyEventsArray = [[NSMutableArray alloc] init];
     [self.dummyEventsArray addObject:@"events 1"];
-    [self.dummyEventsArray addObject:@"events 2"];
+    [self.dummyEventsArray addObject:@"events 2"];*/
     
-    self.currentArray = self.dummyFactsArray;
+    self.currentArray = self.savedFactoids;
 }
 
 

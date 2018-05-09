@@ -289,7 +289,7 @@
         toSave = _houstonFactoids[(int)index];
     }
     [_savedFactoids addObject:toSave];
-    NSLog(@"this is the saved factoid %@", _savedFactoids);
+ //   NSLog(@"this is the saved factoid %@", _savedFactoids);
   //  [self performSegueWithIdentifier:@"savedToProfileSegue" sender:self];
 
 }
