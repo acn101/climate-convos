@@ -13,4 +13,6 @@
 
 @interface DiscoverViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>
 
+@property (nonatomic, strong) NSMutableArray *savedFactoids;
+
 @end

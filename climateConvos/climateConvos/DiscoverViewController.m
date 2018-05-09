@@ -26,7 +26,7 @@
 @property (strong, nonatomic) singleFactoid *currentFactoid;
 @property (nonatomic, strong) NSMutableArray *seattleFactoids;
 @property (nonatomic, strong) NSMutableArray *houstonFactoids;
-@property (nonatomic, strong) NSMutableArray *savedFactoids;
+
 
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
 @property (nonatomic, strong) NSMutableArray *items;
@@ -47,6 +47,7 @@
     self.currentDB = [[NSMutableArray alloc] init];
     self.seattleFactoids = [[NSMutableArray alloc] init];
     self.houstonFactoids = [[NSMutableArray alloc] init];
+//    self.savedFactoids = [[NSMutableArray alloc] init];
 
     [self testDB];
 }
@@ -123,15 +124,14 @@
             NSString *currentSavedLocation = [[NSUserDefaults standardUserDefaults]
                                               stringForKey:@"location"];
             
-          //  if([sf.location isEqualToString:currentSavedLocation] || [sf.location isEqualToString:@"Global"] ) {
-               // [self.items addObject:[NSNumber numberWithInt:i]];
-          //  }
             if ([sf.location isEqualToString:@"Seattle"] || [sf.location isEqualToString:@"Global"]) {
-                [self.items addObject:[NSNumber numberWithInt:i]];
                 [_seattleFactoids addObject:sf];
             } else if ([sf.location isEqualToString:@"Houston"] || [sf.location isEqualToString:@"Global"]) {
-                [self.items addObject:[NSNumber numberWithInt:i]];
                 [_houstonFactoids addObject:sf];
+            }
+            
+            if([sf.location isEqualToString:currentSavedLocation] || [sf.location isEqualToString:@"Global"] ) {
+                [self.items addObject:[NSNumber numberWithInt:i]];
             }
         }
    //     NSLog(@"this is houston: %@", _houstonFactoids);
@@ -289,7 +289,8 @@
         toSave = _houstonFactoids[(int)index];
     }
     [_savedFactoids addObject:toSave];
-    NSLog(@"this is the saved factoid %@", toSave);
+    NSLog(@"this is the saved factoid %@", _savedFactoids);
+  //  [self performSegueWithIdentifier:@"savedToProfileSegue" sender:self];
 
 }
 

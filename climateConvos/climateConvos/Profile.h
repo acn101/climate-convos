@@ -16,4 +16,6 @@
 // this property is weak because it is "owned" by myTabBarViewController
 //@property (weak, nonatomic) NSArray <singleFactoid *> *drones;
 
+@property (nonatomic, strong) NSMutableArray *savedFactoids;
+
 @end

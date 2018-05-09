@@ -7,17 +7,29 @@
 //
 
 #import "ContainerViewController.h"
+#import "DiscoverViewController.h"
+#import "Profile.h"
 
 @interface ContainerViewController ()
+
+@property (nonatomic, strong) NSMutableArray *savedFactoids;
+
 
 @end
 
 @implementation ContainerViewController
 
+- (NSMutableArray *)savedFactoids
+{
+    if (!_savedFactoids) {
+        _savedFactoids = [[NSMutableArray alloc] init];
+    }
+    return _savedFactoids;
+}
+
 - (void)viewDidLoad {
     
     [self segueIdentifierReceivedFromParent:@"toHome"];
-    
     
 }
 -(void)segueIdentifierReceivedFromParent:(NSString*)button{
@@ -44,8 +56,6 @@
         ([button isEqualToString: @"toGetActive"]){
             self.segueIdentifier = @"getActiveButton";
             [self performSegueWithIdentifier:self.segueIdentifier sender:nil];
-          
-
         }
     else if
         ([button isEqualToString: @"toSettings"]){
@@ -59,18 +69,26 @@
     //  vc = [[UIViewController alloc]init];
     // Make sure your segue name in storyboard is the same as this line
     
+    if ([segue.identifier isEqualToString:@"homeButton"]) {
+        
+        DiscoverViewController *discoverVC = segue.destinationViewController;
+        discoverVC.savedFactoids = self.savedFactoids;
+        
+    }
+    
+    if ([segue.identifier isEqualToString:@"profileButton"]) {
+        Profile *profileVC = segue.destinationViewController;
+        profileVC.savedFactoids = self.savedFactoids;
+    }
+    
     if ([[segue identifier] isEqual: self.segueIdentifier]){
         if(lastViewController != nil){
             [lastViewController.view removeFromSuperview];
-            
-            
         }
-        
         
         // Get reference to the destination view controller
         vc = (UIViewController *)[segue destinationViewController];
         [self addChildViewController:(vc)];
-        
         
         vc. view.frame  = CGRectMake(0,0, self.view.frame.size.width , self.view.frame.size.height);
         

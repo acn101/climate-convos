@@ -29,6 +29,12 @@
     // produce a warning
     self.tableView.dataSource = self;
     
+    for (singleFactoid *factoid in self.savedFactoids) {
+        
+        NSLog(@"factoid on profile: %@", factoid);
+        
+    }
+    
     
 }
 
