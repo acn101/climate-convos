@@ -8,6 +8,8 @@
 
 #import "Profile.h"
 #import "singleFactoid.h"
+#import "ProfileCustomTableViewCell.h"
+
 @interface Profile ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -28,15 +30,6 @@
     // DefaultCellViewController.h for this to not
     // produce a warning
     self.tableView.dataSource = self;
-    
-   // NSLog(@"%@ this is the array", self.savedFactoids);
-   /* for (singleFactoid *factoid in self.savedFactoids) {
-        
-        NSLog(@"factoid on profile: %@", factoid);
-        
-    }*/
-    
-    
 }
 
 - (IBAction)segmentedcontroller {
@@ -71,31 +64,16 @@
         } else  {
             return self.currentArray.count;
         }
-        
-        /*
-        if (self.segmentChosen == 0) {
-            return self.dummyFactsArray.count;
-        } else if (self.segmentChosen == 1) {
-            return self.dummyArticlesArray.count;
-        } else {
-            return self.dummyEventsArray.count;
-        }
-        */
     } else {
         return 0;
     }
 }
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // grab the drone for this row
-    //Drone *thisDrone = self.drones[indexPath.row];
-    
-    
-    // create a cell with default styling
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"default"];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"default"];
-    }
+    self.tableView.rowHeight = 85;
+    ProfileCustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"profilecell" forIndexPath:indexPath];
     NSString *text;
     if (self.currentArray.count > 0) {
         for (singleFactoid *factoid in self.currentArray) {
@@ -105,13 +83,12 @@
         }
         singleFactoid *factoid = self.currentArray[indexPath.row];
         text = [factoid.texts objectForKey:@"short"];
-   // NSString *text = self.currentArray[indexPath.row];
     } else {
         text = @"You have no saved factoids";
     }
+    
     // populate the cell
-    cell.textLabel.text = text;
-    //[cell.imageView setImage:thisDrone.image];
+    cell.profileText.text = text;
     
     // return our cell
     return cell;
@@ -122,18 +99,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setup];
- /*   self.dummyFactsArray = [[NSMutableArray alloc] init];
-    [self.dummyFactsArray addObject:@"fact 1"];
-    [self.dummyFactsArray addObject:@"fact 2"];
-    
-    self.dummyArticlesArray = [[NSMutableArray alloc] init];
-    [self.dummyArticlesArray addObject:@"article 1"];
-    [self.dummyArticlesArray addObject:@"article 2"];
-    
-    self.dummyEventsArray = [[NSMutableArray alloc] init];
-    [self.dummyEventsArray addObject:@"events 1"];
-    [self.dummyEventsArray addObject:@"events 2"];*/
-    
     self.currentArray = self.savedFactoids;
 }
 

@@ -24,6 +24,7 @@
 		B64B1AF120759FC100E4F0CD /* ScrollDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */; };
 		B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF32075A41600E4F0CD /* iCarousel.m */; };
 		B678F14420841749001CD0F5 /* ArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B678F14320841749001CD0F5 /* ArticlesViewController.m */; };
+		B692E50A20A38380008E6D40 /* ProfileCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B692E50920A38380008E6D40 /* ProfileCustomTableViewCell.m */; };
 		B69EB1CD20757AF800E22425 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B69EB1CC20757AF800E22425 /* QuartzCore.framework */; };
 		B69FDE772085369F00B60C4C /* EducationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69FDE762085369F00B60C4C /* EducationViewController.m */; };
 		B6C16EFA2099A3BA000B553C /* geo.gif in Resources */ = {isa = PBXBuildFile; fileRef = B6C16EF92099A3B8000B553C /* geo.gif */; };
@@ -73,6 +74,8 @@
 		B64B1AF32075A41600E4F0CD /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		B678F14220841749001CD0F5 /* ArticlesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArticlesViewController.h; sourceTree = "<group>"; };
 		B678F14320841749001CD0F5 /* ArticlesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArticlesViewController.m; sourceTree = "<group>"; };
+		B692E50820A38380008E6D40 /* ProfileCustomTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileCustomTableViewCell.h; sourceTree = "<group>"; };
+		B692E50920A38380008E6D40 /* ProfileCustomTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileCustomTableViewCell.m; sourceTree = "<group>"; };
 		B69EB1CC20757AF800E22425 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B69FDE752085369F00B60C4C /* EducationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EducationViewController.h; sourceTree = "<group>"; };
 		B69FDE762085369F00B60C4C /* EducationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EducationViewController.m; sourceTree = "<group>"; };
@@ -161,6 +164,8 @@
 		7A0476DD20872A3C009765D5 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				B692E50820A38380008E6D40 /* ProfileCustomTableViewCell.h */,
+				B692E50920A38380008E6D40 /* ProfileCustomTableViewCell.m */,
 				CA7137A2208E6217008F57B1 /* Profile.h */,
 				CA7137A1208E6216008F57B1 /* Profile.m */,
 			);
@@ -426,6 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B692E50A20A38380008E6D40 /* ProfileCustomTableViewCell.m in Sources */,
 				7A936CFC2087F21800651E3F /* GEOViewController.m in Sources */,
 				CA5BED112093C2F200C49EDF /* CalendarEvent.m in Sources */,
 				7A1385CD207BF342006BF698 /* NavigationViewController.m in Sources */,
