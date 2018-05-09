@@ -450,10 +450,11 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     selectedIndexes = [[NSMutableDictionary alloc] init];
+    self.tableView.layer.cornerRadius = 11;
 }
 
 - (void)checkCity {
-    self.city = @"Seattle";
+    self.city = @"Houston";
     if([self.city isEqualToString:@"Seattle"]) {
         [self downloadICS];
     } else if ([self.city isEqualToString:@"Houston"]) {
