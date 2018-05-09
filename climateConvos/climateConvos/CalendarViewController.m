@@ -18,6 +18,8 @@
 @property (strong, nonatomic) UILabel *eveEndTime;
 @property (strong, nonatomic) UILabel *eveLocation;
 @property (strong, nonatomic) UIButton *closeEBtn;
+
+@property (strong, nonatomic) NSString *city;
 @end
 
 @implementation CalendarViewController
@@ -96,6 +98,7 @@
     return 42;
 }
 
+#pragma mark - SEATTLE START
 #pragma mark - calendar download
 - (void)downloadICS
 {
@@ -140,6 +143,53 @@
     });
     // NSLog(@"Calendar Events Count %tu", self.calendarEvents.count);
 }
+#pragma mark - SEATTLE END
+
+#pragma mark - HOUSTON START
+- (void)downloadICSHouston
+{
+    NSString *URLString = @"https://calendar.google.com/calendar/ical/glhsdobgfp0uat7regg4idd8ma70fiaq%40import.calendar.google.com/public/basic.ics";
+    NSURL *url = [NSURL URLWithString:URLString];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *downloadTask = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        // handle response
+        if (error) {
+            NSLog(@"ERROR! - %@", error);
+        } else {
+            [self parseICSHouston:data];
+        }
+    }];
+    [downloadTask resume];
+}
+
+- (void)parseICSHouston:(NSData *)data
+{
+    NSString *ICSAsString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    // printf("%s", [NSString stringWithFormat: @"%@", ICSAsString].UTF8String);
+    self.calendarEvents = [[NSMutableArray alloc] init];
+    // create array of lines
+    NSArray *events = [ICSAsString componentsSeparatedByString:@"BEGIN:VEVENT"];
+    for (NSUInteger i = 0; i < events.count; i++) {
+        if (i > 0) {
+#pragma mark - call events here
+            NSString *event = events[i];
+            // NSLog(@"EVENT WE ARE IN: %zd", i);
+            CalendarEvent *calEvent = [[CalendarEvent alloc] init];
+            calEvent.eDescription = [self getDescription:event];
+            calEvent.eStartTime = [self getStartTime:event];
+            calEvent.eEndTime = [self getEndTime:event];
+            calEvent.eSummary = [self getSummary:event];
+            calEvent.eLocation = [self getLocation:event];
+            // NSLog(@"%@ \n\n\n", calEvent);
+            [self.calendarEvents addObject:calEvent];
+        }
+    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+    // NSLog(@"Calendar Events Count %tu", self.calendarEvents.count);
+}
+#pragma mark - HOUSTON END
 
 #pragma mark - HELPER METHODS
 - (NSString *)getDescription:(NSString *)event
@@ -395,10 +445,20 @@
 #pragma mark - Default
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self downloadICS];
+//    [self downloadICS];
+    [self checkCity];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     selectedIndexes = [[NSMutableDictionary alloc] init];
+}
+
+- (void)checkCity {
+    self.city = @"Seattle";
+    if([self.city isEqualToString:@"Seattle"]) {
+        [self downloadICS];
+    } else if ([self.city isEqualToString:@"Houston"]) {
+        [self downloadICSHouston];
+    }
 }
 
 @end
