@@ -807,24 +807,20 @@
                                         <rect key="frame" x="27" y="28" width="321" height="394"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="education_body_3" translatesAutoresizingMaskIntoConstraints="NO" id="4Qh-N8-yxK">
+                                        <rect key="frame" x="27" y="28" width="321" height="394"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5s-fM-9Vg">
-                                        <rect key="frame" x="284" y="39" width="51" height="40"/>
+                                        <rect key="frame" x="284" y="42" width="51" height="40"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <state key="normal" title="X"/>
                                         <connections>
                                             <action selector="hideButt:" destination="E1f-D7-eXi" eventType="touchUpInside" id="RAE-Zk-4dw"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xxa-Qa-BfI">
-                                        <rect key="frame" x="313" y="234" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <state key="normal" title="&gt;"/>
-                                        <connections>
-                                            <action selector="navRight:" destination="E1f-D7-eXi" eventType="touchUpInside" id="fun-2I-bgO"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5X-e9-kSe">
-                                        <rect key="frame" x="35" y="234" width="30" height="30"/>
+                                        <rect key="frame" x="35" y="230" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <state key="normal" title="&lt;"/>
                                         <connections>
@@ -832,11 +828,19 @@
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="PlaceHolder" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="naV-Lq-KET">
-                                        <rect key="frame" x="65" y="58" width="240" height="316"/>
+                                        <rect key="frame" x="65" y="67" width="240" height="316"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xxa-Qa-BfI">
+                                        <rect key="frame" x="313" y="230" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <state key="normal" title="&gt;"/>
+                                        <connections>
+                                            <action selector="navRight:" destination="E1f-D7-eXi" eventType="touchUpInside" id="fun-2I-bgO"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -851,6 +855,7 @@
                         <outlet property="leftNav" destination="U5X-e9-kSe" id="MkQ-TS-gzU"/>
                         <outlet property="modText" destination="naV-Lq-KET" id="gKm-qC-nOw"/>
                         <outlet property="module" destination="VHl-DO-Tdw" id="cFd-cB-wAk"/>
+                        <outlet property="module2" destination="4Qh-N8-yxK" id="Cvz-AT-CgS"/>
                         <outlet property="proButt" destination="pnh-wT-ODK" id="nyB-IK-hUN"/>
                         <outlet property="rightNav" destination="Xxa-Qa-BfI" id="6PQ-Gw-7Cf"/>
                         <outlet property="whatButt" destination="M4p-TQ-zAa" id="ICX-xu-wcN"/>

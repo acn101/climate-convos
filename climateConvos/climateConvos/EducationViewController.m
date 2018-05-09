@@ -16,6 +16,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *leftNav;
 
 @property (weak, nonatomic) IBOutlet UIImageView *module;
+@property (weak, nonatomic) IBOutlet UIImageView *module2;
+
+
 
 @property (weak, nonatomic) IBOutlet UITextView *modText;
 @property (weak, nonatomic) IBOutlet UIButton *hide;
@@ -31,6 +34,9 @@
 
 @property (nonatomic) int pageView;
 @property (nonatomic) int index;
+
+
+
 
 
 @end
@@ -57,11 +63,14 @@
     _whatButt.enabled = YES;
     _howButt.enabled = YES;
     _whatCanButt.enabled = YES;
+    _module.hidden = YES;
+    _module2.hidden = YES;
     
     [UIView transitionWithView:_module
                       duration:0.4
                        options:UIViewAnimationOptionTransitionCrossDissolve
                     animations:^{
+                        
                         _module.hidden = YES;
                         _modText.hidden = YES;
                         _hide.hidden = YES;
@@ -74,6 +83,7 @@
 
 - (void) showContent
 {
+    
     _proButt.enabled = NO;
     _whatButt.enabled = NO;
     _howButt.enabled = NO;
@@ -88,6 +98,7 @@
                         
                     } completion: NULL];
     _module.hidden = NO;
+    _module2.hidden = NO;
     _hide.hidden = NO;
     _rightNav.hidden = NO;
 }
@@ -107,11 +118,11 @@
 - (void) initProArray
 {
     _currentTexts = [NSArray arrayWithObjects:
-                     @"Climate Change is hard to talk about. It's complex, vast, and very political. Luckily I have some tips and guidance for you to follow during your climate convos. 0 ",
-                     @"Something to start you out with is to take it easy, and understand that it's not the end of the world, especially if the person you're talking to doesn't agree with you 1",
-                     @"It's always important to talk about it optimistically, and to not think it's the end of the world. 2",
-                     @"Holding a proactive conversation is to talk about solutions and remaining hopeful. 3",
-                     @"More stuff here!!!!! More text and explanation about proactive conversations and stuff. 4" , nil];
+                     @"Climate Change can be rather difficult to talk about. It's complex, huge, and can be very political. Luckily, we on the Climate Convos team have some guidance for you to follow during your conversations about and your approach towards climate change. ",
+                     @"Something to start you out with is that, no matter what, don't worry too much. Even though there's plenty of news, ongoing conversations, and changing legislature about climate change that can definitely get a little bit scary, it's not quite the end of the world. Make sure to always step back and don't let the severity of the situation stress you.",
+                     @"It's always important to talk about climate change optimistically, and in terms of finding soltions. Many, when approaching the topic, can find themselves worrying and overly stressed, speaking about the end of days and so forth. Also, it is often such worries aren't appropriately educated or researched; the best thing that we can do to combat this is to educate ourselves, which is what you're doing right now!",
+                     @" We're here to tell you that, even if it were the 'end of days', speaking so negatively isn't going to get anything done. To hold proactive conversations, stay positive, and discuss real-life action that can be taken. The importance is understanding the difference between urgency and agency. Urgency is the stress and motivation which come with realizing the severity of the problem, whereas agency is the actual action which can be taken in order to help mend the issue itself. Agency is far more important. ",
+                     @"The major difference to distinguish in this ongoing conversation to combat climate change is that: it's a conversation. It's not an argument, or a debate. And if it ever turns into one, then time to talk about solutions and being proactive is lost. Arguing with an uncle at Thanksgiving dinner gets us, and our planet, nowhere. Instead of this argument, throwing aggressive opinions around, think about instead holding a friendly climate conversation, backed up with facts, and education. And you can do that by starting here. " , nil];
 }
 
 - (IBAction)whatMod:(id)sender {
@@ -124,11 +135,12 @@
 - (void)initWhatArray
 {
     _currentTexts = [NSArray arrayWithObjects:
-                     @" What is it",
-                     @" 1w",
-                     @" 2w",
-                     @" 3w",
-                     @" 4w" , nil];
+                     @"Webster's dictionary definition: Climate Change is - 'a change in global or regional climate patterns, in particular a change apparent from the mid to late 20th century onwards and attributed largely to the increased levels of atmospheric carbon dioxide produced by the use of fossil fuels.'",
+                     @" From NASA: Evidence  - The Earth's climate has changed throughout history. Just in the last 650,000 years there have been seven cycles of glacial advance and retreat, with the abrupt end of the last ice age about 7,000 years ago marking the beginning of the modern climate era — and of human civilization. Most of these climate changes are attributed to very small variations in Earth’s orbit that change the amount of solar energy our planet receives. ",
+                     
+                     @" From NASA: Evidence (Global Warming) - The current warming trend is of particular significance because most of it is extremely likely (greater than 95 percent probability) to be the result of human activity since the mid-20th century and proceeding at a rate that is unprecedented over decades to millennia. Earth-orbiting satellites and other technological advances have enabled scientists to see the big picture, collecting many different types of information about our planet and its climate on a global scale. This body of data, collected over many years, reveals the signals of a changing climate.",
+                     @" From NASA: Causes - Most climate scientists agree the main cause of the current global warming trend is human expansion of the 'greenhouse effect' — warming that results when the atmosphere traps heat radiating from Earth toward space. Certain gases in the atmosphere block heat from escaping. Long-lived gases that remain semi-permanently in the atmosphere and do not respond physically or chemically to changes in temperature are described as 'forcing' climate change. ",
+                     @" From NASA: Causes - On Earth, human activities are changing the natural greenhouse. Over the last century the burning of fossil fuels like coal and oil has increased the concentration of atmospheric carbon dioxide (CO2). This happens because the coal or oil burning process combines carbon with oxygen in the air to make CO2. To a lesser extent, the clearing of land for agriculture, industry, and other human activities has increased concentrations of greenhouse gases. " , nil];
 }
 
 - (IBAction)howMod:(id)sender {
@@ -176,7 +188,8 @@
     
     // Add the transition
     [_modText.layer addAnimation:transition forKey:@"transition"];
-    
+    [_module.layer addAnimation:transition forKey:@"transition"];
+    [_module2.layer addAnimation:transition forKey:@"transition"];
     
     
     
@@ -190,6 +203,8 @@
         _rightNav.hidden = YES;
         
     }
+    
+    
 }
 
 - (IBAction)navLeft:(UIButton *)sender {
@@ -202,7 +217,8 @@
     
     // Add the transition
     [_modText.layer addAnimation:transition forKey:@"transition"];
-    
+    [_module.layer addAnimation:transition forKey:@"transition"];
+    [_module2.layer addAnimation:transition forKey:@"transition"];
     
     
     
