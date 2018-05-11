@@ -194,6 +194,11 @@
                                     <action selector="shareButton:" destination="MkA-cr-rUm" eventType="touchUpInside" id="fui-x4-e0g"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4I-N3-WT5">
+                                <rect key="frame" x="114" y="448" width="86" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="clear default"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -386,34 +391,6 @@
             </objects>
             <point key="canvasLocation" x="-3068" y="-958"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="sg0-yw-RlM">
-            <objects>
-                <viewController id="PYL-QG-8F0" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="102-EC-VaQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="gIr-WQ-8F2"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bU-On-qm5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="588"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GET ACTIVE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Asl-1z-x56">
-                                <rect key="frame" x="166" y="259" width="140" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <size key="freeformSize" width="375" height="588"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aMq-tV-ZCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1667" y="1803"/>
-        </scene>
         <!--Container View Controller-->
         <scene sceneID="Ueo-gv-u22">
             <objects>
@@ -430,11 +407,11 @@
                     <size key="freeformSize" width="375" height="588"/>
                     <connections>
                         <segue destination="MkA-cr-rUm" kind="modal" identifier="homeButton" customClass="EmptySegue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="8Fo-jn-4n7"/>
-                        <segue destination="PYL-QG-8F0" kind="custom" identifier="getActiveButton" customClass="EmptySegue" id="9AP-ma-Q5C"/>
                         <segue destination="E1f-D7-eXi" kind="modal" identifier="educationButton" customClass="EmptySegue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="pg3-yC-aed"/>
                         <segue destination="ZB1-UG-NE0" kind="modal" identifier="profileButton" customClass="EmptySegue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="KUf-ys-Eio"/>
                         <segue destination="rPf-Oi-YjB" kind="modal" identifier="topicButton" customClass="EmptySegue" id="coA-a7-9ja"/>
                         <segue destination="Iu4-6f-Dzw" kind="custom" identifier="settingsButton" customClass="EmptySegue" id="uGi-5F-Jk9"/>
+                        <segue destination="dGW-0j-9RY" kind="custom" identifier="getActiveButton" customClass="EmptySegue" id="obN-Hf-NwM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iNL-YU-qLq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -497,7 +474,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g1P-A9-3WE" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-631.5" y="1407"/>
+            <point key="canvasLocation" x="-632" y="1447"/>
         </scene>
         <!--Articles View Controller-->
         <scene sceneID="73f-ia-1Ps">
@@ -872,14 +849,6 @@
                                 <rect key="frame" x="320" y="593" width="26" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxz-pd-evQ">
-                                <rect key="frame" x="295" y="80" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="caltest"/>
-                                <connections>
-                                    <segue destination="dGW-0j-9RY" kind="modal" id="qE5-E2-oaC"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="geo.gif" translatesAutoresizingMaskIntoConstraints="NO" id="d9b-1G-kUi">
                                 <rect key="frame" x="110" y="450" width="130" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1120,6 +1089,14 @@
                                     <action selector="aboutUs:" destination="Iu4-6f-Dzw" eventType="touchUpInside" id="x2N-Pb-j7d"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYV-ib-w3c">
+                                <rect key="frame" x="248" y="333" width="93" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="clear defaults"/>
+                                <connections>
+                                    <action selector="clearDefaults:" destination="Iu4-6f-Dzw" eventType="touchUpInside" id="hVa-Tj-ScP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -1232,7 +1209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IjT-Q2-1Ih" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1974" y="-1784"/>
+            <point key="canvasLocation" x="-2591" y="2079"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="oB3-04-ccZ">
@@ -1259,7 +1236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c29-xN-wVV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1482" y="-1783"/>
+            <point key="canvasLocation" x="-1430" y="1820"/>
         </scene>
     </scenes>
     <resources>
@@ -1289,7 +1266,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="6pb-hg-yuu"/>
         <segue reference="171-mx-yzv"/>
-        <segue reference="7Da-2V-jHy"/>
+        <segue reference="L9e-qb-ao4"/>
         <segue reference="7df-xW-IVn"/>
     </inferredMetricsTieBreakers>
 </document>

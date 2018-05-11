@@ -47,11 +47,7 @@
 }
 
 
-//clearDefault
-//- (IBAction)clearDefaults:(id)sender {
-//    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
-//    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
-//}
+
 
 - (void)tipsDB {
     [[self.ref child:@"Tips"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
