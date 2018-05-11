@@ -29,6 +29,9 @@
 		B69FDE772085369F00B60C4C /* EducationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69FDE762085369F00B60C4C /* EducationViewController.m */; };
 		B6C16EFA2099A3BA000B553C /* geo.gif in Resources */ = {isa = PBXBuildFile; fileRef = B6C16EF92099A3B8000B553C /* geo.gif */; };
 		B6F58F2E2091065B0098F484 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F58F2C2091065A0098F484 /* LocationViewController.m */; };
+		B9BBBA2420A6316800EB971D /* splashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BBBA2320A6316700EB971D /* splashViewController.m */; };
+		B9BBBA2620A6317500EB971D /* BG.gif in Resources */ = {isa = PBXBuildFile; fileRef = B9BBBA2520A6317300EB971D /* BG.gif */; };
+		B9BBBA2920A6321C00EB971D /* Tip.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BBBA2720A6321C00EB971D /* Tip.m */; };
 		CA5BED102093C2F200C49EDF /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5BED0E2093C2F200C49EDF /* CalendarViewController.m */; };
 		CA5BED112093C2F200C49EDF /* CalendarEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5BED0F2093C2F200C49EDF /* CalendarEvent.m */; };
 		CA7137A3208E6217008F57B1 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7137A1208E6216008F57B1 /* Profile.m */; };
@@ -82,6 +85,11 @@
 		B6C16EF92099A3B8000B553C /* geo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = geo.gif; sourceTree = "<group>"; };
 		B6F58F2C2091065A0098F484 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		B6F58F2D2091065B0098F484 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
+		B9BBBA2220A6316700EB971D /* splashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = splashViewController.h; sourceTree = "<group>"; };
+		B9BBBA2320A6316700EB971D /* splashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = splashViewController.m; sourceTree = "<group>"; };
+		B9BBBA2520A6317300EB971D /* BG.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BG.gif; sourceTree = "<group>"; };
+		B9BBBA2720A6321C00EB971D /* Tip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tip.m; sourceTree = "<group>"; };
+		B9BBBA2820A6321C00EB971D /* Tip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tip.h; sourceTree = "<group>"; };
 		CA5BED0C2093C2F100C49EDF /* CalendarEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarEvent.h; sourceTree = "<group>"; };
 		CA5BED0D2093C2F100C49EDF /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		CA5BED0E2093C2F200C49EDF /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
@@ -180,6 +188,8 @@
 				7A936CFB2087F21800651E3F /* GEOViewController.m */,
 				7AFDF2E420979652009E21BA /* UIImage+animatedGIF.h */,
 				7AFDF2E520979652009E21BA /* UIImage+animatedGIF.m */,
+				B9BBBA2820A6321C00EB971D /* Tip.h */,
+				B9BBBA2720A6321C00EB971D /* Tip.m */,
 			);
 			name = GEO;
 			sourceTree = "<group>";
@@ -199,10 +209,13 @@
 		B6DE172D208414F00068C02F /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				B9BBBA2220A6316700EB971D /* splashViewController.h */,
+				B9BBBA2320A6316700EB971D /* splashViewController.m */,
 				7A02D2822096DBB000AD240D /* SettingsViewController.h */,
 				7A02D2812096DBB000AD240D /* SettingsViewController.m */,
 				CAFD9ED1208153E400F5EB35 /* TutorialViewController.h */,
 				CAFD9ED0208153E300F5EB35 /* TutorialViewController.m */,
+				B9BBBA2520A6317300EB971D /* BG.gif */,
 			);
 			name = Tutorial;
 			sourceTree = "<group>";
@@ -333,7 +346,7 @@
 		CAF55487202B9E5600B1521E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = acn96;
 				TargetAttributes = {
 					CAF5548E202B9E5600B1521E = {
@@ -366,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAF5549F202B9E5600B1521E /* LaunchScreen.storyboard in Resources */,
+				B9BBBA2620A6317500EB971D /* BG.gif in Resources */,
 				E7603904204612820060C245 /* GoogleService-Info.plist in Resources */,
 				CAF5549C202B9E5600B1521E /* Assets.xcassets in Resources */,
 				B6C16EFA2099A3BA000B553C /* geo.gif in Resources */,
@@ -434,6 +448,7 @@
 				B692E50A20A38380008E6D40 /* ProfileCustomTableViewCell.m in Sources */,
 				7A936CFC2087F21800651E3F /* GEOViewController.m in Sources */,
 				CA5BED112093C2F200C49EDF /* CalendarEvent.m in Sources */,
+				B9BBBA2420A6316800EB971D /* splashViewController.m in Sources */,
 				7A1385CD207BF342006BF698 /* NavigationViewController.m in Sources */,
 				CAF554A2202B9E5600B1521E /* main.m in Sources */,
 				CAFD9ED8208155BF00F5EB35 /* singleFactoid.m in Sources */,
@@ -451,6 +466,7 @@
 				B60EFE072097AB3C008D0142 /* DiscoverViewController.m in Sources */,
 				74FD3CCC2093BB4100A56183 /* CustomTableViewCell.m in Sources */,
 				B69FDE772085369F00B60C4C /* EducationViewController.m in Sources */,
+				B9BBBA2920A6321C00EB971D /* Tip.m in Sources */,
 				CAFD9ECF2081500000F5EB35 /* CategoriesViewController.m in Sources */,
 				B64B1AF120759FC100E4F0CD /* ScrollDemoViewController.m in Sources */,
 			);
@@ -492,6 +508,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -499,6 +516,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -547,6 +565,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -554,6 +573,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
