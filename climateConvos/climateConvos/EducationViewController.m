@@ -31,12 +31,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *howButt;
 @property (weak, nonatomic) IBOutlet UIButton *whatCanButt;
 
+@property (weak, nonatomic) IBOutlet UILabel *modTitle;
+
 
 @property (nonatomic) int pageView;
 @property (nonatomic) int index;
-
-
-
 
 
 @end
@@ -50,6 +49,13 @@
     
     _educTitle.textAlignment = NSTextAlignmentCenter;
     _pageView = 0;
+    
+    [_modText setFont:[UIFont systemFontOfSize:14]];
+    [_modTitle setFont:[UIFont systemFontOfSize:16]];
+    
+    _modText.textAlignment = NSTextAlignmentCenter;
+    _modTitle.textAlignment = NSTextAlignmentCenter;
+    
     
     [self hideContent];
     
@@ -65,6 +71,8 @@
     _whatCanButt.enabled = YES;
     _module.hidden = YES;
     _module2.hidden = YES;
+    _modTitle.hidden = YES;
+    
     
     [UIView transitionWithView:_module
                       duration:0.4
@@ -99,6 +107,7 @@
                     } completion: NULL];
     _module.hidden = NO;
     _module2.hidden = NO;
+    _modTitle.hidden = NO;
     _hide.hidden = NO;
     _rightNav.hidden = NO;
 }
@@ -111,6 +120,7 @@
     
     [self initProArray];
     _modText.text = _currentTexts[_index];
+    _modTitle.text = @"Proactive Conversation";
     
     //_modText =
     //self.leftNav.hidden = YES;
@@ -130,7 +140,7 @@
     _pageView = 2;
     [self initWhatArray];
     _modText.text = _currentTexts[0];
-    
+    _modTitle.text = @"What is Climate Change?";
 }
 - (void)initWhatArray
 {
@@ -148,15 +158,17 @@
     _pageView = 3;
     [self initHowArray];
     _modText.text = _currentTexts[0];
+    _modTitle.text = @"How Does it Effect You?";
 }
 - (void)initHowArray
 {
     _currentTexts = [NSArray arrayWithObjects:
-                     @" How Does it Effect You",
-                     @" 1h",
-                     @" 2h",
-                     @" 3h",
-                     @" 4h" , nil];
+                     @" Global climate change has already had observable effects on the environment. Glaciers have shrunk, ice on rivers and lakes is breaking up earlier, plant and animal ranges have shifted and trees are flowering sooner.",
+                     @"Scientists have high confidence that global temperatures will continue to rise for decades to come, largely due to greenhouse gases produced by human activities. The Intergovernmental Panel on Climate Change (IPCC), which includes more than 1,300 scientists from the United States and other countries, forecasts a temperature rise of 2.5 to 10 degrees Fahrenheit over the next century.",
+                     @"Summer temperatures are projected to continue rising, and a reduction of soil moisture, which exacerbates heat waves, is projected for much of the western and central U.S. in summer. By the end of this century, what have been once-in-20-year extreme heat days (one-day events) are projected to occur every two or three years over most of the nation.",
+                     @"Global climate is projected to continue to change over this century and beyond. The magnitude of climate change beyond the next few decades depends primarily on the amount of heat-trapping gases emitted globally, and how sensitive the Earth’s climate is to those emissions.",
+                     @"The length of the frost-free season (and the corresponding growing season) has been increasing nationally since the 1980s, with the largest increases occurring in the western United States, affecting ecosystems and agriculture. Across the United States, the growing season is projected to continue to lengthen." , nil];
+
 }
 
 - (IBAction)whatCanMod:(id)sender {
@@ -164,15 +176,16 @@
     _pageView = 4;
     [self initWhatCanArray];
     _modText.text = _currentTexts[0];
+    _modTitle.text = @"What Can You Do About It?";
 }
 - (void)initWhatCanArray
 {
     _currentTexts = [NSArray arrayWithObjects:
-                     @" What Can you do about it",
-                     @" 1c",
-                     @" 2c",
-                     @" 3c",
-                     @" 4c" , nil];
+                     @"Climate change is one of the most complex issues facing us today. It involves many dimensions – science, economics, society, politics and moral and ethical questions – and is a global problem, felt on local scales, that will be around for decades and centuries to come. Carbon dioxide, the heat-trapping greenhouse gas that has driven recent global warming, lingers in the atmosphere for hundreds of years, and the planet (especially the oceans) takes a while to respond to warming.",
+                     @"How much climate change? That will be determined by how our emissions continue and also exactly how our climate system responds to those emissions. Despite increasing awareness of climate change, our emissions of greenhouse gases continue on a relentless rise. In 2013, the daily level of carbon dioxide in the atmosphere surpassed 400 parts per million for the first time in human history. The last time levels were that high was about three to five million years ago, during the Pliocene era.",
+                     @"Because we are already committed to some level of climate change, responding to climate change involves a two-pronged approach: 1. Reducing emissions of and stabilizing the levels of heat-trapping greenhouse gases in the atmosphere (“mitigation”); 2. Adapting to the climate change already in the pipeline (“adaptation”).",
+                     @"Mitigation – reducing climate change – involves reducing the flow of heat-trapping greenhouse gases into the atmosphere, either by reducing sources of these gases (for example, the burning of fossil fuels for electricity, heat or transport) or enhancing the “sinks” that accumulate and store these gases (such as the oceans, forests and soil). The goal of mitigation is to avoid significant human interference with the climate system, and “stabilize greenhouse gas levels in a timeframe sufficient to allow ecosystems to adapt naturally to climate change.",
+                     @"Adaptation – adapting to life in a changing climate – involves adjusting to actual or expected future climate. The goal is to reduce our vulnerability to the harmful effects of climate change (like sea-level encroachment, more intense extreme weather events or food insecurity). It also encompasses making the most of any potential beneficial opportunities associated with climate change (for example, longer growing seasons or increased yields in some regions)." , nil];
 }
 
 
