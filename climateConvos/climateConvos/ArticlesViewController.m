@@ -133,12 +133,12 @@
     if (carouselView == nil) {
         
         // editing the boyd of the carousel
-        carouselView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300.0f, 378.0f)];
+        carouselView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 323.0f, 310.0f)];
         carouselView.contentMode = UIViewContentModeCenter;
         //        view.backgroundColor = [UIColor grayColor];
-        carouselView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"discover_body.png"]];
+        carouselView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"rect.png"]];
         //        label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 280.0f, 380.0f)];
-        label = [[UITextView alloc] initWithFrame:CGRectMake(25, 50, 250.0f, 280.0f)];
+        label = [[UITextView alloc] initWithFrame:CGRectMake(20, 10, 283.0f, 250.0f)];
         label.textAlignment = NSTextAlignmentCenter;
         [label setScrollEnabled:YES];
         [label setFont:[UIFont systemFontOfSize:12]];
@@ -147,28 +147,19 @@
         label.textColor = [UIColor colorWithRed:94.0f/255.0f green:94.0f/255.0f blue:94.0f/255.0f alpha:1.0f];
         [carouselView addSubview:label];
         
-        // Topic Label
-        UILabel *topic = [[UILabel alloc] initWithFrame:CGRectMake(15, -30, 250.0f, 30.0f)];
-        // topic.textAlignment = NSTextAlignmentLeft;
-        topic.font = [UIFont boldSystemFontOfSize:22];
-        //topic.font = [topic.font fontWithSize:24];
-        topic.tag = 1;
-        topic.numberOfLines = 0;
-        topic.text = self.currentFactoid.tags; // here
-        topic.textColor = [UIColor whiteColor];
-        [carouselView addSubview:topic];
-        
-        // Show more button
-        UIButton *showMore = [[UIButton alloc] initWithFrame:CGRectMake(26.0, 320, 98.0f, 32.0f)];
-        [showMore addTarget:self
-                     action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
-        [showMore setTitle:@"+ show more" forState:UIControlStateNormal];
-        [showMore setTitleColor:[UIColor colorWithRed:94.0f/255.0f green:94.0f/255.0f blue:94.0f/255.0f alpha:1.0f] forState:UIControlStateNormal];
-        showMore.titleLabel.font = [UIFont boldSystemFontOfSize:16];
-        [carouselView addSubview:showMore];
+//        // Topic Label
+//        UILabel *topic = [[UILabel alloc] initWithFrame:CGRectMake(15, -30, 250.0f, 30.0f)];
+//        // topic.textAlignment = NSTextAlignmentLeft;
+//        topic.font = [UIFont boldSystemFontOfSize:22];
+//        //topic.font = [topic.font fontWithSize:24];
+//        topic.tag = 1;
+//        topic.numberOfLines = 0;
+//        topic.text = self.currentFactoid.tags; // here
+//        topic.textColor = [UIColor whiteColor];
+//        [carouselView addSubview:topic];
         
         // Show plus button
-        UIButton *addButton = [[UIButton alloc] initWithFrame:CGRectMake(215.0, 327, 20.0f, 20.0f)];
+        UIButton *addButton = [[UIButton alloc] initWithFrame:CGRectMake(215.0, 280, 20.0f, 20.0f)];
         [addButton addTarget:self
                       action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
         [addButton setImage:([UIImage imageNamed:@"add_icon.png"]) forState:UIControlStateNormal];
@@ -178,7 +169,7 @@
         [carouselView addSubview:addButton];
         
         // share button
-        UIButton *shareButton = [[UIButton alloc] initWithFrame:CGRectMake(245.0, 327, 20.0f, 18.0f)];
+        UIButton *shareButton = [[UIButton alloc] initWithFrame:CGRectMake(245.0, 280, 20.0f, 18.0f)];
         [shareButton addTarget:self
                         action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
         [shareButton setImage:([UIImage imageNamed:@"share_icon.png"]) forState:UIControlStateNormal];
