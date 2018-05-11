@@ -111,12 +111,18 @@
             
             NSString *currentSavedLocation = [[NSUserDefaults standardUserDefaults]
                                               stringForKey:@"location"];
-            
+//            if([sf.tags isEqualToString:self.selectedCategory] ) {
+//            NSLog(@"%@", self.selectedCategory);
             if([sf.location isEqualToString:currentSavedLocation] || [sf.location isEqualToString:@"Global"] ) {
-                [self.items addObject:[NSNumber numberWithInt:i]];
+                if (self.selectedCategory==nil) {
+                    [self.items addObject:[NSNumber numberWithInt:i]];
+                } else if (self.selectedCategory != nil && [sf.tags isEqualToString:self.selectedCategory]) {
+                    NSLog(@"%@", self.selectedCategory);
+                    [self.items addObject:[NSNumber numberWithInt:i]];
+                }
             }
         }
-        if(self.sendMeIndex != 0) {
+        if(self.selectedCategory==nil && self.sendMeIndex != 0) {
             [self.carousel scrollToItemAtIndex:self.sendMeIndex animated:NO];
         }
         [self.carousel reloadData];
