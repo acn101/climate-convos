@@ -10,6 +10,8 @@
 		53C9D0BBA247DEF9485234B6 /* libPods-climateConvos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DDCC3C1E53D0557DD56E79 /* libPods-climateConvos.a */; };
 		74A8796B20A63AE800677F00 /* Articles.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A8796820A63AE800677F00 /* Articles.m */; };
 		74A8796C20A63AE800677F00 /* ArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A8796920A63AE800677F00 /* ArticlesViewController.m */; };
+		74A8797120A63D3300677F00 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A8796F20A63D3300677F00 /* CalendarViewController.m */; };
+		74A8797220A63D3300677F00 /* CalendarEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A8797020A63D3300677F00 /* CalendarEvent.m */; };
 		74FD3CCC2093BB4100A56183 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FD3CCA2093BB4000A56183 /* CustomTableViewCell.m */; };
 		7A01D81220854EC100C832A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A01D81120854EC100C832A9 /* CoreGraphics.framework */; };
 		7A01D81520854ECD00C832A9 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A01D81320854ECC00C832A9 /* AVKit.framework */; };
@@ -33,8 +35,6 @@
 		B9BBBA2420A6316800EB971D /* splashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BBBA2320A6316700EB971D /* splashViewController.m */; };
 		B9BBBA2620A6317500EB971D /* BG.gif in Resources */ = {isa = PBXBuildFile; fileRef = B9BBBA2520A6317300EB971D /* BG.gif */; };
 		B9BBBA2920A6321C00EB971D /* Tip.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BBBA2720A6321C00EB971D /* Tip.m */; };
-		CA5BED102093C2F200C49EDF /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5BED0E2093C2F200C49EDF /* CalendarViewController.m */; };
-		CA5BED112093C2F200C49EDF /* CalendarEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5BED0F2093C2F200C49EDF /* CalendarEvent.m */; };
 		CA7137A3208E6217008F57B1 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7137A1208E6216008F57B1 /* Profile.m */; };
 		CA920A3920815CD6003E78CD /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA920A3820815CD6003E78CD /* MessageUI.framework */; };
 		CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF55493202B9E5600B1521E /* AppDelegate.m */; };
@@ -54,6 +54,10 @@
 		74A8796820A63AE800677F00 /* Articles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Articles.m; sourceTree = "<group>"; };
 		74A8796920A63AE800677F00 /* ArticlesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlesViewController.m; sourceTree = "<group>"; };
 		74A8796A20A63AE800677F00 /* ArticlesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlesViewController.h; sourceTree = "<group>"; };
+		74A8796D20A63D3300677F00 /* CalendarEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarEvent.h; sourceTree = "<group>"; };
+		74A8796E20A63D3300677F00 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		74A8796F20A63D3300677F00 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		74A8797020A63D3300677F00 /* CalendarEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarEvent.m; sourceTree = "<group>"; };
 		74FD3CCA2093BB4000A56183 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		74FD3CCB2093BB4000A56183 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		7A01D81120854EC100C832A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -93,10 +97,6 @@
 		B9BBBA2520A6317300EB971D /* BG.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BG.gif; sourceTree = "<group>"; };
 		B9BBBA2720A6321C00EB971D /* Tip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tip.m; sourceTree = "<group>"; };
 		B9BBBA2820A6321C00EB971D /* Tip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tip.h; sourceTree = "<group>"; };
-		CA5BED0C2093C2F100C49EDF /* CalendarEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarEvent.h; sourceTree = "<group>"; };
-		CA5BED0D2093C2F100C49EDF /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
-		CA5BED0E2093C2F200C49EDF /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
-		CA5BED0F2093C2F200C49EDF /* CalendarEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarEvent.m; sourceTree = "<group>"; };
 		CA7137A1208E6216008F57B1 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
 		CA7137A2208E6217008F57B1 /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
 		CA920A3820815CD6003E78CD /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -164,10 +164,10 @@
 		74FD3CCE2093BBC900A56183 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				CA5BED0C2093C2F100C49EDF /* CalendarEvent.h */,
-				CA5BED0F2093C2F200C49EDF /* CalendarEvent.m */,
-				CA5BED0D2093C2F100C49EDF /* CalendarViewController.h */,
-				CA5BED0E2093C2F200C49EDF /* CalendarViewController.m */,
+				74A8796D20A63D3300677F00 /* CalendarEvent.h */,
+				74A8797020A63D3300677F00 /* CalendarEvent.m */,
+				74A8796E20A63D3300677F00 /* CalendarViewController.h */,
+				74A8796F20A63D3300677F00 /* CalendarViewController.m */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -450,11 +450,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74A8797220A63D3300677F00 /* CalendarEvent.m in Sources */,
 				B692E50A20A38380008E6D40 /* ProfileCustomTableViewCell.m in Sources */,
 				7A936CFC2087F21800651E3F /* GEOViewController.m in Sources */,
-				CA5BED112093C2F200C49EDF /* CalendarEvent.m in Sources */,
 				B9BBBA2420A6316800EB971D /* splashViewController.m in Sources */,
 				74A8796B20A63AE800677F00 /* Articles.m in Sources */,
+				74A8797120A63D3300677F00 /* CalendarViewController.m in Sources */,
 				7A1385CD207BF342006BF698 /* NavigationViewController.m in Sources */,
 				CAF554A2202B9E5600B1521E /* main.m in Sources */,
 				CAFD9ED8208155BF00F5EB35 /* singleFactoid.m in Sources */,
@@ -462,7 +463,6 @@
 				CAFD9ED2208153E400F5EB35 /* TutorialViewController.m in Sources */,
 				CA7137A3208E6217008F57B1 /* Profile.m in Sources */,
 				7A1385D6207BF683006BF698 /* ContainerViewController.m in Sources */,
-				CA5BED102093C2F200C49EDF /* CalendarViewController.m in Sources */,
 				7A1385D3207BF4D7006BF698 /* EmptySegue.m in Sources */,
 				7AFDF2E620979652009E21BA /* UIImage+animatedGIF.m in Sources */,
 				B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */,

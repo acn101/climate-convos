@@ -10,12 +10,96 @@
 #import "CalendarEvent.h"
 
 @interface CalendarViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) UIView *cardBox;
+@property (strong, nonatomic) UILabel *eveSummary;
+@property (strong, nonatomic) UILabel *eveDescription;
+@property (strong, nonatomic) UILabel *eveStartTime;
+@property (strong, nonatomic) UILabel *eveEndTime;
+@property (strong, nonatomic) UILabel *eveLocation;
+@property (strong, nonatomic) UIButton *closeEBtn;
 
-@property (strong, nonatomic) NSMutableArray *calendarEvents;
+@property (strong, nonatomic) NSString *city;
 @end
 
 @implementation CalendarViewController
+#pragma mark - table expansion
+- (BOOL)cellIsSelected:(NSIndexPath *)indexPath {
+    // Return whether the cell at the specified index path is selected or not
+    NSNumber *selectedIndex = [selectedIndexes objectForKey:indexPath];
+    return selectedIndex == nil ? FALSE : [selectedIndex boolValue];
+}
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Deselect cell
+    [tableView deselectRowAtIndexPath:indexPath animated:TRUE];
+    
+    // Toggle 'selected' state
+    BOOL isSelected = ![self cellIsSelected:indexPath];
+    
+    // Store cell 'selected' state keyed on indexPath
+    NSNumber *selectedIndex = [NSNumber numberWithBool:isSelected];
+    [selectedIndexes setObject:selectedIndex forKey:indexPath];
+    
+    // This is where magic happens...
+    [tableView beginUpdates];
+    [tableView endUpdates];
+}
+
+#pragma mark - Table View Data Source and Delegate Methods
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Our table only has one section...
+    if (section == 0) {
+        return self.calendarEvents.count;
+    } else {
+        return 0;
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // grab the drone for this row
+    CalendarEvent *thisEvent = self.calendarEvents[indexPath.row];
+    
+    // get our custom cell
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"custom"];
+    
+    // we assigned each component of the custom cell we created
+    // in interface builder a unique tab number - this is how
+    // we get references to those components
+    UILabel *summaryLabel = (UILabel *)[cell viewWithTag:1];
+    UILabel *startLabel = (UILabel *)[cell viewWithTag:2];
+    UILabel *endLabel = (UILabel *)[cell viewWithTag:3];
+    UILabel *locationLabel = (UILabel *)[cell viewWithTag:4];
+    UILabel *descriptionLabel = (UILabel *)[cell viewWithTag:5];
+    
+    // customize date
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM/dd/yyyy h:mm a"];
+    NSString *fST = [formatter stringFromDate:thisEvent.eStartTime];
+    NSString *fET = [formatter stringFromDate:thisEvent.eEndTime];
+    
+    // populate the cell
+    summaryLabel.text = thisEvent.eSummary;
+    startLabel.text = fST;
+    endLabel.text = fET;
+    locationLabel.text = thisEvent.eLocation;
+    descriptionLabel.text = thisEvent.eDescription;
+    
+    // return our cell
+    return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if([self cellIsSelected:indexPath]) {
+        return 500;
+    }
+    return 42;
+}
+
+#pragma mark - SEATTLE START
+#pragma mark - calendar download
 - (void)downloadICS
 {
     NSString *URLString = @"https://calendar.google.com/calendar/ical/72dh5ehol3oufbkusqagta0qf8%40group.calendar.google.com/public/basic.ics";
@@ -54,11 +138,60 @@
             [self.calendarEvents addObject:calEvent];
         }
     }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
     // NSLog(@"Calendar Events Count %tu", self.calendarEvents.count);
 }
+#pragma mark - SEATTLE END
+
+#pragma mark - HOUSTON START
+- (void)downloadICSHouston
+{
+    NSString *URLString = @"https://calendar.google.com/calendar/ical/glhsdobgfp0uat7regg4idd8ma70fiaq%40import.calendar.google.com/public/basic.ics";
+    NSURL *url = [NSURL URLWithString:URLString];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *downloadTask = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        // handle response
+        if (error) {
+            NSLog(@"ERROR! - %@", error);
+        } else {
+            [self parseICSHouston:data];
+        }
+    }];
+    [downloadTask resume];
+}
+
+- (void)parseICSHouston:(NSData *)data
+{
+    NSString *ICSAsString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    // printf("%s", [NSString stringWithFormat: @"%@", ICSAsString].UTF8String);
+    self.calendarEvents = [[NSMutableArray alloc] init];
+    // create array of lines
+    NSArray *events = [ICSAsString componentsSeparatedByString:@"BEGIN:VEVENT"];
+    for (NSUInteger i = 0; i < events.count; i++) {
+        if (i > 0) {
+#pragma mark - call events here
+            NSString *event = events[i];
+            // NSLog(@"EVENT WE ARE IN: %zd", i);
+            CalendarEvent *calEvent = [[CalendarEvent alloc] init];
+            calEvent.eDescription = [self getDescription:event];
+            calEvent.eStartTime = [self getStartTime:event];
+            calEvent.eEndTime = [self getEndTime:event];
+            calEvent.eSummary = [self getSummary:event];
+            calEvent.eLocation = [self getLocation:event];
+            // NSLog(@"%@ \n\n\n", calEvent);
+            [self.calendarEvents addObject:calEvent];
+        }
+    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+    // NSLog(@"Calendar Events Count %tu", self.calendarEvents.count);
+}
+#pragma mark - HOUSTON END
 
 #pragma mark - HELPER METHODS
-#pragma mark - description
 - (NSString *)getDescription:(NSString *)event
 {
     // GET DESCRIPTION
@@ -147,7 +280,7 @@
             [formatter setDateFormat:@"MM/dd/yyyy h:mm a"];
             NSDate *dateObj = [formatter dateFromString:dateTimeString];
             // NSLog(@"Start Date: %@", [formatter stringFromDate:dateObj]);
-            break;
+            return dateObj;
         }
     }
     return lines[0];
@@ -235,7 +368,7 @@
             [formatter setDateFormat:@"MM/dd/yyyy h:mm a"];
             NSDate *dateObj = [formatter dateFromString:dateTimeString];
             // NSLog(@"END DATE: %@", [formatter stringFromDate:dateObj]);
-            break;
+            return dateObj;
         }
     }
     return lines[0];
@@ -312,7 +445,21 @@
 #pragma mark - Default
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self downloadICS];
+//    [self downloadICS];
+    [self checkCity];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    selectedIndexes = [[NSMutableDictionary alloc] init];
+    self.tableView.layer.cornerRadius = 11;
+}
+
+- (void)checkCity {
+    self.city = @"Houston";
+    if([self.city isEqualToString:@"Seattle"]) {
+        [self downloadICS];
+    } else if ([self.city isEqualToString:@"Houston"]) {
+        [self downloadICSHouston];
+    }
 }
 
 @end
