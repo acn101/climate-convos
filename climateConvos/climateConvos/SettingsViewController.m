@@ -11,6 +11,7 @@
 
 
 
+
 @interface SettingsViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *seattleButton;
@@ -22,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *notificationsLabel;
 @property (weak, nonatomic) IBOutlet UIButton *locationButton;
 @property (weak, nonatomic) IBOutlet UISwitch *geoSwitch;
+@property  (weak, nonatomic) GEOViewController *geoView;
 
 
 @end
@@ -73,14 +75,24 @@
     
 }
 
-- (IBAction)geoSwitch:(id)sender {
-    if([sender isOn]){
-        self.geoLabel.text = @"Disable GEO";
-      
-    } else{
-        self.geoLabel.text = @"Enable GEO";
-    }
-}
+//- (IBAction)geoSwitch:(id)sender {
+//
+//    if([sender isOn]){
+//        NSString *valueToSave = @"disableGeo";
+//        [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"geoEnabledStatus"];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+//        NSLog(valueToSave);
+//        self.geoView.view.hidden = YES;
+//
+//    } else{
+//        NSString *valueToSave = @"enableGeo";
+//        [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"geoEnabledStatus"];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+//        NSLog(valueToSave);
+//        //[_geoView setHidden:YES];
+//
+//    }
+//}
 
 
 

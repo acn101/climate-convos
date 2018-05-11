@@ -142,19 +142,7 @@
 
 // Share Button
 
-- (IBAction)shareButton:(id)sender {
-    [self shareContent];
-}
 
--(void)shareContent{
-    NSString * message = @"share factoids";
-//    UIImage * image = [UIImage imageNamed:@"earth"];
-    NSArray * shareItems = @[message];
-//    NSArray * shareItems = @[message, image];
-    
-    UIActivityViewController * avc = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
-    [self presentViewController:avc animated:YES completion:nil];
-}
 
 #pragma mark - iCarousel methods
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel {
@@ -233,7 +221,7 @@
         // share button
         UIButton *shareButton = [[UIButton alloc] initWithFrame:CGRectMake(245.0, 327, 20.0f, 18.0f)];
         [shareButton addTarget:self
-                        action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+                        action:@selector(shareContent:) forControlEvents:UIControlEventTouchUpInside];
         [shareButton setImage:([UIImage imageNamed:@"share_icon.png"]) forState:UIControlStateNormal];
         [shareButton setTitle:@"" forState:UIControlStateNormal];
         shareButton.titleLabel.font = [UIFont systemFontOfSize:16];
@@ -245,7 +233,7 @@
         shadowShare.frame = CGRectMake(283.0, 364.0, 20.0f, 18.0f);
         shadowShare.backgroundColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:.25];
         [shadowShare addTarget:self
-                       action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
+                       action:@selector(shareContent:) forControlEvents:UIControlEventTouchDown];
         [self.view addSubview:shadowShare];
         
     } else {
@@ -265,6 +253,32 @@
     return carouselView;
 }
 
+//- (IBAction)shareButton:(id)sender {
+//    [self shareContent];
+//}
+
+-(void ) shareContent:(id)sender {
+    UIView *current = self.carousel.currentItemView;
+    NSInteger *index = [self.carousel indexOfItemView:(current)];
+    singleFactoid *toSave = [[singleFactoid alloc] init];
+    
+    NSString *currentSavedLocation = [[NSUserDefaults standardUserDefaults] stringForKey:@"location"];
+    if ([currentSavedLocation isEqualToString:@"Seattle"]) {
+        toSave = _seattleFactoids[(int)index];
+    } else {
+        toSave = _houstonFactoids[(int)index];
+    }
+    
+    
+    NSDictionary *texts = toSave.texts;
+    NSString *message = [texts objectForKey:@"long"];
+    NSArray * shareItems = @[message];
+    //    NSArray * shareItems = @[message, image];
+    
+    UIActivityViewController * avc = [[UIActivityViewController alloc]  initWithActivityItems:shareItems applicationActivities:nil];
+    [self presentViewController:avc animated:YES completion:nil];
+}
+
 - (void)buttonPressed:(id)sender {
     NSLog(@"I worked yay");
     UIView *current = self.carousel.currentItemView;
@@ -272,10 +286,9 @@
     NSLog(@" %tu", index);
     [self performSegueWithIdentifier:@"showMoreSegue" sender:self];
     
-    
 }
 
--(void ) addFactoid:(id)sender {
+-(void) addFactoid:(id)sender {
     UIView *current = self.carousel.currentItemView;
     
     NSInteger *index = [self.carousel indexOfItemView:(current)];

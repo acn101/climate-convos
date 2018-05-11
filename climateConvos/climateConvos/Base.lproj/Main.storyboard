@@ -186,19 +186,6 @@
                                 <rect key="frame" x="0.0" y="91" width="375" height="271"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V88-q2-wMx">
-                                <rect key="frame" x="229" y="448" width="49" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="SHARE"/>
-                                <connections>
-                                    <action selector="shareButton:" destination="MkA-cr-rUm" eventType="touchUpInside" id="fui-x4-e0g"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4I-N3-WT5">
-                                <rect key="frame" x="114" y="448" width="86" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="clear default"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -710,31 +697,7 @@
                                         <rect key="frame" x="27" y="28" width="321" height="394"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5s-fM-9Vg">
-                                        <rect key="frame" x="284" y="39" width="51" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <state key="normal" title="X"/>
-                                        <connections>
-                                            <action selector="hideButt:" destination="E1f-D7-eXi" eventType="touchUpInside" id="RAE-Zk-4dw"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xxa-Qa-BfI">
-                                        <rect key="frame" x="313" y="234" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <state key="normal" title="&gt;"/>
-                                        <connections>
-                                            <action selector="navRight:" destination="E1f-D7-eXi" eventType="touchUpInside" id="fun-2I-bgO"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U5X-e9-kSe">
-                                        <rect key="frame" x="35" y="234" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <state key="normal" title="&lt;"/>
-                                        <connections>
-                                            <action selector="navLeft:" destination="E1f-D7-eXi" eventType="touchUpInside" id="0mb-El-QMd"/>
-                                        </connections>
-                                    </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="PlaceHolder" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="naV-Lq-KET">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" editable="NO" text="PlaceHolder" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="naV-Lq-KET">
                                         <rect key="frame" x="65" y="87" width="240" height="316"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -747,6 +710,14 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5s-fM-9Vg">
+                                        <rect key="frame" x="294" y="49" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <state key="normal" image="blue x"/>
+                                        <connections>
+                                            <action selector="hideButt:" destination="E1f-D7-eXi" eventType="touchUpInside" id="RAE-Zk-4dw"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -758,12 +729,10 @@
                         <outlet property="educText" destination="Etp-4l-ceN" id="Zcx-v7-y25"/>
                         <outlet property="hide" destination="D5s-fM-9Vg" id="eC9-JD-AmA"/>
                         <outlet property="howButt" destination="bqU-zR-3s7" id="exe-v0-cUG"/>
-                        <outlet property="leftNav" destination="U5X-e9-kSe" id="MkQ-TS-gzU"/>
                         <outlet property="modText" destination="naV-Lq-KET" id="gKm-qC-nOw"/>
                         <outlet property="modTitle" destination="4JW-Fh-IIe" id="YaF-g3-VtO"/>
                         <outlet property="module" destination="VHl-DO-Tdw" id="cFd-cB-wAk"/>
                         <outlet property="proButt" destination="pnh-wT-ODK" id="nyB-IK-hUN"/>
-                        <outlet property="rightNav" destination="Xxa-Qa-BfI" id="6PQ-Gw-7Cf"/>
                         <outlet property="whatButt" destination="M4p-TQ-zAa" id="ICX-xu-wcN"/>
                         <outlet property="whatCanButt" destination="6BP-lw-j6h" id="6Eh-iG-qMg"/>
                     </connections>
@@ -871,10 +840,10 @@
             </objects>
             <point key="canvasLocation" x="-1554" y="-958"/>
         </scene>
-        <!--GEO -->
+        <!--GEOViewController-->
         <scene sceneID="fUv-JG-jzQ">
             <objects>
-                <viewController title="GEO " id="BoL-lh-zxP" customClass="GEOViewController" sceneMemberID="viewController">
+                <viewController title="GEOViewController" id="BoL-lh-zxP" customClass="GEOViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jiq-ap-pAm"/>
                         <viewControllerLayoutGuide type="bottom" id="9tQ-y4-uYi"/>
@@ -1245,6 +1214,7 @@
         <image name="add_icon" width="55" height="55"/>
         <image name="arrow-down" width="40" height="25"/>
         <image name="backarrow" width="36" height="36"/>
+        <image name="blue x" width="37" height="37"/>
         <image name="cc-logo" width="264" height="262"/>
         <image name="dots" width="70" height="10"/>
         <image name="education_body_1" width="3220" height="1280"/>

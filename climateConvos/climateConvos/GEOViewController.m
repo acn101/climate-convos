@@ -31,12 +31,14 @@
 @implementation GEOViewController
 
 - (void)viewDidLoad {
-   
+    //[self checkEnabledStatus];
+    
     [super viewDidLoad];
     [self setup];
     [self displayGeo];
     [self displayTip];
 
+   
 }
 
 - (void)setup {
@@ -46,7 +48,19 @@
     self.geoText.textAlignment = NSTextAlignmentCenter;
 }
 
-
+//-(void)checkEnabledStatus
+//{
+//    NSString *currentSavedGeo = [[NSUserDefaults standardUserDefaults]
+//                                    stringForKey:@"geoEnabledStatus"];
+//    if ([currentSavedGeo isEqualToString:(@"disableGeo")])
+//    {
+//        [self disableGeo];
+//    }else if([currentSavedGeo isEqualToString:(@"enableGeo")]){
+//        self.geoGif.hidden=NO;
+//        self.speechBubble.hidden=NO;
+//
+//    }
+//}
 
 
 - (void)tipsDB {
