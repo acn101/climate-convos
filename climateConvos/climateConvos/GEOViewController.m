@@ -27,6 +27,11 @@
     
     [self displayGeo];
 }
+
+- (IBAction)clearDefaults:(id)sender {
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+}
     
     
 -(void)displayGeo{

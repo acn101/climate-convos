@@ -18,7 +18,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
     // Show Slashscreens
     [FIRApp configure];
     UIStoryboard *SB = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
@@ -35,17 +34,53 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             self.window.rootViewController = [SB instantiateViewControllerWithIdentifier:@"splashscreen2"];
             [self.window makeKeyAndVisible];
+            
+            
+            NSString *startScreen = [self checkSkip];
+            
+            
+            
             //Enter the app
+            
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                self.window.rootViewController = [SB instantiateViewControllerWithIdentifier:@"somethingElse"];
+                self.window.rootViewController = [SB instantiateViewControllerWithIdentifier: startScreen];
                 [self.window makeKeyAndVisible];
             });
+            
         });
         
     });
     
     
     return YES;
+}
+
+-(NSString*) checkSkip
+{
+    NSString *theSkip = @"intro";
+    
+    NSLog(@"%@", theSkip);
+    
+    NSString *currentSavedStatus = [[NSUserDefaults standardUserDefaults]
+                                    stringForKey:@"tutSkipStatus"];
+    
+    
+    if ([currentSavedStatus isEqualToString:(@"skipToLocation")])
+    {
+        theSkip = @"location";
+        
+    } else if ([currentSavedStatus isEqualToString:(@"skipToDiscover")])
+    {
+        theSkip = @"discover";
+    }
+    else
+    {
+        theSkip = @"intro";
+    }
+    
+    NSLog(@"%@", theSkip);
+    
+    return theSkip;
 }
 
 

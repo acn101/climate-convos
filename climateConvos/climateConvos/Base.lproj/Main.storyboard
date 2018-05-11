@@ -14,7 +14,7 @@
         <!--Navigation View Controller-->
         <scene sceneID="Ltg-Vi-ijT">
             <objects>
-                <viewController title="Navigation View Controller" id="F5C-TM-oVy" customClass="NavigationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="discover" title="Navigation View Controller" id="F5C-TM-oVy" customClass="NavigationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JvD-7r-3CC"/>
                         <viewControllerLayoutGuide type="bottom" id="Hag-xZ-XnX"/>
@@ -879,11 +879,18 @@
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="PlaceHolder" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="naV-Lq-KET">
-                                        <rect key="frame" x="65" y="58" width="240" height="316"/>
+                                        <rect key="frame" x="65" y="87" width="240" height="316"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JW-Fh-IIe">
+                                        <rect key="frame" x="117" y="39" width="159" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -897,6 +904,7 @@
                         <outlet property="howButt" destination="bqU-zR-3s7" id="exe-v0-cUG"/>
                         <outlet property="leftNav" destination="U5X-e9-kSe" id="MkQ-TS-gzU"/>
                         <outlet property="modText" destination="naV-Lq-KET" id="gKm-qC-nOw"/>
+                        <outlet property="modTitle" destination="4JW-Fh-IIe" id="YaF-g3-VtO"/>
                         <outlet property="module" destination="VHl-DO-Tdw" id="cFd-cB-wAk"/>
                         <outlet property="proButt" destination="pnh-wT-ODK" id="nyB-IK-hUN"/>
                         <outlet property="rightNav" destination="Xxa-Qa-BfI" id="6PQ-Gw-7Cf"/>
@@ -906,12 +914,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sm0-3v-4R1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1668" y="968"/>
+            <point key="canvasLocation" x="-1668.5" y="968"/>
         </scene>
         <!--Tutorial View Controller-->
         <scene sceneID="Ihv-Pi-u4X">
             <objects>
-                <viewController storyboardIdentifier="somethingElse" id="lTQ-Fw-3bh" customClass="TutorialViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="intro" id="lTQ-Fw-3bh" customClass="TutorialViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vQI-Th-d2I"/>
                         <viewControllerLayoutGuide type="bottom" id="bxN-71-pPN"/>
@@ -943,6 +951,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="setSkipStatus:" destination="lTQ-Fw-3bh" eventType="touchUpInside" id="BMn-Zg-Gvn"/>
                                     <segue destination="c28-H7-wmd" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="kQ7-nK-npE"/>
                                 </connections>
                             </button>
@@ -1042,6 +1051,14 @@
                                 <rect key="frame" x="21" y="-3" width="130" height="130"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrO-Ck-NW7">
+                                <rect key="frame" x="204" y="20" width="108" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Clear Defaults"/>
+                                <connections>
+                                    <action selector="clearDefaults:" destination="BoL-lh-zxP" eventType="touchUpInside" id="9y0-cA-uOT"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <size key="freeformSize" width="375" height="128"/>
@@ -1058,7 +1075,7 @@
         <!--Location View Controller-->
         <scene sceneID="cXX-eQ-tkp">
             <objects>
-                <viewController id="c28-H7-wmd" customClass="LocationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="location" id="c28-H7-wmd" customClass="LocationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tDe-WW-f0X"/>
                         <viewControllerLayoutGuide type="bottom" id="LUW-0M-j7D"/>
@@ -1078,6 +1095,8 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="saveLocation:" destination="c28-H7-wmd" eventType="touchUpInside" id="Chj-GK-CQy"/>
+                                    <action selector="setSkipStatus:" destination="c28-H7-wmd" eventType="touchUpInside" id="DFf-G1-nF4"/>
                                     <segue destination="F5C-TM-oVy" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="7df-xW-IVn"/>
                                 </connections>
                             </button>
@@ -1108,14 +1127,6 @@
                                     <segment title="Houston"/>
                                 </segments>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGT-YC-sqA">
-                                <rect key="frame" x="257" y="396" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="saveLocation:" destination="c28-H7-wmd" eventType="touchUpInside" id="ONM-BW-Vvc"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="geo.gif" translatesAutoresizingMaskIntoConstraints="NO" id="SzL-Wm-l5b">
                                 <rect key="frame" x="110" y="450" width="130" height="130"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1285,6 +1296,6 @@
         <segue reference="6pb-hg-yuu"/>
         <segue reference="Jtk-wm-iid"/>
         <segue reference="7Da-2V-jHy"/>
-        <segue reference="PtQ-hz-cGi"/>
+        <segue reference="7df-xW-IVn"/>
     </inferredMetricsTieBreakers>
 </document>

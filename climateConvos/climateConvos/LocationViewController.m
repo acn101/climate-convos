@@ -23,15 +23,11 @@
     [self displayGeo];
 }
 
-
--(void)displayGeo{
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"geo" withExtension:@"gif"];
-    self.geoAtLocation.image = [UIImage animatedImageWithAnimatedGIFData:[NSData dataWithContentsOfURL:url]];
-    
+- (IBAction)setSkipStatus:(id)sender {
+    NSString *valueToSave = @"skipToDiscover";
+    [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"tutSkipStatus"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
-
-
-
 
 
 
@@ -50,6 +46,15 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }
+
+
+-(void)displayGeo{
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"geo" withExtension:@"gif"];
+    self.geoAtLocation.image = [UIImage animatedImageWithAnimatedGIFData:[NSData dataWithContentsOfURL:url]];
+    
+}
+
+
 
 
 - (void)didReceiveMemoryWarning {

@@ -10,7 +10,6 @@
 #import "TutorialViewController.h"
 #import "UIImage+animatedGIF.h"
 
-
 @interface TutorialViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *skipButton;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
@@ -27,17 +26,37 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self checkStatus];
-   
     [self displayGeo];
+    [self checkStatus];
+    
+    // [self loadHTML];
 }
 
+- (IBAction)setSkipStatus:(id)sender {
+    NSString *valueToSave = @"skipToLocation";
+    [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"tutSkipStatus"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
 
 -(void)displayGeo{
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"geo" withExtension:@"gif"];
     self.geoAtTutorial.image = [UIImage animatedImageWithAnimatedGIFData:[NSData dataWithContentsOfURL:url]];
     
 }
+
+/*
+ // gif of GEO
+ - (void)loadHTML {
+ NSString *path = [[NSBundle mainBundle] pathForResource:@"geo" ofType:@"html"];
+ NSURL *url = [NSURL fileURLWithPath:path];
+ NSData *data = [NSData dataWithContentsOfURL:url];
+ NSURL *baseURL = [url URLByDeletingLastPathComponent];
+ [self.geoGif loadData:data MIMEType:@"text/html" textEncodingName:@"utf-8" baseURL:baseURL];
+ 
+ //make the background transparent
+ [self.geoGif setBackgroundColor:[UIColor clearColor]];
+ [self.geoGif setOpaque:NO];
+ }*/
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
