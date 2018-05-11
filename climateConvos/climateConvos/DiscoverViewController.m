@@ -31,6 +31,8 @@
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
 @property (nonatomic, strong) NSMutableArray *items;
 
+//@property (nonatomic, assign) NSInteger *sendMeIndex;
+@property (nonatomic) int sendMeIndex;
 
 
 @end
@@ -266,10 +268,12 @@
 }
 
 - (void)buttonPressed:(id)sender {
-    NSLog(@"I worked yay");
+//    NSLog(@"I worked yay");
     UIView *current = self.carousel.currentItemView;
     NSInteger *index = [self.carousel indexOfItemView:(current)];
-    NSLog(@" %tu", index);
+    self.sendMeIndex = (int)index;
+//    NSLog(@" %tu", index);
+    
     [self performSegueWithIdentifier:@"showMoreSegue" sender:self];
     
     
@@ -279,6 +283,7 @@
     UIView *current = self.carousel.currentItemView;
     
     NSInteger *index = [self.carousel indexOfItemView:(current)];
+    self.sendMeIndex = index;
     NSLog(@" %tu", index);
     singleFactoid *toSave = [[singleFactoid alloc] init];
     NSString *currentSavedLocation = [[NSUserDefaults standardUserDefaults]
@@ -328,5 +333,7 @@
 {
     NSLog(@"prep for segue");
     ArticlesViewController *factoidVC = segue.destinationViewController;
+    factoidVC.sendMeIndex = self.sendMeIndex;
+    NSLog(@"SENT BEFORE SEGUE: %tu", self.sendMeIndex);
 }
 @end

@@ -41,6 +41,7 @@
     [super viewDidLoad];
     [self frameSetup];
     [self setup];
+    NSLog(@"%tu aowefijaowejfoajw", self.sendMeIndex);
 }
 
 - (void)frameSetup {
@@ -114,6 +115,9 @@
             if([sf.location isEqualToString:currentSavedLocation] || [sf.location isEqualToString:@"Global"] ) {
                 [self.items addObject:[NSNumber numberWithInt:i]];
             }
+        }
+        if(self.sendMeIndex != 0) {
+            [self.carousel scrollToItemAtIndex:self.sendMeIndex animated:NO];
         }
         [self.carousel reloadData];
     }];
@@ -243,7 +247,7 @@
             anArticle.location = [articleDetails objectForKey:@"location"];
             anArticle.sources = [articleDetails objectForKey:@"sources"];
             [self.articlesDB addObject:anArticle];
-            NSLog(@"%@", anArticle);
+//            NSLog(@"%@", anArticle);
         }
         [self setupCarousel];
     } withCancelBlock:^(NSError * _Nonnull error) {

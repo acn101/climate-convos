@@ -13,5 +13,6 @@
 @interface ArticlesViewController : UIViewController <iCarouselDataSource, iCarouselDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) NSString *selectedCategory;
+@property (nonatomic) int sendMeIndex;
 
 @end
