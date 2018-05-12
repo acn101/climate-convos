@@ -211,7 +211,7 @@
         UIButton *shadowShare = [UIButton buttonWithType:UIButtonTypeCustom];
         shadowShare.frame = CGRectMake(283.0, 364.0, 20.0f, 18.0f);
         [shadowShare addTarget:self
-                       action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
+                       action:@selector(shareContent:) forControlEvents:UIControlEventTouchDown];
         [self.view addSubview:shadowShare];
         
     } else {
@@ -244,6 +244,25 @@
     
     
 }
+
+
+-(void ) shareContent:(id)sender {
+    UIView *current = self.carousel.currentItemView;
+    NSInteger *index = [self.carousel indexOfItemView:(current)];
+    singleFactoid *toSave = [[singleFactoid alloc] init];
+    
+    
+    toSave = _seattleFactoids[(int)index];
+    
+    NSDictionary *texts = toSave.texts;
+    NSString *message = [texts objectForKey:@"long"];
+    NSArray * shareItems = @[message];
+    //    NSArray * shareItems = @[message, image];
+    
+    UIActivityViewController * avc = [[UIActivityViewController alloc]  initWithActivityItems:shareItems applicationActivities:nil];
+    [self presentViewController:avc animated:YES completion:nil];
+}
+
 
 -(void ) addFactoid:(id)sender {
     UIView *current = self.carousel.currentItemView;
