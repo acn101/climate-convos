@@ -31,6 +31,8 @@
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
 @property (nonatomic, strong) NSMutableArray *items;
 
+//@property (nonatomic, assign) NSInteger *sendMeIndex;
+@property (nonatomic) int sendMeIndex;
 
 
 @end
@@ -47,6 +49,8 @@
     self.currentDB = [[NSMutableArray alloc] init];
     self.seattleFactoids = [[NSMutableArray alloc] init];
     self.houstonFactoids = [[NSMutableArray alloc] init];
+//    self.savedFactoids = [[NSMutableArray alloc] init];
+
     [self testDB];
 }
 
@@ -69,40 +73,13 @@
     }];
 }
 
-/*
--(void) initArrayIndices
-{
-    [self.ref observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot) {
-        for (int i = 0; i < _currentDB.count; i++)
-        {
-            singleFactoid *current = self.currentDB[i];
-            NSLog(@"%@", current);
-            if ([current.location isEqualToString:@"Seattle"])
-            {
-                [_seattleFactoids addObject:current];
-            }
-            
-            if ([current.location isEqualToString:@"Houston"])
-            {
-                [_houstonFactoids addObject:current];
-            }
-        }
-        NSLog(@"this is houston: %@", _houstonFactoids);
-        NSLog(@"this is seattle: %@",_seattleFactoids);
-    }];
-    
-    
-}*/
-
 - (void)setItems:(NSMutableArray *)items {
     NSLog(@"setting items");
     _items = items;
 }
 
-
 - (void)setupCarousel {
 //    configure carousel
-//    self.carousel.type = iCarouselTypeLinear;
     self.carousel.type = iCarouselTypeLinear;
     self.carousel.delegate = self;
     self.carousel.dataSource = self;
@@ -125,30 +102,31 @@
             
             if ([sf.location isEqualToString:@"Seattle"] || [sf.location isEqualToString:@"Global"]) {
                 [_seattleFactoids addObject:sf];
-                
+            } else if ([sf.location isEqualToString:@"Houston"] || [sf.location isEqualToString:@"Global"]) {
+                [_houstonFactoids addObject:sf];
             }
-            
-            
-            if ([sf.location isEqualToString:@"Houston"] || [sf.location isEqualToString:@"Global"]) {
-                 [_houstonFactoids addObject:sf];
-             
-            }
-            
-            
             
             if([sf.location isEqualToString:currentSavedLocation] || [sf.location isEqualToString:@"Global"] ) {
                 [self.items addObject:[NSNumber numberWithInt:i]];
             }
         }
-        NSLog(@"this is houston: %@", _houstonFactoids);
-        NSLog(@"this is seattle: %@",_seattleFactoids);
         [self.carousel reloadData];
     }];
 }
 
 // Share Button
 
+- (IBAction)shareButton:(id)sender {
+    [self shareContent];
+}
 
+-(void)shareContent{
+    NSString * message = @"share factoids";
+    NSArray * shareItems = @[message];
+    
+    UIActivityViewController * avc = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
+    [self presentViewController:avc animated:YES completion:nil];
+}
 
 #pragma mark - iCarousel methods
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel {
@@ -159,6 +137,7 @@
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)carouselView {
     UILabel *label = nil;
+    UILabel *topic = nil;
     
     //create new view if no view is available for recycling
     if (carouselView == nil) {
@@ -166,25 +145,21 @@
         // editing the boyd of the carousel
         carouselView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300.0f, 378.0f)];
         carouselView.contentMode = UIViewContentModeCenter;
-//        view.backgroundColor = [UIColor grayColor];
         carouselView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"discover_body.png"]];
-//        label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 280.0f, 380.0f)];
         label = [[UILabel alloc] initWithFrame:CGRectMake(25, -50, 250.0f, 380.0f)];
         label.textAlignment = NSTextAlignmentCenter;
         label.font = [label.font fontWithSize:16];
         label.tag = 1;
         label.numberOfLines = 0;
-       // [label sizeToFit];
         label.textColor = [UIColor colorWithRed:94.0f/255.0f green:94.0f/255.0f blue:94.0f/255.0f alpha:1.0f];
         [carouselView addSubview:label];
         
         // Topic Label
-        UILabel *topic = [[UILabel alloc] initWithFrame:CGRectMake(15, -30, 250.0f, 30.0f)];
+        topic = [[UILabel alloc] initWithFrame:CGRectMake(15, -30, 250.0f, 30.0f)];
         topic.font = [UIFont boldSystemFontOfSize:22];
-        //topic.font = [topic.font fontWithSize:24];
-        //topic.tag = 1;
         topic.numberOfLines = 0;
-        topic.text = self.currentFactoid.tags; // here
+//        topic.text = self.currentFactoid.tags; // here
+//        NSLog(@"this is the fact number %@ this is the tag %@", self.currentFactoid.number, self.currentFactoid.tags);
         topic.textColor = [UIColor whiteColor];
         [carouselView addSubview:topic];
         
@@ -199,7 +174,6 @@
         // Inivisible shadow show more button
         UIButton *shadowMore = [UIButton buttonWithType:UIButtonTypeCustom];
         shadowMore.frame = CGRectMake(65.0, 357.0, 98.0f, 32.0f);
-        shadowMore.backgroundColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:.25];
         [shadowMore addTarget:self
                        action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
         [self.view addSubview:shadowMore];
@@ -218,7 +192,6 @@
         // Inivisible shadow plus button
         UIButton *shadowPlus = [UIButton buttonWithType:UIButtonTypeCustom];
         shadowPlus.frame = CGRectMake(253.0, 364.0, 20.0f, 20.0f);
-        shadowPlus.backgroundColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:.25];
         [shadowPlus addTarget:self
                        action:@selector(addFactoid:) forControlEvents:UIControlEventTouchDown];
         [self.view addSubview:shadowPlus];
@@ -227,7 +200,7 @@
         // share button
         UIButton *shareButton = [[UIButton alloc] initWithFrame:CGRectMake(245.0, 327, 20.0f, 18.0f)];
         [shareButton addTarget:self
-                        action:@selector(shareContent:) forControlEvents:UIControlEventTouchUpInside];
+                        action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
         [shareButton setImage:([UIImage imageNamed:@"share_icon.png"]) forState:UIControlStateNormal];
         [shareButton setTitle:@"" forState:UIControlStateNormal];
         shareButton.titleLabel.font = [UIFont systemFontOfSize:16];
@@ -237,9 +210,8 @@
         // Inivisible share plus button
         UIButton *shadowShare = [UIButton buttonWithType:UIButtonTypeCustom];
         shadowShare.frame = CGRectMake(283.0, 364.0, 20.0f, 18.0f);
-        shadowShare.backgroundColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:.25];
         [shadowShare addTarget:self
-                       action:@selector(shareContent:) forControlEvents:UIControlEventTouchDown];
+                       action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
         [self.view addSubview:shadowShare];
         
     } else {
@@ -255,55 +227,29 @@
 #pragma mark this2
     self.currentFactoid = [self.currentDB objectAtIndex:[[self.items objectAtIndex:index] intValue]];
     label.text = [self.currentFactoid.texts objectForKey:@"short"];
+    topic.text = self.currentFactoid.tags;
+    NSLog(@"Hullu: %@ %@", _currentFactoid.tags, _currentFactoid.number);
     
     return carouselView;
 }
 
-//- (IBAction)shareButton:(id)sender {
-//    [self shareContent];
-//}
-
--(void ) shareContent:(id)sender {
-    UIView *current = self.carousel.currentItemView;
-    NSInteger *index = [self.carousel indexOfItemView:(current)];
-    singleFactoid *toSave = [[singleFactoid alloc] init];
-    
-//    NSString *currentSavedLocation = [[NSUserDefaults standardUserDefaults] stringForKey:@"location"];
-//
-//    NSLog(currentSavedLocation);
-//
-//    if ([currentSavedLocation isEqualToString:@"Seattle"]) {
-//        toSave = _seattleFactoids[(int)index];
-//    }
-//
-//    if ([currentSavedLocation isEqualToString:@"Houston"]) {
-//        toSave = _houstonFactoids[(int)index];
-//    }
-    
-   toSave = _seattleFactoids[(int)index];
-
-    NSDictionary *texts = toSave.texts;
-    NSString *message = [texts objectForKey:@"long"];
-    NSArray * shareItems = @[message];
-    //    NSArray * shareItems = @[message, image];
-    
-    UIActivityViewController * avc = [[UIActivityViewController alloc]  initWithActivityItems:shareItems applicationActivities:nil];
-    [self presentViewController:avc animated:YES completion:nil];
-}
-
 - (void)buttonPressed:(id)sender {
-    NSLog(@"I worked yay");
+//    NSLog(@"I worked yay");
     UIView *current = self.carousel.currentItemView;
     NSInteger *index = [self.carousel indexOfItemView:(current)];
-    NSLog(@" %tu", index);
+    self.sendMeIndex = (int)index;
+//    NSLog(@" %tu", index);
+    
     [self performSegueWithIdentifier:@"showMoreSegue" sender:self];
     
+    
 }
 
--(void) addFactoid:(id)sender {
+-(void ) addFactoid:(id)sender {
     UIView *current = self.carousel.currentItemView;
     
     NSInteger *index = [self.carousel indexOfItemView:(current)];
+    self.sendMeIndex = index;
     NSLog(@" %tu", index);
     singleFactoid *toSave = [[singleFactoid alloc] init];
     NSString *currentSavedLocation = [[NSUserDefaults standardUserDefaults]
@@ -345,6 +291,9 @@
         case iCarouselOptionSpacing:
             return 1.05; // If the width of your items is 40 e.g, the spacing would be 4 px.
             break;
+        case iCarouselOptionVisibleItems:
+            return self.currentDB.count;
+            break;
     }
     return value;
 }
@@ -353,5 +302,7 @@
 {
     NSLog(@"prep for segue");
     ArticlesViewController *factoidVC = segue.destinationViewController;
+    factoidVC.sendMeIndex = self.sendMeIndex;
+    NSLog(@"SENT BEFORE SEGUE: %tu", self.sendMeIndex);
 }
 @end

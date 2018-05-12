@@ -26,12 +26,7 @@ ContainerViewController *container;
     [super viewDidLoad];
     
     
-    // check what screen to load
-    if ([self.VCSegueWasPerformedFrom isEqualToString:@"articlesVC"]) {
-        // setup the display to show article categories
-         [self.container segueIdentifierReceivedFromParent:@"toTopic"];
-    }
-    
+    [self toPerviousPage];
     [self buttonShadows];
     self.titleButtonPressed = NO;
     self.displayGEO.hidden=NO;
@@ -45,6 +40,12 @@ ContainerViewController *container;
         [self openMenu];
     }
     
+}
+
+-(void)toPerviousPage{
+    if([self.VCSegueWasPerformedFrom isEqualToString:@"articlesVC"]){
+        [self.container segueIdentifierReceivedFromParent:@"toTopic"];
+    }
 }
 
 

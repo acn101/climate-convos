@@ -414,7 +414,7 @@
         NSTextCheckingResult *result = matches[0];
         summary = [event substringWithRange:result.range];
         summary = [summary stringByReplacingOccurrencesOfString:@"SUMMARY:" withString:@""];
-        summary = [summary stringByReplacingOccurrencesOfString:@"T" withString:@""];
+//        summary = [summary stringByReplacingOccurrencesOfString:@"T" withString:@""];
         // NSLog(@"Summary: %@", summary);
     }
     return summary;
