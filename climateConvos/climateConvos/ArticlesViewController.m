@@ -48,7 +48,12 @@
     self.whiteFrame.layer.cornerRadius = 11;
     self.whiteFrame.layer.masksToBounds = YES;
     // NSLog(@"should display articles for %@", self.selectedCategory);
-    self.topic.text = self.selectedCategory;
+    if (self.selectedCategory == nil) {
+        self.topic.text = @"More Info";
+    } else {
+        self.topic.text = self.selectedCategory;
+    }
+    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -85,7 +90,7 @@
 }
 
 - (void)setItems:(NSMutableArray *)items {
-//    NSLog(@"setting items");
+    //    NSLog(@"setting items");
     _items = items;
 }
 
@@ -111,13 +116,14 @@
             
             NSString *currentSavedLocation = [[NSUserDefaults standardUserDefaults]
                                               stringForKey:@"location"];
-//            if([sf.tags isEqualToString:self.selectedCategory] ) {
-//            NSLog(@"%@", self.selectedCategory);
+            //            if([sf.tags isEqualToString:self.selectedCategory] ) {
+            //            NSLog(@"%@", self.selectedCategory);
             if([sf.location isEqualToString:currentSavedLocation] || [sf.location isEqualToString:@"Global"] ) {
+                NSLog(@"%@", self.selectedCategory);
                 if (self.selectedCategory==nil) {
                     [self.items addObject:[NSNumber numberWithInt:i]];
                 } else if (self.selectedCategory != nil && [sf.tags isEqualToString:self.selectedCategory]) {
-                    NSLog(@"%@", self.selectedCategory);
+                //    NSLog(@"%@", self.selectedCategory);
                     [self.items addObject:[NSNumber numberWithInt:i]];
                 }
             }
@@ -132,7 +138,7 @@
 #pragma mark - iCarousel methods
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel {
     //return the total number of items in the carousel
-//    NSLog(@"numberOfItemsInCarousel self.items.count: %lu", (long unsigned)self.items.count);
+    //    NSLog(@"numberOfItemsInCarousel self.items.count: %lu", (long unsigned)self.items.count);
     return [self.items count];
 }
 
@@ -157,16 +163,16 @@
         label.textColor = [UIColor colorWithRed:94.0f/255.0f green:94.0f/255.0f blue:94.0f/255.0f alpha:1.0f];
         [carouselView addSubview:label];
         
-//        // Topic Label
-//        UILabel *topic = [[UILabel alloc] initWithFrame:CGRectMake(15, -30, 250.0f, 30.0f)];
-//        // topic.textAlignment = NSTextAlignmentLeft;
-//        topic.font = [UIFont boldSystemFontOfSize:22];
-//        //topic.font = [topic.font fontWithSize:24];
-//        topic.tag = 1;
-//        topic.numberOfLines = 0;
-//        topic.text = self.currentFactoid.tags; // here
-//        topic.textColor = [UIColor whiteColor];
-//        [carouselView addSubview:topic];
+        //        // Topic Label
+        //        UILabel *topic = [[UILabel alloc] initWithFrame:CGRectMake(15, -30, 250.0f, 30.0f)];
+        //        // topic.textAlignment = NSTextAlignmentLeft;
+        //        topic.font = [UIFont boldSystemFontOfSize:22];
+        //        //topic.font = [topic.font fontWithSize:24];
+        //        topic.tag = 1;
+        //        topic.numberOfLines = 0;
+        //        topic.text = self.currentFactoid.tags; // here
+        //        topic.textColor = [UIColor whiteColor];
+        //        [carouselView addSubview:topic];
         
         // Show plus button
         UIButton *addButton = [[UIButton alloc] initWithFrame:CGRectMake(215.0, 280, 20.0f, 20.0f)];
@@ -206,7 +212,7 @@
 }
 
 - (void)buttonPressed:(id)sender {
-//    NSLog(@"I worked yay");
+    //    NSLog(@"I worked yay");
     
 }
 
@@ -253,7 +259,7 @@
             anArticle.location = [articleDetails objectForKey:@"location"];
             anArticle.sources = [articleDetails objectForKey:@"sources"];
             [self.articlesDB addObject:anArticle];
-//            NSLog(@"%@", anArticle);
+            //            NSLog(@"%@", anArticle);
         }
         [self setupCarousel];
     } withCancelBlock:^(NSError * _Nonnull error) {

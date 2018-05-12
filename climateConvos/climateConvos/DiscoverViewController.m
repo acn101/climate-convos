@@ -207,7 +207,6 @@
         // Inivisible shadow show more button
         UIButton *shadowMore = [UIButton buttonWithType:UIButtonTypeCustom];
         shadowMore.frame = CGRectMake(65.0, 357.0, 98.0f, 32.0f);
-        shadowMore.backgroundColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:.25];
         [shadowMore addTarget:self
                        action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
         [self.view addSubview:shadowMore];
@@ -226,7 +225,6 @@
         // Inivisible shadow plus button
         UIButton *shadowPlus = [UIButton buttonWithType:UIButtonTypeCustom];
         shadowPlus.frame = CGRectMake(253.0, 364.0, 20.0f, 20.0f);
-        shadowPlus.backgroundColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:.25];
         [shadowPlus addTarget:self
                        action:@selector(addFactoid:) forControlEvents:UIControlEventTouchDown];
         [self.view addSubview:shadowPlus];
@@ -245,7 +243,6 @@
         // Inivisible share plus button
         UIButton *shadowShare = [UIButton buttonWithType:UIButtonTypeCustom];
         shadowShare.frame = CGRectMake(283.0, 364.0, 20.0f, 18.0f);
-        shadowShare.backgroundColor = [UIColor colorWithRed:.1 green:.1 blue:.1 alpha:.25];
         [shadowShare addTarget:self
                        action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
         [self.view addSubview:shadowShare];
