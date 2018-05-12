@@ -35,6 +35,8 @@
 		B9BBBA2420A6316800EB971D /* splashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BBBA2320A6316700EB971D /* splashViewController.m */; };
 		B9BBBA2620A6317500EB971D /* BG.gif in Resources */ = {isa = PBXBuildFile; fileRef = B9BBBA2520A6317300EB971D /* BG.gif */; };
 		B9BBBA2920A6321C00EB971D /* Tip.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BBBA2720A6321C00EB971D /* Tip.m */; };
+		B9BBBA2E20A6766900EB971D /* launch.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B9BBBA2D20A6766800EB971D /* launch.jpg */; };
+		B9BBBA3020A6767300EB971D /* splash.gif in Resources */ = {isa = PBXBuildFile; fileRef = B9BBBA2F20A6767200EB971D /* splash.gif */; };
 		CA7137A3208E6217008F57B1 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7137A1208E6216008F57B1 /* Profile.m */; };
 		CA920A3920815CD6003E78CD /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA920A3820815CD6003E78CD /* MessageUI.framework */; };
 		CAF55494202B9E5600B1521E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF55493202B9E5600B1521E /* AppDelegate.m */; };
@@ -97,6 +99,8 @@
 		B9BBBA2520A6317300EB971D /* BG.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BG.gif; sourceTree = "<group>"; };
 		B9BBBA2720A6321C00EB971D /* Tip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tip.m; sourceTree = "<group>"; };
 		B9BBBA2820A6321C00EB971D /* Tip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tip.h; sourceTree = "<group>"; };
+		B9BBBA2D20A6766800EB971D /* launch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launch.jpg; sourceTree = "<group>"; };
+		B9BBBA2F20A6767200EB971D /* splash.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = splash.gif; sourceTree = "<group>"; };
 		CA7137A1208E6216008F57B1 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
 		CA7137A2208E6217008F57B1 /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
 		CA920A3820815CD6003E78CD /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -187,6 +191,8 @@
 			isa = PBXGroup;
 			children = (
 				B6C16EF92099A3B8000B553C /* geo.gif */,
+				B9BBBA2F20A6767200EB971D /* splash.gif */,
+				B9BBBA2D20A6766800EB971D /* launch.jpg */,
 				7A936CFA2087F21800651E3F /* GEOViewController.h */,
 				7A936CFB2087F21800651E3F /* GEOViewController.m */,
 				7AFDF2E420979652009E21BA /* UIImage+animatedGIF.h */,
@@ -387,8 +393,10 @@
 				B9BBBA2620A6317500EB971D /* BG.gif in Resources */,
 				E7603904204612820060C245 /* GoogleService-Info.plist in Resources */,
 				CAF5549C202B9E5600B1521E /* Assets.xcassets in Resources */,
+				B9BBBA2E20A6766900EB971D /* launch.jpg in Resources */,
 				B6C16EFA2099A3BA000B553C /* geo.gif in Resources */,
 				CAF5549A202B9E5600B1521E /* Main.storyboard in Resources */,
+				B9BBBA3020A6767300EB971D /* splash.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

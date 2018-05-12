@@ -47,8 +47,6 @@
     self.currentDB = [[NSMutableArray alloc] init];
     self.seattleFactoids = [[NSMutableArray alloc] init];
     self.houstonFactoids = [[NSMutableArray alloc] init];
-//    self.savedFactoids = [[NSMutableArray alloc] init];
-
     [self testDB];
 }
 
@@ -101,6 +99,7 @@
     _items = items;
 }
 
+
 - (void)setupCarousel {
 //    configure carousel
 //    self.carousel.type = iCarouselTypeLinear;
@@ -126,16 +125,23 @@
             
             if ([sf.location isEqualToString:@"Seattle"] || [sf.location isEqualToString:@"Global"]) {
                 [_seattleFactoids addObject:sf];
-            } else if ([sf.location isEqualToString:@"Houston"] || [sf.location isEqualToString:@"Global"]) {
-                [_houstonFactoids addObject:sf];
+                
             }
+            
+            
+            if ([sf.location isEqualToString:@"Houston"] || [sf.location isEqualToString:@"Global"]) {
+                 [_houstonFactoids addObject:sf];
+             
+            }
+            
+            
             
             if([sf.location isEqualToString:currentSavedLocation] || [sf.location isEqualToString:@"Global"] ) {
                 [self.items addObject:[NSNumber numberWithInt:i]];
             }
         }
-   //     NSLog(@"this is houston: %@", _houstonFactoids);
-   //     NSLog(@"this is seattle: %@",_seattleFactoids);
+        NSLog(@"this is houston: %@", _houstonFactoids);
+        NSLog(@"this is seattle: %@",_seattleFactoids);
         [self.carousel reloadData];
     }];
 }
@@ -262,14 +268,20 @@
     NSInteger *index = [self.carousel indexOfItemView:(current)];
     singleFactoid *toSave = [[singleFactoid alloc] init];
     
-    NSString *currentSavedLocation = [[NSUserDefaults standardUserDefaults] stringForKey:@"location"];
-    if ([currentSavedLocation isEqualToString:@"Seattle"]) {
-        toSave = _seattleFactoids[(int)index];
-    } else {
-        toSave = _houstonFactoids[(int)index];
-    }
+//    NSString *currentSavedLocation = [[NSUserDefaults standardUserDefaults] stringForKey:@"location"];
+//
+//    NSLog(currentSavedLocation);
+//
+//    if ([currentSavedLocation isEqualToString:@"Seattle"]) {
+//        toSave = _seattleFactoids[(int)index];
+//    }
+//
+//    if ([currentSavedLocation isEqualToString:@"Houston"]) {
+//        toSave = _houstonFactoids[(int)index];
+//    }
     
-    
+   toSave = _seattleFactoids[(int)index];
+
     NSDictionary *texts = toSave.texts;
     NSString *message = [texts objectForKey:@"long"];
     NSArray * shareItems = @[message];

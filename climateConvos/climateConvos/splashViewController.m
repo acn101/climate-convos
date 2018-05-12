@@ -26,7 +26,7 @@
 }
 
 -(void)displayBG{
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"BG" withExtension:@"gif"];
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"splash" withExtension:@"gif"];
     self.splashBG.image = [UIImage animatedImageWithAnimatedGIFData:[NSData dataWithContentsOfURL:url]];
     
 }
