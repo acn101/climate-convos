@@ -73,31 +73,6 @@
     }];
 }
 
-/*
--(void) initArrayIndices
-{
-    [self.ref observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot) {
-        for (int i = 0; i < _currentDB.count; i++)
-        {
-            singleFactoid *current = self.currentDB[i];
-            NSLog(@"%@", current);
-            if ([current.location isEqualToString:@"Seattle"])
-            {
-                [_seattleFactoids addObject:current];
-            }
-            
-            if ([current.location isEqualToString:@"Houston"])
-            {
-                [_houstonFactoids addObject:current];
-            }
-        }
-        NSLog(@"this is houston: %@", _houstonFactoids);
-        NSLog(@"this is seattle: %@",_seattleFactoids);
-    }];
-    
-    
-}*/
-
 - (void)setItems:(NSMutableArray *)items {
     NSLog(@"setting items");
     _items = items;
@@ -105,7 +80,6 @@
 
 - (void)setupCarousel {
 //    configure carousel
-//    self.carousel.type = iCarouselTypeLinear;
     self.carousel.type = iCarouselTypeLinear;
     self.carousel.delegate = self;
     self.carousel.dataSource = self;
@@ -136,8 +110,6 @@
                 [self.items addObject:[NSNumber numberWithInt:i]];
             }
         }
-   //     NSLog(@"this is houston: %@", _houstonFactoids);
-   //     NSLog(@"this is seattle: %@",_seattleFactoids);
         [self.carousel reloadData];
     }];
 }
@@ -150,9 +122,7 @@
 
 -(void)shareContent{
     NSString * message = @"share factoids";
-//    UIImage * image = [UIImage imageNamed:@"earth"];
     NSArray * shareItems = @[message];
-//    NSArray * shareItems = @[message, image];
     
     UIActivityViewController * avc = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
     [self presentViewController:avc animated:YES completion:nil];
@@ -167,6 +137,7 @@
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)carouselView {
     UILabel *label = nil;
+    UILabel *topic = nil;
     
     //create new view if no view is available for recycling
     if (carouselView == nil) {
@@ -174,25 +145,21 @@
         // editing the boyd of the carousel
         carouselView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300.0f, 378.0f)];
         carouselView.contentMode = UIViewContentModeCenter;
-//        view.backgroundColor = [UIColor grayColor];
         carouselView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"discover_body.png"]];
-//        label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 280.0f, 380.0f)];
         label = [[UILabel alloc] initWithFrame:CGRectMake(25, -50, 250.0f, 380.0f)];
         label.textAlignment = NSTextAlignmentCenter;
         label.font = [label.font fontWithSize:16];
         label.tag = 1;
         label.numberOfLines = 0;
-       // [label sizeToFit];
         label.textColor = [UIColor colorWithRed:94.0f/255.0f green:94.0f/255.0f blue:94.0f/255.0f alpha:1.0f];
         [carouselView addSubview:label];
         
         // Topic Label
-        UILabel *topic = [[UILabel alloc] initWithFrame:CGRectMake(15, -30, 250.0f, 30.0f)];
+        topic = [[UILabel alloc] initWithFrame:CGRectMake(15, -30, 250.0f, 30.0f)];
         topic.font = [UIFont boldSystemFontOfSize:22];
-        //topic.font = [topic.font fontWithSize:24];
-        //topic.tag = 1;
         topic.numberOfLines = 0;
-        topic.text = self.currentFactoid.tags; // here
+//        topic.text = self.currentFactoid.tags; // here
+//        NSLog(@"this is the fact number %@ this is the tag %@", self.currentFactoid.number, self.currentFactoid.tags);
         topic.textColor = [UIColor whiteColor];
         [carouselView addSubview:topic];
         
@@ -260,6 +227,8 @@
 #pragma mark this2
     self.currentFactoid = [self.currentDB objectAtIndex:[[self.items objectAtIndex:index] intValue]];
     label.text = [self.currentFactoid.texts objectForKey:@"short"];
+    topic.text = self.currentFactoid.tags;
+    NSLog(@"Hullu: %@ %@", _currentFactoid.tags, _currentFactoid.number);
     
     return carouselView;
 }
@@ -321,6 +290,9 @@
             return YES;
         case iCarouselOptionSpacing:
             return 1.05; // If the width of your items is 40 e.g, the spacing would be 4 px.
+            break;
+        case iCarouselOptionVisibleItems:
+            return self.currentDB.count;
             break;
     }
     return value;

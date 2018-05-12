@@ -59,7 +59,7 @@
             tip.tags = [tipsDetails  objectForKey:@"tags"];
             tip.text = [tipsDetails objectForKey:@"text"];
             [self.tips addObject:tip];
-            NSLog(@"this is the current tip %@", tip);
+            // NSLog(@"this is the current tip %@", tip);
             //  [self displayTip];
         }
     } withCancelBlock:^(NSError * _Nonnull error) {
