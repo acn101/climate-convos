@@ -50,10 +50,11 @@
     _pageView = 0;
     
     [_modText setFont:[UIFont systemFontOfSize:14]];
-    [_modTitle setFont:[UIFont systemFontOfSize:16]];
+   // [_modTitle setFont:[UIFont systemFontOfSize:16]];
+    [_modTitle setFont:[UIFont boldSystemFontOfSize:22]];
     
-    _modText.textAlignment = NSTextAlignmentCenter;
-    _modTitle.textAlignment = NSTextAlignmentCenter;
+    _modText.textAlignment = NSTextAlignmentLeft;
+    _modTitle.textAlignment = NSTextAlignmentLeft;
     
     
     [self hideContent];

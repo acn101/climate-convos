@@ -154,10 +154,12 @@
         //        view.backgroundColor = [UIColor grayColor];
         carouselView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"rect.png"]];
         //        label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 280.0f, 380.0f)];
-        label = [[UITextView alloc] initWithFrame:CGRectMake(20, 10, 283.0f, 250.0f)];
+       // label = [[UITextView alloc] initWithFrame:CGRectMake(20, 10, 283.0f, 250.0f)];
+        label = [[UITextView alloc] initWithFrame:CGRectMake(20, 10, 283.0f, 290.0f)];
         label.textAlignment = NSTextAlignmentCenter;
         [label setScrollEnabled:YES];
-        [label setFont:[UIFont systemFontOfSize:12]];
+        //[label setFont:[UIFont systemFontOfSize:12]];
+        [label setFont:[UIFont systemFontOfSize:14]];
         label.tag = 1;
         // [label sizeToFit];
         label.textColor = [UIColor colorWithRed:94.0f/255.0f green:94.0f/255.0f blue:94.0f/255.0f alpha:1.0f];
@@ -174,6 +176,8 @@
         //        topic.textColor = [UIColor whiteColor];
         //        [carouselView addSubview:topic];
         
+        
+        /*
         // Show plus button
         UIButton *addButton = [[UIButton alloc] initWithFrame:CGRectMake(215.0, 280, 20.0f, 20.0f)];
         [addButton addTarget:self
@@ -192,7 +196,7 @@
         [shareButton setTitle:@"" forState:UIControlStateNormal];
         shareButton.titleLabel.font = [UIFont systemFontOfSize:16];
         shareButton.userInteractionEnabled = YES;
-        [carouselView addSubview:shareButton];
+        [carouselView addSubview:shareButton];*/
         
     } else {
         //get a reference to the label in the recycled view

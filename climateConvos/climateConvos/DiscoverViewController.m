@@ -278,6 +278,19 @@
     } else {
         toSave = _houstonFactoids[(int)index];
     }
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Fact Saved!" message:@"\nFact has been added to your profile!\n" delegate:self cancelButtonTitle:@"Done" otherButtonTitles:nil];
+    
+    UITextView *textAboutUs = [[UITextView alloc] initWithFrame:CGRectMake(15, 35, 250, 100)];
+    textAboutUs.backgroundColor = [UIColor clearColor];
+    textAboutUs.textColor = [UIColor whiteColor];
+    textAboutUs.editable = NO;
+    textAboutUs.scrollEnabled = YES;
+    textAboutUs.font = [UIFont systemFontOfSize:15];
+    
+    [alert addSubview:textAboutUs];
+    [alert show];
+    
     [_savedFactoids addObject:toSave];
  //   NSLog(@"this is the saved factoid %@", _savedFactoids);
   //  [self performSegueWithIdentifier:@"savedToProfileSegue" sender:self];
