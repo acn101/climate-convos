@@ -212,8 +212,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cc-logo" highlightedImage="cc-logo" translatesAutoresizingMaskIntoConstraints="NO" id="ajZ-wQ-HLq">
-                                <rect key="frame" x="117" y="245" width="141" height="176"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.jpg" highlightedImage="cc-logo" translatesAutoresizingMaskIntoConstraints="NO" id="ajZ-wQ-HLq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -222,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y28-b5-Zs6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2627" y="-997"/>
+            <point key="canvasLocation" x="-2627.5" y="-997.5"/>
         </scene>
         <!--Splash Screen-->
         <scene sceneID="dcd-FZ-kWT">
@@ -236,7 +236,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cc-logo" highlightedImage="cc-logo" translatesAutoresizingMaskIntoConstraints="NO" id="dRV-MI-wkd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.jpg" highlightedImage="cc-logo" translatesAutoresizingMaskIntoConstraints="NO" id="dRV-MI-wkd">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -1123,6 +1123,7 @@
         <image name="geo speech bubble" width="517" height="225"/>
         <image name="geo.gif" width="750" height="422"/>
         <image name="house-selected" width="90" height="90"/>
+        <image name="logo.jpg" width="375" height="667"/>
         <image name="profile icon" width="90" height="90"/>
         <image name="profile_body" width="805" height="1052"/>
         <image name="right arrow" width="25" height="40"/>

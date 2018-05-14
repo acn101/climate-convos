@@ -42,6 +42,9 @@
     [self frameSetup];
     [self setup];
     NSLog(@"%tu aowefijaowejfoajw", self.sendMeIndex);
+    [[self.ref child:@"Facts"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+        [self setuptbl];
+    }];
 }
 
 - (void)frameSetup {
@@ -65,6 +68,7 @@
 - (void)setup {
     self.ref = [[FIRDatabase database] reference];
     self.currentDB = [[NSMutableArray alloc] init];
+    self.articlesDB = [[NSMutableArray alloc] init];
     [self testDB];
     [self populateArticles];
     [self setuptbl];
@@ -119,7 +123,7 @@
             //            if([sf.tags isEqualToString:self.selectedCategory] ) {
             //            NSLog(@"%@", self.selectedCategory);
             if([sf.location isEqualToString:currentSavedLocation] || [sf.location isEqualToString:@"Global"] ) {
-                NSLog(@"%@", self.selectedCategory);
+//                NSLog(@"Me? %@", self.selectedCategory);
                 if (self.selectedCategory==nil) {
                     [self.items addObject:[NSNumber numberWithInt:i]];
                 } else if (self.selectedCategory != nil && [sf.tags isEqualToString:self.selectedCategory]) {
@@ -154,12 +158,10 @@
         //        view.backgroundColor = [UIColor grayColor];
         carouselView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"rect.png"]];
         //        label = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 280.0f, 380.0f)];
-       // label = [[UITextView alloc] initWithFrame:CGRectMake(20, 10, 283.0f, 250.0f)];
-        label = [[UITextView alloc] initWithFrame:CGRectMake(20, 10, 283.0f, 290.0f)];
+        label = [[UITextView alloc] initWithFrame:CGRectMake(20, 10, 283.0f, 250.0f)];
         label.textAlignment = NSTextAlignmentCenter;
         [label setScrollEnabled:YES];
-        //[label setFont:[UIFont systemFontOfSize:12]];
-        [label setFont:[UIFont systemFontOfSize:14]];
+        [label setFont:[UIFont systemFontOfSize:12]];
         label.tag = 1;
         // [label sizeToFit];
         label.textColor = [UIColor colorWithRed:94.0f/255.0f green:94.0f/255.0f blue:94.0f/255.0f alpha:1.0f];
@@ -176,27 +178,25 @@
         //        topic.textColor = [UIColor whiteColor];
         //        [carouselView addSubview:topic];
         
-        
-        /*
         // Show plus button
-        UIButton *addButton = [[UIButton alloc] initWithFrame:CGRectMake(215.0, 280, 20.0f, 20.0f)];
-        [addButton addTarget:self
-                      action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
-        [addButton setImage:([UIImage imageNamed:@"add_icon.png"]) forState:UIControlStateNormal];
-        [addButton setTitle:@"" forState:UIControlStateNormal];
-        addButton.titleLabel.font = [UIFont systemFontOfSize:16];
-        addButton.userInteractionEnabled = YES;
-        [carouselView addSubview:addButton];
-        
-        // share button
-        UIButton *shareButton = [[UIButton alloc] initWithFrame:CGRectMake(245.0, 280, 20.0f, 18.0f)];
-        [shareButton addTarget:self
-                        action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
-        [shareButton setImage:([UIImage imageNamed:@"share_icon.png"]) forState:UIControlStateNormal];
-        [shareButton setTitle:@"" forState:UIControlStateNormal];
-        shareButton.titleLabel.font = [UIFont systemFontOfSize:16];
-        shareButton.userInteractionEnabled = YES;
-        [carouselView addSubview:shareButton];*/
+//        UIButton *addButton = [[UIButton alloc] initWithFrame:CGRectMake(215.0, 280, 20.0f, 20.0f)];
+//        [addButton addTarget:self
+//                      action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
+//        [addButton setImage:([UIImage imageNamed:@"add_icon.png"]) forState:UIControlStateNormal];
+//        [addButton setTitle:@"" forState:UIControlStateNormal];
+//        addButton.titleLabel.font = [UIFont systemFontOfSize:16];
+//        addButton.userInteractionEnabled = YES;
+//        [carouselView addSubview:addButton];
+//        
+//        // share button
+//        UIButton *shareButton = [[UIButton alloc] initWithFrame:CGRectMake(245.0, 280, 20.0f, 18.0f)];
+//        [shareButton addTarget:self
+//                        action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+//        [shareButton setImage:([UIImage imageNamed:@"share_icon.png"]) forState:UIControlStateNormal];
+//        [shareButton setTitle:@"" forState:UIControlStateNormal];
+//        shareButton.titleLabel.font = [UIFont systemFontOfSize:16];
+//        shareButton.userInteractionEnabled = YES;
+//        [carouselView addSubview:shareButton];
         
     } else {
         //get a reference to the label in the recycled view
@@ -265,7 +265,7 @@
             [self.articlesDB addObject:anArticle];
             //            NSLog(@"%@", anArticle);
         }
-        [self setupCarousel];
+        [self.tableView reloadData];
     } withCancelBlock:^(NSError * _Nonnull error) {
         NSLog(@"%@", error.localizedDescription);
     }];
@@ -279,13 +279,15 @@
     // DefaultCellViewController.h for this to not
     // produce a warning
     self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    
 }
 #pragma mark - Table View Methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Our table only has one section...
     if (section == 0) {
-        return self.currentDB.count;
+        return self.articlesDB.count;
     } else {
         return 0;
     }
@@ -293,8 +295,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // grab the drone for this row
-    singleFactoid *source = self.currentDB[indexPath.row];
-    NSString *singleSource = [source.sources objectForKey:@"url"];
+    Articles *source = self.articlesDB[indexPath.row];
+    NSString *singleSource = source.name;
     
     // create a cell with default styling
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"default"];
@@ -307,6 +309,20 @@
     
     // return our cell
     return cell;
+}
+
+//Go to url from tableview click
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"What is the value of indexpath: %lu", indexPath.row);
+    Articles *singleArticle = [self.articlesDB objectAtIndex:indexPath.row];
+    NSString *url = [singleArticle.sources objectForKey:@"url"];
+    NSLog(@"What is the url?: %@", url);
+    [self openURL:url];
+}
+
+- (void)openURL:(NSString *)url{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 }
 
 @end
