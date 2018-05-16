@@ -135,15 +135,15 @@ ContainerViewController *container;
 
 //dropdown menu shadows
 -(void)buttonShadows{
-    [self.topicButton.layer setShadowOffset:CGSizeMake(5, 5)];
-    [self.topicButton.layer setShadowColor:[[UIColor blackColor] CGColor]];
-    [self.topicButton.layer setShadowOpacity:0.5];
-    [self.getActiveButton.layer setShadowOffset:CGSizeMake(5, 5)];
-    [self.getActiveButton.layer setShadowColor:[[UIColor blackColor] CGColor]];
-    [self.getActiveButton.layer setShadowOpacity:0.5];
-    [self.educationButton.layer setShadowOffset:CGSizeMake(5, 5)];
-    [self.educationButton.layer setShadowColor:[[UIColor blackColor] CGColor]];
-    [self.educationButton.layer setShadowOpacity:0.5];
+//    [self.topicButton.layer setShadowOffset:CGSizeMake(5, 5)];
+//    [self.topicButton.layer setShadowColor:[[UIColor blackColor] CGColor]];
+//    [self.topicButton.layer setShadowOpacity:0.5];
+//    [self.getActiveButton.layer setShadowOffset:CGSizeMake(5, 5)];
+//    [self.getActiveButton.layer setShadowColor:[[UIColor blackColor] CGColor]];
+//    [self.getActiveButton.layer setShadowOpacity:0.5];
+//    [self.educationButton.layer setShadowOffset:CGSizeMake(5, 5)];
+//    [self.educationButton.layer setShadowColor:[[UIColor blackColor] CGColor]];
+//    [self.educationButton.layer setShadowOpacity:0.5];
 }
 
 
