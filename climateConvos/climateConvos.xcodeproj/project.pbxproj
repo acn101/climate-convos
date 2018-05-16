@@ -35,7 +35,6 @@
 		B6C16EFA2099A3BA000B553C /* geo.gif in Resources */ = {isa = PBXBuildFile; fileRef = B6C16EF92099A3B8000B553C /* geo.gif */; };
 		B6F58F2E2091065B0098F484 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F58F2C2091065A0098F484 /* LocationViewController.m */; };
 		B9BBBA2420A6316800EB971D /* splashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BBBA2320A6316700EB971D /* splashViewController.m */; };
-		B9BBBA2620A6317500EB971D /* BG.gif in Resources */ = {isa = PBXBuildFile; fileRef = B9BBBA2520A6317300EB971D /* BG.gif */; };
 		B9BBBA2920A6321C00EB971D /* Tip.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BBBA2720A6321C00EB971D /* Tip.m */; };
 		B9BBBA2E20A6766900EB971D /* launch.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B9BBBA2D20A6766800EB971D /* launch.jpg */; };
 		B9BBBA3020A6767300EB971D /* splash.gif in Resources */ = {isa = PBXBuildFile; fileRef = B9BBBA2F20A6767200EB971D /* splash.gif */; };
@@ -101,7 +100,6 @@
 		B6F58F2D2091065B0098F484 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		B9BBBA2220A6316700EB971D /* splashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = splashViewController.h; sourceTree = "<group>"; };
 		B9BBBA2320A6316700EB971D /* splashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = splashViewController.m; sourceTree = "<group>"; };
-		B9BBBA2520A6317300EB971D /* BG.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BG.gif; sourceTree = "<group>"; };
 		B9BBBA2720A6321C00EB971D /* Tip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tip.m; sourceTree = "<group>"; };
 		B9BBBA2820A6321C00EB971D /* Tip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tip.h; sourceTree = "<group>"; };
 		B9BBBA2D20A6766800EB971D /* launch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launch.jpg; sourceTree = "<group>"; };
@@ -196,8 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				B6C16EF92099A3B8000B553C /* geo.gif */,
-				B9BBBA2F20A6767200EB971D /* splash.gif */,
-				B9BBBA2D20A6766800EB971D /* launch.jpg */,
 				7A936CFA2087F21800651E3F /* GEOViewController.h */,
 				7A936CFB2087F21800651E3F /* GEOViewController.m */,
 				7AFDF2E420979652009E21BA /* UIImage+animatedGIF.h */,
@@ -221,16 +217,37 @@
 			name = NavBar;
 			sourceTree = "<group>";
 		};
+		B6B256E220ACB67400E8B408 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				B623179520AA166E008A5369 /* logo.jpg */,
+				B623179920AA174A008A5369 /* splashAnimate.gif */,
+				B9BBBA2220A6316700EB971D /* splashViewController.h */,
+				B9BBBA2320A6316700EB971D /* splashViewController.m */,
+				B9BBBA2F20A6767200EB971D /* splash.gif */,
+				B9BBBA2D20A6766800EB971D /* launch.jpg */,
+			);
+			name = Splash;
+			sourceTree = "<group>";
+		};
+		B6B256E320ACB71F00E8B408 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				7A02D2822096DBB000AD240D /* SettingsViewController.h */,
+				7A02D2812096DBB000AD240D /* SettingsViewController.m */,
+				CAF55492202B9E5600B1521E /* AppDelegate.h */,
+				CAF55493202B9E5600B1521E /* AppDelegate.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		B6DE172D208414F00068C02F /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
-				B9BBBA2220A6316700EB971D /* splashViewController.h */,
-				B9BBBA2320A6316700EB971D /* splashViewController.m */,
-				7A02D2822096DBB000AD240D /* SettingsViewController.h */,
-				7A02D2812096DBB000AD240D /* SettingsViewController.m */,
+				B6F58F2D2091065B0098F484 /* LocationViewController.h */,
+				B6F58F2C2091065A0098F484 /* LocationViewController.m */,
 				CAFD9ED1208153E400F5EB35 /* TutorialViewController.h */,
 				CAFD9ED0208153E300F5EB35 /* TutorialViewController.m */,
-				B9BBBA2520A6317300EB971D /* BG.gif */,
 			);
 			name = Tutorial;
 			sourceTree = "<group>";
@@ -263,8 +280,6 @@
 				CAFD9ECD2081500000F5EB35 /* CategoriesViewController.h */,
 				CAFD9ECE2081500000F5EB35 /* CategoriesViewController.m */,
 				74A8796720A63AE800677F00 /* Articles.h */,
-				B623179920AA174A008A5369 /* splashAnimate.gif */,
-				B623179520AA166E008A5369 /* logo.jpg */,
 				74A8796820A63AE800677F00 /* Articles.m */,
 				74A8796A20A63AE800677F00 /* ArticlesViewController.h */,
 				B623179B20AA202D008A5369 /* ArticlesViewController.m */,
@@ -302,9 +317,8 @@
 		CAF55491202B9E5600B1521E /* climateConvos */ = {
 			isa = PBXGroup;
 			children = (
+				B6B256E220ACB67400E8B408 /* Splash */,
 				74FD3CCE2093BBC900A56183 /* Calendar */,
-				B6F58F2D2091065B0098F484 /* LocationViewController.h */,
-				B6F58F2C2091065A0098F484 /* LocationViewController.m */,
 				7A936CFD2087F22400651E3F /* GEO */,
 				7A0476DD20872A3C009765D5 /* Profile */,
 				7AFD84C5207CAA210029ED54 /* NavBar */,
@@ -314,6 +328,7 @@
 				B6DE172E208414FE0068C02F /* Carousel */,
 				B6DE172D208414F00068C02F /* Tutorial */,
 				CAF55498202B9E5600B1521E /* Main.storyboard */,
+				B6B256E320ACB71F00E8B408 /* Settings */,
 				E7603903204612820060C245 /* GoogleService-Info.plist */,
 				CAF5549B202B9E5600B1521E /* Assets.xcassets */,
 				7A158CFA2087D29300AEA7FE /* house-selected.png */,
@@ -328,8 +343,6 @@
 				CAF5549D202B9E5600B1521E /* LaunchScreen.storyboard */,
 				CAF554A0202B9E5600B1521E /* Info.plist */,
 				CAF554A1202B9E5600B1521E /* main.m */,
-				CAF55492202B9E5600B1521E /* AppDelegate.h */,
-				CAF55493202B9E5600B1521E /* AppDelegate.m */,
 				B64B1AEF20759FC100E4F0CD /* ScrollDemoViewController.h */,
 				B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */,
 			);
@@ -398,7 +411,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAF5549F202B9E5600B1521E /* LaunchScreen.storyboard in Resources */,
-				B9BBBA2620A6317500EB971D /* BG.gif in Resources */,
 				E7603904204612820060C245 /* GoogleService-Info.plist in Resources */,
 				B623179A20AA174C008A5369 /* splashAnimate.gif in Resources */,
 				CAF5549C202B9E5600B1521E /* Assets.xcassets in Resources */,

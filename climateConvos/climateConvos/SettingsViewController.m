@@ -90,24 +90,25 @@
     
 }
 
-//- (IBAction)geoSwitch:(id)sender {
-//
-//    if([sender isOn]){
-//        NSString *valueToSave = @"disableGeo";
-//        [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"geoEnabledStatus"];
-//        [[NSUserDefaults standardUserDefaults] synchronize];
-//        NSLog(valueToSave);
-//        self.geoView.view.hidden = YES;
-//
-//    } else{
-//        NSString *valueToSave = @"enableGeo";
-//        [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"geoEnabledStatus"];
-//        [[NSUserDefaults standardUserDefaults] synchronize];
-//        NSLog(valueToSave);
-//        //[_geoView setHidden:YES];
-//
-//    }
-//}
+- (IBAction)geoSwitch:(id)sender {
+
+    if([sender isOn]){
+        NSString *valueToSave = @"disableGeo";
+        [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"geoEnabledStatus"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        NSLog(valueToSave);
+        self.geoView.view.hidden = YES;
+        self.geoLabel.text = @"GEO Disable";
+
+    } else{
+        NSString *valueToSave = @"enableGeo";
+        [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"geoEnabledStatus"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        NSLog(valueToSave);
+      self.geoLabel.text = @"GEO Enable";
+
+    }
+}
 
 
 

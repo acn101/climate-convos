@@ -30,7 +30,7 @@
     self.tableView.layer.masksToBounds = YES;
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.categories = [NSArray arrayWithObjects:@"Agriculture", @"Energy", @"Extreme Weather", @"Health", @"Legislation", @"Water", @"Wildlife", nil];
+    self.categories = [NSArray arrayWithObjects:@"Agriculture", @"Energy", @"Extreme Weather", @"Health", @"Legislation", @"Water Supply", @"Wildlife", nil];
 }
 
 #pragma mark - table view delegate and data source methods
