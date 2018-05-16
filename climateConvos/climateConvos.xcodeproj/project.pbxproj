@@ -95,6 +95,7 @@
 		B69EB1CC20757AF800E22425 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B69FDE752085369F00B60C4C /* EducationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EducationViewController.h; sourceTree = "<group>"; };
 		B69FDE762085369F00B60C4C /* EducationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EducationViewController.m; sourceTree = "<group>"; };
+		B6B256E120ACAD6500E8B408 /* NavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
 		B6C16EF92099A3B8000B553C /* geo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = geo.gif; sourceTree = "<group>"; };
 		B6F58F2C2091065A0098F484 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		B6F58F2D2091065B0098F484 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
@@ -214,6 +215,7 @@
 				7A1385D2207BF4D7006BF698 /* EmptySegue.m */,
 				7A1385D4207BF683006BF698 /* ContainerViewController.h */,
 				7A1385D5207BF683006BF698 /* ContainerViewController.m */,
+				B6B256E120ACAD6500E8B408 /* NavigationViewController.h */,
 				7A1385CC207BF342006BF698 /* NavigationViewController.m */,
 			);
 			name = NavBar;

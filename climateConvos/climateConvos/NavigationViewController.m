@@ -54,7 +54,7 @@ ContainerViewController *container;
     
     //change the label
     [self.titleButton setTitle:@"Discover" forState:UIControlStateNormal];
-    [self.homeButton setImage:[UIImage imageNamed:@"house-selected"] forState : UIControlStateNormal];
+   // [self.homeButton setImage:[UIImage imageNamed:@"house-selected"] forState : UIControlStateNormal];
     
     [self closeMenu];
     

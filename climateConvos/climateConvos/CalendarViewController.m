@@ -73,6 +73,7 @@
     UILabel *endLabel = (UILabel *)[cell viewWithTag:3];
     UILabel *locationLabel = (UILabel *)[cell viewWithTag:4];
     UILabel *descriptionLabel = (UILabel *)[cell viewWithTag:5];
+    UILabel *somethingElse = (UILabel *)[cell viewWithTag:6];
     
     // customize date
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -80,12 +81,17 @@
     NSString *fST = [formatter stringFromDate:thisEvent.eStartTime];
     NSString *fET = [formatter stringFromDate:thisEvent.eEndTime];
     
+    NSDateFormatter *newFormatter = [[NSDateFormatter alloc] init];
+    [newFormatter setDateFormat:@"MM/dd"];
+    NSString *bST = [newFormatter stringFromDate:thisEvent.eStartTime];
+    
     // populate the cell
     summaryLabel.text = thisEvent.eSummary;
     startLabel.text = fST;
     endLabel.text = fET;
     locationLabel.text = thisEvent.eLocation;
     descriptionLabel.text = thisEvent.eDescription;
+    somethingElse.text = bST;
     
     // return our cell
     return cell;
@@ -454,7 +460,7 @@
 }
 
 - (void)checkCity {
-    self.city = @"Houston";
+    self.city = [[NSUserDefaults standardUserDefaults] stringForKey:@"location"];
     if([self.city isEqualToString:@"Seattle"]) {
         [self downloadICS];
     } else if ([self.city isEqualToString:@"Houston"]) {

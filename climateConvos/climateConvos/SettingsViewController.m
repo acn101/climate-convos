@@ -43,7 +43,22 @@
 - (IBAction)clearDefaults:(id)sender {
     NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
     [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Clear Defaults" message:@"Are you sure you want to clear the defaults.  This action cannot be undone" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Clear", nil];
+    [alert show];
+    
+    
 }
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    if (buttonIndex == 0){
+        NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+        [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+        
+    }
+}
+
+
 
 - (IBAction)aboutUs:(id)sender {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"About Us👋" message:@"\n\n We are SASON, a team of UW students from the Interactive Media Design program and we are creating an iOs app called Climate Convos. Climate Convos creates the agency for well-informed conversations about climate change. It does this through the use of factoids, local articles, and interactive data (live data), which are based on scholarly research and sources. By adding informed dialogue to the world, we believe we can create change to the systems which affect our earth. The information is presented in a way that it advocates face-to-face conversations and can also lead to activism. Users will also be presented with local events and calls-to-action based in the Pacific NorthWest. Due to this localization, we hope to create a sense of urgency as people would then feel a personal stake in the issue.\n" delegate:self cancelButtonTitle:@"Done" otherButtonTitles:nil];
