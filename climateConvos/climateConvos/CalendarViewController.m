@@ -141,12 +141,7 @@
             calEvent.eSummary = [self getSummary:event];
             calEvent.eLocation = [self getLocation:event];
             // NSLog(@"%@ \n\n\n", calEvent);
-            
-            if([calEvent.eStartTime timeIntervalSinceDate:[NSDate date]] > 0)
-            {
-                //start time greater than today
-                [calendarEventsUnsorted addObject:calEvent];
-            }
+            [calendarEventsUnsorted addObject:calEvent];
 
         }
     }

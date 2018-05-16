@@ -116,7 +116,7 @@ ContainerViewController *container;
     [self.container segueIdentifierReceivedFromParent:@"toGetActive"];
     
     //change the label
-    [self.titleButton setTitle:@"Get Active" forState:UIControlStateNormal];
+    [self.titleButton setTitle:@"Events" forState:UIControlStateNormal];
      [self buttonStyling];
     [self closeMenu];
 }

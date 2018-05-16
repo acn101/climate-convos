@@ -20,10 +20,10 @@
                         <viewControllerLayoutGuide type="bottom" id="Hag-xZ-XnX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2DV-Hg-nWS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUC-Tz-brZ">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUC-Tz-brZ">
                                 <rect key="frame" x="0.0" y="79" width="375" height="42"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -39,7 +39,7 @@
                                     <action selector="topicButton:" destination="F5C-TM-oVy" eventType="touchUpInside" id="cCD-wo-9tP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sy-cz-iaN">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sy-cz-iaN">
                                 <rect key="frame" x="0.0" y="119" width="375" height="48"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
@@ -52,11 +52,11 @@
                                     <action selector="notHomeButton:" destination="F5C-TM-oVy" eventType="touchUpInside" id="Gut-tx-W5g"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SQU-JQ-jfO">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SQU-JQ-jfO">
                                 <rect key="frame" x="0.0" y="167" width="375" height="42"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                <state key="normal" title="Get Active">
+                                <state key="normal" title="Events">
                                     <color key="titleColor" red="0.40784313725490196" green="0.73725490196078436" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -65,13 +65,13 @@
                                     <action selector="notHomeButton:" destination="F5C-TM-oVy" eventType="touchUpInside" id="PvK-Ty-RVk"/>
                                 </connections>
                             </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BRH-9w-HRr">
-                                <rect key="frame" x="0.0" y="79" width="375" height="588"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BRH-9w-HRr">
+                                <rect key="frame" x="0.0" y="79" width="375" height="35"/>
                                 <connections>
                                     <segue destination="SRQ-HU-ol3" kind="embed" identifier="container" id="31N-RT-zD9"/>
                                 </connections>
                             </containerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NHv-Cc-Qjw">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NHv-Cc-Qjw">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow-down" translatesAutoresizingMaskIntoConstraints="NO" id="Icf-Hs-f8K">
@@ -121,7 +121,7 @@
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G5j-oy-l5N">
-                                <rect key="frame" x="0.0" y="539" width="375" height="128"/>
+                                <rect key="frame" x="0.0" y="-93" width="375" height="128"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="BoL-lh-zxP" kind="embed" id="n3j-uT-7rJ"/>
@@ -179,7 +179,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2G0-QV-QAD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gvU-gX-0ZB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="588"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QcV-jm-3kc" customClass="iCarousel">
@@ -376,7 +376,7 @@
                         <viewControllerLayoutGuide type="bottom" id="SyF-Yk-6R8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IBD-Eb-Ytr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="588"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zE4-Mg-Pk9">
@@ -440,7 +440,7 @@
                         <viewControllerLayoutGuide type="bottom" id="UJy-lV-jzW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eXv-u5-zIy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="588"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile_body" translatesAutoresizingMaskIntoConstraints="NO" id="EXC-Si-qob">
@@ -510,7 +510,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Omm-3v-oPn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XFM-p5-4nX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="588"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lRC-B2-L2e">
@@ -1124,6 +1124,7 @@
         <image name="speech bubble" width="680" height="722"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="31N-RT-zD9"/>
         <segue reference="6pb-hg-yuu"/>
         <segue reference="KUf-ys-Eio"/>
         <segue reference="L9e-qb-ao4"/>
