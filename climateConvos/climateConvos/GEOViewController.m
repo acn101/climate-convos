@@ -34,9 +34,10 @@
     //[self checkEnabledStatus];
     
     [super viewDidLoad];
+    [self checkEnabledStatus];
     [self setup];
     [self displayGeo];
-    [self displayTip];
+    
 
    
 }
@@ -46,21 +47,21 @@
     self.tips = [[NSMutableArray alloc] init];
     [self tipsDB];
     self.geoText.textAlignment = NSTextAlignmentCenter;
+    [self displayTip];
 }
 
-//-(void)checkEnabledStatus
-//{
-//    NSString *currentSavedGeo = [[NSUserDefaults standardUserDefaults]
-//                                    stringForKey:@"geoEnabledStatus"];
-//    if ([currentSavedGeo isEqualToString:(@"disableGeo")])
-//    {
-//        [self disableGeo];
-//    }else if([currentSavedGeo isEqualToString:(@"enableGeo")]){
-//        self.geoGif.hidden=NO;
-//        self.speechBubble.hidden=NO;
-//
-//    }
-//}
+-(void)checkEnabledStatus
+{
+    NSString *currentSavedGeo = [[NSUserDefaults standardUserDefaults]
+                                    stringForKey:@"geoEnabledStatus"];
+    if ([currentSavedGeo isEqualToString:(@"disableGeo")])
+    {
+        [self disableGeo:YES];
+      
+    }else if([currentSavedGeo isEqualToString:(@"enableGeo")]){
+        [self disableGeo:NO];
+    }
+}
 
 
 - (void)tipsDB {
@@ -104,9 +105,11 @@
     self.geoText.text = currentTip.text;
 }
 
--(void)disableGeo{
-    self.geoGif.hidden=YES;
-    self.speechBubble.hidden=YES;
+-(void)disableGeo:(bool) input{
+    self.geoGif.hidden=input;
+    self.speechBubble.hidden=input;
+    self.geoText.hidden = input;
+    
     
 }
 

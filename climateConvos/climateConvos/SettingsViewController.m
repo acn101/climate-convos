@@ -16,14 +16,13 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *seattleButton;
 @property (weak, nonatomic) IBOutlet UIButton *houstonButton;
-
 @property (weak, nonatomic) IBOutlet UIView *geoButtonView;
 @property (weak, nonatomic) IBOutlet UILabel *geoLabel;
-@property (weak, nonatomic) IBOutlet UILabel *soundsLabel;
-@property (weak, nonatomic) IBOutlet UILabel *notificationsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tutorialLabel;
+@property (weak, nonatomic) IBOutlet UISwitch *tutorialSwitch;
 @property (weak, nonatomic) IBOutlet UIButton *locationButton;
 @property (weak, nonatomic) IBOutlet UISwitch *geoSwitch;
-@property  (weak, nonatomic) GEOViewController *geoView;
+
 
 
 @end
@@ -49,6 +48,21 @@
     
     
 }
+
+- (IBAction)tutorialSwitch:(id)sender {
+    
+     if([sender isOn]){
+    NSString *valueToSave = @"";
+    [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"tutSkipStatus"];
+         [[NSUserDefaults standardUserDefaults] synchronize];}
+     else{
+         NSString *valueToSave = @"skipToDiscover";
+         [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"tutSkipStatus"];
+         [[NSUserDefaults standardUserDefaults] synchronize];
+     }
+    
+}
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     
     if (buttonIndex == 0){
@@ -91,35 +105,53 @@
 }
 
 - (IBAction)geoSwitch:(id)sender {
-
+    NSString *currentSavedGeo = [[NSUserDefaults standardUserDefaults] stringForKey:@"geoEnabledStatus"];
+    
     if([sender isOn]){
-        NSString *valueToSave = @"disableGeo";
-        [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"geoEnabledStatus"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        NSLog(valueToSave);
-        self.geoView.view.hidden = YES;
-        self.geoLabel.text = @"GEO Disable";
-
-    } else{
         NSString *valueToSave = @"enableGeo";
         [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"geoEnabledStatus"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         NSLog(valueToSave);
-      self.geoLabel.text = @"GEO Enable";
+//        self.geoView.view.hidden = YES;
+//        self.geoLabel.text = @"GEO Enable";
+        [self geoAlert];
+
+    } else{
+        NSString *valueToSave = @"disableGeo";
+        [[NSUserDefaults standardUserDefaults] setObject:valueToSave forKey:@"geoEnabledStatus"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        NSLog(valueToSave);
+//      self.geoLabel.text = @"GEO Disable";
 
     }
 }
 
 
-
+-(void)geoAlert{
+    UIAlertController *alert=   [UIAlertController
+                                 alertControllerWithTitle:@"GEO"
+                                 message:@"You must restart the app for this feature to work"
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [alert dismissViewControllerAnimated:YES completion:^{
+            
+            //Dismissed
+        }];
+        
+    });
+    
+}
 
 -(void)style{
     self.geoButtonView.layer.cornerRadius = 11;
     self.geoButtonView.layer.masksToBounds = true;
-    self.soundsLabel.layer.cornerRadius = 11;
-    self.soundsLabel.layer.masksToBounds = true;
-    self.notificationsLabel.layer.cornerRadius = 11;
-    self.notificationsLabel.layer.masksToBounds = true;
+    self.tutorialLabel.layer.cornerRadius = 11;
+    self.tutorialLabel.layer.masksToBounds = true;
     self.locationButton.layer.cornerRadius = 11;
     self.locationButton.layer.masksToBounds = true;
     self.seattleButton.layer.cornerRadius = 11;

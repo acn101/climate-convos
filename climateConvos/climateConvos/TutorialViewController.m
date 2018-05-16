@@ -28,8 +28,7 @@
     [super viewDidLoad];
     [self displayGeo];
     [self checkStatus];
-    
-    // [self loadHTML];
+
 }
 
 - (IBAction)setSkipStatus:(id)sender {
