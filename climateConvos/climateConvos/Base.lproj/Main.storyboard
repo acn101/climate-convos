@@ -475,19 +475,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Dvv-mu-Jvf">
-                                <rect key="frame" x="39" y="42" width="296" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Saved Facts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzU-VZ-KzY">
+                                <rect key="frame" x="141" y="38" width="93" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Facts"/>
-                                    <segment title="Articles"/>
-                                    <segment title="Events"/>
-                                </segments>
-                                <color key="tintColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="segmentedcontroller" destination="ZB1-UG-NE0" eventType="valueChanged" id="Acv-RQ-Zms"/>
-                                </connections>
-                            </segmentedControl>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.42352941179999998" green="0.74117647060000003" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -500,7 +494,6 @@
                         <barButtonItem key="rightBarButtonItem" title="Setting" id="79g-dy-Uf9"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="control" destination="Dvv-mu-Jvf" id="L1e-IH-lRm"/>
                         <outlet property="tableView" destination="EDW-hF-QCl" id="gHN-Uy-kOi"/>
                     </connections>
                 </viewController>
@@ -1143,6 +1136,6 @@
         <segue reference="6pb-hg-yuu"/>
         <segue reference="KUf-ys-Eio"/>
         <segue reference="L9e-qb-ao4"/>
-        <segue reference="heN-WH-QUy"/>
+        <segue reference="PtQ-hz-cGi"/>
     </inferredMetricsTieBreakers>
 </document>

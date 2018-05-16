@@ -30,8 +30,9 @@
     // DefaultCellViewController.h for this to not
     // produce a warning
     self.tableView.dataSource = self;
+    self.currentArray = self.savedFactoids;
 }
-
+/*
 - (IBAction)segmentedcontroller {
     self.segmentChosen = (int) control.selectedSegmentIndex;
     switch (control.selectedSegmentIndex) {
@@ -52,7 +53,7 @@
             break;}
     }
     self.segmentChosen = (int) control.selectedSegmentIndex;
-}
+}*/ 
 
 #pragma mark - Table View Methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
