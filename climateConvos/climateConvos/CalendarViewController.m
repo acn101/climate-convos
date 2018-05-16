@@ -126,7 +126,7 @@
 {
     NSString *ICSAsString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     // printf("%s", [NSString stringWithFormat: @"%@", ICSAsString].UTF8String);
-    self.calendarEvents = [[NSMutableArray alloc] init];
+    NSMutableArray *calendarEventsUnsorted = [[NSMutableArray alloc] init];
     // create array of lines
     NSArray *events = [ICSAsString componentsSeparatedByString:@"BEGIN:VEVENT"];
     for (NSUInteger i = 0; i < events.count; i++) {
@@ -141,14 +141,19 @@
             calEvent.eSummary = [self getSummary:event];
             calEvent.eLocation = [self getLocation:event];
             // NSLog(@"%@ \n\n\n", calEvent);
-            [self.calendarEvents addObject:calEvent];
+            [calendarEventsUnsorted addObject:calEvent];
         }
     }
+    
+    self.calendarEvents = [NSMutableArray arrayWithArray:[calendarEventsUnsorted sortedArrayUsingSelector:@selector(compareTest:)]];
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
     });
     // NSLog(@"Calendar Events Count %tu", self.calendarEvents.count);
 }
+
+
 #pragma mark - SEATTLE END
 
 #pragma mark - HOUSTON START
@@ -209,12 +214,17 @@
     if (error) {
         NSLog(@"ERROR! - %@", error.localizedDescription);
     }
+    
     NSArray *matches = [RE matchesInString:event options:0 range:NSMakeRange(0, event.length)];
     if (matches.count > 0) {
         NSTextCheckingResult *result = matches[0];
         description = [event substringWithRange:result.range];
         description = [description stringByReplacingOccurrencesOfString:@"DESCRIPTION:" withString:@""];
         description = [description stringByReplacingOccurrencesOfString:@"LAST-MODIFIED" withString:@""];
+        description = [description stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+        description = [description stringByReplacingOccurrencesOfString:@"\r\n" withString:@" "];
+        description = [description stringByReplacingOccurrencesOfString:@"\\" withString:@""];
+        description = [description stringByReplacingOccurrencesOfString:@"  " withString:@" "];
         description = [self stringByStrippingHTML:description];
         // NSLog(@"description: %@", description);
     }
@@ -407,22 +417,46 @@
 #pragma mark - summary
 - (NSString *)getSummary:(NSString *)event
 {
+    // GET SUMMARY
+    
     NSString *summary;
     NSError *error;
     NSRegularExpression *RE = [[NSRegularExpression alloc] initWithPattern:@"(?<=SUMMARY:)(.*)(?=RANSP)"
                                                                    options:NSRegularExpressionDotMatchesLineSeparators
                                                                      error:&error];
+
     if (error) {
         NSLog(@"ERROR! - %@", error.localizedDescription);
     }
+    
     NSArray *matches = [RE matchesInString:event options:0 range:NSMakeRange(0, event.length)];
     if (matches.count > 0) {
         NSTextCheckingResult *result = matches[0];
         summary = [event substringWithRange:result.range];
         summary = [summary stringByReplacingOccurrencesOfString:@"SUMMARY:" withString:@""];
-//        summary = [summary stringByReplacingOccurrencesOfString:@"T" withString:@""];
+        //        summary = [summary stringByReplacingOccurrencesOfString:@"T" withString:@""];
         // NSLog(@"Summary: %@", summary);
     }
+
+    // STRIP PARENTHESES
+
+    NSRegularExpression *REParentheses = [[NSRegularExpression alloc] initWithPattern:@"\\(.+\\)"
+                                                                              options:NSRegularExpressionDotMatchesLineSeparators
+                                                                                error:&error];
+    
+    if (error) {
+        NSLog(@"ERROR! - %@", error.localizedDescription);
+    }
+    
+    NSArray *matchesParen = [REParentheses matchesInString:summary options:0 range:NSMakeRange(0, summary.length)];
+    
+    if (matchesParen.count > 0) {
+        NSTextCheckingResult *result = matchesParen[0];
+        NSString *parens = [summary substringWithRange:result.range];
+        summary = [summary stringByReplacingOccurrencesOfString:parens withString:@""];
+    }
+
+    
     return summary;
 }
 

@@ -16,4 +16,6 @@
 @property (strong, nonatomic) NSDate *eEndTime;
 @property (strong, nonatomic) NSString *eLocation;
 
+- (NSComparisonResult)compareTest:(CalendarEvent *)eventToCompare;
+
 @end

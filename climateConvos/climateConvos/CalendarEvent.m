@@ -14,4 +14,8 @@
     return [NSString stringWithFormat:@"Summary: %@\nStart Time: %@\nEnd Time: %@\nLocation: %@\nDescription: %@", self.eSummary, self.eStartTime, self.eEndTime, self.eLocation, self.eDescription];
 }
 
+- (NSComparisonResult)compareTest:(CalendarEvent *)eventToCompare {
+    return [self.eStartTime compare:eventToCompare.eStartTime];
+}
+
 @end
