@@ -521,11 +521,11 @@
                                         <rect key="frame" x="27" y="28" width="321" height="128"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="It's important to have a baseline of knowledge about climate change. Click on the modules below to learn more!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Etp-4l-ceN">
-                                        <rect key="frame" x="65" y="42" width="240" height="93"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Click on the modules below to educate yourself about Climate Change and Conversations!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Etp-4l-ceN">
+                                        <rect key="frame" x="47" y="46" width="281" height="92"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="textColor" red="0.36862745099999999" green="0.36862745099999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="education_body_2" translatesAutoresizingMaskIntoConstraints="NO" id="Z03-tC-V3l">
@@ -537,7 +537,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <state key="normal" title="Proactive Conversation">
-                                            <color key="titleColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.33995747049618058" green="0.61254166949545408" blue="0.7453255520583435" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="proMod:" destination="E1f-D7-eXi" eventType="touchUpInside" id="c4q-1k-rTz"/>
@@ -552,7 +552,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <state key="normal" title="What Even is Climate Change?">
-                                            <color key="titleColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.33995747049618058" green="0.61254166949545408" blue="0.7453255520583435" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="whatMod:" destination="E1f-D7-eXi" eventType="touchUpInside" id="MaB-oE-osV"/>
@@ -567,7 +567,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <state key="normal" title="How Does it Affect you?">
-                                            <color key="titleColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.33995747049618058" green="0.61254166949545408" blue="0.7453255520583435" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="howMod:" destination="E1f-D7-eXi" eventType="touchUpInside" id="6pE-wW-A6R"/>
@@ -582,34 +582,34 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <state key="normal" title="What Can You Do About it?">
-                                            <color key="titleColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.33995747049618058" green="0.61254166949545408" blue="0.7453255520583435" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="whatCanMod:" destination="E1f-D7-eXi" eventType="touchUpInside" id="NMn-Um-iDf"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="education_body_3" translatesAutoresizingMaskIntoConstraints="NO" id="VHl-DO-Tdw">
-                                        <rect key="frame" x="27" y="28" width="321" height="394"/>
+                                        <rect key="frame" x="27" y="29" width="321" height="394"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5s-fM-9Vg">
-                                        <rect key="frame" x="301" y="49" width="20" height="20"/>
+                                        <rect key="frame" x="301" y="50" width="20" height="20"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <state key="normal" image="blue x"/>
                                         <connections>
                                             <action selector="hideButt:" destination="E1f-D7-eXi" eventType="touchUpInside" id="RAE-Zk-4dw"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="PlaceHolder" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="naV-Lq-KET">
-                                        <rect key="frame" x="46" y="90" width="289" height="316"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="PlaceHolder" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="naV-Lq-KET">
+                                        <rect key="frame" x="46" y="91" width="289" height="316"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JW-Fh-IIe">
-                                        <rect key="frame" x="46" y="42" width="236" height="40"/>
+                                        <rect key="frame" x="46" y="43" width="236" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                         <color key="textColor" red="0.42352941176470588" green="0.74117647058823533" blue="0.88235294117647056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -890,18 +890,8 @@
                                     <color key="titleColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nve-zb-zoa">
-                                <rect key="frame" x="167" y="51" width="81" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Seattle">
-                                    <color key="titleColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="seattleButton:" destination="Iu4-6f-Dzw" eventType="touchUpInside" id="Ryh-Xu-rUr"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ru3-TC-uEg">
-                                <rect key="frame" x="256" y="51" width="86" height="62"/>
+                                <rect key="frame" x="262" y="51" width="86" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Houston">
                                     <color key="titleColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -932,19 +922,8 @@
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYV-ib-w3c">
-                                <rect key="frame" x="22" y="293" width="320" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Clear Defaults">
-                                    <color key="titleColor" red="0.95686274509803926" green="0.072324749897481888" blue="0.0030063980796669189" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="clearDefaults:" destination="Iu4-6f-Dzw" eventType="touchUpInside" id="hVa-Tj-ScP"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byI-pb-Kky">
-                                <rect key="frame" x="28" y="360" width="308" height="30"/>
+                                <rect key="frame" x="26" y="395" width="322" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <state key="normal" title="Created by team SASON">
@@ -955,6 +934,28 @@
                                     <action selector="aboutUs:" destination="Iu4-6f-Dzw" eventType="touchUpInside" id="x2N-Pb-j7d"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYV-ib-w3c">
+                                <rect key="frame" x="26" y="310" width="322" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Clear Defaults">
+                                    <color key="titleColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearDefaults:" destination="Iu4-6f-Dzw" eventType="touchUpInside" id="hVa-Tj-ScP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nve-zb-zoa">
+                                <rect key="frame" x="171" y="51" width="83" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Seattle">
+                                    <color key="titleColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="seattleButton:" destination="Iu4-6f-Dzw" eventType="touchUpInside" id="Ryh-Xu-rUr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -963,6 +964,8 @@
                     </navigationItem>
                     <size key="freeformSize" width="375" height="588"/>
                     <connections>
+                        <outlet property="aboutUs" destination="byI-pb-Kky" id="RrS-zY-zC2"/>
+                        <outlet property="clearDefaults" destination="VYV-ib-w3c" id="che-RN-v8x"/>
                         <outlet property="geoButtonView" destination="Ybf-lO-RZC" id="smD-NK-1Da"/>
                         <outlet property="geoLabel" destination="bsu-gN-40W" id="IaI-FH-PW4"/>
                         <outlet property="geoSwitch" destination="GDi-at-RxE" id="TnO-ac-RWX"/>

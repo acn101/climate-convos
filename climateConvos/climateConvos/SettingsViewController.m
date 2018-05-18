@@ -22,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UISwitch *tutorialSwitch;
 @property (weak, nonatomic) IBOutlet UIButton *locationButton;
 @property (weak, nonatomic) IBOutlet UISwitch *geoSwitch;
+@property (weak, nonatomic) IBOutlet UIButton *clearDefaults;
+@property (weak, nonatomic) IBOutlet UIButton *aboutUs;
 
 
 
@@ -106,6 +108,7 @@
 
 - (IBAction)geoSwitch:(id)sender {
     NSString *currentSavedGeo = [[NSUserDefaults standardUserDefaults] stringForKey:@"geoEnabledStatus"];
+  
     
     if([sender isOn]){
         NSString *valueToSave = @"enableGeo";
@@ -158,6 +161,26 @@
     self.seattleButton.layer.masksToBounds = true;
     self.houstonButton.layer.cornerRadius = 11;
     self.houstonButton.layer.masksToBounds = true;
+    [self.clearDefaults.layer setBorderWidth:3.0];
+    [self.clearDefaults.layer setBorderColor:[[UIColor colorWithRed:239/255.0 green:239/255.0 blue:244/255.0 alpha:1.0]CGColor]];
+    self.clearDefaults.layer.cornerRadius = 11;
+ 
+    
+    NSString *currentSavedLocation = [[NSUserDefaults standardUserDefaults]
+                                      stringForKey:@"location"];
+    
+    NSLog(currentSavedLocation);
+    
+    if ([currentSavedLocation isEqualToString: @"Houston"])
+     {
+         self.houstonButton.backgroundColor=[UIColor whiteColor];
+         
+     } else if ([currentSavedLocation isEqualToString: @"Seattle"])
+         {
+             self.seattleButton.backgroundColor=[UIColor whiteColor];
+         }
+        
+    
 }
 
 

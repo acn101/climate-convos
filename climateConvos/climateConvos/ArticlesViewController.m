@@ -167,36 +167,46 @@
         label.textColor = [UIColor colorWithRed:94.0f/255.0f green:94.0f/255.0f blue:94.0f/255.0f alpha:1.0f];
         [carouselView addSubview:label];
         
-        //        // Topic Label
-        //        UILabel *topic = [[UILabel alloc] initWithFrame:CGRectMake(15, -30, 250.0f, 30.0f)];
-        //        // topic.textAlignment = NSTextAlignmentLeft;
-        //        topic.font = [UIFont boldSystemFontOfSize:22];
-        //        //topic.font = [topic.font fontWithSize:24];
-        //        topic.tag = 1;
-        //        topic.numberOfLines = 0;
-        //        topic.text = self.currentFactoid.tags; // here
-        //        topic.textColor = [UIColor whiteColor];
-        //        [carouselView addSubview:topic];
         
-        // Show plus button
-//        UIButton *addButton = [[UIButton alloc] initWithFrame:CGRectMake(215.0, 280, 20.0f, 20.0f)];
-//        [addButton addTarget:self
-//                      action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
-//        [addButton setImage:([UIImage imageNamed:@"add_icon.png"]) forState:UIControlStateNormal];
-//        [addButton setTitle:@"" forState:UIControlStateNormal];
-//        addButton.titleLabel.font = [UIFont systemFontOfSize:16];
-//        addButton.userInteractionEnabled = YES;
-//        [carouselView addSubview:addButton];
-//        
-//        // share button
-//        UIButton *shareButton = [[UIButton alloc] initWithFrame:CGRectMake(245.0, 280, 20.0f, 18.0f)];
-//        [shareButton addTarget:self
-//                        action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
-//        [shareButton setImage:([UIImage imageNamed:@"share_icon.png"]) forState:UIControlStateNormal];
-//        [shareButton setTitle:@"" forState:UIControlStateNormal];
-//        shareButton.titleLabel.font = [UIFont systemFontOfSize:16];
-//        shareButton.userInteractionEnabled = YES;
-//        [carouselView addSubview:shareButton];
+        
+        
+                // Topic Label
+                UILabel *topic = [[UILabel alloc] initWithFrame:CGRectMake(15, -30, 250.0f, 30.0f)];
+                // topic.textAlignment = NSTextAlignmentLeft;
+                topic.font = [UIFont boldSystemFontOfSize:22];
+                //topic.font = [topic.font fontWithSize:24];
+                topic.tag = 1;
+                topic.numberOfLines = 0;
+                topic.text = self.currentFactoid.tags; // here
+                topic.textColor = [UIColor whiteColor];
+                [carouselView addSubview:topic];
+        
+        // Show Sources
+        UIButton *sources = [[UIButton alloc] initWithFrame:CGRectMake(75.0, 280, 20.0f, 20.0f)];
+        [sources addTarget:self
+                      action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
+        [sources setImage:([UIImage imageNamed:@"add_icon.png"]) forState:UIControlStateNormal];
+        [sources setTitle:@"" forState:UIControlStateNormal];
+        sources.titleLabel.font = [UIFont systemFontOfSize:16];
+        sources.userInteractionEnabled = YES;
+        [carouselView addSubview:sources];
+        
+        // share button
+        UIButton *shareButton = [[UIButton alloc] initWithFrame:CGRectMake(270.0, 280, 20.0f, 18.0f)];
+        [shareButton addTarget:self
+                        action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [shareButton setImage:([UIImage imageNamed:@"share_icon.png"]) forState:UIControlStateNormal];
+        [shareButton setTitle:@"" forState:UIControlStateNormal];
+        shareButton.titleLabel.font = [UIFont systemFontOfSize:16];
+        shareButton.userInteractionEnabled = YES;
+        [carouselView addSubview:shareButton];
+        
+        // Inivisible share
+        UIButton *shadowShare = [UIButton buttonWithType:UIButtonTypeCustom];
+        shadowShare.frame = CGRectMake(298.0, 400, 20.0f, 18.0f);
+        [shadowShare addTarget:self
+                        action:@selector(shareContent:) forControlEvents:UIControlEventTouchDown];
+        [self.view addSubview:shadowShare];
         
     } else {
         //get a reference to the label in the recycled view
@@ -213,6 +223,23 @@
     label.text = [self.currentFactoid.texts objectForKey:@"long"];
     
     return carouselView;
+}
+
+-(void ) shareContent:(id)sender {
+    UIView *current = self.carousel.currentItemView;
+    NSInteger *index = [self.carousel indexOfItemView:(current)];
+    
+    singleFactoid *toSave = [[singleFactoid alloc] init];
+    
+    toSave = _currentDB[(int)index];
+    
+    NSDictionary *texts = toSave.texts;
+    NSString *message = [texts objectForKey:@"long"];
+    NSArray * shareItems = @[message];
+    //    NSArray * shareItems = @[message, image];
+    
+    UIActivityViewController * avc = [[UIActivityViewController alloc]  initWithActivityItems:shareItems applicationActivities:nil];
+    [self presentViewController:avc animated:YES completion:nil];
 }
 
 - (void)buttonPressed:(id)sender {
@@ -249,6 +276,8 @@
     }
     return value;
 }
+
+
 
 #pragma mark - articles setup
 - (void)populateArticles {

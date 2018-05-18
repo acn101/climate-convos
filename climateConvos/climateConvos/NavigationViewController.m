@@ -30,7 +30,11 @@ ContainerViewController *container;
     [self buttonShadows];
     self.titleButtonPressed = NO;
     self.displayGEO.hidden=NO;
+  
 }
+
+
+
 
 - (IBAction)titleButton:(id)sender {
     
