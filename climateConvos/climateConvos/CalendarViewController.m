@@ -140,8 +140,21 @@
             calEvent.eEndTime = [self getEndTime:event];
             calEvent.eSummary = [self getSummary:event];
             calEvent.eLocation = [self getLocation:event];
+            [self getYear:event];
             // NSLog(@"%@ \n\n\n", calEvent);
-            [calendarEventsUnsorted addObject:calEvent];
+            
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            [formatter setDateFormat:@"yyyyMMdd"];
+            NSString *stringFromDate = [formatter stringFromDate:[NSDate date]];
+            int integerDate = [stringFromDate intValue];
+            NSString *savedStringFromDate = [formatter stringFromDate:calEvent.eStartTime];
+            int savedIntegerDate = [savedStringFromDate intValue];
+//            NSLog(@"Regular Integer: %i", integerDate);
+//            NSLog(@"Saved Integer: %i", savedIntegerDate);
+            
+            if(savedIntegerDate >= integerDate) {
+                [calendarEventsUnsorted addObject:calEvent];
+            }
 
         }
     }
@@ -178,7 +191,7 @@
 {
     NSString *ICSAsString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     // printf("%s", [NSString stringWithFormat: @"%@", ICSAsString].UTF8String);
-    self.calendarEvents = [[NSMutableArray alloc] init];
+    NSMutableArray *calendarEventsUnsorted = [[NSMutableArray alloc] init];
     // create array of lines
     NSArray *events = [ICSAsString componentsSeparatedByString:@"BEGIN:VEVENT"];
     for (NSUInteger i = 0; i < events.count; i++) {
@@ -192,10 +205,27 @@
             calEvent.eEndTime = [self getEndTime:event];
             calEvent.eSummary = [self getSummary:event];
             calEvent.eLocation = [self getLocation:event];
+            [self getYear:event];
             // NSLog(@"%@ \n\n\n", calEvent);
-            [self.calendarEvents addObject:calEvent];
+            
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            [formatter setDateFormat:@"yyyyMMdd"];
+            NSString *stringFromDate = [formatter stringFromDate:[NSDate date]];
+            int integerDate = [stringFromDate intValue];
+            NSString *savedStringFromDate = [formatter stringFromDate:calEvent.eStartTime];
+            int savedIntegerDate = [savedStringFromDate intValue];
+            //            NSLog(@"Regular Integer: %i", integerDate);
+            //            NSLog(@"Saved Integer: %i", savedIntegerDate);
+            
+            if(savedIntegerDate >= integerDate) {
+                [calendarEventsUnsorted addObject:calEvent];
+            }
+            
         }
     }
+    
+    self.calendarEvents = [NSMutableArray arrayWithArray:[calendarEventsUnsorted sortedArrayUsingSelector:@selector(compareTest:)]];
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
     });
@@ -237,6 +267,56 @@
     while ((r = [stringToStrip rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
         stringToStrip = [stringToStrip stringByReplacingCharactersInRange:r withString:@""];
     return stringToStrip;
+}
+
+#pragma mark - Year
+- (int)getYear:(NSString *)event
+{
+    NSArray *lines = [event componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    //    for (NSUInteger i = 0; i < lines.count; i++) {
+    //        NSString *line = lines[i];
+    //    }
+    for (NSUInteger i = 0; i < lines.count; i++) {
+        NSString *line = lines[i];
+        if ([line rangeOfString:@"DTSTART" options:NSRegularExpressionSearch].location != NSNotFound) {
+            NSRegularExpression *RE = [[NSRegularExpression alloc] initWithPattern:@"TSTART:.+Z"
+                                                                           options:NSRegularExpressionDotMatchesLineSeparators
+                                                                             error:nil];
+            NSArray *matches = [RE matchesInString:line options:0 range:NSMakeRange(0, line.length)];
+            if (matches.count <= 0) {
+                // NSLog(@"ERROR! No matches for DTSART");
+                line = [self getSemiColonTimeStart:line];
+                RE = [[NSRegularExpression alloc] initWithPattern:@"TSTART:.+Z"
+                                                          options:NSRegularExpressionDotMatchesLineSeparators
+                                                            error:nil];
+                matches = [RE matchesInString:line options:0 range:NSMakeRange(0, line.length)];
+                // exit(EXIT_FAILURE);
+            }
+            // NSLog(@"matches: %@", matches);
+            NSTextCheckingResult *result = matches[0];
+            // Should be:   20180519T163000Z
+            // Is:          20180509T000000Z
+            NSString *startTime = [line substringWithRange:result.range];
+            startTime = [startTime stringByReplacingOccurrencesOfString:@"TSTART:" withString:@""];
+            NSArray *components = [startTime componentsSeparatedByString:@"T"];
+            NSString *date;
+            NSString *time;
+            if (components.count == 2) {
+                date = components[0];
+                time = components[1];
+            } else {
+                NSLog(@"ERROR!! TSTART not splitting up into components");
+                exit(EXIT_FAILURE);
+            }
+            time = [time stringByReplacingOccurrencesOfString:@"Z" withString:@""];
+            NSString *year = [date substringWithRange:NSMakeRange(0, 4)];
+//            NSLog(@"%@", year);
+            int retYear = [year intValue];
+//            NSLog(@"%i", retYear);
+            return retYear;
+        }
+    }
+    return (int)lines[0];
 }
 
 #pragma mark - start time
