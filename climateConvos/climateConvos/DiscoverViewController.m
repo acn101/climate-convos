@@ -143,10 +143,10 @@
     if (carouselView == nil) {
     
         // editing the boyd of the carousel
-        carouselView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300.0f, 378.0f)];
+        carouselView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 327.0f, 378.0f)];
         carouselView.contentMode = UIViewContentModeCenter;
-        carouselView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"discover_body.png"]];
-        label = [[UILabel alloc] initWithFrame:CGRectMake(25, -50, 250.0f, 380.0f)];
+        carouselView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"discover.png"]];
+        label = [[UILabel alloc] initWithFrame:CGRectMake(25, -50, 283.0f, 380.0f)];
         label.textAlignment = NSTextAlignmentCenter;
         label.font = [label.font fontWithSize:16];
         label.tag = 1;
@@ -166,6 +166,8 @@
         // Show more button
         UIButton *showMore = [UIButton buttonWithType:UIButtonTypeCustom];
         showMore.frame = CGRectMake(26.0, 320, 98.0f, 32.0f);
+        
+        
         [showMore setTitle:@"+ show more" forState:UIControlStateNormal];
         [showMore setTitleColor:[UIColor colorWithRed:94.0f/255.0f green:94.0f/255.0f blue:94.0f/255.0f alpha:1.0f] forState:UIControlStateNormal];
         showMore.titleLabel.font = [UIFont boldSystemFontOfSize:16];
@@ -174,15 +176,18 @@
         // Inivisible shadow show more button
         UIButton *shadowMore = [UIButton buttonWithType:UIButtonTypeCustom];
         shadowMore.frame = CGRectMake(65.0, 357.0, 98.0f, 32.0f);
+        
         [shadowMore addTarget:self
                        action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
         [self.view addSubview:shadowMore];
 
         
         // Show plus button
-        UIButton *addButton = [[UIButton alloc] initWithFrame:CGRectMake(215.0, 327, 20.0f, 20.0f)];
+        UIButton *addButton = [[UIButton alloc] initWithFrame:CGRectMake(255.0, 327, 20.0f, 20.0f)];
         [addButton addTarget:self
                       action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
+        
+        
         [addButton setImage:([UIImage imageNamed:@"add_icon.png"]) forState:UIControlStateNormal];
         [addButton setTitle:@"" forState:UIControlStateNormal];
         addButton.titleLabel.font = [UIFont systemFontOfSize:16];
@@ -191,25 +196,28 @@
         
         // Inivisible shadow plus button
         UIButton *shadowPlus = [UIButton buttonWithType:UIButtonTypeCustom];
-        shadowPlus.frame = CGRectMake(253.0, 364.0, 20.0f, 20.0f);
+        shadowPlus.frame = CGRectMake(278.0, 378.0, 20.0f, 20.0f);
+      //  shadowPlus.backgroundColor = [UIColor redColor];
         [shadowPlus addTarget:self
                        action:@selector(addFactoid:) forControlEvents:UIControlEventTouchDown];
         [self.view addSubview:shadowPlus];
         
         
         // share button
-        UIButton *shareButton = [[UIButton alloc] initWithFrame:CGRectMake(245.0, 327, 20.0f, 18.0f)];
+        UIButton *shareButton = [[UIButton alloc] initWithFrame:CGRectMake(285.0, 327, 20.0f, 18.0f)];
         [shareButton addTarget:self
                         action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
         [shareButton setImage:([UIImage imageNamed:@"share_icon.png"]) forState:UIControlStateNormal];
         [shareButton setTitle:@"" forState:UIControlStateNormal];
         shareButton.titleLabel.font = [UIFont systemFontOfSize:16];
+        
         shareButton.userInteractionEnabled = YES;
         [carouselView addSubview:shareButton];
         
         // Inivisible share plus button
         UIButton *shadowShare = [UIButton buttonWithType:UIButtonTypeCustom];
-        shadowShare.frame = CGRectMake(283.0, 364.0, 20.0f, 18.0f);
+      //  shadowShare.backgroundColor = [UIColor redColor];
+        shadowShare.frame = CGRectMake(308.0, 378.0, 20.0f, 18.0f);
         [shadowShare addTarget:self
                        action:@selector(shareContent:) forControlEvents:UIControlEventTouchDown];
         [self.view addSubview:shadowShare];
@@ -334,7 +342,8 @@
         case iCarouselOptionWrap:
             return YES;
         case iCarouselOptionSpacing:
-            return 1.05; // If the width of your items is 40 e.g, the spacing would be 4 px.
+            //return 1.05; // If the width of your items is 40 e.g, the spacing would be 4 px.
+            return 1.02;
             break;
         case iCarouselOptionVisibleItems:
             return self.currentDB.count;

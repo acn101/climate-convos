@@ -423,7 +423,7 @@
                     <connections>
                         <outlet property="carousel" destination="Jf1-My-Dlf" id="d0N-3m-ZTJ"/>
                         <outlet property="tableView" destination="vnH-eO-Stz" id="skz-hy-7kd"/>
-                        <outlet property="topic" destination="zE4-Mg-Pk9" id="N79-Jo-yeh"/>
+                        <outlet property="topTitle" destination="zE4-Mg-Pk9" id="z9X-TC-jwG"/>
                         <outlet property="whiteFrame" destination="3ln-QB-apd" id="dRg-qE-J1t"/>
                     </connections>
                 </viewController>
@@ -757,7 +757,7 @@
                                 <rect key="frame" x="16" y="8" width="111" height="100"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="tips" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LCn-Hn-9N5">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="tips" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCn-Hn-9N5">
                                 <rect key="frame" x="123" y="8" width="227" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -941,7 +941,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Clear Defaults">
+                                <state key="normal" title="Reset Settings">
                                     <color key="titleColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>

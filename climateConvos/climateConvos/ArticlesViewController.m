@@ -13,7 +13,9 @@
 
 @interface ArticlesViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *topic;
+@property (weak, nonatomic) IBOutlet UILabel *topTitle;
+
+
 @property (weak, nonatomic) IBOutlet UIView *whiteFrame;
 
 
@@ -52,9 +54,9 @@
     self.whiteFrame.layer.masksToBounds = YES;
     // NSLog(@"should display articles for %@", self.selectedCategory);
     if (self.selectedCategory == nil) {
-        self.topic.text = @"More Info";
+        self.topTitle.text = @"More Info";
     } else {
-        self.topic.text = self.selectedCategory;
+        self.topTitle.text = self.selectedCategory;
     }
     
 }
@@ -148,6 +150,7 @@
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)carouselView {
     UITextView *label = nil;
+    UILabel *topic = nil;
     
     //create new view if no view is available for recycling
     if (carouselView == nil) {
@@ -166,20 +169,20 @@
         // [label sizeToFit];
         label.textColor = [UIColor colorWithRed:94.0f/255.0f green:94.0f/255.0f blue:94.0f/255.0f alpha:1.0f];
         [carouselView addSubview:label];
+    
         
+        // Topic Label
         
+        topic = [[UILabel alloc] initWithFrame:CGRectMake(10, -35, 250.0f, 30.0f)];
+        // topic.textAlignment = NSTextAlignmentLeft;
+        topic.font = [UIFont boldSystemFontOfSize:22];
+        //topic.font = [topic.font fontWithSize:24];
+        topic.tag = 1;
+        topic.numberOfLines = 0;
+        // here
+        topic.textColor = [UIColor whiteColor];
+        [carouselView addSubview:topic];
         
-        
-                // Topic Label
-                UILabel *topic = [[UILabel alloc] initWithFrame:CGRectMake(15, -30, 250.0f, 30.0f)];
-                // topic.textAlignment = NSTextAlignmentLeft;
-                topic.font = [UIFont boldSystemFontOfSize:22];
-                //topic.font = [topic.font fontWithSize:24];
-                topic.tag = 1;
-                topic.numberOfLines = 0;
-                topic.text = self.currentFactoid.tags; // here
-                topic.textColor = [UIColor whiteColor];
-                [carouselView addSubview:topic];
         
         // Show Sources
         UIButton *sources = [[UIButton alloc] initWithFrame:CGRectMake(75.0, 280, 20.0f, 20.0f)];
@@ -221,6 +224,9 @@
 #pragma mark this2
     self.currentFactoid = [self.currentDB objectAtIndex:[[self.items objectAtIndex:index] intValue]];
     label.text = [self.currentFactoid.texts objectForKey:@"long"];
+    if ([self.topTitle.text isEqualToString:@"More Info"]) {
+        topic.text = self.currentFactoid.tags;
+    } 
     
     return carouselView;
 }
@@ -272,6 +278,9 @@
             return YES;
         case iCarouselOptionSpacing:
             return 1.05; // If the width of your items is 40 e.g, the spacing would be 4 px.
+            break;
+        case iCarouselOptionVisibleItems:
+            return self.currentDB.count;
             break;
     }
     return value;
