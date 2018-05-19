@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSMutableArray *dummyEventsArray;
 @property (strong, nonatomic) NSMutableArray *currentArray;
 @property (nonatomic) int segmentChosen;
+@property (weak, nonatomic) IBOutlet UILabel *saveFactsLabel;
 
 @end
 
@@ -31,6 +32,7 @@
     // produce a warning
     self.tableView.dataSource = self;
     self.currentArray = self.savedFactoids;
+    [_saveFactsLabel setFont:[UIFont boldSystemFontOfSize:20]];
 }
 /*
 - (IBAction)segmentedcontroller {

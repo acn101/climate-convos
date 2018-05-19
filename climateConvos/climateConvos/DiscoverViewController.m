@@ -228,7 +228,6 @@
     self.currentFactoid = [self.currentDB objectAtIndex:[[self.items objectAtIndex:index] intValue]];
     label.text = [self.currentFactoid.texts objectForKey:@"short"];
     topic.text = self.currentFactoid.tags;
-    NSLog(@"Hullu: %@ %@", _currentFactoid.tags, _currentFactoid.number);
     
     return carouselView;
 }

@@ -120,7 +120,7 @@ ContainerViewController *container;
     [self.container segueIdentifierReceivedFromParent:@"toGetActive"];
     
     //change the label
-    [self.titleButton setTitle:@"Events" forState:UIControlStateNormal];
+    [self.titleButton setTitle:@"Find Events" forState:UIControlStateNormal];
      [self buttonStyling];
     [self closeMenu];
 }
