@@ -20,9 +20,12 @@
 @property (strong, nonatomic) NSMutableDictionary *dict;
 @property (strong, nonatomic) NSMutableArray *tips;
 
+@property (weak, nonatomic) IBOutlet UILabel *tapButton;
 
 @property (weak, nonatomic) IBOutlet UIButton *GEO;
 @property (weak, nonatomic) IBOutlet UIImageView *speechBubble;
+
+@property (nonatomic) Boolean tapped;
 
 
 
@@ -38,8 +41,7 @@
     [self setup];
     [self displayGeo];
     
-
-   
+    self.tapped = YES;
 }
 
 - (void)setup {
@@ -103,6 +105,10 @@
     int random = arc4random_uniform(self.tips.count);
     Tip *currentTip = self.tips[random];
     self.geoText.text = currentTip.text;
+    if(self.tapped) {
+        self.tapButton.hidden = self.tapped;
+        self.tapped = NO;
+    }
 }
 
 -(void)disableGeo:(bool) input{
