@@ -151,7 +151,7 @@
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)carouselView {
     UITextView *label = nil;
     UILabel *topic = nil;
-    
+    self.currentFactoid = [self.currentDB objectAtIndex:[[self.items objectAtIndex:index] intValue]];
     //create new view if no view is available for recycling
     if (carouselView == nil) {
         
@@ -176,7 +176,6 @@
         topic = [[UILabel alloc] initWithFrame:CGRectMake(10, -35, 250.0f, 30.0f)];
         // topic.textAlignment = NSTextAlignmentLeft;
         topic.font = [UIFont boldSystemFontOfSize:22];
-        //topic.font = [topic.font fontWithSize:24];
         topic.tag = 1;
         topic.numberOfLines = 0;
         // here
@@ -185,20 +184,45 @@
         
         
         // Show Sources
-        UIButton *sources = [[UIButton alloc] initWithFrame:CGRectMake(75.0, 280, 20.0f, 20.0f)];
-        [sources addTarget:self
-                      action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
-        [sources setImage:([UIImage imageNamed:@"add_icon.png"]) forState:UIControlStateNormal];
-        [sources setTitle:@"" forState:UIControlStateNormal];
-        sources.titleLabel.font = [UIFont systemFontOfSize:16];
-        sources.userInteractionEnabled = YES;
-        [carouselView addSubview:sources];
+        
+        NSDictionary *sources = self.currentFactoid.sources;
+        NSString *imgName = [sources objectForKey:@"img"];
+        UIImage *sourceImg = [UIImage imageNamed:imgName];
+        UIButton *sourceButt = [[UIButton alloc] init];
+        UIButton *shadowSource = [UIButton buttonWithType:UIButtonTypeCustom];
+        
+        // if its taller
+        int width = sourceImg.size.width;
+        int height = sourceImg.size.height;
+        if (height > width || height == width || (width < height * 1.3)) {
+            [sourceButt setFrame:CGRectMake(10.0, 230.0f, 70.0f, 70.0f)];
+            [shadowSource setFrame:CGRectMake(35.0, 345.0f, 70.0f, 70.0f)];
+        } else {
+            [sourceButt setFrame:CGRectMake(10.0, 250.0f, 130.0f, 50.0f)];
+            [shadowSource setFrame:CGRectMake(35.0, 365.0f, 130.0f, 50.0f)];
+        }
+        [sourceButt addTarget:self
+                       action:@selector(linkSource:) forControlEvents:UIControlEventTouchDown];
+        [sourceButt setImage:([UIImage imageNamed:imgName]) forState:UIControlStateNormal];
+        [sourceButt setTitle:@"" forState:UIControlStateNormal];
+        sourceButt.titleLabel.font = [UIFont systemFontOfSize:16];
+        sourceButt.userInteractionEnabled = YES;
+        [sourceButt.imageView setContentMode:UIViewContentModeScaleAspectFit];
+        [carouselView addSubview:sourceButt];
+        
+        
+        [shadowSource addTarget:self
+                        action:@selector(linkSource:) forControlEvents:UIControlEventTouchDown];
+        //shadowSource.backgroundColor = [UIColor blackColor];
+        [self.view addSubview:shadowSource];
         
         // share button
-        UIButton *shareButton = [[UIButton alloc] initWithFrame:CGRectMake(270.0, 280, 20.0f, 18.0f)];
-        [shareButton addTarget:self
-                        action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
-        [shareButton setImage:([UIImage imageNamed:@"share_icon.png"]) forState:UIControlStateNormal];
+        //UIButton *shareButton = [[UIButton alloc] initWithFrame:CGRectMake(270.0, 280, 20.0f, 18.0f)];
+        UIButton *shareButton = [[UIButton alloc] initWithFrame:CGRectMake(270.0, 272, 18.0f, 26.0f)];
+       // [shareButton addTarget:self
+       //                 action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        //[shareButton setImage:([UIImage imageNamed:@"share_icon.png"]) forState:UIControlStateNormal];
+        [shareButton setImage:([UIImage imageNamed:@"upload.png"]) forState:UIControlStateNormal];
         [shareButton setTitle:@"" forState:UIControlStateNormal];
         shareButton.titleLabel.font = [UIFont systemFontOfSize:16];
         shareButton.userInteractionEnabled = YES;
@@ -206,7 +230,9 @@
         
         // Inivisible share
         UIButton *shadowShare = [UIButton buttonWithType:UIButtonTypeCustom];
-        shadowShare.frame = CGRectMake(298.0, 400, 20.0f, 18.0f);
+        shadowShare.frame = CGRectMake(296.0, 390, 20.0f, 28.0f);
+       // shadowShare.backgroundColor = [UIColor blackColor];
+       // shadowShare.frame = CGRectMake(298.0, 400, 20.0f, 18.0f);
         [shadowShare addTarget:self
                         action:@selector(shareContent:) forControlEvents:UIControlEventTouchDown];
         [self.view addSubview:shadowShare];
@@ -222,7 +248,7 @@
     //    you'll get weird issues with carousel item content appearing
     //    in the wrong place in the carousel
 #pragma mark this2
-    self.currentFactoid = [self.currentDB objectAtIndex:[[self.items objectAtIndex:index] intValue]];
+   // self.currentFactoid = [self.currentDB objectAtIndex:[[self.items objectAtIndex:index] intValue]];
     label.text = [self.currentFactoid.texts objectForKey:@"long"];
     if ([self.topTitle.text isEqualToString:@"More Info"]) {
         topic.text = self.currentFactoid.tags;
@@ -230,6 +256,7 @@
     
     return carouselView;
 }
+
 
 -(void ) shareContent:(id)sender {
     UIView *current = self.carousel.currentItemView;
@@ -248,7 +275,10 @@
     [self presentViewController:avc animated:YES completion:nil];
 }
 
-- (void)buttonPressed:(id)sender {
+- (void)linkSource:(id)sender {
+    NSString *url = [self.currentFactoid.sources objectForKey:@"url"];
+   // NSLog(@"What is the url?: %@", url);
+    [self openURL:url];
     //    NSLog(@"I worked yay");
     
 }
@@ -358,6 +388,8 @@
     NSLog(@"What is the url?: %@", url);
     [self openURL:url];
 }
+
+
 
 - (void)openURL:(NSString *)url{
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];

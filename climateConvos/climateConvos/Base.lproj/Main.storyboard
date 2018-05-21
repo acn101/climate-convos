@@ -370,7 +370,7 @@
         <!--Articles View Controller-->
         <scene sceneID="73f-ia-1Ps">
             <objects>
-                <viewController id="1qX-uL-M1N" customClass="ArticlesViewController" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="1qX-uL-M1N" customClass="ArticlesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pQX-oK-QZm"/>
                         <viewControllerLayoutGuide type="bottom" id="SyF-Yk-6R8"/>
@@ -429,7 +429,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uEK-AC-ePs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="163" y="767"/>
+            <point key="canvasLocation" x="162.5" y="767"/>
         </scene>
         <!--Profile-->
         <scene sceneID="wMK-b1-zAT">
@@ -448,7 +448,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EDW-hF-QCl">
-                                <rect key="frame" x="39" y="71" width="296" height="362"/>
+                                <rect key="frame" x="39" y="71" width="296" height="334"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -482,6 +482,16 @@
                                 <color key="textColor" red="0.42352941179999998" green="0.74117647060000003" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfn-wn-Bfl">
+                                <rect key="frame" x="115" y="409" width="144" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Clear All Saved Facts">
+                                    <color key="titleColor" red="0.95686274510000002" green="0.072324749899999999" blue="0.0030063980800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="removeAllFactoids:" destination="ZB1-UG-NE0" eventType="touchUpInside" id="iRt-VA-2Fo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -494,13 +504,14 @@
                         <barButtonItem key="rightBarButtonItem" title="Setting" id="79g-dy-Uf9"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="clearAllFacts" destination="bfn-wn-Bfl" id="ZKK-Nd-b3R"/>
                         <outlet property="saveFactsLabel" destination="rzU-VZ-KzY" id="PSp-la-or4"/>
                         <outlet property="tableView" destination="EDW-hF-QCl" id="gHN-Uy-kOi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l18-D6-BLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="988" y="284"/>
+            <point key="canvasLocation" x="987.5" y="284"/>
         </scene>
         <!--Education View Controller-->
         <scene sceneID="qGw-w4-BQX">
@@ -1132,6 +1143,6 @@
         <segue reference="6pb-hg-yuu"/>
         <segue reference="KUf-ys-Eio"/>
         <segue reference="7Da-2V-jHy"/>
-        <segue reference="heN-WH-QUy"/>
+        <segue reference="PtQ-hz-cGi"/>
     </inferredMetricsTieBreakers>
 </document>

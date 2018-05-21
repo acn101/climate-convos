@@ -19,6 +19,7 @@
 @property (strong, nonatomic) NSMutableArray *currentArray;
 @property (nonatomic) int segmentChosen;
 @property (weak, nonatomic) IBOutlet UILabel *saveFactsLabel;
+@property (weak, nonatomic) IBOutlet UIButton *clearAllFacts;
 
 @end
 
@@ -75,28 +76,51 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     self.tableView.rowHeight = 85;
     ProfileCustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"profilecell" forIndexPath:indexPath];
     NSString *text;
     if (self.currentArray.count > 0) {
-        for (singleFactoid *factoid in self.currentArray) {
+     /*   for (singleFactoid *factoid in self.currentArray) {
             
             NSLog(@"factoid on profile: %@", factoid);
             
-        }
+        }*/
         singleFactoid *factoid = self.currentArray[indexPath.row];
         text = [factoid.texts objectForKey:@"short"];
     } else {
         text = @"You have no saved factoids";
     }
-    
     // populate the cell
     cell.profileText.text = text;
+   // cell.removeButton.tag = indexPath.row;
+   // [cell.removeButton addTarget:self
+   //                 action:@selector(removeFactoid:) forControlEvents:UIControlEventTouchUpInside];
     
     // return our cell
     return cell;
 }
+- (void)removeFactoid:(UIButton*)sender {
+    //int index = sender.tag;
+    //NSLog(@"this is saved factoids %tu", self.savedFactoids.count);
+    //NSLog(@"this is the sender %tu", sender.tag);
+    //if(self.savedFactoids.count > sender.tag){
+    //    [self.savedFactoids removeObjectAtIndex:sender.tag];
+    
+   // NSLog(@"this is the row i want to delete %tu", sender.tag);
+    //NSIndexPath *cellIndexPath = [self.medicationsTableView indexPathForCell:cell];
+   // NSArray *deleteIndexPaths = [NSArray arrayWithObjects:
+    //                             [NSIndexPath indexPathForRow:0 inSection:0]];
+//    [self.tableView beginUpdates];
+//    [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:sender.tag] withRowAnimation:UITableViewRowAnimationFade];
+//    [self.tableView endUpdates];
+    
 
+}
+- (IBAction)removeAllFactoids:(UIButton *)sender {
+    [self.savedFactoids removeAllObjects];
+    [self.tableView reloadData];
+}
 #pragma mark - Inherited Methods
 - (void)viewDidLoad {
     [super viewDidLoad];

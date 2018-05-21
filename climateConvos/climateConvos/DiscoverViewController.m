@@ -183,7 +183,8 @@
 
         
         // Show plus button
-        UIButton *addButton = [[UIButton alloc] initWithFrame:CGRectMake(255.0, 327, 20.0f, 20.0f)];
+       // UIButton *addButton = [[UIButton alloc] initWithFrame:CGRectMake(250.0, 327, 20.0f, 20.0f)];
+        UIButton *addButton = [[UIButton alloc] initWithFrame:CGRectMake(247.0, 323, 25.0f, 25.0f)];
         [addButton addTarget:self
                       action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
         
@@ -196,28 +197,32 @@
         
         // Inivisible shadow plus button
         UIButton *shadowPlus = [UIButton buttonWithType:UIButtonTypeCustom];
-        shadowPlus.frame = CGRectMake(278.0, 378.0, 20.0f, 20.0f);
-      //  shadowPlus.backgroundColor = [UIColor redColor];
+//        shadowPlus.frame = CGRectMake(273.0, 378.0, 20.0f, 20.0f);
+        shadowPlus.frame = CGRectMake(270.0, 374.0, 25.0f, 25.0f);
+    //    shadowPlus.backgroundColor = [UIColor redColor];
         [shadowPlus addTarget:self
                        action:@selector(addFactoid:) forControlEvents:UIControlEventTouchDown];
         [self.view addSubview:shadowPlus];
         
         
         // share button
-        UIButton *shareButton = [[UIButton alloc] initWithFrame:CGRectMake(285.0, 327, 20.0f, 18.0f)];
+        UIButton *shareButton = [[UIButton alloc] initWithFrame:CGRectMake(285.0, 320, 18.0f, 26.0f)];
+       // UIButton *shareButton = [[UIButton alloc] initWithFrame:CGRectMake(285.0, 327, 20.0f, 18.0f)];
         [shareButton addTarget:self
                         action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
-        [shareButton setImage:([UIImage imageNamed:@"share_icon.png"]) forState:UIControlStateNormal];
+        [shareButton setImage:([UIImage imageNamed:@"upload1.png"]) forState:UIControlStateNormal];
+       // [shareButton setImage:([UIImage imageNamed:@"share_icon.png"]) forState:UIControlStateNormal];
         [shareButton setTitle:@"" forState:UIControlStateNormal];
         shareButton.titleLabel.font = [UIFont systemFontOfSize:16];
-        
+        [shareButton.imageView setContentMode:UIViewContentModeScaleAspectFit];
         shareButton.userInteractionEnabled = YES;
         [carouselView addSubview:shareButton];
         
         // Inivisible share plus button
         UIButton *shadowShare = [UIButton buttonWithType:UIButtonTypeCustom];
-      //  shadowShare.backgroundColor = [UIColor redColor];
-        shadowShare.frame = CGRectMake(308.0, 378.0, 20.0f, 18.0f);
+       // shadowShare.backgroundColor = [UIColor redColor];
+       // shadowShare.frame = CGRectMake(308.0, 378.0, 20.0f, 18.0f);
+        shadowShare.frame = CGRectMake(308.0, 371.0, 20.0f, 26.0f);
         [shadowShare addTarget:self
                        action:@selector(shareContent:) forControlEvents:UIControlEventTouchDown];
         [self.view addSubview:shadowShare];
@@ -262,6 +267,7 @@
     toSave = _seattleFactoids[(int)index];
     
     NSDictionary *texts = toSave.texts;
+    
     NSString *message = [texts objectForKey:@"long"];
     NSArray * shareItems = @[message];
     //    NSArray * shareItems = @[message, image];
@@ -285,23 +291,23 @@
     } else {
         toSave = _houstonFactoids[(int)index];
     }
-    UIAlertController *alert=   [UIAlertController
-                                 alertControllerWithTitle:@"Fact Saved!"
-                                 message:@"\nFact has been added to your profile!\n"
-                                 preferredStyle:UIAlertControllerStyleAlert];
-    
-    [self presentViewController:alert animated:YES completion:nil];
-    
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        [alert dismissViewControllerAnimated:YES completion:^{
-            
-            //Dismissed
-        }];
-        
-    });
-    
+//    UIAlertController *alert=   [UIAlertController
+//                                 alertControllerWithTitle:@"Fact Saved!"
+//                                 message:@"\nFact has been added to your profile!\n"
+//                                 preferredStyle:UIAlertControllerStyleAlert];
+//
+//    [self presentViewController:alert animated:YES completion:nil];
+//
+//
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//
+//        [alert dismissViewControllerAnimated:YES completion:^{
+//
+//            //Dismissed
+//        }];
+//
+//    });
+//
     
     
     UITextView *textAboutUs = [[UITextView alloc] initWithFrame:CGRectMake(15, 35, 250, 100)];
@@ -311,8 +317,44 @@
     textAboutUs.scrollEnabled = YES;
     textAboutUs.font = [UIFont systemFontOfSize:15];
 
-    
-    [_savedFactoids addObject:toSave];
+    if ([_savedFactoids containsObject:toSave]) {
+        UIAlertController *alert=   [UIAlertController
+                                     alertControllerWithTitle:@"Could not save!"
+                                     message:@"\nYou already have this factoid saved!\n"
+                                     preferredStyle:UIAlertControllerStyleAlert];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            [alert dismissViewControllerAnimated:YES completion:^{
+                
+                //Dismissed
+            }];
+            
+        });
+    } else {
+        [_savedFactoids addObject:toSave];
+        UIAlertController *alert=   [UIAlertController
+                                     alertControllerWithTitle:@"Fact Saved!"
+                                     message:@"\nFact has been added to your profile!\n"
+                                     preferredStyle:UIAlertControllerStyleAlert];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            [alert dismissViewControllerAnimated:YES completion:^{
+                
+                //Dismissed
+            }];
+            
+        });
+        
+        
+    }
  //   NSLog(@"this is the saved factoid %@", _savedFactoids);
   //  [self performSegueWithIdentifier:@"savedToProfileSegue" sender:self];
 

@@ -10,5 +10,6 @@
 
 @interface ProfileCustomTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UITextView *profileText;
+//@property (weak, nonatomic) IBOutlet UIButton *removeButton;
 
 @end
