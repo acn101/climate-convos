@@ -134,10 +134,10 @@
                 }
             }
         }
+        [self.carousel reloadData];
         if(self.selectedCategory==nil && self.sendMeIndex != 0) {
             [self.carousel scrollToItemAtIndex:self.sendMeIndex animated:NO];
         }
-        [self.carousel reloadData];
     }];
 }
 

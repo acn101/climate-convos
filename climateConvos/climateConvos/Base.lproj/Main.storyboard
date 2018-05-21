@@ -212,7 +212,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.jpg" highlightedImage="cc-logo" translatesAutoresizingMaskIntoConstraints="NO" id="ajZ-wQ-HLq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="launch.gif" highlightedImage="cc-logo" translatesAutoresizingMaskIntoConstraints="NO" id="ajZ-wQ-HLq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -236,7 +236,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.jpg" highlightedImage="cc-logo" translatesAutoresizingMaskIntoConstraints="NO" id="dRV-MI-wkd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="launch.gif" highlightedImage="cc-logo" translatesAutoresizingMaskIntoConstraints="NO" id="dRV-MI-wkd">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -259,7 +259,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cc-logo" translatesAutoresizingMaskIntoConstraints="NO" id="Djw-DL-lLQ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="launch.gif" translatesAutoresizingMaskIntoConstraints="NO" id="Djw-DL-lLQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -935,18 +935,6 @@
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byI-pb-Kky">
-                                <rect key="frame" x="26" y="395" width="322" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <state key="normal" title="Created by team SASON">
-                                    <color key="titleColor" red="0.98686391228692516" green="1" blue="0.98407886723167148" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="aboutUs:" destination="Iu4-6f-Dzw" eventType="touchUpInside" id="x2N-Pb-j7d"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYV-ib-w3c">
                                 <rect key="frame" x="26" y="310" width="322" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -967,6 +955,22 @@
                                 </state>
                                 <connections>
                                     <action selector="seattleButton:" destination="Iu4-6f-Dzw" eventType="touchUpInside" id="Ryh-Xu-rUr"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cclogobox" translatesAutoresizingMaskIntoConstraints="NO" id="bRI-A1-Rt8">
+                                <rect key="frame" x="70" y="402" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byI-pb-Kky">
+                                <rect key="frame" x="0.0" y="389" width="322" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <state key="normal" title="Created by team SASON">
+                                    <color key="titleColor" red="0.98686391228692516" green="1" blue="0.98407886723167148" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="aboutUs:" destination="Iu4-6f-Dzw" eventType="touchUpInside" id="x2N-Pb-j7d"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -998,7 +1002,7 @@
             <objects>
                 <viewController id="jIv-Pm-tmg" customClass="CalendarViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="BMI-Jl-sbh">
-                        <rect key="frame" x="0.0" y="0.0" width="323" height="400"/>
+                        <rect key="frame" x="0.0" y="0.0" width="323" height="410"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -1045,7 +1049,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="5" contentMode="scaleAspectFill" fixedFrame="YES" editable="NO" text="Description" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fp0-jL-vB1">
-                                            <rect key="frame" x="16" y="183" width="308" height="218"/>
+                                            <rect key="frame" x="10" y="183" width="302" height="298"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -1090,7 +1094,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IjT-Q2-1Ih" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2591" y="2079"/>
+            <point key="canvasLocation" x="-2591.5" y="2078.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="oB3-04-ccZ">
@@ -1105,7 +1109,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KnM-yc-kfY">
-                                <rect key="frame" x="26" y="110" width="323" height="400"/>
+                                <rect key="frame" x="26" y="110" width="323" height="410"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="jIv-Pm-tmg" kind="embed" id="Kq7-Fu-VrF"/>
@@ -1126,6 +1130,7 @@
         <image name="backarrow" width="36" height="36"/>
         <image name="blue x" width="37" height="37"/>
         <image name="cc-logo" width="264" height="262"/>
+        <image name="cclogobox" width="101" height="101"/>
         <image name="dots" width="70" height="10"/>
         <image name="education_body_1" width="3220" height="1280"/>
         <image name="education_body_2" width="3220" height="530"/>
@@ -1133,7 +1138,7 @@
         <image name="geo speech bubble" width="517" height="225"/>
         <image name="geo.gif" width="750" height="422"/>
         <image name="house icon" width="90" height="90"/>
-        <image name="logo.jpg" width="375" height="667"/>
+        <image name="launch.gif" width="375" height="667"/>
         <image name="profile icon" width="90" height="90"/>
         <image name="profile_body" width="805" height="1052"/>
         <image name="right arrow" width="25" height="40"/>

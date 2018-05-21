@@ -25,8 +25,8 @@
 		7AFDF2E620979652009E21BA /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFDF2E520979652009E21BA /* UIImage+animatedGIF.m */; };
 		B60EFE072097AB3C008D0142 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B60EFE052097AB3C008D0142 /* DiscoverViewController.m */; };
 		B623179620AA1670008A5369 /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B623179520AA166E008A5369 /* logo.jpg */; };
-		B623179A20AA174C008A5369 /* splashAnimate.gif in Resources */ = {isa = PBXBuildFile; fileRef = B623179920AA174A008A5369 /* splashAnimate.gif */; };
 		B623179C20AA202E008A5369 /* ArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B623179B20AA202D008A5369 /* ArticlesViewController.m */; };
+		B631E1A320B3567B00500902 /* launch.gif in Resources */ = {isa = PBXBuildFile; fileRef = B631E1A220B3567900500902 /* launch.gif */; };
 		B64B1AF120759FC100E4F0CD /* ScrollDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */; };
 		B64B1AF42075A41700E4F0CD /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = B64B1AF32075A41600E4F0CD /* iCarousel.m */; };
 		B692E50A20A38380008E6D40 /* ProfileCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B692E50920A38380008E6D40 /* ProfileCustomTableViewCell.m */; };
@@ -83,8 +83,8 @@
 		B60EFE052097AB3C008D0142 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
 		B60EFE062097AB3C008D0142 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
 		B623179520AA166E008A5369 /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpg; sourceTree = "<group>"; };
-		B623179920AA174A008A5369 /* splashAnimate.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = splashAnimate.gif; sourceTree = "<group>"; };
 		B623179B20AA202D008A5369 /* ArticlesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlesViewController.m; sourceTree = "<group>"; };
+		B631E1A220B3567900500902 /* launch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = launch.gif; sourceTree = "<group>"; };
 		B64B1AEF20759FC100E4F0CD /* ScrollDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollDemoViewController.h; sourceTree = "<group>"; };
 		B64B1AF020759FC100E4F0CD /* ScrollDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollDemoViewController.m; sourceTree = "<group>"; };
 		B64B1AF22075A41600E4F0CD /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
@@ -221,7 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				B623179520AA166E008A5369 /* logo.jpg */,
-				B623179920AA174A008A5369 /* splashAnimate.gif */,
+				B631E1A220B3567900500902 /* launch.gif */,
 				B9BBBA2220A6316700EB971D /* splashViewController.h */,
 				B9BBBA2320A6316700EB971D /* splashViewController.m */,
 				B9BBBA2F20A6767200EB971D /* splash.gif */,
@@ -411,8 +411,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAF5549F202B9E5600B1521E /* LaunchScreen.storyboard in Resources */,
+				B631E1A320B3567B00500902 /* launch.gif in Resources */,
 				E7603904204612820060C245 /* GoogleService-Info.plist in Resources */,
-				B623179A20AA174C008A5369 /* splashAnimate.gif in Resources */,
 				CAF5549C202B9E5600B1521E /* Assets.xcassets in Resources */,
 				B9BBBA2E20A6766900EB971D /* launch.jpg in Resources */,
 				B6C16EFA2099A3BA000B553C /* geo.gif in Resources */,
