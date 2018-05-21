@@ -59,7 +59,7 @@ ContainerViewController *container;
     //change the label
     [self.titleButton setTitle:@"Discover" forState:UIControlStateNormal];
    // [self.homeButton setImage:[UIImage imageNamed:@"house-selected"] forState : UIControlStateNormal];
-    
+    [self stylingNotInMenu];
     [self closeMenu];
     
 }
@@ -70,7 +70,7 @@ ContainerViewController *container;
     //change the label
     
     [self.titleButton setTitle:@"Profile" forState:UIControlStateNormal];
-    
+    [self stylingNotInMenu];
     self.settingsButton.hidden=NO;
     self.profileButton.hidden=YES;
     
@@ -80,7 +80,7 @@ ContainerViewController *container;
     
     //change the label
     [self.titleButton setTitle:@"Settings" forState:UIControlStateNormal];
-    
+    [self stylingNotInMenu];
     self.settingsButton.hidden=YES;
     self.profileButton.hidden=NO;
     
@@ -195,6 +195,15 @@ ContainerViewController *container;
     }
    
     
+}
+
+-(void)stylingNotInMenu{
+    [self.topicButton setBackgroundColor:[UIColor whiteColor]];
+     [self.getActiveButton setBackgroundColor:[UIColor whiteColor]];
+     [self.educationButton setBackgroundColor:[UIColor whiteColor]];
+    [self.topicButton setTitleColor:[UIColor colorWithRed:104/255.0 green:188/255.0 blue:227/255.0 alpha:1.0] forState:UIControlStateNormal];
+    [self.getActiveButton setTitleColor:[UIColor colorWithRed:104/255.0 green:188/255.0 blue:227/255.0 alpha:1.0] forState:UIControlStateNormal];
+        [self.educationButton setTitleColor:[UIColor colorWithRed:104/255.0 green:188/255.0 blue:227/255.0 alpha:1.0] forState:UIControlStateNormal];
 }
 
 

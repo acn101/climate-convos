@@ -184,7 +184,7 @@
         
         // Show plus button
        // UIButton *addButton = [[UIButton alloc] initWithFrame:CGRectMake(250.0, 327, 20.0f, 20.0f)];
-        UIButton *addButton = [[UIButton alloc] initWithFrame:CGRectMake(247.0, 323, 25.0f, 25.0f)];
+        UIButton *addButton = [[UIButton alloc] initWithFrame:CGRectMake(237.0, 323, 25.0f, 25.0f)];
         [addButton addTarget:self
                       action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchDown];
         
@@ -198,7 +198,7 @@
         // Inivisible shadow plus button
         UIButton *shadowPlus = [UIButton buttonWithType:UIButtonTypeCustom];
 //        shadowPlus.frame = CGRectMake(273.0, 378.0, 20.0f, 20.0f);
-        shadowPlus.frame = CGRectMake(270.0, 374.0, 25.0f, 25.0f);
+        shadowPlus.frame = CGRectMake(260.0, 374.0, 25.0f, 25.0f);
     //    shadowPlus.backgroundColor = [UIColor redColor];
         [shadowPlus addTarget:self
                        action:@selector(addFactoid:) forControlEvents:UIControlEventTouchDown];
@@ -268,7 +268,7 @@
     
     NSDictionary *texts = toSave.texts;
     
-    NSString *message = [texts objectForKey:@"long"];
+    NSString *message = [texts objectForKey:@"short"];
     NSArray * shareItems = @[message];
     //    NSArray * shareItems = @[message, image];
     

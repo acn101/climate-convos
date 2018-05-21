@@ -201,8 +201,7 @@
             [sourceButt setFrame:CGRectMake(10.0, 250.0f, 130.0f, 50.0f)];
             [shadowSource setFrame:CGRectMake(35.0, 365.0f, 130.0f, 50.0f)];
         }
-        [sourceButt addTarget:self
-                       action:@selector(linkSource:) forControlEvents:UIControlEventTouchDown];
+        
         [sourceButt setImage:([UIImage imageNamed:imgName]) forState:UIControlStateNormal];
         [sourceButt setTitle:@"" forState:UIControlStateNormal];
         sourceButt.titleLabel.font = [UIFont systemFontOfSize:16];
@@ -218,7 +217,7 @@
         
         // share button
         //UIButton *shareButton = [[UIButton alloc] initWithFrame:CGRectMake(270.0, 280, 20.0f, 18.0f)];
-        UIButton *shareButton = [[UIButton alloc] initWithFrame:CGRectMake(270.0, 272, 18.0f, 26.0f)];
+        UIButton *shareButton = [[UIButton alloc] initWithFrame:CGRectMake(270.0, 262, 18.0f, 26.0f)];
        // [shareButton addTarget:self
        //                 action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
         //[shareButton setImage:([UIImage imageNamed:@"share_icon.png"]) forState:UIControlStateNormal];
@@ -230,7 +229,7 @@
         
         // Inivisible share
         UIButton *shadowShare = [UIButton buttonWithType:UIButtonTypeCustom];
-        shadowShare.frame = CGRectMake(296.0, 390, 20.0f, 28.0f);
+        shadowShare.frame = CGRectMake(296.0, 380, 20.0f, 28.0f);
        // shadowShare.backgroundColor = [UIColor blackColor];
        // shadowShare.frame = CGRectMake(298.0, 400, 20.0f, 18.0f);
         [shadowShare addTarget:self
@@ -276,11 +275,14 @@
 }
 
 - (void)linkSource:(id)sender {
-    NSString *url = [self.currentFactoid.sources objectForKey:@"url"];
-   // NSLog(@"What is the url?: %@", url);
+    UIView *current = self.carousel.currentItemView;
+    NSInteger *index = [self.carousel indexOfItemView:(current)];
+    singleFactoid *something = [[singleFactoid alloc] init];
+    something = [self.currentDB objectAtIndex:index];
+    NSString *url = [something.sources objectForKey:@"url"];
+    // NSLog(@"What is the url?: %@", url);
     [self openURL:url];
     //    NSLog(@"I worked yay");
-    
 }
 
 

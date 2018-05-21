@@ -45,7 +45,7 @@
     NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
     [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Clear Defaults" message:@"Are you sure you want to clear the defaults.  This action cannot be undone" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Clear", nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reset Settings" message:@"Are you sure you want to clear the defaults.  This action cannot be undone" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Clear", nil];
     [alert show];
     
     
